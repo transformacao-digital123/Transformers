@@ -8,11 +8,12 @@ CELULAS = {
     "cliente": "B6",
     "padrao": "B7",
     "filme": "B8",
-    "peso_tubete": "B10"
+    "peso_tubete": "B10",
+    "observacoes": "B20"
 }
 
 FONTE_PADRAO = Font(name="Aptos Narrow",
-        size=16)
+        size=24)
 
 
 FONTES = {
@@ -39,7 +40,7 @@ ALINHAMENTOS = {
 def preencher_planilha(dados):
 
 # Carrega o arquivo Excel anexado no programa dentro do sistema
-    planilha = load_workbook("modelos/FR.PRO.014 - RASTREABILIDADE DE PALLET (1).xlsx")
+    planilha = load_workbook("modelos/modelo.xlsx")
 
 # Permite acessar a primeira página do arquivo Excel (Eu acho)
     aba = planilha.active

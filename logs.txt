@@ -2291,3 +2291,94 @@
 2026-07-24 07:33:31,526 - INFO - 127.0.0.1 - - [24/Jul/2026 07:33:31] "POST / HTTP/1.1" 200 -
 2026-07-24 07:33:31,540 - INFO - 127.0.0.1 - - [24/Jul/2026 07:33:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-07-24 07:33:31,543 - INFO - 127.0.0.1 - - [24/Jul/2026 07:33:31] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 11:21:02,906 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 11:21:03,149 - INFO -  * Restarting with stat
+2026-07-24 11:21:04,070 - WARNING -  * Debugger is active!
+2026-07-24 11:21:04,074 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 11:21:09,837 - ERROR - No /Root object! - Is this really a PDF?
+2026-07-24 11:21:09,850 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:09] "POST / HTTP/1.1" 200 -
+2026-07-24 11:21:09,867 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:09] "GET /static/style.css HTTP/1.1" 200 -
+2026-07-24 11:21:09,871 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:09] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 11:21:30,756 - ERROR - openpyxl does not support .014 - rastreabilidade de pallet (com observação) file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+2026-07-24 11:21:30,757 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:30] "POST / HTTP/1.1" 200 -
+2026-07-24 11:21:30,765 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-24 11:21:30,766 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:30] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 11:21:34,413 - ERROR - No /Root object! - Is this really a PDF?
+2026-07-24 11:21:34,414 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:34] "POST / HTTP/1.1" 200 -
+2026-07-24 11:21:34,428 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-24 11:21:34,429 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:34] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 11:21:39,375 - ERROR - openpyxl does not support .014 - rastreabilidade de pallet (com observação) file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+2026-07-24 11:21:39,376 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:39] "POST / HTTP/1.1" 200 -
+2026-07-24 11:21:39,387 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-24 11:21:39,388 - INFO - 127.0.0.1 - - [24/Jul/2026 11:21:39] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 11:37:39,657 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 11:37:39,753 - INFO -  * Restarting with stat
+2026-07-24 11:37:40,372 - WARNING -  * Debugger is active!
+2026-07-24 11:37:40,374 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 11:37:51,189 - INFO - Conversão do ordem de produção.pdf realizada com sucesso!
+2026-07-24 11:37:51,190 - INFO - 127.0.0.1 - - [24/Jul/2026 11:37:51] "POST / HTTP/1.1" 200 -
+2026-07-24 11:38:47,833 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 11:38:47,917 - INFO -  * Restarting with stat
+2026-07-24 11:38:48,451 - WARNING -  * Debugger is active!
+2026-07-24 11:38:48,454 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 11:38:51,482 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 11:38:51,611 - INFO -  * Restarting with stat
+2026-07-24 11:38:52,188 - WARNING -  * Debugger is active!
+2026-07-24 11:38:52,190 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 11:38:57,208 - INFO - Conversão do ordem de produção.pdf realizada com sucesso!
+2026-07-24 11:38:57,209 - INFO - 127.0.0.1 - - [24/Jul/2026 11:38:57] "POST / HTTP/1.1" 200 -
+2026-07-24 11:42:52,638 - INFO - Conversão do ordem de produção.pdf realizada com sucesso!
+2026-07-24 11:42:52,639 - INFO - 127.0.0.1 - - [24/Jul/2026 11:42:52] "POST / HTTP/1.1" 200 -
+2026-07-24 11:44:49,990 - INFO - Conversão do ordem de produção.pdf realizada com sucesso!
+2026-07-24 11:44:49,990 - INFO - 127.0.0.1 - - [24/Jul/2026 11:44:49] "POST / HTTP/1.1" 200 -
+2026-07-24 11:45:33,533 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 11:45:33,612 - INFO -  * Restarting with stat
+2026-07-24 11:45:34,124 - WARNING -  * Debugger is active!
+2026-07-24 11:45:34,126 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 11:45:36,983 - INFO - 127.0.0.1 - - [24/Jul/2026 11:45:36] "GET / HTTP/1.1" 200 -
+2026-07-24 11:45:37,026 - INFO - 127.0.0.1 - - [24/Jul/2026 11:45:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-24 11:45:37,034 - INFO - 127.0.0.1 - - [24/Jul/2026 11:45:37] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 11:45:42,640 - INFO - Conversão do ordem de produção.pdf realizada com sucesso!
+2026-07-24 11:45:42,641 - INFO - 127.0.0.1 - - [24/Jul/2026 11:45:42] "POST / HTTP/1.1" 200 -
+2026-07-24 11:52:37,165 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 11:52:37,291 - INFO -  * Restarting with stat
+2026-07-24 11:52:37,839 - WARNING -  * Debugger is active!
+2026-07-24 11:52:37,842 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 11:52:40,868 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 11:52:40,962 - INFO -  * Restarting with stat
+2026-07-24 11:52:41,478 - WARNING -  * Debugger is active!
+2026-07-24 11:52:41,480 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 11:52:50,721 - INFO - 127.0.0.1 - - [24/Jul/2026 11:52:50] "GET / HTTP/1.1" 200 -
+2026-07-24 11:52:50,734 - INFO - 127.0.0.1 - - [24/Jul/2026 11:52:50] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 11:52:50,734 - INFO - 127.0.0.1 - - [24/Jul/2026 11:52:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-24 11:52:55,377 - INFO - Conversão do ordem de produção.pdf realizada com sucesso!
+2026-07-24 11:52:55,377 - INFO - 127.0.0.1 - - [24/Jul/2026 11:52:55] "POST / HTTP/1.1" 200 -
+2026-07-24 11:56:03,546 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 11:56:03,665 - INFO -  * Restarting with stat
+2026-07-24 11:56:04,146 - WARNING -  * Debugger is active!
+2026-07-24 11:56:04,148 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 11:58:07,216 - INFO - 127.0.0.1 - - [24/Jul/2026 11:58:07] "GET / HTTP/1.1" 200 -
+2026-07-24 11:58:07,229 - INFO - 127.0.0.1 - - [24/Jul/2026 11:58:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-24 11:58:07,231 - INFO - 127.0.0.1 - - [24/Jul/2026 11:58:07] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 11:59:00,764 - ERROR - No /Root object! - Is this really a PDF?
+2026-07-24 11:59:00,765 - INFO - 127.0.0.1 - - [24/Jul/2026 11:59:00] "POST / HTTP/1.1" 200 -
+2026-07-24 11:59:00,777 - INFO - 127.0.0.1 - - [24/Jul/2026 11:59:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-24 11:59:00,778 - INFO - 127.0.0.1 - - [24/Jul/2026 11:59:00] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 13:04:36,718 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\planilha.py', reloading
+2026-07-24 13:04:36,869 - INFO -  * Restarting with stat
+2026-07-24 13:04:37,471 - WARNING -  * Debugger is active!
+2026-07-24 13:04:37,474 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 13:08:40,353 - ERROR - No /Root object! - Is this really a PDF?
+2026-07-24 13:08:40,362 - INFO - 127.0.0.1 - - [24/Jul/2026 13:08:40] "POST / HTTP/1.1" 200 -
+2026-07-24 13:08:40,386 - INFO - 127.0.0.1 - - [24/Jul/2026 13:08:40] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-07-24 13:08:40,387 - INFO - 127.0.0.1 - - [24/Jul/2026 13:08:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-24 13:13:33,219 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-07-24 13:13:33,289 - INFO -  * Restarting with stat
+2026-07-24 13:13:33,758 - WARNING -  * Debugger is active!
+2026-07-24 13:13:33,761 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 13:14:07,994 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-07-24 13:14:08,090 - INFO -  * Restarting with stat
+2026-07-24 13:14:08,672 - WARNING -  * Debugger is active!
+2026-07-24 13:14:08,705 - INFO -  * Debugger PIN: 141-900-870
+2026-07-24 14:01:08,321 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-07-24 14:01:08,513 - INFO -  * Restarting with stat
