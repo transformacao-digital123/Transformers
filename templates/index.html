@@ -36,6 +36,7 @@
             method = "POST"
             enctype = "multipart/form-data">
 
+               <div class="entrada">
                 <input
                 type = "file"
                 name = "pdf"
@@ -44,17 +45,21 @@
                 <p class="ou">──────── ou ────────</p>
 
                 <label for="link">
-                    URL da planilha: 
+                    Insira a URL da planilha: 
                 </label>
-                
-                <input type = "url"
+
+                <div class="linha-url"> <!-- div para deixar o link e o botão alinhado -->
+                    <input type = "url"
                         id = "link"
                         placeholder="https://docs.google.com/..."
                         disabled>
 
-                <button type = "submit">    
-                    Converter Ordem de Produção
-                </button>
+                        <button type = "submit">    
+                        Converter Ordem de Produção
+                        </button>
+                </div>
+
+                </div>
 
                 {% if erro %}
 
@@ -69,6 +74,7 @@
                 </div>
 
                 {% endif %}
+
             
 
 

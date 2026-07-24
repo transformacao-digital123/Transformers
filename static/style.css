@@ -129,7 +129,8 @@ button:hover{
     color: rgb(179, 168, 168);
 }
 
-.error{padding-left: 10px;
+.error{
+    padding-left: 10px;
     padding-right: 10px;
     font-size: 20px;
     margin:20px 10px;
@@ -156,7 +157,7 @@ footer{
 .ou{
     margin-left: 10px;
     font-family: var(--fonte-principal);
-    font-size: 20px;
+    font-size: 20px;    
 }
 
 label{
@@ -170,6 +171,8 @@ label{
     margin-bottom: 20px;
 }
 
-.acoes{
-    margin-bottom: 20px;
+.linha-url{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
