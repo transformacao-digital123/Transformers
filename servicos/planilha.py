@@ -1,6 +1,7 @@
 from openpyxl import load_workbook
 from datetime import datetime
 from openpyxl.styles import Font, Alignment
+import os
 
 CELULAS = {
     "data": "B3",
@@ -9,6 +10,8 @@ CELULAS = {
     "padrao": "B7",
     "filme": "B8",
     "peso_tubete": "B10",
+    "maquina": "B18",
+    "operador": "B19",
     "observacoes": "B20"
 }
 
@@ -22,7 +25,11 @@ FONTES = {
     "cliente": FONTE_PADRAO,
     "padrao": FONTE_PADRAO,
     "filme": FONTE_PADRAO,
-    "peso_tubete": FONTE_PADRAO
+    "peso_tubete": FONTE_PADRAO,
+    "maquina": FONTE_PADRAO,
+    "operador": FONTE_PADRAO,
+    "observacoes": Font(name="Aptos Narrow",
+        size=24,color="D60F0FEB",bold=True)
 }
 
 ALINHAMENTOS_PADRAO = Alignment(horizontal="center", vertical= "center")
@@ -34,10 +41,13 @@ ALINHAMENTOS = {
     "padrao": ALINHAMENTOS_PADRAO,
     "filme": ALINHAMENTOS_PADRAO,
     "peso_tubete": ALINHAMENTOS_PADRAO,
+    "maquina": ALINHAMENTOS_PADRAO,
+    "operador": ALINHAMENTOS_PADRAO,
+    "observacoes": ALINHAMENTOS_PADRAO
 }
 
 # aplicação do Excel para abrir a planilha
-def preencher_planilha(dados):
+def preencher_planilha(dados, origem="pdf"):
 
 # Carrega o arquivo Excel anexado no programa dentro do sistema
     planilha = load_workbook("modelos/modelo.xlsx")
@@ -60,7 +70,15 @@ def preencher_planilha(dados):
 # Comando para nomear a data e hora no arquivo
     nome = datetime.now().strftime("%d%m%Y_%H%M%S")
 
-    arquivo = f"resultado_{nome}.xlsx"
+    if origem == "pdf":
+
+# Caso seja um arquivo PDF
+        arquivo = os.path.join("temporario", f"resultado_{nome}.xlsx")
+    else:
+
+# Caso seja um arquivo do Google Sheets
+        arquivo = os.path.join("temporario", f"{dados['numero_pedido']}.xlsx")
+
     planilha.save(arquivo)
 
     return arquivo

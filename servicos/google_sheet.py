@@ -1,16 +1,182 @@
-# Essa biblioteca é como openpyxl mas mais pesado pois analis a planilha no navegador
-import pandas as pd 
+# OpenPyXL é uma biblioteca especializada em ler e escrever
+# arquivos do Excel preservando sua estrutura.  
+from openpyxl import load_workbook
+import os, shutil
+
+from servicos.planilha import preencher_planilha
+from servicos.utilirarios import criar_zip
+from servicos.interpretador import selecionar_interpretador
+
+# Ela Conversa com servidores na internet, desde: acessar sites;baixar imagens; baixar PDFs; baixar Excel; acessar APIs.
+import requests
 
 def converter_google_sheets(link):
-    if "docs.google.com/spreadsheets" not in link:
-        raise Exception("O link inserido não é um Google-Sheets")
+
+    os.makedirs("temporario", exist_ok=True)
+
+# Valida de o link é do google docs ou não
+    def validar_link(link):
+        if "docs.google.com/spreadsheets" not in link:
+                raise Exception("O link inserido não é um Google-Sheets")
+
+    def baixar_planilha(link):
 
 # Substitui o final do link e o transforma em um arquivo baixável no navegador
-    link_csv = link.replace("/edit?", "/export?format=csv&")
+        link_xlsx = link.replace("/edit?", "/export?format=xlsx&")
 
-# Pega o arquivo no navegador (internet) ao acessá-lo, baixa e cria o dataframe
-    df=pd.read_csv(link_csv)
+# requests.get(...): "Vá até esse endereço e me traga a resposta, um objeto que contém tudo que o servidor respondeu. 
+# Enquanto isso o "resposta.content" irá guardar em bytes a informação no computador até ela ser usada"
+        resposta = requests.get(link_xlsx)
 
-    print(df)
+# Variável para que possamos sempre usar o nome que será retornada, quando quisermos só alterando 1 linha
+        caminho_arquivo = "planilha.xlsx"
 
-    return link_csv
+# Crie (ou abra) um arquivo chamado planilha.xlsx, no modo de escrita binária, e quando eu terminar, feche-o automaticamente.
+        with open(caminho_arquivo, "wb") as arquivo:
+             arquivo.write(resposta.content)
+
+        return caminho_arquivo
+        
+
+    def abrir_planilha(caminho_arquivo):
+         
+# Abre a planilha salva no computador e carrega seu conteúdo para a memória, ou seja, abre a planilha salva no computador         
+        planilha = load_workbook(caminho_arquivo)
+
+# Seleciona a aba ativa da planilha
+        aba = planilha.active
+
+        return aba
+         
+    def identificar_blocos(aba):
+
+        estado ="procurando_bloco"
+
+# Para armazenar as informações do dicionário "dados"
+        ordens=[]
+
+        colunas = {}
+
+        MAPEAMENTO = {
+            "data": "DATA",
+            "numero_pedido": "PEDIDO",
+            "odp": "OdP",
+            "cliente": "CLIENTE",
+            "padrao": ["PADRÃO", "LARGURA  X MICRA"]
+        }
+
+# O .iter_rows() lê linha por linha do conteúdo que está conectado
+        for linha in aba.iter_rows(): 
+
+            try:
+
+                valores = []
+
+            except Exception as erro:
+
+                raise
+
+# Percorre as células da linha  
+            for celula in linha:
+                if celula.value is not None:
+
+# O .append acrescenta na lista Valores, e o .strip separa o conteúdo por espaços 
+                        valores.append(str(celula.value).strip())
+
+# o len lê a quantidade, se a quantidade de celulas preenchidas for 1 continuará para descobrir a máquina e o operador
+            if len(valores) == 1:
+                    
+        # Guarda o primeiro valor da célula na variável turno
+                    turno = valores[0]
+
+        # Primeiro verifica se é o título da ODP
+                    if turno.startswith("Ordem De Produção"):
+
+                        if "Noite" in turno:
+                            turno = "Noite"
+                        elif "Manhã" in turno:
+                            turno = "Manhã"
+
+        # Só depois verifica máquina-operador
+                    elif " - " in turno:
+
+                        maquina, operador = turno.split(" - ", 1)
+
+                        maquina = maquina.strip()
+                        operador = operador.strip()
+
+# Descobrir o cabeçalho
+            if "DATA" in valores and "PEDIDO" in valores and "OdP" in valores:
+                estado = "lendo_ordens"
+
+                if "PADRÃO" in valores:
+                     origem = "PADRÃO"
+                elif "LARGURA  X MICRA" in valores:
+                     origem = "LARGURA  X MICRA"
+
+# O indice é a posição, em que coluna está, e a celula a coordenada excel, como A15
+                for indice, celula in enumerate(linha):
+                    if celula.value:
+
+# Estrutura feita para que caso mudem alguma coluna de lugar essa linha se atualizará sozinha
+                        colunas[str(celula.value).strip()] = indice
+
+                continue
+
+            if estado == "lendo_ordens":
+
+                data = linha[colunas["DATA"]].value
+
+                if data is not None:
+
+                    dados = {}
+
+# O .items serve para organizar o dicionário em chave e valor
+                    for chave_programa,chave_planilha in MAPEAMENTO.items():
+
+                        dados[chave_programa] = linha[colunas[chave_planilha]].value
+
+# Aqui não precisa de , pq não é uma string, é um tupla
+                    dados["operador"] = operador
+                    dados["maquina"] = maquina
+                    dados["observacao"] = ""
+                    dados["turno"] = turno
+                    dados["origem"] = origem
+
+                ordens.append(dados)
+
+                if   len(valores) == 1:
+                    if valores[0].startswith("OBS: "):
+                        ordens[-1]["observacao"] = valores[0].replace("OBS: ","")
+
+        return ordens
+
+# Esse está aqui apenas para orietação
+    validar_link(link)
+
+    caminho_arquivo = baixar_planilha(link)
+    aba = abrir_planilha(caminho_arquivo)
+    ordens = identificar_blocos(aba)
+
+    arquivos = []
+
+    for ordem in ordens:
+
+        print(ordem)
+        print(ordem["origem"])
+# Função chamada para analisar o padrão, e descobrir o filme e o peso do tubete. Além disso, dentro dela nota-se 2 padrao, o 1° é para encontrar a variável dentro do dicionário e o 2° é para encontrar a coluna caso ela se chame PADRÃO
+        informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
+
+        ordem["filme"] = informacoes["filme"]
+        ordem["peso_tubete"] = informacoes["peso_tubete"]
+        ordem["padrao"] = informacoes["padrao"]
+
+        arquivo = preencher_planilha(ordem)
+
+        arquivos.append(arquivo)
+
+    arquivo_zip = criar_zip(arquivos)
+
+    shutil.rmtree("temporario")
+
+    return arquivo_zip

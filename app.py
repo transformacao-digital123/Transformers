@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, send_file
 
 #importações vindas de outros arquivos
 from servicos.conversor import converter_pdf
-from servicos.google_sheet import converter_google_sheets
+from servicos.google_sheet import converter_google_sheets, criar_zip
 from servicos.tratador_erros import tratar_erro
 
 app = Flask(__name__)
@@ -25,15 +25,15 @@ def home():
                     if arquivo:
 
 # Comando, com uma nova "variável arquivo_excel" que puxa do conversor o arquivo já pronto e lapidado e só espera ser chamado para lançado no sistema
-                        arquivo_excel = converter_pdf(arquivo)
+                        arquivo_saida = converter_pdf(arquivo)
 
                     elif link:
-                          arquivo_excel = converter_google_sheets(link)
+                          arquivo_saida = converter_google_sheets(link)
                     else:
                           render_template("index.html", erro = "Selecione um PDF ou insira um link dom google-sheet")
                 
 #Ele lança o arquivo no sistema
-                    return send_file(arquivo_excel)
+                    return send_file(arquivo_saida)
 
             except Exception as erro:
                     mensagem  = tratar_erro(erro)
