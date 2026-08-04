@@ -38,7 +38,25 @@ def extrair_padrao(peso_filme,peso_tubete):
 
 def interpretar_largura_micra(texto):
 
-    print("Entrei no interpretador de largura")
+    print(texto)
+
+    partes = texto.split( )
+
+    print(partes)
+
+    parte_esquerda = partes[0]
+    print(parte_esquerda)
+
+    medida = parte_esquerda.split("x")
+    print(medida)
+
+    filme = partes[1]
+    padrao = medida[1]
+    peso_tubete = ""
+
+    print(filme)
+    print(padrao)
+    print(peso_tubete)
 
     informacoes = {
             "padrao":"",
@@ -54,7 +72,7 @@ def interpretar_padrao(texto):
     partes = texto.split(" - ")
 
 # Proteção para caso o PADRÃO  não tenha hífen
-    if len(partes) > 2:
+    if len(partes) != 2:
         return {
             "padrao": texto,
             "filme": "",
@@ -79,17 +97,19 @@ def interpretar_padrao(texto):
         "filme": filme,
         "peso_tubete": peso_tubete
     }
-
+    
     return informacoes
 
 def selecionar_interpretador(texto, origem):
 
+    print("Recebi a origem: ", origem)
+
     if origem == "PADRÃO":
-        print("Entrou em PADRÃO")
+        print("Chamando interpretar_padrao")
         return interpretar_padrao(texto)
 
     elif origem == "LARGURA  X MICRA":
-        print("Entrou em LARGURA")
+        print("Chamando interpretar_largura_micra")
         return interpretar_largura_micra(texto)
     else:
-        print("Nenhum if foi satisfeito")
+        print("Origem desconhecida:", origem)

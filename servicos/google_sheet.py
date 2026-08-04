@@ -50,6 +50,10 @@ def converter_google_sheets(link):
          
     def identificar_blocos(aba):
 
+        maquina = ""
+        operador = ""
+        turno = ""
+
         estado ="procurando_bloco"
 
 # Para armazenar as informações do dicionário "dados"
@@ -111,8 +115,10 @@ def converter_google_sheets(link):
 
                 if "PADRÃO" in valores:
                      origem = "PADRÃO"
+                     coluna_padrao = "PADRÃO"
                 elif "LARGURA  X MICRA" in valores:
                      origem = "LARGURA  X MICRA"
+                     coluna_padrao = "LARGURA  X MICRA"
 
 # O indice é a posição, em que coluna está, e a celula a coordenada excel, como A15
                 for indice, celula in enumerate(linha):
@@ -134,7 +140,10 @@ def converter_google_sheets(link):
 # O .items serve para organizar o dicionário em chave e valor
                     for chave_programa,chave_planilha in MAPEAMENTO.items():
 
-                        dados[chave_programa] = linha[colunas[chave_planilha]].value
+                        if chave_programa == "padrao":
+                            dados[chave_programa] = linha[colunas[coluna_padrao]].value
+                        else:
+                            dados[chave_programa] = linha[colunas[chave_planilha]].value
 
 # Aqui não precisa de , pq não é uma string, é um tupla
                     dados["operador"] = operador
@@ -161,11 +170,11 @@ def converter_google_sheets(link):
     arquivos = []
 
     for ordem in ordens:
-
-        print(ordem)
-        print(ordem["origem"])
 # Função chamada para analisar o padrão, e descobrir o filme e o peso do tubete. Além disso, dentro dela nota-se 2 padrao, o 1° é para encontrar a variável dentro do dicionário e o 2° é para encontrar a coluna caso ela se chame PADRÃO
         informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
+
+        print("Origem da ordem: ", ordem["origem"])
+        print("Texto: ", ordem["padrao"])
 
         ordem["filme"] = informacoes["filme"]
         ordem["peso_tubete"] = informacoes["peso_tubete"]

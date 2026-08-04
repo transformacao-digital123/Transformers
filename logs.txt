@@ -3345,3 +3345,82 @@
 2026-08-04 07:04:01,042 - INFO -  * Restarting with stat
 2026-08-04 07:04:01,638 - WARNING -  * Debugger is active!
 2026-08-04 07:04:01,638 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 08:23:19,320 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-04 08:23:19,323 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-04 08:23:19,326 - INFO -  * Restarting with stat
+2026-08-04 08:23:19,890 - WARNING -  * Debugger is active!
+2026-08-04 08:23:19,894 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 08:30:16,736 - INFO - 127.0.0.1 - - [04/Aug/2026 08:30:16] "GET / HTTP/1.1" 200 -
+2026-08-04 08:30:16,785 - INFO - 127.0.0.1 - - [04/Aug/2026 08:30:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 08:30:16,787 - INFO - 127.0.0.1 - - [04/Aug/2026 08:30:16] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 08:30:16,847 - INFO - 127.0.0.1 - - [04/Aug/2026 08:30:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-04 08:53:22,762 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-04 08:53:22,974 - INFO -  * Restarting with stat
+2026-08-04 08:53:23,860 - WARNING -  * Debugger is active!
+2026-08-04 08:53:23,860 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 08:53:25,460 - INFO - 127.0.0.1 - - [04/Aug/2026 08:53:25] "GET / HTTP/1.1" 200 -
+2026-08-04 08:53:25,515 - INFO - 127.0.0.1 - - [04/Aug/2026 08:53:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 08:53:25,518 - INFO - 127.0.0.1 - - [04/Aug/2026 08:53:25] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 08:53:33,483 - INFO - 127.0.0.1 - - [04/Aug/2026 08:53:33] "POST / HTTP/1.1" 200 -
+2026-08-04 08:53:33,493 - INFO - 127.0.0.1 - - [04/Aug/2026 08:53:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 08:53:33,494 - INFO - 127.0.0.1 - - [04/Aug/2026 08:53:33] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 08:57:35,182 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-04 08:57:35,294 - INFO -  * Restarting with stat
+2026-08-04 08:57:36,307 - WARNING -  * Debugger is active!
+2026-08-04 08:57:36,310 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 08:57:44,019 - INFO - 127.0.0.1 - - [04/Aug/2026 08:57:44] "GET / HTTP/1.1" 200 -
+2026-08-04 08:57:44,058 - INFO - 127.0.0.1 - - [04/Aug/2026 08:57:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 08:57:44,065 - INFO - 127.0.0.1 - - [04/Aug/2026 08:57:44] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 08:57:51,623 - INFO - 127.0.0.1 - - [04/Aug/2026 08:57:51] "POST / HTTP/1.1" 200 -
+2026-08-04 08:57:51,643 - INFO - 127.0.0.1 - - [04/Aug/2026 08:57:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 08:57:51,644 - INFO - 127.0.0.1 - - [04/Aug/2026 08:57:51] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 09:18:00,267 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\interpretador.py', reloading
+2026-08-04 09:18:00,393 - INFO -  * Restarting with stat
+2026-08-04 09:18:01,414 - WARNING -  * Debugger is active!
+2026-08-04 09:18:01,418 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 09:18:02,567 - INFO - 127.0.0.1 - - [04/Aug/2026 09:18:02] "GET / HTTP/1.1" 200 -
+2026-08-04 09:18:02,587 - INFO - 127.0.0.1 - - [04/Aug/2026 09:18:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 09:18:02,590 - INFO - 127.0.0.1 - - [04/Aug/2026 09:18:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 10:00:12,045 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\interpretador.py', reloading
+2026-08-04 10:00:12,312 - INFO -  * Restarting with stat
+2026-08-04 10:00:13,447 - WARNING -  * Debugger is active!
+2026-08-04 10:00:13,447 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 10:00:24,834 - INFO - 127.0.0.1 - - [04/Aug/2026 10:00:24] "GET / HTTP/1.1" 200 -
+2026-08-04 10:00:24,884 - INFO - 127.0.0.1 - - [04/Aug/2026 10:00:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 10:00:24,886 - INFO - 127.0.0.1 - - [04/Aug/2026 10:00:24] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 10:08:06,297 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:06] "POST / HTTP/1.1" 200 -
+2026-08-04 10:08:06,310 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 10:08:06,311 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:06] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 10:08:17,481 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\interpretador.py', reloading
+2026-08-04 10:08:17,655 - INFO -  * Restarting with stat
+2026-08-04 10:08:18,715 - WARNING -  * Debugger is active!
+2026-08-04 10:08:18,715 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 10:08:20,805 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-04 10:08:20,885 - INFO -  * Restarting with stat
+2026-08-04 10:08:21,545 - WARNING -  * Debugger is active!
+2026-08-04 10:08:21,549 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 10:08:29,727 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:29] "GET / HTTP/1.1" 200 -
+2026-08-04 10:08:29,772 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 10:08:29,772 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:29] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 10:08:37,202 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:37] "POST / HTTP/1.1" 200 -
+2026-08-04 10:08:37,216 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 10:08:37,219 - INFO - 127.0.0.1 - - [04/Aug/2026 10:08:37] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 10:10:18,417 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-04 10:10:18,507 - INFO -  * Restarting with stat
+2026-08-04 10:10:19,227 - WARNING -  * Debugger is active!
+2026-08-04 10:10:19,229 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 10:10:25,482 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-04 10:10:25,564 - INFO -  * Restarting with stat
+2026-08-04 10:10:26,190 - WARNING -  * Debugger is active!
+2026-08-04 10:10:26,192 - INFO -  * Debugger PIN: 996-711-774
+2026-08-04 10:10:30,241 - INFO - 127.0.0.1 - - [04/Aug/2026 10:10:30] "GET / HTTP/1.1" 200 -
+2026-08-04 10:10:30,280 - INFO - 127.0.0.1 - - [04/Aug/2026 10:10:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 10:10:30,290 - INFO - 127.0.0.1 - - [04/Aug/2026 10:10:30] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 10:10:39,396 - INFO - 127.0.0.1 - - [04/Aug/2026 10:10:39] "POST / HTTP/1.1" 200 -
+2026-08-04 10:10:39,407 - INFO - 127.0.0.1 - - [04/Aug/2026 10:10:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-04 10:10:39,409 - INFO - 127.0.0.1 - - [04/Aug/2026 10:10:39] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-04 10:19:33,309 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\interpretador.py', reloading
+2026-08-04 10:19:33,449 - INFO -  * Restarting with stat
+2026-08-04 10:19:34,246 - WARNING -  * Debugger is active!
+2026-08-04 10:19:34,249 - INFO -  * Debugger PIN: 996-711-774

@@ -5,7 +5,7 @@ tempo = datetime.now().strftime("%d%m%Y_%H%M%S")
 
 def criar_zip(arquivos):
 
-    nome_zip = "Rastreabilidades_{tempo}.zip"
+    nome_zip = f"Rastreabilidades_{tempo}.zip"
 
     with zipfile.ZipFile(nome_zip, "w") as zip:
 

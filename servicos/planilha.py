@@ -43,7 +43,7 @@ ALINHAMENTOS = {
     "peso_tubete": ALINHAMENTOS_PADRAO,
     "maquina": ALINHAMENTOS_PADRAO,
     "operador": ALINHAMENTOS_PADRAO,
-    "observacoes": ALINHAMENTOS_PADRAO
+    "observacao": ALINHAMENTOS_PADRAO
 }
 
 # aplicação do Excel para abrir a planilha
