@@ -38,32 +38,54 @@ def extrair_padrao(peso_filme,peso_tubete):
 
 def interpretar_largura_micra(texto):
 
-    print(texto)
+    partes = texto.upper().strip().split()
 
-    partes = texto.split( )
+    filme = partes[3]
 
-    print(partes)
+    micra =partes[0]
 
-    parte_esquerda = partes[0]
-    print(parte_esquerda)
+    padrao = f"{filme} + {micra}"
 
-    medida = parte_esquerda.split("x")
-    print(medida)
-
-    filme = partes[1]
-    padrao = medida[1]
     peso_tubete = ""
 
-    print(filme)
-    print(padrao)
-    print(peso_tubete)
+    informacoes = {
+            "padrao":padrao,
+            "filme": filme,
+            "peso_tubete": peso_tubete
+    }
+    return informacoes
+
+def interpretar_72x100(texto):
+    partes = texto.upper().strip().split()
+
+    filme = partes[1]
+
+    padrao = partes[0]
+
+    peso_tubete = ""
 
     informacoes = {
-            "padrao":"",
-            "filme": "",
-            "peso_tubete": ""
+        "padrao": padrao,
+        "filme": filme,
+        "peso_tubete": peso_tubete
     }
 
+    return informacoes
+
+def interpretar_medidas(texto):
+
+    padrao = texto
+
+    partes = texto.split("x")
+
+    filme =partes[-1].strip()
+    peso_tubete = ""
+
+    informacoes = {
+        "padrao": padrao,
+        "filme": filme,
+        "peso_tubete": peso_tubete
+    }
     return informacoes
 
 def interpretar_padrao(texto):
@@ -100,16 +122,84 @@ def interpretar_padrao(texto):
     
     return informacoes
 
+def interpretar_mic_pol(texto):
+
+    esquerda,direita = texto.split("MIC -")
+
+    filme = esquerda.strip()
+
+    padrao =direita.strip()
+
+    conteudo = direita.split("(")[1].replace(")", "")
+    pesos = conteudo.split("+")
+    peso_tubete = pesos[1].strip()
+
+    informacoes = {
+        "padrao": padrao,
+        "filme": filme,
+        "peso_tubete": peso_tubete
+    }
+
+    return informacoes
+
+def interpretar_fita(texto):
+    partes = texto.split()
+
+    micragem = partes[-2].replace("(","")
+
+    filme = f"{partes[0]} {micragem}"
+
+    padrao = " ".join(partes[1:4])
+
+    peso_tubete = ""
+
+    informacoes = {
+        "filme" : filme,
+        "padrao" : padrao,
+        "peso_tubete" : peso_tubete
+    }
+
+    return informacoes
+
+def interpretar_manopla(texto):
+
+    texto = texto.upper().strip()
+
+    esquerda,direita = texto.split("-")
+
+    filme = esquerda.strip()
+
+    padrao = direita.strip()
+    conteudo = padrao.split("(")[1].replace(")","")
+
+    padrao = conteudo.strip()
+
+    pesos = conteudo.split("+")
+
+    peso_tubete = pesos[1].strip()
+
+    informacoes = {
+        "filme": filme,
+        "padrao": padrao,
+        "peso_tubete": peso_tubete
+    }
+
 def selecionar_interpretador(texto, origem):
 
-    print("Recebi a origem: ", origem)
-
     if origem == "PADRÃO":
-        print("Chamando interpretar_padrao")
-        return interpretar_padrao(texto)
+            if texto.count("x") == 2:
+                return interpretar_medidas(texto)
+            else:
+                return interpretar_padrao(texto)
 
     elif origem == "LARGURA  X MICRA":
-        print("Chamando interpretar_largura_micra")
-        return interpretar_largura_micra(texto)
-    else:
-        print("Origem desconhecida:", origem)
+            if "POL" in texto:
+                return interpretar_mic_pol(texto)
+            elif texto.startswith("MANOPLA"):
+                return interpretar_manopla(texto)
+            elif texto.startswith("FITA"):
+                return interpretar_fita(texto)
+            elif "MM" in texto:
+                return interpretar_largura_micra(texto)
+            else:
+                return interpretar_72x100(texto)

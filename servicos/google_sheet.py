@@ -113,9 +113,11 @@ def converter_google_sheets(link):
             if "DATA" in valores and "PEDIDO" in valores and "OdP" in valores:
                 estado = "lendo_ordens"
 
+
                 if "PADRÃO" in valores:
                      origem = "PADRÃO"
                      coluna_padrao = "PADRÃO"
+                     
                 elif "LARGURA  X MICRA" in valores:
                      origem = "LARGURA  X MICRA"
                      coluna_padrao = "LARGURA  X MICRA"
@@ -132,8 +134,9 @@ def converter_google_sheets(link):
             if estado == "lendo_ordens":
 
                 data = linha[colunas["DATA"]].value
+                numero_pedido = linha[colunas["PEDIDO"]].value      
 
-                if data is not None:
+                if (data is not None and numero_pedido is not None):
 
                     dados = {}
 
@@ -150,9 +153,10 @@ def converter_google_sheets(link):
                     dados["maquina"] = maquina
                     dados["observacao"] = ""
                     dados["turno"] = turno
+
                     dados["origem"] = origem
 
-                ordens.append(dados)
+                    ordens.append(dados)
 
                 if   len(valores) == 1:
                     if valores[0].startswith("OBS: "):
@@ -169,20 +173,31 @@ def converter_google_sheets(link):
 
     arquivos = []
 
-    for ordem in ordens:
+    print(len(ordens))
+    for indice,ordem in enumerate(ordens):
 # Função chamada para analisar o padrão, e descobrir o filme e o peso do tubete. Além disso, dentro dela nota-se 2 padrao, o 1° é para encontrar a variável dentro do dicionário e o 2° é para encontrar a coluna caso ela se chame PADRÃO
-        informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
+        try:
+                informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
+             
+                print("==========")
+                print(ordem["origem"])
+                print(ordem["padrao"])
+             
+                ordem["filme"] = informacoes["filme"]
+                ordem["peso_tubete"] = informacoes["peso_tubete"]
+                ordem["padrao"] = informacoes["padrao"]
 
-        print("Origem da ordem: ", ordem["origem"])
-        print("Texto: ", ordem["padrao"])
+                print(ordem["numero_pedido"], ordem["odp"])
+                arquivo = preencher_planilha(ordem, indice)
+             
+                arquivos.append(arquivo)
+        except Exception as erro:
+            print("ERRO NA ORDEM")
+            print(ordem)
+            print(type(erro))
+            print(erro)
 
-        ordem["filme"] = informacoes["filme"]
-        ordem["peso_tubete"] = informacoes["peso_tubete"]
-        ordem["padrao"] = informacoes["padrao"]
-
-        arquivo = preencher_planilha(ordem)
-
-        arquivos.append(arquivo)
+            raise
 
     arquivo_zip = criar_zip(arquivos)
 

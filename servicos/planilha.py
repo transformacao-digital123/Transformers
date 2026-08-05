@@ -12,7 +12,7 @@ CELULAS = {
     "peso_tubete": "B10",
     "maquina": "B18",
     "operador": "B19",
-    "observacoes": "B20"
+    "observacao": "B20"
 }
 
 FONTE_PADRAO = Font(name="Aptos Narrow",
@@ -28,7 +28,7 @@ FONTES = {
     "peso_tubete": FONTE_PADRAO,
     "maquina": FONTE_PADRAO,
     "operador": FONTE_PADRAO,
-    "observacoes": Font(name="Aptos Narrow",
+    "observacao": Font(name="Aptos Narrow",
         size=24,color="D60F0FEB",bold=True)
 }
 
@@ -37,17 +37,17 @@ ALINHAMENTOS_PADRAO = Alignment(horizontal="center", vertical= "center")
 ALINHAMENTOS = {
     "data": ALINHAMENTOS_PADRAO,
     "numero_pedido": ALINHAMENTOS_PADRAO,
-    "cliente": ALINHAMENTOS_PADRAO,
+    "cliente": Alignment(horizontal="center", vertical= "center",wrap_text=True),
     "padrao": ALINHAMENTOS_PADRAO,
     "filme": ALINHAMENTOS_PADRAO,
     "peso_tubete": ALINHAMENTOS_PADRAO,
     "maquina": ALINHAMENTOS_PADRAO,
     "operador": ALINHAMENTOS_PADRAO,
-    "observacao": ALINHAMENTOS_PADRAO
+    "observacao": Alignment(horizontal="center", vertical= "center",wrap_text=True)
 }
 
 # aplicação do Excel para abrir a planilha
-def preencher_planilha(dados, origem="pdf"):
+def preencher_planilha(dados, indice, origem="pdf"):
 
 # Carrega o arquivo Excel anexado no programa dentro do sistema
     planilha = load_workbook("modelos/modelo.xlsx")
@@ -58,6 +58,10 @@ def preencher_planilha(dados, origem="pdf"):
 # Comando de repetição para que não precise toda vez acrescentar uma linha nova na função preencher_planilha toda vez que uma nova variável for acrescentada como essa, por exemplo: aba[CELULAS["cliente"]] = dados["cliente"] ,(que é a mesma coisa que) == aba[CELULAS["B6"]] = dados["FBR EMBALAGENS LTDA"]
 # Ele funciona assim, o itens,  vai separar cada linha em 2 valores, ex: ("data", "20/07/2026"), para preencher a variável chave e valor respectivamente, já procurando os valores de uma vez, ao invés de ficar toda vez analisando o dicionário inteiro para encontrar a resposta
     for chave, valor in dados.items():
+
+        if chave not in CELULAS:
+            continue
+
         celula = aba[CELULAS[chave]] # ou aba[CELULAS[chave]] = valor
         celula.value = valor 
 
@@ -70,14 +74,19 @@ def preencher_planilha(dados, origem="pdf"):
 # Comando para nomear a data e hora no arquivo
     nome = datetime.now().strftime("%d%m%Y_%H%M%S")
 
+    if dados["odp"]:
+        identificador = str(dados["odp"]).replace("/","-")
+    else:
+        identificador = str(dados["numero_pedido"]).replace("/", "-")
+
     if origem == "pdf":
 
 # Caso seja um arquivo PDF
-        arquivo = os.path.join("temporario", f"resultado_{nome}.xlsx")
+        arquivo = os.path.join("temporario", f"{identificador}-{indice}-{nome}.xlsx")
     else:
 
 # Caso seja um arquivo do Google Sheets
-        arquivo = os.path.join("temporario", f"{dados['numero_pedido']}.xlsx")
+        arquivo = os.path.join("temporario", f"{identificador}-{indice}-{nome}.xlsx")
 
     planilha.save(arquivo)
 
