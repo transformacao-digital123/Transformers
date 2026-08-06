@@ -14,6 +14,17 @@ def converter_google_sheets(link):
 
     os.makedirs("temporario", exist_ok=True)
 
+    for nome in os.listdir("temporario"):
+         caminho = os.path.join("temporario", nome)
+
+         if os.path.isfile(caminho):
+
+              try:
+                os.remove(caminho)
+
+              except PermissionError:
+                   print(f"Não foi possível apagar {nome}")
+
 # Valida de o link é do google docs ou não
     def validar_link(link):
         if "docs.google.com/spreadsheets" not in link:
@@ -43,10 +54,7 @@ def converter_google_sheets(link):
 # Abre a planilha salva no computador e carrega seu conteúdo para a memória, ou seja, abre a planilha salva no computador         
         planilha = load_workbook(caminho_arquivo)
 
-# Seleciona a aba ativa da planilha
-        aba = planilha.active
-
-        return aba
+        return planilha
          
     def identificar_blocos(aba):
 
@@ -168,8 +176,15 @@ def converter_google_sheets(link):
     validar_link(link)
 
     caminho_arquivo = baixar_planilha(link)
-    aba = abrir_planilha(caminho_arquivo)
+    planilha = abrir_planilha(caminho_arquivo)
+
+# Seleciona a aba ativa da planilha
+    aba = planilha.active
     ordens = identificar_blocos(aba)
+
+    planilha.close()
+
+    os.remove(caminho_arquivo)
 
     arquivos = []
 
@@ -179,28 +194,17 @@ def converter_google_sheets(link):
         try:
                 informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
              
-                print("==========")
-                print(ordem["origem"])
-                print(ordem["padrao"])
-             
                 ordem["filme"] = informacoes["filme"]
                 ordem["peso_tubete"] = informacoes["peso_tubete"]
                 ordem["padrao"] = informacoes["padrao"]
 
-                print(ordem["numero_pedido"], ordem["odp"])
                 arquivo = preencher_planilha(ordem, indice)
              
                 arquivos.append(arquivo)
         except Exception as erro:
-            print("ERRO NA ORDEM")
-            print(ordem)
-            print(type(erro))
-            print(erro)
 
             raise
 
     arquivo_zip = criar_zip(arquivos)
-
-    shutil.rmtree("temporario")
 
     return arquivo_zip

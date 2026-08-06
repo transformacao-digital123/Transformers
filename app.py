@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, send_file
 
+import traceback
+
 #importações vindas de outros arquivos
 from servicos.conversor import converter_pdf
 from servicos.google_sheet import converter_google_sheets, criar_zip
@@ -30,12 +32,17 @@ def home():
                     elif link:
                           arquivo_saida = converter_google_sheets(link)
                     else:
-                          render_template("index.html", erro = "Selecione um PDF ou insira um link dom google-sheet")
+                          render_template("index.html", erro = "Selecione um PDF ou insira um link do google-sheet")
                 
 #Ele lança o arquivo no sistema
                     return send_file(arquivo_saida)
 
             except Exception as erro:
+
+                    traceback.print_exc()
+                    print(type(erro))
+                    print(erro)
+                    
                     mensagem  = tratar_erro(erro)
 
             return render_template("index.html", erro = mensagem)

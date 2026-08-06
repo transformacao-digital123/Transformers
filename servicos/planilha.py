@@ -29,7 +29,7 @@ FONTES = {
     "maquina": FONTE_PADRAO,
     "operador": FONTE_PADRAO,
     "observacao": Font(name="Aptos Narrow",
-        size=24,color="D60F0FEB",bold=True)
+        size=24,color="FF0000",bold=True)
 }
 
 ALINHAMENTOS_PADRAO = Alignment(horizontal="center", vertical= "center")
@@ -63,7 +63,10 @@ def preencher_planilha(dados, indice, origem="pdf"):
             continue
 
         celula = aba[CELULAS[chave]] # ou aba[CELULAS[chave]] = valor
-        celula.value = valor 
+        celula.value = valor
+
+        if chave == "data":
+            celula.number_format = "dd/mm/yyyy" 
 
         if chave in FONTES:
             celula.font = FONTES[chave]
@@ -89,5 +92,6 @@ def preencher_planilha(dados, indice, origem="pdf"):
         arquivo = os.path.join("temporario", f"{identificador}-{indice}-{nome}.xlsx")
 
     planilha.save(arquivo)
+    planilha.close()
 
     return arquivo

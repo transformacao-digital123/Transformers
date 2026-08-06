@@ -42,9 +42,9 @@ def interpretar_largura_micra(texto):
 
     filme = partes[3]
 
-    micra =partes[0]
+    largura =partes[0]
 
-    padrao = f"{filme} + {micra}"
+    padrao = f"{filme} + {largura}"
 
     peso_tubete = ""
 
@@ -184,11 +184,75 @@ def interpretar_manopla(texto):
         "peso_tubete": peso_tubete
     }
 
+    return informacoes
+
+def interpretar_filme_pol(texto):
+
+    partes = texto.split("-")
+
+    filme = partes[0].replace("FILME_", "").strip()
+
+# Pega o valor a partir da posição 1 em diante, e exibe sem espaçamentos de quina
+    padrao = "-".join(parte.strip() for parte in partes[1:])
+
+    peso_tubete = partes[3].split("+")[-1].replace("G)", "").strip()
+
+    informacoes = {
+        "filme": filme,
+        "padrao": padrao,   
+        "peso_tubete": peso_tubete
+    }
+
+    return informacoes
+
+def interpretar_hotmelt(texto):
+
+    texto = texto.upper().strip()
+
+    partes = texto.split()
+
+    padrao = partes[-1].strip()
+
+    filme = " ".join(parte.strip() for parte in partes[:-1])
+
+    peso_tubete = ""
+
+    informacoes = {
+        "filme": filme,
+        "padrao": padrao,
+        "peso_tubete": peso_tubete
+    }
+    return informacoes
+
+def interpretar_filme_mm(texto):
+
+    texto = texto.upper().strip
+
+    partes = texto.split("-")
+
+    filme = partes[1].split()[0]
+
+    peso_tubete = partes[2].split("+")[1].replace("G)", "").strip()
+
+    padrao = " - ".join(parte.strip() for parte in partes[1:])
+
+    informacoes = {
+        "filme": filme,
+        "padrao": padrao,
+        "peso_tubete": peso_tubete
+    }
+
+    return informacoes
+
 def selecionar_interpretador(texto, origem):
 
     if origem == "PADRÃO":
             if texto.count("x") == 2:
                 return interpretar_medidas(texto)
+            elif texto.count("-") == 3:
+                return interpretar_filme_pol(texto)
+            elif "MM" in texto:
+                return interpretar_filme_mm(texto)
             else:
                 return interpretar_padrao(texto)
 
@@ -197,9 +261,13 @@ def selecionar_interpretador(texto, origem):
                 return interpretar_mic_pol(texto)
             elif texto.startswith("MANOPLA"):
                 return interpretar_manopla(texto)
+            elif texto.count("x") == 2:
+                return interpretar_medidas(texto)
             elif texto.startswith("FITA"):
                 return interpretar_fita(texto)
             elif "MM" in texto:
                 return interpretar_largura_micra(texto)
+            elif "HOTMELT" in texto:
+                return interpretar_hotmelt(texto)
             else:
                 return interpretar_72x100(texto)
