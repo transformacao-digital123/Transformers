@@ -1,11 +1,12 @@
 # OpenPyXL é uma biblioteca especializada em ler e escrever
 # arquivos do Excel preservando sua estrutura.  
 from openpyxl import load_workbook
-import os, shutil
+import os
 
 from servicos.planilha import preencher_planilha
 from servicos.utilirarios import criar_zip
 from servicos.interpretador import selecionar_interpretador
+from servicos.apontamento import agrupar_por_operador, selecionar_apontamento
 
 # Ela Conversa com servidores na internet, desde: acessar sites;baixar imagens; baixar PDFs; baixar Excel; acessar APIs.
 import requests
@@ -99,20 +100,20 @@ def converter_google_sheets(link):
             if len(valores) == 1:
                     
         # Guarda o primeiro valor da célula na variável turno
-                    turno = valores[0]
+                    texto = valores[0]
 
         # Primeiro verifica se é o título da ODP
-                    if turno.startswith("Ordem De Produção"):
+                    if texto.startswith("Ordem De Produção"):
 
-                        if "Noite" in turno:
+                        if "Noite" in texto:
                             turno = "Noite"
-                        elif "Manhã" in turno:
+                        elif "Manhã" in texto:
                             turno = "Manhã"
 
         # Só depois verifica máquina-operador
-                    elif " - " in turno:
+                    elif " - " in texto:
 
-                        maquina, operador = turno.split(" - ", 1)
+                        maquina, operador = texto.split(" - ", 1)
 
                         maquina = maquina.strip()
                         operador = operador.strip()
@@ -201,10 +202,23 @@ def converter_google_sheets(link):
                 arquivo = preencher_planilha(ordem, indice)
              
                 arquivos.append(arquivo)
+        
         except Exception as erro:
 
             raise
 
+    grupos = agrupar_por_operador(ordens)
+                    
+    for operador,ordens_operador in grupos.items():
+
+        turno = ordens_operador[0]["turno"]
+
+        arquivo = selecionar_apontamento(turno, operador, ordens_operador)
+        arquivos.append(arquivo)
+
     arquivo_zip = criar_zip(arquivos)
 
     return arquivo_zip
+
+
+
