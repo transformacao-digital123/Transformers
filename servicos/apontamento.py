@@ -1,6 +1,13 @@
 from openpyxl import load_workbook
+from openpyxl.styles import Font, Alignment
 from datetime import datetime
 import os
+
+ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center")
+
+FONTE_PADRAO = Font(name="Arial", size=11)
+
+
 
 def agrupar_por_operador(ordens):
 
@@ -37,19 +44,34 @@ def preencher_apontamento(caminho_modelo,operador,ordens_operador):
 
     linha = 4
 
-    aba["L2"] = primeira_ordem["data"]
-    aba["M2"] = primeira_ordem["operador"]
-    aba["O2"] = primeira_ordem["maquina"]
+    aba["M2"] = primeira_ordem["data"]
+    aba["M2"].number_format = "dd/mm/yyyy"
+    aba["M2"].font = FONTE_PADRAO
+    aba["M2"].alignment = ALINHAMENTO_PADRAO
+
+    aba["O2"] = primeira_ordem["operador"]
+    aba["O2"].font = FONTE_PADRAO
+    aba["O2"].alignment = ALINHAMENTO_PADRAO
+
+    aba["Q2"] = primeira_ordem["maquina"]
+    aba["Q2"].font = FONTE_PADRAO
+    aba["Q2"].alignment = ALINHAMENTO_PADRAO
 
     for ordem in ordens_operador:
         aba[f"A{linha}"] = ordem["numero_pedido"]
         aba[f"B{linha}"] = ordem["odp"]
-
-        print(f"C{linha}")
         aba[f"C{linha}"] = ordem["cliente"]
-
-        print(f"D{linha}")
         aba[f"E{linha}"] = ordem["padrao"]
+
+        aba[f"A{linha}"].font = FONTE_PADRAO
+        aba[f"B{linha}"].font = FONTE_PADRAO
+        aba[f"C{linha}"].font = FONTE_PADRAO
+        aba[f"E{linha}"].font = FONTE_PADRAO
+
+        aba[f"A{linha}"].alignment = ALINHAMENTO_PADRAO
+        aba[f"B{linha}"].alignment = ALINHAMENTO_PADRAO
+        aba[f"C{linha}"].alignment = ALINHAMENTO_PADRAO
+        aba[f"E{linha}"].alignment = ALINHAMENTO_PADRAO
 
         linha += 1
 

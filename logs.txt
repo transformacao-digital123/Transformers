@@ -4012,3 +4012,39 @@
 2026-08-07 16:00:45,026 - INFO - 127.0.0.1 - - [07/Aug/2026 16:00:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-08-07 16:00:45,029 - INFO - 127.0.0.1 - - [07/Aug/2026 16:00:45] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
 2026-08-07 16:00:53,362 - INFO - 127.0.0.1 - - [07/Aug/2026 16:00:53] "POST / HTTP/1.1" 200 -
+2026-08-07 16:04:25,240 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-07 16:04:25,362 - INFO -  * Restarting with stat
+2026-08-10 07:04:22,628 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-10 07:04:22,630 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-10 07:04:22,631 - INFO -  * Restarting with stat
+2026-08-10 07:04:23,259 - WARNING -  * Debugger is active!
+2026-08-10 07:04:23,259 - INFO -  * Debugger PIN: 996-711-774
+2026-08-10 07:06:10,375 - INFO - 127.0.0.1 - - [10/Aug/2026 07:06:10] "GET / HTTP/1.1" 200 -
+2026-08-10 07:06:10,414 - INFO - 127.0.0.1 - - [10/Aug/2026 07:06:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-10 07:06:10,438 - INFO - 127.0.0.1 - - [10/Aug/2026 07:06:10] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-10 07:06:10,493 - INFO - 127.0.0.1 - - [10/Aug/2026 07:06:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-10 07:24:30,202 - INFO - 127.0.0.1 - - [10/Aug/2026 07:24:30] "POST / HTTP/1.1" 200 -
+2026-08-10 07:33:48,191 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-10 07:33:48,319 - INFO -  * Restarting with stat
+2026-08-10 07:33:49,591 - WARNING -  * Debugger is active!
+2026-08-10 07:33:49,591 - INFO -  * Debugger PIN: 996-711-774
+2026-08-10 07:33:55,444 - INFO - 127.0.0.1 - - [10/Aug/2026 07:33:55] "GET / HTTP/1.1" 200 -
+2026-08-10 07:33:55,483 - INFO - 127.0.0.1 - - [10/Aug/2026 07:33:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-10 07:33:55,491 - INFO - 127.0.0.1 - - [10/Aug/2026 07:33:55] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-10 07:34:04,988 - INFO - 127.0.0.1 - - [10/Aug/2026 07:34:04] "POST / HTTP/1.1" 200 -
+2026-08-10 07:43:58,376 - INFO - 127.0.0.1 - - [10/Aug/2026 07:43:58] "POST / HTTP/1.1" 200 -
+2026-08-10 08:07:37,488 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-10 08:07:37,703 - INFO -  * Restarting with stat
+2026-08-10 08:07:39,047 - WARNING -  * Debugger is active!
+2026-08-10 08:07:39,047 - INFO -  * Debugger PIN: 996-711-774
+2026-08-10 08:07:43,342 - INFO - 127.0.0.1 - - [10/Aug/2026 08:07:43] "GET / HTTP/1.1" 200 -
+2026-08-10 08:07:43,429 - INFO - 127.0.0.1 - - [10/Aug/2026 08:07:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-10 08:07:43,434 - INFO - 127.0.0.1 - - [10/Aug/2026 08:07:43] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-10 08:07:51,976 - INFO - 127.0.0.1 - - [10/Aug/2026 08:07:51] "POST / HTTP/1.1" 200 -
+2026-08-10 08:21:05,480 - INFO - 127.0.0.1 - - [10/Aug/2026 08:21:05] "POST / HTTP/1.1" 200 -
+2026-08-10 08:21:47,844 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-10 08:21:48,219 - INFO -  * Restarting with stat
+2026-08-10 08:21:49,069 - WARNING -  * Debugger is active!
+2026-08-10 08:21:49,073 - INFO -  * Debugger PIN: 996-711-774
+2026-08-10 08:21:56,172 - INFO - 127.0.0.1 - - [10/Aug/2026 08:21:56] "POST / HTTP/1.1" 200 -
