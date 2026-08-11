@@ -1,13 +1,10 @@
 from openpyxl import load_workbook
 from openpyxl.styles import Font, Alignment
-from datetime import datetime
 import os
 
 ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center")
 
 FONTE_PADRAO = Font(name="Arial", size=11)
-
-
 
 def agrupar_por_operador(ordens):
 
@@ -84,3 +81,85 @@ def preencher_apontamento(caminho_modelo,operador,ordens_operador):
     planilha.close()
 
     return caminho
+
+# app.py
+#   │
+#   │ converter_google_sheets(link)
+#   ▼
+# google_sheet.py
+#   │
+#   ├── validar_link()
+#   │
+#   ├── baixar_planilha()
+#   │
+#   ├── abrir_planilha()
+#   │
+#   ├── identificar_blocos()
+#   │       │
+#   │       └── retorna → ordens
+#   │
+#   ├── selecionar_interpretador()
+#   │       │
+#   │       └── retorna informações interpretadas
+#   │
+#   ├── preencher_planilha()
+#   │       │
+#   │       └── cria arquivo de rastreabilidade
+#   │
+#   ├── agrupar_por_operador(ordens)
+#   │       │
+#   │       └── retorna → grupos
+#   │
+#   └── para cada grupo:
+#           │
+#           ▼
+#     selecionar_apontamento()
+#           │
+#           ├── verifica turno
+#           │
+#           ├── escolhe modelo
+#           │
+#           │   ├── Manhã → apontamento_manha.xlsx
+#           │   └── Noite → apontamento_noite.xlsx
+#           │
+#           ▼
+#     preencher_apontamento()
+#           │
+#           ├── load_workbook()
+#           │
+#           ├── pega aba
+#           │
+#           ├── pega primeira ordem
+#           │
+#           ├── preenche data
+#           ├── preenche operador
+#           ├── preenche máquina
+#           │
+#           ├── for ordem in ordens_operador
+#           │       │
+#           │       ├── número pedido
+#           │       ├── ODP
+#           │       ├── cliente
+#           │       └── padrão
+#           │
+#           ├── planilha.save()
+#           │
+#           └── retorna nome do arquivo
+#           │
+#           ▼
+#     arquivos.append(arquivo)
+#           │
+#           ▼
+#     criar_zip(arquivos)
+#           │
+#           ▼
+#     retorna arquivo_zip
+#           │
+#           ▼
+#     app.py
+#           │
+#           ▼
+#     send_file(arquivo_saida)
+#           │
+#           ▼
+#     USUÁRIO RECEBE O ZIP

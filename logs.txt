@@ -4048,3 +4048,157 @@
 2026-08-10 08:21:49,069 - WARNING -  * Debugger is active!
 2026-08-10 08:21:49,073 - INFO -  * Debugger PIN: 996-711-774
 2026-08-10 08:21:56,172 - INFO - 127.0.0.1 - - [10/Aug/2026 08:21:56] "POST / HTTP/1.1" 200 -
+2026-08-10 11:08:18,139 - INFO - 127.0.0.1 - - [10/Aug/2026 11:08:18] "GET / HTTP/1.1" 200 -
+2026-08-10 11:23:47,308 - INFO - 127.0.0.1 - - [10/Aug/2026 11:23:47] "POST / HTTP/1.1" 200 -
+2026-08-10 15:16:04,301 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-10 15:16:04,801 - INFO -  * Restarting with stat
+2026-08-10 15:16:06,311 - WARNING -  * Debugger is active!
+2026-08-10 15:16:06,315 - INFO -  * Debugger PIN: 996-711-774
+2026-08-10 16:58:17,992 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-10 16:58:18,254 - INFO -  * Restarting with stat
+2026-08-10 16:58:19,950 - WARNING -  * Debugger is active!
+2026-08-10 16:58:19,950 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 07:00:02,267 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-11 07:00:02,267 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-11 07:00:02,267 - INFO -  * Restarting with stat
+2026-08-11 07:00:03,143 - WARNING -  * Debugger is active!
+2026-08-11 07:00:03,148 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 07:00:10,203 - INFO - 127.0.0.1 - - [11/Aug/2026 07:00:10] "GET / HTTP/1.1" 200 -
+2026-08-11 07:00:10,285 - INFO - 127.0.0.1 - - [11/Aug/2026 07:00:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 07:00:10,311 - INFO - 127.0.0.1 - - [11/Aug/2026 07:00:10] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 07:00:10,397 - INFO - 127.0.0.1 - - [11/Aug/2026 07:00:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-11 07:28:13,276 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 07:28:13,483 - INFO -  * Restarting with stat
+2026-08-11 07:28:14,551 - WARNING -  * Debugger is active!
+2026-08-11 07:28:14,551 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 08:01:55,670 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 08:01:55,770 - INFO -  * Restarting with stat
+2026-08-11 08:01:56,921 - WARNING -  * Debugger is active!
+2026-08-11 08:01:56,921 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 08:48:28,660 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 08:48:28,939 - INFO -  * Restarting with stat
+2026-08-11 08:48:30,867 - WARNING -  * Debugger is active!
+2026-08-11 08:48:30,872 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 08:48:33,390 - INFO - 127.0.0.1 - - [11/Aug/2026 08:48:33] "GET / HTTP/1.1" 200 -
+2026-08-11 08:48:33,422 - INFO - 127.0.0.1 - - [11/Aug/2026 08:48:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:48:33,422 - INFO - 127.0.0.1 - - [11/Aug/2026 08:48:33] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 08:49:21,654 - INFO - 127.0.0.1 - - [11/Aug/2026 08:49:21] "GET / HTTP/1.1" 200 -
+2026-08-11 08:49:21,703 - INFO - 127.0.0.1 - - [11/Aug/2026 08:49:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:49:21,719 - INFO - 127.0.0.1 - - [11/Aug/2026 08:49:21] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 08:49:36,689 - INFO - 127.0.0.1 - - [11/Aug/2026 08:49:36] "POST / HTTP/1.1" 200 -
+2026-08-11 08:49:36,709 - INFO - 127.0.0.1 - - [11/Aug/2026 08:49:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:49:36,710 - INFO - 127.0.0.1 - - [11/Aug/2026 08:49:36] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 08:49:38,088 - INFO - 127.0.0.1 - - [11/Aug/2026 08:49:38] "POST / HTTP/1.1" 200 -
+2026-08-11 08:50:47,836 - INFO - 127.0.0.1 - - [11/Aug/2026 08:50:47] "GET / HTTP/1.1" 200 -
+2026-08-11 08:50:47,885 - INFO - 127.0.0.1 - - [11/Aug/2026 08:50:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:50:47,887 - INFO - 127.0.0.1 - - [11/Aug/2026 08:50:47] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 08:50:58,072 - INFO - 127.0.0.1 - - [11/Aug/2026 08:50:58] "POST / HTTP/1.1" 200 -
+2026-08-11 08:50:58,082 - INFO - 127.0.0.1 - - [11/Aug/2026 08:50:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:50:58,085 - INFO - 127.0.0.1 - - [11/Aug/2026 08:50:58] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 08:55:52,037 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 08:55:52,143 - INFO -  * Restarting with stat
+2026-08-11 08:55:52,943 - WARNING -  * Debugger is active!
+2026-08-11 08:55:52,944 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 08:55:59,156 - INFO - 127.0.0.1 - - [11/Aug/2026 08:55:59] "GET / HTTP/1.1" 200 -
+2026-08-11 08:55:59,196 - INFO - 127.0.0.1 - - [11/Aug/2026 08:55:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:55:59,201 - INFO - 127.0.0.1 - - [11/Aug/2026 08:55:59] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 08:56:10,081 - INFO - 127.0.0.1 - - [11/Aug/2026 08:56:10] "POST / HTTP/1.1" 200 -
+2026-08-11 08:56:10,092 - INFO - 127.0.0.1 - - [11/Aug/2026 08:56:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:56:10,095 - INFO - 127.0.0.1 - - [11/Aug/2026 08:56:10] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 08:59:07,088 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 08:59:07,187 - INFO -  * Restarting with stat
+2026-08-11 08:59:07,989 - WARNING -  * Debugger is active!
+2026-08-11 08:59:08,005 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 08:59:21,754 - INFO - 127.0.0.1 - - [11/Aug/2026 08:59:21] "GET / HTTP/1.1" 200 -
+2026-08-11 08:59:21,787 - INFO - 127.0.0.1 - - [11/Aug/2026 08:59:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:59:21,787 - INFO - 127.0.0.1 - - [11/Aug/2026 08:59:21] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 08:59:31,814 - INFO - 127.0.0.1 - - [11/Aug/2026 08:59:31] "POST / HTTP/1.1" 200 -
+2026-08-11 08:59:31,837 - INFO - 127.0.0.1 - - [11/Aug/2026 08:59:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 08:59:31,840 - INFO - 127.0.0.1 - - [11/Aug/2026 08:59:31] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:02:27,390 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 09:02:27,470 - INFO -  * Restarting with stat
+2026-08-11 09:02:28,389 - WARNING -  * Debugger is active!
+2026-08-11 09:02:28,389 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 09:02:31,913 - INFO - 127.0.0.1 - - [11/Aug/2026 09:02:31] "GET / HTTP/1.1" 200 -
+2026-08-11 09:02:31,943 - INFO - 127.0.0.1 - - [11/Aug/2026 09:02:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:02:31,953 - INFO - 127.0.0.1 - - [11/Aug/2026 09:02:31] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:02:40,420 - INFO - 127.0.0.1 - - [11/Aug/2026 09:02:40] "POST / HTTP/1.1" 200 -
+2026-08-11 09:02:40,430 - INFO - 127.0.0.1 - - [11/Aug/2026 09:02:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:02:40,432 - INFO - 127.0.0.1 - - [11/Aug/2026 09:02:40] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:06:55,880 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 09:06:56,023 - INFO -  * Restarting with stat
+2026-08-11 09:06:56,686 - WARNING -  * Debugger is active!
+2026-08-11 09:06:56,686 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 09:07:05,984 - INFO - 127.0.0.1 - - [11/Aug/2026 09:07:05] "GET / HTTP/1.1" 200 -
+2026-08-11 09:07:06,037 - INFO - 127.0.0.1 - - [11/Aug/2026 09:07:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:07:06,040 - INFO - 127.0.0.1 - - [11/Aug/2026 09:07:06] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:07:15,775 - INFO - 127.0.0.1 - - [11/Aug/2026 09:07:15] "POST / HTTP/1.1" 200 -
+2026-08-11 09:17:18,864 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 09:17:18,981 - INFO -  * Restarting with stat
+2026-08-11 09:17:19,899 - WARNING -  * Debugger is active!
+2026-08-11 09:17:19,899 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 09:17:23,685 - INFO - 127.0.0.1 - - [11/Aug/2026 09:17:23] "GET / HTTP/1.1" 200 -
+2026-08-11 09:17:23,727 - INFO - 127.0.0.1 - - [11/Aug/2026 09:17:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:17:23,732 - INFO - 127.0.0.1 - - [11/Aug/2026 09:17:23] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:17:33,548 - INFO - 127.0.0.1 - - [11/Aug/2026 09:17:33] "POST / HTTP/1.1" 200 -
+2026-08-11 09:17:33,559 - INFO - 127.0.0.1 - - [11/Aug/2026 09:17:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:17:33,560 - INFO - 127.0.0.1 - - [11/Aug/2026 09:17:33] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:22:41,354 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 09:22:41,489 - INFO -  * Restarting with stat
+2026-08-11 09:22:42,265 - WARNING -  * Debugger is active!
+2026-08-11 09:22:42,267 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 09:22:43,866 - INFO - 127.0.0.1 - - [11/Aug/2026 09:22:43] "GET / HTTP/1.1" 200 -
+2026-08-11 09:22:43,922 - INFO - 127.0.0.1 - - [11/Aug/2026 09:22:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:22:43,927 - INFO - 127.0.0.1 - - [11/Aug/2026 09:22:43] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:22:53,197 - INFO - 127.0.0.1 - - [11/Aug/2026 09:22:53] "POST / HTTP/1.1" 200 -
+2026-08-11 09:22:53,207 - INFO - 127.0.0.1 - - [11/Aug/2026 09:22:53] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:22:53,208 - INFO - 127.0.0.1 - - [11/Aug/2026 09:22:53] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:33:21,110 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 09:33:21,209 - INFO -  * Restarting with stat
+2026-08-11 09:33:22,007 - WARNING -  * Debugger is active!
+2026-08-11 09:33:22,009 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 09:33:28,020 - INFO - 127.0.0.1 - - [11/Aug/2026 09:33:28] "GET / HTTP/1.1" 200 -
+2026-08-11 09:33:28,073 - INFO - 127.0.0.1 - - [11/Aug/2026 09:33:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:33:28,094 - INFO - 127.0.0.1 - - [11/Aug/2026 09:33:28] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:33:37,528 - INFO - 127.0.0.1 - - [11/Aug/2026 09:33:37] "POST / HTTP/1.1" 200 -
+2026-08-11 09:33:37,541 - INFO - 127.0.0.1 - - [11/Aug/2026 09:33:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:33:37,542 - INFO - 127.0.0.1 - - [11/Aug/2026 09:33:37] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:51:31,613 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 09:51:31,700 - INFO -  * Restarting with stat
+2026-08-11 09:51:32,619 - WARNING -  * Debugger is active!
+2026-08-11 09:51:32,619 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 09:51:37,378 - INFO - 127.0.0.1 - - [11/Aug/2026 09:51:37] "GET / HTTP/1.1" 200 -
+2026-08-11 09:51:37,426 - INFO - 127.0.0.1 - - [11/Aug/2026 09:51:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:51:37,426 - INFO - 127.0.0.1 - - [11/Aug/2026 09:51:37] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:51:46,514 - INFO - 127.0.0.1 - - [11/Aug/2026 09:51:46] "POST / HTTP/1.1" 200 -
+2026-08-11 09:51:46,536 - INFO - 127.0.0.1 - - [11/Aug/2026 09:51:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:51:46,538 - INFO - 127.0.0.1 - - [11/Aug/2026 09:51:46] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:53:24,033 - INFO - 127.0.0.1 - - [11/Aug/2026 09:53:24] "GET / HTTP/1.1" 200 -
+2026-08-11 09:53:24,080 - INFO - 127.0.0.1 - - [11/Aug/2026 09:53:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:53:24,080 - INFO - 127.0.0.1 - - [11/Aug/2026 09:53:24] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:53:32,770 - INFO - 127.0.0.1 - - [11/Aug/2026 09:53:32] "POST / HTTP/1.1" 200 -
+2026-08-11 09:54:25,257 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 09:54:25,359 - INFO -  * Restarting with stat
+2026-08-11 09:54:26,252 - WARNING -  * Debugger is active!
+2026-08-11 09:54:26,268 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 09:54:31,929 - INFO - 127.0.0.1 - - [11/Aug/2026 09:54:31] "GET / HTTP/1.1" 200 -
+2026-08-11 09:54:31,962 - INFO - 127.0.0.1 - - [11/Aug/2026 09:54:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:54:31,962 - INFO - 127.0.0.1 - - [11/Aug/2026 09:54:31] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:54:44,815 - INFO - 127.0.0.1 - - [11/Aug/2026 09:54:44] "POST / HTTP/1.1" 200 -
+2026-08-11 09:58:35,438 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 09:58:35,540 - INFO -  * Restarting with stat
+2026-08-11 09:58:36,578 - WARNING -  * Debugger is active!
+2026-08-11 09:58:36,590 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 09:58:41,428 - INFO - 127.0.0.1 - - [11/Aug/2026 09:58:41] "GET / HTTP/1.1" 200 -
+2026-08-11 09:58:41,502 - INFO - 127.0.0.1 - - [11/Aug/2026 09:58:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 09:58:41,517 - INFO - 127.0.0.1 - - [11/Aug/2026 09:58:41] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 09:58:51,617 - INFO - 127.0.0.1 - - [11/Aug/2026 09:58:51] "POST / HTTP/1.1" 200 -
+2026-08-11 10:00:08,615 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-11 10:00:08,712 - INFO -  * Restarting with stat
+2026-08-11 10:00:09,993 - WARNING -  * Debugger is active!
+2026-08-11 10:00:10,004 - INFO -  * Debugger PIN: 996-711-774
+2026-08-11 10:00:12,285 - INFO - 127.0.0.1 - - [11/Aug/2026 10:00:12] "GET / HTTP/1.1" 200 -
+2026-08-11 10:00:12,342 - INFO - 127.0.0.1 - - [11/Aug/2026 10:00:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-11 10:00:12,346 - INFO - 127.0.0.1 - - [11/Aug/2026 10:00:12] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-11 10:00:21,868 - INFO - 127.0.0.1 - - [11/Aug/2026 10:00:21] "POST / HTTP/1.1" 200 -

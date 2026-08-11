@@ -7,6 +7,7 @@ from servicos.planilha import preencher_planilha
 from servicos.utilirarios import criar_zip
 from servicos.interpretador import selecionar_interpretador
 from servicos.apontamento import agrupar_por_operador, selecionar_apontamento
+from servicos.qrcode import preencher_etiqueta
 
 # Ela Conversa com servidores na internet, desde: acessar sites;baixar imagens; baixar PDFs; baixar Excel; acessar APIs.
 import requests
@@ -99,7 +100,7 @@ def converter_google_sheets(link):
 # o len lê a quantidade, se a quantidade de celulas preenchidas for 1 continuará para descobrir a máquina e o operador
             if len(valores) == 1:
                     
-        # Guarda o primeiro valor da célula na variável turno
+        # Guarda o primeiro valor da célula na variável texto
                     texto = valores[0]
 
         # Primeiro verifica se é o título da ODP
@@ -157,7 +158,7 @@ def converter_google_sheets(link):
                         else:
                             dados[chave_programa] = linha[colunas[chave_planilha]].value
 
-# Aqui não precisa de , pq não é uma string, é um tupla
+# Aqui não precisa de , pq não é uma string, é uma tupla
                     dados["operador"] = operador
                     dados["maquina"] = maquina
                     dados["observacao"] = ""
@@ -216,9 +217,10 @@ def converter_google_sheets(link):
         arquivo = selecionar_apontamento(turno, operador, ordens_operador)
         arquivos.append(arquivo)
 
+        for ordem in ordens_operador:
+            arquivo_etiqueta = preencher_etiqueta(ordem)
+            arquivos.append(arquivo_etiqueta)
+
     arquivo_zip = criar_zip(arquivos)
 
     return arquivo_zip
-
-
-
