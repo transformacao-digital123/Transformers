@@ -6,7 +6,7 @@ import os
 from servicos.planilha import preencher_planilha
 from servicos.utilirarios import criar_zip
 from servicos.interpretador import selecionar_interpretador
-from servicos.apontamento import agrupar_por_operador, selecionar_apontamento
+from servicos.apontamento import agrupar_por_operador, selecionar_apontamento, preencher_odps
 from servicos.qrcode import preencher_etiqueta
 
 # Ela Conversa com servidores na internet, desde: acessar sites;baixar imagens; baixar PDFs; baixar Excel; acessar APIs.
@@ -49,7 +49,6 @@ def converter_google_sheets(link):
              arquivo.write(resposta.content)
 
         return caminho_arquivo
-        
 
     def abrir_planilha(caminho_arquivo):
          
@@ -216,6 +215,9 @@ def converter_google_sheets(link):
 
         arquivo = selecionar_apontamento(turno, operador, ordens_operador)
         arquivos.append(arquivo)
+
+        arquivo_odps = preencher_odps(ordens_operador)
+        arquivos.append(arquivo_odps)
 
         for ordem in ordens_operador:
             arquivo_etiqueta = preencher_etiqueta(ordem)
