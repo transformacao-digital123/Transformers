@@ -34,7 +34,7 @@
 <!-- O autoplay faz o vídeo começar automaticamente quando receber a câmera  e o playsinline ajuda a fazer o vídeo ser exibido dentro da página, em vez de o navegador tentar abrir o vídeo em tela cheia. -->
     <video id="camera" width="400" autoplay playsinline></video>
 
-    <p id = "resultado">Aguardando o QR code..</p>
+    <p id = "resultado">Aguardando o QR code...</p>
 
     <script>
 
@@ -55,12 +55,12 @@
 
 // ENTÂO: se o usuário permitiu o uso da cãmera - function criará uma função que guardará o parâmetro que estiver entre ()
 // Video é a caixa criada no código do site para exibir as imagens,o comando seguinte diz que ele deve ser executado ao vivo, ou seja, imediatamente, e então o objeto stream, que será o fluxo real do video, receberá essas atribuições
-        .them(function(stream){
+        .then(function(stream){
             console.log("Câmera acessada com sucesso!") // Escreve uma mensagem oculta no painel do desenvolvedor
             video.srcObject = stream;
-            video.onloadeddata = function() {
+            video.onloadeddata = function() { // O comando que guarda todas as informações técnicas, seja largura, altura ou duração
                 console.log("Vídeo carregado!")
-                video.play()
+                video.play() // faz o vídeo rodar
             }
         })
 
