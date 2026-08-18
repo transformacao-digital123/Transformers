@@ -43,6 +43,25 @@ body{
     border-radius: var(--borda-arredondada);
 }
 
+.camera{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.camera button{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.camera img{
+    width: 45px;
+    height: auto;
+    display: block;
+}
+
 main{
     flex: 1;
 }
@@ -59,6 +78,7 @@ header{
     display: flex;
     align-items: center;
     gap: 20px;
+    width: 100%;
 }
 
 figure{

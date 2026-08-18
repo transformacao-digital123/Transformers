@@ -7,6 +7,8 @@ from servicos.conversor import converter_pdf
 from servicos.google_sheet import converter_google_sheets, criar_zip
 from servicos.tratador_erros import tratar_erro
 
+from servicos.qrcode import carregar_rastreabilidade,buscar_rastreabilidade,localizar_aba, localizar_por_identificador
+
 app = Flask(__name__)
 
 # Comandos padrão do Flask para organizar o acesso a página Web
@@ -51,6 +53,18 @@ def home():
 #Enquanto nada for enviado ainda será um GET, logo, enquanto isso, afim de evitar erro, o programa pula para as linha anteriores para que a página possa ser aberta, carregando a página através do arquivo HTML
     return render_template(
         "index.html")
+
+rastreabilidade = carregar_rastreabilidade()
+
+if rastreabilidade:
+    identificador_teste = next(iter(rastreabilidade))
+
+    resultado = localizar_por_identificador(identificador_teste)
+
+    print("IDENTIFICADOR:", identificador_teste)
+    print("LOCALIZAÇÃO:", resultado)
+else:
+    print("Nenhuma rastreabilidade encontrada.")
 
 if __name__ == "__main__":
     app.run(debug=True)

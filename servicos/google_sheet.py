@@ -7,12 +7,14 @@ from servicos.planilha import preencher_planilha
 from servicos.utilirarios import criar_zip
 from servicos.interpretador import selecionar_interpretador
 from servicos.apontamento import agrupar_por_operador, selecionar_apontamento, preencher_odps
-from servicos.qrcode import preencher_etiqueta
+from servicos.qrcode import preencher_etiqueta,salvar_rastreabilidade
 
 # Ela Conversa com servidores na internet, desde: acessar sites;baixar imagens; baixar PDFs; baixar Excel; acessar APIs.
 import requests
 
 def converter_google_sheets(link):
+
+    rastreabilidade = {}
 
     os.makedirs("temporario", exist_ok=True)
 
@@ -220,9 +222,12 @@ def converter_google_sheets(link):
         arquivos.append(arquivo_odps)
 
         for ordem in ordens_operador:
-            arquivo_etiqueta = preencher_etiqueta(ordem)
+            arquivo_etiqueta = preencher_etiqueta(ordem,rastreabilidade)
             arquivos.append(arquivo_etiqueta)
 
     arquivo_zip = criar_zip(arquivos)
 
+    salvar_rastreabilidade(rastreabilidade)
+
     return arquivo_zip
+
