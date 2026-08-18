@@ -241,7 +241,6 @@ label{
 
     .entrada input[type="file"]{
         white-space: nowrap;
-        font-size: 14px;
         margin-left: 10px;
     }
 
