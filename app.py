@@ -54,17 +54,9 @@ def home():
     return render_template(
         "index.html")
 
-rastreabilidade = carregar_rastreabilidade()
-
-if rastreabilidade:
-    identificador_teste = next(iter(rastreabilidade))
-
-    resultado = localizar_por_identificador(identificador_teste)
-
-    print("IDENTIFICADOR:", identificador_teste)
-    print("LOCALIZAÇÃO:", resultado)
-else:
-    print("Nenhuma rastreabilidade encontrada.")
+@app.route("/camera")
+def camera():
+      return render_template("camera.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
