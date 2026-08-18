@@ -4,16 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leitor de QR code - Luari</title>
+
+    <style>
+        body{
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #F5F7FA;
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            color: #015794;
+            margin: 25px 0;
+        }
+
+        #camer{ width: 90%;
+                max-width: 500px;
+                border-radius: 10px;
+            }
+    </style>
 </head>
+
 <body>
     <h1>Leitor de QR code</h1>
 
-    <video id="camera" width="400" autoplay></video>
+    <video id="camera" width="400" autoplay playsinline></video>
 
     <p id = "resultado">Aguardando o QR code..</p>
 
     <script>
-        
+
+// A variável constante "video" recebe o que for encontrado por quem tem o ID "camera" e insere no documento, toda a página atual
+        const video = document.getElementById("camera")
+
+// Tudo em () vão ser as configurações da câmera, as {} criam um grupo de configurações(chamado de OBJETOS)
+
+// O navigator acessa as informações do navegador e aparelho do usuário, e a gerencia dos dispositivos de mídia disso é feita pelo comando seguinte, e o seguinte desse é o que pede permissão ao usuário
+// Dentro do {} ele cria um grupo de configurações que diz: Ativa o video e configura o modo de face (facingMode) para a câmera traseira (environment)
+        navigator.mediaDevices.getUserMedia({
+            video: {
+                facingMode: "environment"
+            }
+        })
+
+// O "." antes do comando inicial conecta o pedido da câmera . Significa "Caso dê certo, faça..." ou "Caso dê errado, faça...".
+
+// ENTÂO: se o usuário permitiu o uso da cãmera - 
+        .them(function(stream){
+            video.srcObject = stream;
+        })
+
+//
+        .cath(function(erro){
+            console.error("erro ao acessar a câmera", erro);
+        });
+
     </script>
 </body>
 </html>
