@@ -26,49 +26,40 @@
                 border-radius: 10px;
             }
     </style>
+
+    <script src = "https://unpkg.com/html5-qrcode" type = "text/javascript"></script>
 </head>
 
 <body>
     <h1>Leitor de QR code</h1>
 
-<!-- O autoplay faz o vídeo começar automaticamente quando receber a câmera  e o playsinline ajuda a fazer o vídeo ser exibido dentro da página, em vez de o navegador tentar abrir o vídeo em tela cheia. -->
-    <video id="camera" width="400" autoplay playsinline></video>
+    <div id = "leitor"></div>
 
-    <p id = "resultado">Aguardando o QR code...</p>
+<!-- O autoplay faz o vídeo começar automaticamente quando receber a câmera  e o playsinline ajuda a fazer o vídeo ser exibido dentro da página, em vez de o navegador tentar abrir o vídeo em tela cheia. -->
+
+    <p id = "resultado">Aguardando o QR Code...</p>
 
     <script>
 
-// A variável constante "video" recebe o que for encontrado por quem tem o ID "camera" e insere no documento, toda a página atual
-        const video = document.getElementById("camera")
+// Essa função guardará o valor do identificado no lugar de texto
+// então substituirá o que estiver em resultado, podendo ficar por exemplo "QR encontrado: LUARI-62B2E9F5"
+        function quandoLerQR(texto) {
+            document.getElementById("resultado").textContent = "QR encontrado" + texto;
 
-// Tudo em () vão ser as configurações da câmera, as {} criam um grupo de configurações(chamado de OBJETOS)
+            console.log("QR: ", texto);
+        }
 
-// O navigator acessa as informações do navegador e aparelho do usuário, e a gerencia dos dispositivos de mídia disso é feita pelo comando seguinte, e o seguinte desse é o que pede permissão ao usuário
-// Dentro do {} ele cria um grupo de configurações que diz: Ativa o video e configura o modo de face (facingMode) para a câmera traseira (environment)
-        navigator.mediaDevices.getUserMedia({
-            video: {
-                facingMode: "environment"
-            }
-        })
+// O "new" está dizendo: crie um novo objeto a partir dessa ferramenta. isso seerá posto em "leitor" e então,caso haja uma div com esse nome essa função será executada onde é que ela estiver
+        const leitor = new Html5QrcodeScanner(
+            "leitor",{ fps:10, qrbox:{
+                width:250,
+                height:250           
+            }}
+        );
 
-// O "." antes do comando inicial conecta o pedido da câmera . Significa "Caso dê certo, faça..." ou "Caso dê errado, faça...".
-
-// ENTÂO: se o usuário permitiu o uso da cãmera - function criará uma função que guardará o parâmetro que estiver entre ()
-// Video é a caixa criada no código do site para exibir as imagens,o comando seguinte diz que ele deve ser executado ao vivo, ou seja, imediatamente, e então o objeto stream, que será o fluxo real do video, receberá essas atribuições
-        .then(function(stream){
-            console.log("Câmera acessada com sucesso!") // Escreve uma mensagem oculta no painel do desenvolvedor
-            video.srcObject = stream;
-            video.onloadeddata = function() { // O comando que guarda todas as informações técnicas, seja largura, altura ou duração
-                console.log("Vídeo carregado!")
-                video.play() // faz o vídeo rodar
-            }
-        })
-
-// CAPTURAR: se o usuáio não permitiu o uso da câmera - function criará uma função que guardará o parâmetro que estiver entre ()
-// O console acessa a ferramenta de diagnóstico oculta do navegador para caso dê errad ele ativar função error, que exibirá uma mensagem grande em vermelho de alerta no painel de controle do navegador
-        .cath(function(erro){
-            console.error("erro ao acessar a câmera", erro);
-        });
+        leitor.render(
+            quandoLerQR
+        );  
 
     </script>
 </body>
