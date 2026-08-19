@@ -89,7 +89,7 @@ def localizar_odp(aba, odp):
     for linha in range(1, aba.max_row + 1):
 
 # Se o valor da célula for igual a odp retornará linha
-        if aba[f"C{linha}"].value == odp:
+        if aba[f"D{linha}"].value == odp:
             return linha
 
 # Se não retornará nada 
@@ -133,38 +133,37 @@ def preencher_odps(ordens_operador):
         logo.width = 150
         logo.height = 60
 
-        aba.add_image(logo, "A2")
+        aba.add_image(logo, "B2")
 
-    aba["C3"] = primeira_ordem["operador"]
-    aba["C3"].font = FONTE_PADRAO
-    aba["C3"].alignment = ALINHAMENTO_PADRAO
+    aba["D3"] = primeira_ordem["operador"]
+    aba["D3"].font = FONTE_PADRAO
+    aba["D3"].alignment = ALINHAMENTO_PADRAO
 
-    aba["E3"] = primeira_ordem["maquina"]
-    aba["E3"].font = FONTE_PADRAO
-    aba["E3"].alignment = ALINHAMENTO_PADRAO
+    aba["F3"] = primeira_ordem["maquina"]
+    aba["F3"].font = FONTE_PADRAO
+    aba["F3"].alignment = ALINHAMENTO_PADRAO
 
-    aba["H3"] = primeira_ordem["data"]
-    aba["H3"].number_format = "dd/mm/yyyy"
-    aba["H3"].font = FONTE_PADRAO
-    aba["H3"].alignment = ALINHAMENTO_PADRAO
+    aba["I3"] = primeira_ordem["data"]
+    aba["I3"].number_format = "dd/mm/yyyy"
+    aba["I3"].font = FONTE_PADRAO
+    aba["I3"].alignment = ALINHAMENTO_PADRAO
 
-    aba["J3"] = primeira_ordem["turno"]
-    aba["J3"].font = FONTE_PADRAO
-    aba["J3"].alignment = ALINHAMENTO_PADRAO
+    aba["K3"] = primeira_ordem["turno"]
+    aba["K3"].font = FONTE_PADRAO
+    aba["K3"].alignment = ALINHAMENTO_PADRAO
 
     linha = 6
 
     for ordem in ordens_operador:
 
-        aba[f"B{linha}"] = ordem["numero_pedido"]
-        aba[f"C{linha}"] = ordem["odp"]
-        aba[f"G{linha}"] = ordem["cliente"]
-        aba[f"H{linha}"] = ordem["padrao"]
-        aba[f"I{linha}"] = ordem["filme"]
-        aba[f"J{linha}"] = ordem["peso_tubete"]
-        aba[f"K{linha}"] = ordem.get("observacao", "")
+        aba[f"C{linha}"] = ordem["numero_pedido"]
+        aba[f"D{linha}"] = ordem["odp"]
+        aba[f"H{linha}"] = ordem["cliente"]
+        aba[f"I{linha}"] = ordem["padrao"]
+        aba[f"J{linha}"] = ordem["filme"]
+        aba[f"K{linha}"] = ordem["peso_tubete"]
+        aba[f"L{linha}"] = ordem.get("observacao", "")
 
-        aba[f"B{linha}"].font = FONTE_PADRAO
         aba[f"C{linha}"].font = FONTE_PADRAO
         aba[f"D{linha}"].font = FONTE_PADRAO
         aba[f"E{linha}"].font = FONTE_PADRAO
@@ -173,9 +172,9 @@ def preencher_odps(ordens_operador):
         aba[f"H{linha}"].font = FONTE_PADRAO
         aba[f"I{linha}"].font = FONTE_PADRAO
         aba[f"J{linha}"].font = FONTE_PADRAO
-        aba[f"K{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
+        aba[f"K{linha}"].font = FONTE_PADRAO
+        aba[f"L{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
         
-        aba[f"B{linha}"].alignment = ALINHAMENTO_PADRAO
         aba[f"C{linha}"].alignment = ALINHAMENTO_PADRAO
         aba[f"D{linha}"].alignment = ALINHAMENTO_PADRAO
         aba[f"E{linha}"].alignment = ALINHAMENTO_PADRAO
@@ -185,6 +184,7 @@ def preencher_odps(ordens_operador):
         aba[f"I{linha}"].alignment = ALINHAMENTO_PADRAO
         aba[f"J{linha}"].alignment = ALINHAMENTO_PADRAO
         aba[f"K{linha}"].alignment = ALINHAMENTO_PADRAO
+        aba[f"L{linha}"].alignment = ALINHAMENTO_PADRAO
 
         linha += 2
         

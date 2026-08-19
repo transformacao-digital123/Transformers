@@ -75,7 +75,11 @@
                     <p><strong>ODP:</strong> ${dados.odp}</p>
                     <p><strong>OPERADOR:</strong> ${dados.operador}</p>
                     <p><strong>MAQUINA:</strong> ${dados.maquina}</p>
-                    <p><strong>DATA:</strong> ${dados.data}</p>
+                    <p><strong>DATA:</strong> ${
+                        dados.data.slice(0,2) + "/" +
+                        dados.data.slice(2,4) + "/" +
+                        dados.data.slice(4,8) 
+                        }</p>
                     <p><strong>TURNO:</strong> ${dados.turno}</p>
 
                     <p><strong>📍 Linha:</strong> ${dados.linha}</p>
