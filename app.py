@@ -6,8 +6,7 @@ import traceback
 from servicos.conversor import converter_pdf
 from servicos.google_sheet import converter_google_sheets, criar_zip
 from servicos.tratador_erros import tratar_erro
-
-from servicos.qrcode import carregar_rastreabilidade,buscar_rastreabilidade,localizar_aba, localizar_por_identificador
+from servicos.qrcode import buscar_rastreabilidade, localizar_aba
 
 app = Flask(__name__)
 
@@ -56,7 +55,39 @@ def home():
 
 @app.route("/camera")
 def camera():
-      return render_template("camera.html")
+    return render_template("camera.html")
+
+@app.route("/buscar-rastreabilidade",methods = ["POST"])
+def buscar_rastreabilidade_api():
+
+# Transforma os dados recebidos em JSON e transforma em um dicionário python
+    texto = request.get_json()
+    identificador = texto["identificador"]
+    print("IDENTIFICADOR RECEBIDO:", identificador)
+
+    dados = buscar_rastreabilidade(identificador)
+
+    if dados is None:
+          return {"Erro": "identificador não encontrado"}, 404
+
+    localizacao = localizar_aba(dados)
+
+    print("LOCALIZAÇÃO ENCONTRADA: ", localizacao)
+
+    if localizacao is None:
+          return {"Erro": "não foi possível localizar a OdP"}, 404
+
+# Ao dar o último return o Flask sempre irá transformar o texto novamente em string para que ele possa navegar pela rede
+    return {
+          "odp": dados["odp"],
+          "operador": dados["operador"],
+          "maquina": dados["maquina"],
+          "data": dados["data"],
+          "turno": dados["turno"],
+          "arquivo": localizacao["arquivo"],
+          "aba": localizacao["aba"],
+          "linha": localizacao["linha"]
+    }
 
 if __name__ == "__main__":
     app.run(debug=True)

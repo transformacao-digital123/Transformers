@@ -21,7 +21,7 @@
             margin: 25px 0;
         }
 
-        #camer{ width: 90%;
+        #camera{ width: 90%;
                 max-width: 500px;
                 border-radius: 10px;
             }
@@ -35,28 +35,72 @@
 
     <div id = "leitor"></div>
 
-<!-- O autoplay faz o vídeo começar automaticamente quando receber a câmera  e o playsinline ajuda a fazer o vídeo ser exibido dentro da página, em vez de o navegador tentar abrir o vídeo em tela cheia. -->
-
-    <p id = "resultado">Aguardando o QR Code...</p>
+    <div id = "resultado">
+        <p>Aguardando o QR Code...</p>
+    </div>
 
     <script>
 
 // Essa função guardará o valor do identificado no lugar de texto
-// então substituirá o que estiver em resultado, podendo ficar por exemplo "QR encontrado: LUARI-62B2E9F5"
+// Então substituirá o que estiver em resultado, podendo ficar por exemplo "QR encontrado: LUARI-62B2E9F5"
         function quandoLerQR(texto) {
-            document.getElementById("resultado").textContent = "QR encontrado" + texto;
+            document.getElementById("resultado").textContent = "QR encontrado: "+ texto;
 
             console.log("QR: ", texto);
+
+// BUSCAR: /buscar-rastreabilidade - O o fetch faz com que haja uma obrigatoriedade do dado, após ser reformulado, retornar
+// O método serve para eu avisar que estou enviando um dado novo, e não pedindo para ver algo, pois o método em python diz explicitamente que só aceita em post, por isso especificamos em POST
+// Headers está avisando que o dado entregue está escrito no "idioma" JSON
+// Body é o conteúdo do dado, que recebe o valor do identificador após ele ser transformado em string pois o python tem dificuldade em ler javascript e envia o valor mais ou menos nesse formato: "identificador": "LUARI-AAD476BA" e envia para POST /buscar-rastreabilidade
+            fetch ("/buscar-rastreabilidade", {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(
+                    {identificador: texto}
+                )
+            })
+// ENTÂO: Ele transforma o texto string de volta em objeto para que o javascript possa interpretá-lo
+            .then(function(resposta){
+                return resposta.json();
+            })
+// Depois de transformado em javascript ele pega a informação, que no caso em python era "mensagem": "Identificador recebido com sucesso" e o console exibe no seu painel pra vc ver se deu certo
+            .then(function(dados){
+                console.log("RESPOSTA DO FLASK:", dados)
+
+                document.getElementById("resultado").innerHTML = `
+                    <h2>QR encontrado ✓</h2>
+
+                    <p><strong>ODP:</strong> ${dados.odp}</p>
+                    <p><strong>OPERADOR:</strong> ${dados.operador}</p>
+                    <p><strong>MAQUINA:</strong> ${dados.maquina}</p>
+                    <p><strong>DATA:</strong> ${dados.data}</p>
+                    <p><strong>TURNO:</strong> ${dados.turno}</p>
+
+                    <p><strong>📍 Linha:</strong> ${dados.linha}</p>
+
+                    <button>
+                        Abrir planilha
+                    </button>
+
+               `;
+            })
+// CAPTURAR: Garantia para que caso de algum problema no servidor como queda de internet o programa inteiro não quebre, e então ele exibe uma mensagem de erro 
+            .catch(function(erro){
+                console.error("Erro ao enviar identificador:", erro)
+            })
         }
 
-// O "new" está dizendo: crie um novo objeto a partir dessa ferramenta. isso seerá posto em "leitor" e então,caso haja uma div com esse nome essa função será executada onde é que ela estiver
+// O "new" está dizendo: crie um novo objeto a partir dessa ferramenta. isso será posto em "leitor" e então,caso haja uma div com esse nome essa função será executada onde é que ela estiver
+// Seguido de algumas formatações como 10 frames por segundo ou a área de refer~encia criada para ele conseguir scanne
         const leitor = new Html5QrcodeScanner(
             "leitor",{ fps:10, qrbox:{
                 width:250,
                 height:250           
             }}
         );
-
+// O leitor iniciará, quando o QR code for encontrado ativa a função quandolerQR
         leitor.render(
             quandoLerQR
         );  

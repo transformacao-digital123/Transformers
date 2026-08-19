@@ -1,0 +1,93 @@
+{
+    "LUARI-79A13528": {
+        "odp": "26/02257",
+        "operador": "Daves",
+        "maquina": "13",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-7BF4F885": {
+        "odp": "26/02258",
+        "operador": "Daves",
+        "maquina": "13",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-24B5CD3F": {
+        "odp": "26/02263",
+        "operador": "Daves",
+        "maquina": "13",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-1C35545C": {
+        "odp": "26/02408",
+        "operador": "Luis",
+        "maquina": "11",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-0344E0DB": {
+        "odp": "26/02297",
+        "operador": "Luis",
+        "maquina": "11",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-00D62086": {
+        "odp": "26/02376",
+        "operador": "Luis",
+        "maquina": "11",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-E3D77E78": {
+        "odp": "26/02299",
+        "operador": "Mateus",
+        "maquina": "12",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-6FF2C2C1": {
+        "odp": "26/02417",
+        "operador": "Mateus",
+        "maquina": "12",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-D43D258C": {
+        "odp": "26/02411",
+        "operador": "Mateus",
+        "maquina": "12",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-C0286EA9": {
+        "odp": "26/02187",
+        "operador": "Mateus",
+        "maquina": "12",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-A61E1B32": {
+        "odp": "26/02260",
+        "operador": "Clebison",
+        "maquina": "15",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-535AF915": {
+        "odp": "26/02413",
+        "operador": "Clebison",
+        "maquina": "15",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-8C19199C": {
+        "odp": "26/02418",
+        "operador": "Clebison",
+        "maquina": "15",
+        "turno": "Noite",
+        "data": "16072026"
+    }
+}
