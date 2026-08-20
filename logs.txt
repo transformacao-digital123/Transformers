@@ -6172,3 +6172,10 @@
 2026-08-20 14:47:38,376 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:38] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
 2026-08-20 14:47:41,492 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-08-20 14:47:41,591 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 14:50:22,124 - INFO - 127.0.0.1 - - [20/Aug/2026 14:50:22] "GET / HTTP/1.1" 200 -
+2026-08-20 14:50:22,184 - INFO - 127.0.0.1 - - [20/Aug/2026 14:50:22] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-20 14:50:22,205 - INFO - 127.0.0.1 - - [20/Aug/2026 14:50:22] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:50:22,205 - INFO - 127.0.0.1 - - [20/Aug/2026 14:50:22] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:50:25,483 - INFO - 127.0.0.1 - - [20/Aug/2026 14:50:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:50:25,579 - INFO - 127.0.0.1 - - [20/Aug/2026 14:50:25] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 14:50:55,215 - INFO - 127.0.0.1 - - [20/Aug/2026 14:50:55] "GET /camera HTTP/1.1" 200 -
