@@ -84,6 +84,7 @@ def preencher_apontamento(caminho_modelo,operador,ordens_operador):
     return caminho
 
 def localizar_odp(aba, odp):
+    print("PROCURANDO ODP:", repr(odp))
 
 # Aqui ele analisará cada linha desde a 1 até o final, mas devido ao python considerar que ele lerá somente até o valor antes do último colocamos o +1
     for linha in range(1, aba.max_row + 1):
@@ -116,6 +117,7 @@ def preencher_odps(ordens_operador):
     primeira_ordem = ordens_operador[0]
 
     caminho_saida = f"temporario/ODP_{primeira_ordem['operador']}.xlsx"
+    print("CAMINHO DA ODP:", os.path.abspath(caminho_saida))
 
     if os.path.exists(caminho_saida):
         planilha = load_workbook(caminho_saida)
@@ -200,6 +202,7 @@ def preencher_odps(ordens_operador):
     planilha.save(caminho_saida)
     planilha.close()
 
+    print("SALVANDO O ARQUIVO:", os.path.abspath(caminho_saida))
     return caminho_saida
 
 # Como funciona o Apontamento

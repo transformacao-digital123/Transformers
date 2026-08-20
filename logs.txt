@@ -6079,3 +6079,57 @@
 2026-08-20 13:11:20,821 - INFO - 127.0.0.1 - - [20/Aug/2026 13:11:20] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
 2026-08-20 13:11:20,822 - INFO - 127.0.0.1 - - [20/Aug/2026 13:11:20] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
 2026-08-20 13:11:22,946 - INFO - 127.0.0.1 - - [20/Aug/2026 13:11:22] "GET /camera HTTP/1.1" 200 -
+2026-08-20 13:16:15,839 - INFO - 127.0.0.1 - - [20/Aug/2026 13:16:15] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 13:28:44,362 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-20 13:28:44,660 - INFO -  * Restarting with stat
+2026-08-20 13:28:45,781 - WARNING -  * Debugger is active!
+2026-08-20 13:28:45,784 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 13:28:58,735 - INFO - 127.0.0.1 - - [20/Aug/2026 13:28:58] "GET / HTTP/1.1" 200 -
+2026-08-20 13:28:58,749 - INFO - 127.0.0.1 - - [20/Aug/2026 13:28:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 13:28:58,753 - INFO - 127.0.0.1 - - [20/Aug/2026 13:28:58] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 13:28:58,758 - INFO - 127.0.0.1 - - [20/Aug/2026 13:28:58] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 13:29:56,975 - INFO - 127.0.0.1 - - [20/Aug/2026 13:29:56] "POST / HTTP/1.1" 200 -
+2026-08-20 13:30:12,039 - INFO - 127.0.0.1 - - [20/Aug/2026 13:30:12] "POST / HTTP/1.1" 200 -
+2026-08-20 14:01:03,745 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-20 14:01:03,927 - INFO -  * Restarting with stat
+2026-08-20 14:01:05,585 - WARNING -  * Debugger is active!
+2026-08-20 14:01:05,593 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 14:01:11,361 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:11] "GET / HTTP/1.1" 200 -
+2026-08-20 14:01:11,430 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:01:11,437 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:11] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:01:11,437 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:11] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:01:13,026 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:13] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:01:20,681 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:20] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 14:01:28,818 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:28] "GET / HTTP/1.1" 200 -
+2026-08-20 14:01:28,895 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:01:28,906 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:28] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:01:28,906 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:28] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:01:35,625 - INFO - 127.0.0.1 - - [20/Aug/2026 14:01:35] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:02:18,923 - INFO - 127.0.0.1 - - [20/Aug/2026 14:02:18] "POST / HTTP/1.1" 200 -
+2026-08-20 14:02:20,591 - INFO - 127.0.0.1 - - [20/Aug/2026 14:02:20] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:02:29,610 - INFO - 127.0.0.1 - - [20/Aug/2026 14:02:29] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 14:03:14,112 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-20 14:03:14,211 - INFO -  * Restarting with stat
+2026-08-20 14:03:15,010 - WARNING -  * Debugger is active!
+2026-08-20 14:03:15,026 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 14:03:44,504 - INFO - 127.0.0.1 - - [20/Aug/2026 14:03:44] "GET / HTTP/1.1" 200 -
+2026-08-20 14:03:44,554 - INFO - 127.0.0.1 - - [20/Aug/2026 14:03:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:03:44,564 - INFO - 127.0.0.1 - - [20/Aug/2026 14:03:44] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:03:44,564 - INFO - 127.0.0.1 - - [20/Aug/2026 14:03:44] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:03:46,110 - INFO - 127.0.0.1 - - [20/Aug/2026 14:03:46] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:03:50,848 - INFO - 127.0.0.1 - - [20/Aug/2026 14:03:50] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 14:03:58,456 - INFO - 127.0.0.1 - - [20/Aug/2026 14:03:58] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:04:08,048 - INFO - 127.0.0.1 - - [20/Aug/2026 14:04:08] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 14:04:18,038 - INFO - 127.0.0.1 - - [20/Aug/2026 14:04:18] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 14:06:45,916 - INFO - 127.0.0.1 - - [20/Aug/2026 14:06:45] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 14:08:53,680 - INFO - 127.0.0.1 - - [20/Aug/2026 14:08:53] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 14:27:58,380 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-20 14:27:58,511 - INFO -  * Restarting with stat
+2026-08-20 14:27:59,578 - WARNING -  * Debugger is active!
+2026-08-20 14:27:59,581 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 14:28:06,787 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:06] "GET / HTTP/1.1" 200 -
+2026-08-20 14:28:06,823 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:28:06,841 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:06] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:28:06,842 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:06] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:28:07,968 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:07] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:28:14,043 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:14] "POST /buscar-rastreabilidade HTTP/1.1" 200 -

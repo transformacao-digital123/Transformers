@@ -1,65 +1,93 @@
 {
-    "LUARI-1AC642D5": {
-        "odp": "26/02293",
-        "operador": "Luis",
-        "maquina": "01",
+    "LUARI-B39FD621": {
+        "odp": "26/02257",
+        "operador": "Daves",
+        "maquina": "13",
         "turno": "Noite",
-        "data": "14072026"
+        "data": "16072026"
     },
-    "LUARI-55532C94": {
-        "odp": "26/02319",
-        "operador": "Luis",
-        "maquina": "01",
+    "LUARI-5B742ED5": {
+        "odp": "26/02258",
+        "operador": "Daves",
+        "maquina": "13",
         "turno": "Noite",
-        "data": "14072026"
+        "data": "16072026"
     },
-    "LUARI-4E8ACFD6": {
-        "odp": "26/02087",
+    "LUARI-8F06A263": {
+        "odp": "26/02263",
+        "operador": "Daves",
+        "maquina": "13",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-1814794E": {
+        "odp": "26/02408",
+        "operador": "Luis",
+        "maquina": "11",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-37E66CA5": {
+        "odp": "26/02297",
+        "operador": "Luis",
+        "maquina": "11",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-E1FBB07E": {
+        "odp": "26/02376",
+        "operador": "Luis",
+        "maquina": "11",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-BFDDCDAA": {
+        "odp": "26/02299",
+        "operador": "Mateus",
+        "maquina": "12",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-3F2FD81E": {
+        "odp": "26/02417",
+        "operador": "Mateus",
+        "maquina": "12",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-19768A2F": {
+        "odp": "26/02411",
+        "operador": "Mateus",
+        "maquina": "12",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-EA6B1824": {
+        "odp": "26/02187",
+        "operador": "Mateus",
+        "maquina": "12",
+        "turno": "Noite",
+        "data": "16072026"
+    },
+    "LUARI-C1AFC93D": {
+        "odp": "26/02260",
         "operador": "Clebison",
         "maquina": "15",
         "turno": "Noite",
-        "data": "14072026"
+        "data": "16072026"
     },
-    "LUARI-413873C6": {
-        "odp": "26/02317",
+    "LUARI-25C05E1F": {
+        "odp": "26/02413",
         "operador": "Clebison",
         "maquina": "15",
         "turno": "Noite",
-        "data": "14072026"
+        "data": "16072026"
     },
-    "LUARI-681399F2": {
-        "odp": "26/02353",
-        "operador": "Mateus",
-        "maquina": "13",
+    "LUARI-1274CAFE": {
+        "odp": "26/02418",
+        "operador": "Clebison",
+        "maquina": "15",
         "turno": "Noite",
-        "data": "14072026"
-    },
-    "LUARI-D38FAA94": {
-        "odp": "26/02244",
-        "operador": "Mateus",
-        "maquina": "13",
-        "turno": "Noite",
-        "data": "14072026"
-    },
-    "LUARI-AD98D212": {
-        "odp": "26/02225",
-        "operador": "Daves",
-        "maquina": "Permaco",
-        "turno": "Noite",
-        "data": "14072026"
-    },
-    "LUARI-8F67F433": {
-        "odp": "26/02345",
-        "operador": "Daves",
-        "maquina": "Permaco",
-        "turno": "Noite",
-        "data": "14072026"
-    },
-    "LUARI-FECB7213": {
-        "odp": "26/01929",
-        "operador": "Daves",
-        "maquina": "Permaco",
-        "turno": "Noite",
-        "data": "15072026"
+        "data": "16072026"
     }
 }
