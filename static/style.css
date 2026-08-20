@@ -293,5 +293,6 @@ label{
         margin-bottom: 15px;
         flex-shrink: 0;
         word-break: break-word;
+        padding-right: 10px;
     }
 }

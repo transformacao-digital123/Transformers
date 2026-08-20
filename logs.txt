@@ -6133,3 +6133,42 @@
 2026-08-20 14:28:06,842 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:06] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
 2026-08-20 14:28:07,968 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:07] "GET /camera HTTP/1.1" 200 -
 2026-08-20 14:28:14,043 - INFO - 127.0.0.1 - - [20/Aug/2026 14:28:14] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 14:34:49,055 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-20 14:34:49,055 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-20 14:34:49,056 - INFO -  * Restarting with stat
+2026-08-20 14:34:50,313 - WARNING -  * Debugger is active!
+2026-08-20 14:34:50,313 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 14:35:51,900 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-20 14:35:52,025 - INFO -  * Restarting with stat
+2026-08-20 14:35:52,990 - WARNING -  * Debugger is active!
+2026-08-20 14:35:52,990 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 14:35:56,673 - INFO - 127.0.0.1 - - [20/Aug/2026 14:35:56] "GET / HTTP/1.1" 200 -
+2026-08-20 14:35:56,703 - INFO - 127.0.0.1 - - [20/Aug/2026 14:35:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:35:56,722 - INFO - 127.0.0.1 - - [20/Aug/2026 14:35:56] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:35:56,722 - INFO - 127.0.0.1 - - [20/Aug/2026 14:35:56] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:35:57,978 - INFO - 127.0.0.1 - - [20/Aug/2026 14:35:57] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:36:13,762 - INFO - 127.0.0.1 - - [20/Aug/2026 14:36:13] "POST / HTTP/1.1" 200 -
+2026-08-20 14:42:07,550 - INFO - 127.0.0.1 - - [20/Aug/2026 14:42:07] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:42:16,585 - INFO - 127.0.0.1 - - [20/Aug/2026 14:42:16] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 14:42:42,302 - INFO - 127.0.0.1 - - [20/Aug/2026 14:42:42] "GET /camera HTTP/1.1" 200 -
+2026-08-20 14:42:46,849 - INFO - 127.0.0.1 - - [20/Aug/2026 14:42:46] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 14:45:56,161 - INFO - 127.0.0.1 - - [20/Aug/2026 14:45:56] "GET / HTTP/1.1" 200 -
+2026-08-20 14:45:56,226 - INFO - 127.0.0.1 - - [20/Aug/2026 14:45:56] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-20 14:45:56,242 - INFO - 127.0.0.1 - - [20/Aug/2026 14:45:56] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:45:56,243 - INFO - 127.0.0.1 - - [20/Aug/2026 14:45:56] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:46:00,901 - INFO - 127.0.0.1 - - [20/Aug/2026 14:46:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:46:00,981 - INFO - 127.0.0.1 - - [20/Aug/2026 14:46:00] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 14:46:10,027 - INFO - 127.0.0.1 - - [20/Aug/2026 14:46:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 14:47:05,338 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:05] "GET / HTTP/1.1" 200 -
+2026-08-20 14:47:05,404 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:05] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-20 14:47:05,409 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:05] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:47:05,412 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:05] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:47:07,795 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:47:07,895 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 14:47:38,305 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:38] "GET / HTTP/1.1" 200 -
+2026-08-20 14:47:38,370 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:38] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-20 14:47:38,374 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:38] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 14:47:38,376 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:38] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 14:47:41,492 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 14:47:41,591 - INFO - 127.0.0.1 - - [20/Aug/2026 14:47:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
