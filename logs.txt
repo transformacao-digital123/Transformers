@@ -6073,3 +6073,9 @@
 2026-08-20 11:52:52,128 - INFO - 127.0.0.1 - - [20/Aug/2026 11:52:52] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
 2026-08-20 11:52:53,461 - INFO - 127.0.0.1 - - [20/Aug/2026 11:52:53] "GET /camera HTTP/1.1" 200 -
 2026-08-20 11:53:00,886 - INFO - 127.0.0.1 - - [20/Aug/2026 11:53:00] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 13:06:17,631 - INFO - 127.0.0.1 - - [20/Aug/2026 13:06:17] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 13:11:20,764 - INFO - 127.0.0.1 - - [20/Aug/2026 13:11:20] "GET / HTTP/1.1" 200 -
+2026-08-20 13:11:20,805 - INFO - 127.0.0.1 - - [20/Aug/2026 13:11:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 13:11:20,821 - INFO - 127.0.0.1 - - [20/Aug/2026 13:11:20] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 13:11:20,822 - INFO - 127.0.0.1 - - [20/Aug/2026 13:11:20] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 13:11:22,946 - INFO - 127.0.0.1 - - [20/Aug/2026 13:11:22] "GET /camera HTTP/1.1" 200 -
