@@ -113,15 +113,20 @@ def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido):
 
 def preencher_odps(ordens_operador):
 
-    planilha = load_workbook("modelos/OdP's de cada funcionário.xlsx")
-
     primeira_ordem = ordens_operador[0]
+
+    caminho_saida = f"temporario/ODP_{primeira_ordem['operador']}.xlsx"
+
+    if os.path.exists(caminho_saida):
+        planilha = load_workbook(caminho_saida)
+    else:
+        planilha = load_workbook("modelos/OdP's de cada funcionário.xlsx")
 
     data = primeira_ordem["data"].strftime("%d-%m-%Y")
     nome_aba = f"{data}_{primeira_ordem["turno"]}"
 
-    aba_modelo = planilha.active
-
+# Assim fica especificado pro programa sempre usar de parâmetro a aba com o nome "Modelo"
+    aba_modelo = planilha["Modelo"]
 
     if nome_aba in planilha.sheetnames:
         aba = planilha[nome_aba]
@@ -143,14 +148,14 @@ def preencher_odps(ordens_operador):
     aba["F3"].font = FONTE_PADRAO
     aba["F3"].alignment = ALINHAMENTO_PADRAO
 
-    aba["I3"] = primeira_ordem["data"]
-    aba["I3"].number_format = "dd/mm/yyyy"
-    aba["I3"].font = FONTE_PADRAO
-    aba["I3"].alignment = ALINHAMENTO_PADRAO
-
-    aba["K3"] = primeira_ordem["turno"]
+    aba["K3"] = primeira_ordem["data"]
+    aba["K3"].number_format = "dd/mm/yyyy"
     aba["K3"].font = FONTE_PADRAO
     aba["K3"].alignment = ALINHAMENTO_PADRAO
+
+    aba["M3"] = primeira_ordem["turno"]
+    aba["M3"].font = FONTE_PADRAO
+    aba["M3"].alignment = ALINHAMENTO_PADRAO
 
     linha = 6
 
@@ -158,11 +163,11 @@ def preencher_odps(ordens_operador):
 
         aba[f"C{linha}"] = ordem["numero_pedido"]
         aba[f"D{linha}"] = ordem["odp"]
-        aba[f"H{linha}"] = ordem["cliente"]
-        aba[f"I{linha}"] = ordem["padrao"]
-        aba[f"J{linha}"] = ordem["filme"]
-        aba[f"K{linha}"] = ordem["peso_tubete"]
-        aba[f"L{linha}"] = ordem.get("observacao", "")
+        aba[f"J{linha}"] = ordem["cliente"]
+        aba[f"K{linha}"] = ordem["padrao"]
+        aba[f"L{linha}"] = ordem["filme"]
+        aba[f"M{linha}"] = ordem["peso_tubete"]
+        aba[f"N{linha}"] = ordem.get("observacao", "")
 
         aba[f"C{linha}"].font = FONTE_PADRAO
         aba[f"D{linha}"].font = FONTE_PADRAO
@@ -173,7 +178,9 @@ def preencher_odps(ordens_operador):
         aba[f"I{linha}"].font = FONTE_PADRAO
         aba[f"J{linha}"].font = FONTE_PADRAO
         aba[f"K{linha}"].font = FONTE_PADRAO
-        aba[f"L{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
+        aba[f"L{linha}"].font = FONTE_PADRAO
+        aba[f"M{linha}"].font = FONTE_PADRAO
+        aba[f"N{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
         
         aba[f"C{linha}"].alignment = ALINHAMENTO_PADRAO
         aba[f"D{linha}"].alignment = ALINHAMENTO_PADRAO
@@ -185,14 +192,10 @@ def preencher_odps(ordens_operador):
         aba[f"J{linha}"].alignment = ALINHAMENTO_PADRAO
         aba[f"K{linha}"].alignment = ALINHAMENTO_PADRAO
         aba[f"L{linha}"].alignment = ALINHAMENTO_PADRAO
+        aba[f"M{linha}"].alignment = ALINHAMENTO_PADRAO
+        aba[f"N{linha}"].alignment = ALINHAMENTO_PADRAO
 
-        linha += 2
-        
-# Serve para encontrar o título dentro arquivo, assim, sem esses ussents apagaria provavelmente a variável e ficaria sujeito a erro de tipagem devido a limitações do python
-    if aba_modelo.title in planilha.sheetnames:
-        planilha.remove(aba_modelo)
-
-    caminho_saida = f"temporario/ODP_{primeira_ordem['operador']}.xlsx"
+        linha += 2  
 
     planilha.save(caminho_saida)
     planilha.close()

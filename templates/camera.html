@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,11 +82,24 @@
                         }</p>
                     <p><strong>TURNO:</strong> ${dados.turno}</p>
 
+                    <br>
+
+                    <label>Nº do PALLET: <input type:"text" id = "numero_pallet"></label>
+                    <label>PESO LÍQUIDO: <input type:"text" id = "peso_liquido"></label>
+                    <label>PESO TOTAL: <input type:"text" id = "peso_total"></label>
+                    <label>OP MATERIAL: <input type:"text" id = "op_material"></label>
+                    <label>OP TUBETE: <input type:"text" id = "op_tubete"></label>
+
                     <p><strong>📍 Linha:</strong> ${dados.linha}</p>
 
-                    <button>
-                        Abrir planilha
-                    </button>
+                    <a href = "https://docs.google.com/spreadsheets/d/1llp4IY3t3d4IhiyKo-hyRoj3M_EBG3QpMhSjyUQS21U/edit?gid=0#gid=0"
+                    target = "_blank">
+
+                        <button>
+                            Abrir planilha
+                        </button>
+                        
+                    </a>
 
                `;
             })

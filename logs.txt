@@ -5920,3 +5920,150 @@
 2026-08-19 14:38:12,319 - INFO - 127.0.0.1 - - [19/Aug/2026 14:38:12] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
 2026-08-19 14:39:36,506 - INFO - 127.0.0.1 - - [19/Aug/2026 14:39:36] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
 2026-08-19 14:39:36,903 - INFO - 127.0.0.1 - - [19/Aug/2026 14:39:36] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-19 15:09:16,068 - INFO - 127.0.0.1 - - [19/Aug/2026 15:09:16] "GET / HTTP/1.1" 200 -
+2026-08-19 15:09:16,112 - INFO - 127.0.0.1 - - [19/Aug/2026 15:09:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-19 15:09:16,116 - INFO - 127.0.0.1 - - [19/Aug/2026 15:09:16] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-19 15:09:16,118 - INFO - 127.0.0.1 - - [19/Aug/2026 15:09:16] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-19 15:09:18,772 - INFO - 127.0.0.1 - - [19/Aug/2026 15:09:18] "GET /camera HTTP/1.1" 200 -
+2026-08-19 15:09:32,853 - INFO - 127.0.0.1 - - [19/Aug/2026 15:09:32] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-19 15:39:41,805 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-19 15:39:42,182 - INFO -  * Restarting with stat
+2026-08-19 15:39:43,266 - WARNING -  * Debugger is active!
+2026-08-19 15:39:43,268 - INFO -  * Debugger PIN: 133-117-302
+2026-08-19 15:39:48,832 - INFO - 127.0.0.1 - - [19/Aug/2026 15:39:48] "GET / HTTP/1.1" 200 -
+2026-08-19 15:39:48,871 - INFO - 127.0.0.1 - - [19/Aug/2026 15:39:48] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-19 15:39:48,871 - INFO - 127.0.0.1 - - [19/Aug/2026 15:39:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-19 15:39:48,871 - INFO - 127.0.0.1 - - [19/Aug/2026 15:39:48] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-19 15:39:59,502 - INFO - 127.0.0.1 - - [19/Aug/2026 15:39:59] "POST / HTTP/1.1" 200 -
+2026-08-19 15:41:36,009 - INFO - 127.0.0.1 - - [19/Aug/2026 15:41:36] "POST / HTTP/1.1" 200 -
+2026-08-19 15:42:12,948 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-19 15:42:13,064 - INFO -  * Restarting with stat
+2026-08-19 15:42:13,792 - WARNING -  * Debugger is active!
+2026-08-19 15:42:13,794 - INFO -  * Debugger PIN: 133-117-302
+2026-08-19 15:42:18,340 - INFO - 127.0.0.1 - - [19/Aug/2026 15:42:18] "GET / HTTP/1.1" 200 -
+2026-08-19 15:42:18,381 - INFO - 127.0.0.1 - - [19/Aug/2026 15:42:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-19 15:42:18,384 - INFO - 127.0.0.1 - - [19/Aug/2026 15:42:18] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-19 15:42:18,385 - INFO - 127.0.0.1 - - [19/Aug/2026 15:42:18] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-19 15:42:31,065 - INFO - 127.0.0.1 - - [19/Aug/2026 15:42:31] "POST / HTTP/1.1" 200 -
+2026-08-20 07:04:20,601 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-20 07:04:20,601 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-20 07:04:20,601 - INFO -  * Restarting with stat
+2026-08-20 07:04:21,408 - WARNING -  * Debugger is active!
+2026-08-20 07:04:21,408 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 07:04:31,668 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-20 07:04:31,668 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-20 07:04:31,670 - INFO -  * Restarting with stat
+2026-08-20 07:04:32,325 - WARNING -  * Debugger is active!
+2026-08-20 07:04:32,325 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 07:05:10,387 - INFO - 127.0.0.1 - - [20/Aug/2026 07:05:10] "GET / HTTP/1.1" 200 -
+2026-08-20 07:05:10,533 - INFO - 127.0.0.1 - - [20/Aug/2026 07:05:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-20 07:05:12,374 - INFO - 127.0.0.1 - - [20/Aug/2026 07:05:12] "GET /camera HTTP/1.1" 200 -
+2026-08-20 08:44:55,261 - INFO - 127.0.0.1 - - [20/Aug/2026 08:44:55] "GET / HTTP/1.1" 200 -
+2026-08-20 08:44:55,321 - INFO - 127.0.0.1 - - [20/Aug/2026 08:44:55] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 08:44:55,327 - INFO - 127.0.0.1 - - [20/Aug/2026 08:44:55] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 08:44:55,332 - INFO - 127.0.0.1 - - [20/Aug/2026 08:44:55] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 08:44:56,371 - INFO - 127.0.0.1 - - [20/Aug/2026 08:44:56] "GET /camera HTTP/1.1" 200 -
+2026-08-20 08:45:25,678 - INFO - 127.0.0.1 - - [20/Aug/2026 08:45:25] "POST / HTTP/1.1" 200 -
+2026-08-20 08:45:25,690 - INFO - 127.0.0.1 - - [20/Aug/2026 08:45:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 08:45:25,693 - INFO - 127.0.0.1 - - [20/Aug/2026 08:45:25] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 08:45:25,695 - INFO - 127.0.0.1 - - [20/Aug/2026 08:45:25] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 08:50:43,425 - INFO - 127.0.0.1 - - [20/Aug/2026 08:50:43] "POST / HTTP/1.1" 200 -
+2026-08-20 08:50:43,439 - INFO - 127.0.0.1 - - [20/Aug/2026 08:50:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 08:50:43,445 - INFO - 127.0.0.1 - - [20/Aug/2026 08:50:43] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 08:50:43,447 - INFO - 127.0.0.1 - - [20/Aug/2026 08:50:43] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 08:50:48,288 - INFO - 127.0.0.1 - - [20/Aug/2026 08:50:48] "GET /camera HTTP/1.1" 200 -
+2026-08-20 08:51:33,469 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-20 08:51:33,703 - INFO -  * Restarting with stat
+2026-08-20 08:51:35,312 - WARNING -  * Debugger is active!
+2026-08-20 08:51:35,323 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 08:51:42,632 - INFO - 127.0.0.1 - - [20/Aug/2026 08:51:42] "GET / HTTP/1.1" 200 -
+2026-08-20 08:51:42,669 - INFO - 127.0.0.1 - - [20/Aug/2026 08:51:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 08:51:42,674 - INFO - 127.0.0.1 - - [20/Aug/2026 08:51:42] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 08:51:42,675 - INFO - 127.0.0.1 - - [20/Aug/2026 08:51:42] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 08:51:44,705 - INFO - 127.0.0.1 - - [20/Aug/2026 08:51:44] "POST / HTTP/1.1" 200 -
+2026-08-20 08:51:44,728 - INFO - 127.0.0.1 - - [20/Aug/2026 08:51:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 08:51:44,732 - INFO - 127.0.0.1 - - [20/Aug/2026 08:51:44] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 08:51:44,735 - INFO - 127.0.0.1 - - [20/Aug/2026 08:51:44] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 08:52:05,874 - INFO - 127.0.0.1 - - [20/Aug/2026 08:52:05] "GET / HTTP/1.1" 200 -
+2026-08-20 08:52:16,818 - INFO - 127.0.0.1 - - [20/Aug/2026 08:52:16] "POST / HTTP/1.1" 200 -
+2026-08-20 08:52:26,109 - INFO - 127.0.0.1 - - [20/Aug/2026 08:52:26] "GET /camera HTTP/1.1" 200 -
+2026-08-20 08:52:34,510 - INFO - 127.0.0.1 - - [20/Aug/2026 08:52:34] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 08:52:42,711 - INFO - 127.0.0.1 - - [20/Aug/2026 08:52:42] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 09:10:15,326 - INFO - 127.0.0.1 - - [20/Aug/2026 09:10:15] "GET / HTTP/1.1" 200 -
+2026-08-20 09:10:15,371 - INFO - 127.0.0.1 - - [20/Aug/2026 09:10:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 09:10:15,373 - INFO - 127.0.0.1 - - [20/Aug/2026 09:10:15] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 09:10:15,379 - INFO - 127.0.0.1 - - [20/Aug/2026 09:10:15] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 09:10:27,859 - INFO - 127.0.0.1 - - [20/Aug/2026 09:10:27] "POST / HTTP/1.1" 200 -
+2026-08-20 09:10:58,572 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-20 09:10:58,699 - INFO -  * Restarting with stat
+2026-08-20 09:10:59,701 - WARNING -  * Debugger is active!
+2026-08-20 09:10:59,701 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 09:11:06,169 - INFO - 127.0.0.1 - - [20/Aug/2026 09:11:06] "GET / HTTP/1.1" 200 -
+2026-08-20 09:11:06,206 - INFO - 127.0.0.1 - - [20/Aug/2026 09:11:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 09:11:06,214 - INFO - 127.0.0.1 - - [20/Aug/2026 09:11:06] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 09:11:06,214 - INFO - 127.0.0.1 - - [20/Aug/2026 09:11:06] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 09:11:19,325 - INFO - 127.0.0.1 - - [20/Aug/2026 09:11:19] "POST / HTTP/1.1" 200 -
+2026-08-20 10:12:36,657 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-20 10:12:36,835 - INFO -  * Restarting with stat
+2026-08-20 10:12:38,035 - WARNING -  * Debugger is active!
+2026-08-20 10:12:38,035 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 10:13:29,184 - INFO - 127.0.0.1 - - [20/Aug/2026 10:13:29] "GET / HTTP/1.1" 200 -
+2026-08-20 10:13:34,170 - INFO - 127.0.0.1 - - [20/Aug/2026 10:13:34] "GET / HTTP/1.1" 200 -
+2026-08-20 10:13:34,210 - INFO - 127.0.0.1 - - [20/Aug/2026 10:13:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 10:13:34,210 - INFO - 127.0.0.1 - - [20/Aug/2026 10:13:34] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 10:13:34,210 - INFO - 127.0.0.1 - - [20/Aug/2026 10:13:34] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 10:13:47,873 - INFO - 127.0.0.1 - - [20/Aug/2026 10:13:47] "POST / HTTP/1.1" 200 -
+2026-08-20 10:14:43,095 - INFO - 127.0.0.1 - - [20/Aug/2026 10:14:43] "POST / HTTP/1.1" 200 -
+2026-08-20 10:41:00,737 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-20 10:41:00,943 - INFO -  * Restarting with stat
+2026-08-20 10:41:02,083 - WARNING -  * Debugger is active!
+2026-08-20 10:41:02,083 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 10:41:11,681 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:11] "GET / HTTP/1.1" 200 -
+2026-08-20 10:41:11,695 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:11] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 10:41:11,695 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 10:41:11,700 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:11] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 10:41:24,896 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:24] "POST / HTTP/1.1" 200 -
+2026-08-20 10:41:45,166 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:45] "POST / HTTP/1.1" 200 -
+2026-08-20 10:41:45,187 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 10:41:45,190 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:45] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 10:41:45,193 - INFO - 127.0.0.1 - - [20/Aug/2026 10:41:45] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 10:44:33,514 - INFO - 127.0.0.1 - - [20/Aug/2026 10:44:33] "GET / HTTP/1.1" 200 -
+2026-08-20 10:44:33,529 - INFO - 127.0.0.1 - - [20/Aug/2026 10:44:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 10:44:33,532 - INFO - 127.0.0.1 - - [20/Aug/2026 10:44:33] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 10:44:33,534 - INFO - 127.0.0.1 - - [20/Aug/2026 10:44:33] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 10:44:51,442 - INFO - 127.0.0.1 - - [20/Aug/2026 10:44:51] "POST / HTTP/1.1" 200 -
+2026-08-20 10:44:51,453 - INFO - 127.0.0.1 - - [20/Aug/2026 10:44:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 10:44:51,458 - INFO - 127.0.0.1 - - [20/Aug/2026 10:44:51] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 10:44:51,461 - INFO - 127.0.0.1 - - [20/Aug/2026 10:44:51] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 10:52:09,781 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-20 10:52:09,922 - INFO -  * Restarting with stat
+2026-08-20 10:52:10,979 - WARNING -  * Debugger is active!
+2026-08-20 10:52:10,981 - INFO -  * Debugger PIN: 133-117-302
+2026-08-20 10:52:59,407 - INFO - 127.0.0.1 - - [20/Aug/2026 10:52:59] "GET / HTTP/1.1" 200 -
+2026-08-20 10:52:59,424 - INFO - 127.0.0.1 - - [20/Aug/2026 10:52:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 10:52:59,426 - INFO - 127.0.0.1 - - [20/Aug/2026 10:52:59] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 10:52:59,430 - INFO - 127.0.0.1 - - [20/Aug/2026 10:52:59] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 10:53:13,083 - INFO - 127.0.0.1 - - [20/Aug/2026 10:53:13] "POST / HTTP/1.1" 200 -
+2026-08-20 10:53:51,318 - INFO - 127.0.0.1 - - [20/Aug/2026 10:53:51] "POST / HTTP/1.1" 200 -
+2026-08-20 11:02:35,020 - INFO - 127.0.0.1 - - [20/Aug/2026 11:02:35] "POST / HTTP/1.1" 200 -
+2026-08-20 11:42:46,623 - INFO - 127.0.0.1 - - [20/Aug/2026 11:42:46] "GET / HTTP/1.1" 200 -
+2026-08-20 11:42:46,659 - INFO - 127.0.0.1 - - [20/Aug/2026 11:42:46] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 11:42:46,662 - INFO - 127.0.0.1 - - [20/Aug/2026 11:42:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 11:42:46,665 - INFO - 127.0.0.1 - - [20/Aug/2026 11:42:46] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 11:42:48,277 - INFO - 127.0.0.1 - - [20/Aug/2026 11:42:48] "GET /camera HTTP/1.1" 200 -
+2026-08-20 11:42:59,352 - INFO - 127.0.0.1 - - [20/Aug/2026 11:42:59] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 11:43:04,955 - INFO - 127.0.0.1 - - [20/Aug/2026 11:43:04] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 11:46:15,022 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:15] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 11:46:19,688 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:19] "GET /camera HTTP/1.1" 200 -
+2026-08-20 11:46:19,760 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:19] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 11:46:28,328 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:28] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 11:46:34,590 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:34] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-20 11:46:52,430 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:52] "GET / HTTP/1.1" 200 -
+2026-08-20 11:46:52,438 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-20 11:46:52,438 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:52] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-20 11:46:52,438 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:52] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-20 11:46:54,938 - INFO - 127.0.0.1 - - [20/Aug/2026 11:46:54] "GET /camera HTTP/1.1" 200 -
+2026-08-20 11:48:05,125 - INFO - 127.0.0.1 - - [20/Aug/2026 11:48:05] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-20 11:48:14,617 - INFO - 127.0.0.1 - - [20/Aug/2026 11:48:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -

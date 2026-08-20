@@ -16,12 +16,17 @@ def converter_google_sheets(link):
 
     rastreabilidade = {}
 
+    print("LINK RECEBIDO:", link)
+
     os.makedirs("temporario", exist_ok=True)
 
     for nome in os.listdir("temporario"):
          caminho = os.path.join("temporario", nome)
 
          if os.path.isfile(caminho):
+
+              if nome.startswith("ODP_") and nome.endswith(".xlsx"):
+                   continue
 
               try:
                 os.remove(caminho)
@@ -230,4 +235,3 @@ def converter_google_sheets(link):
     salvar_rastreabilidade(rastreabilidade)
 
     return arquivo_zip
-
