@@ -25,6 +25,7 @@ def converter_google_sheets(link):
 
          if os.path.isfile(caminho):
 
+# Se começar com ODP_ seguirá reto e irá apagar o resto
               if nome.startswith("ODP_") and nome.endswith(".xlsx"):
                    continue
 

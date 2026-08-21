@@ -7,6 +7,7 @@ from servicos.conversor import converter_pdf
 from servicos.google_sheet import converter_google_sheets, criar_zip
 from servicos.tratador_erros import tratar_erro
 from servicos.qrcode import buscar_rastreabilidade, localizar_aba
+from servicos.apontamento import atualizar_odp
 
 app = Flask(__name__)
 
@@ -89,5 +90,35 @@ def buscar_rastreabilidade_api():
           "linha": localizacao["linha"]
     }
 
+@app.route("/atualizar-rastreabilidade",methods=["POST"])
+def atualizar_rastreabilidade_api():
+    texto = request.get_json()
+
+    identificador = texto["identificador"]
+
+    dados = buscar_rastreabilidade(identificador)
+
+    if dados is None:
+        return {"Erro": "Identificador não encontrado"}, 404
+      
+    localizacao = localizar_aba(dados)
+
+    if localizacao is None:
+        return {"Erro": "ODP não encontrada"}, 404
+
+    atualizar_odp (
+        localizacao["arquivo"],
+        localizacao["aba"],
+        localizacao["linha"],
+        identificador,
+        texto
+    )
+
+    return {
+         "mensagem": "Dados atualizados com sucesso",
+         "arquivo": localizacao["arquivo"],
+         "aba": localizacao["aba"],
+         "linha": localizacao["linha"]
+    }
 if __name__ == "__main__":
     app.run(debug=True)

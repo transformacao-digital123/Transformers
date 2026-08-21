@@ -2,6 +2,7 @@ from openpyxl import load_workbook
 from openpyxl.styles import Font, Alignment
 import os
 from openpyxl.drawing.image import Image
+from datetime import datetime
 
 ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center",wrap_text=True)
 
@@ -24,7 +25,7 @@ def agrupar_por_operador(ordens):
 def selecionar_apontamento(turno, operador,ordens_operador):
 
     if turno == "Manhã":
-        caminho_modelo = "modelos/apontamneto_manha.xlsx"
+        caminho_modelo = "modelos/apontamento_manha.xlsx"
     elif turno == "Noite":
         caminho_modelo = "modelos/apontamento_noite.xlsx"
     else:
@@ -116,15 +117,31 @@ def preencher_odps(ordens_operador):
     primeira_ordem = ordens_operador[0]
 
     caminho_saida = f"temporario/ODP_{primeira_ordem['operador']}.xlsx"
-    print("CAMINHO:", os.path.abspath(caminho_saida))
-    print("ARQUIVO EXISTE?", os.path.exists(caminho_saida))
 
     if os.path.exists(caminho_saida):
-        print("ABRINDO ARQUIVO EXISTENTE")
         planilha = load_workbook(caminho_saida)
     else:
-        print("CRIANDO A PARTIR DO MODELO")
         planilha = load_workbook("modelos/OdP's de cada funcionário.xlsx")
+
+# Se a aba historico já existir na planilha ela é guardada na variável historico para ser usada mais pra frente
+    if "historico" in planilha.sheetnames:
+        historico = planilha["historico"]
+    else:
+
+# Se não tiver, procra por historico_modelo, que é o nome da aba no arquivo principal
+# Historico_modelo guarda na variavel historico modelo pra ser usado mais pra frente
+# Faz uma cópia da planilha da aba do historico_modelo na em historico
+# O títuloda aba dessa planilha será historico
+# Depois disso a planilha historico_modelo será apagada e o loop não passará mais por aqui porque a aba historico já existirá no arquivo
+        if "historico_modelo" in planilha.sheetnames:
+            historico_modelo = planilha["historico_modelo"]
+            historico = planilha.copy_worksheet(historico_modelo)
+            historico.title = "historico"
+            planilha.remove(historico_modelo)
+
+ # caso nenhuma das 2 abas forem achada ele cria uma aba vazia com o nome historico afim de evitar dar erro 
+        else:
+            historico = planilha.create_chartsheet(title="historico")
 
     data = primeira_ordem["data"].strftime("%d-%m-%Y")
     nome_aba = f"{data}_{primeira_ordem["turno"]}"
@@ -207,6 +224,86 @@ def preencher_odps(ordens_operador):
     print("SALVANDO O ARQUIVO:", os.path.abspath(caminho_saida))
     return caminho_saida
 
+def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
+    planilha = load_workbook(caminho_arquivo)
+
+    aba = planilha[nome_aba]
+
+    historico = planilha["historico"]
+
+    campos = {
+        "numero_pallet": 'E',
+        "peso_liquido": "F",
+        "peso_total": "G",
+        "op_material": "H",
+        "op_tubete": "I"
+    }
+
+    linha_histotico = historico.max_row + 1
+
+    houve_alteracao = False
+
+# Item faz uma lista onde campo é a chave e coluna valor
+    for campo,coluna in campos.items():
+
+# O .get() irá procurar se algum dos valores de campo está dados, se não tiver retornará None
+        novo_valor = dados.get(campo)
+
+# Se o operador não preencheu o campo ou deixou em branco, não altera nada, ele continua
+        if novo_valor in (None,""):
+            continue
+# Acessa a célula exata da aba principal e lê o cionteúdo del através do .value()
+        valor_anterior = aba[f"{coluna}{linha}"].value 
+
+# Se os valores forem iguais o sistema continua, isso evita que o programa gaste processamento alterando valores iguais e acrescentando linhas de histórico inúteis 
+        if str(valor_anterior) == str(novo_valor):
+            continue
+
+# Após passar pela filtragem as células da aba principal recebe o novo valor
+        aba[f"{coluna}{linha}"] = novo_valor
+        houve_alteracao = True
+
+        agora = datetime.now()
+
+        historico[f"C{linha_histotico}"] = agora.strftime("%d%m%Y")
+        historico[f"D{linha_histotico}"] = agora.strftime("%H:%M:%S")
+        historico[f"E{linha_histotico}"] = identificador
+        historico[f"F{linha_histotico}"] = aba[f"D{linha}"].value
+        historico[f"G{linha_histotico}"] = dados.get("acao", "")
+        historico[f"H{linha_histotico}"] = valor_anterior
+        historico[f"I{linha_histotico}"] = novo_valor
+
+        linha_histotico += 1
+
+
+
+    if houve_alteracao:
+        planilha.save(caminho_arquivo)
+
+    planilha.close() 
+
+def registrar_historico(caminho_arquivo,identificador,odp,acao,valor_anterior,novo_valor):
+
+    planilha = load_workbook(caminho_arquivo)
+
+# Procura pela aba "historico"
+    historico = planilha["historico"]
+
+# Essa linha vizualiza qual a última linha preenchida da tabela +1 pra garantir que comece na linha em branco
+    linha = historico.max_row + 1
+
+    agora = datetime.now()
+
+    historico[f"C{linha}"] = agora.strftime("%d%m%Y")
+    historico[f"D{linha}"] = agora.strftime("%H:%M:%S")
+    historico[f"E{linha}"] = identificador
+    historico[f"F{linha}"] = odp
+    historico[f"G{linha}"] = acao
+    historico[f"H{linha}"] = valor_anterior
+    historico[f"I{linha}"] = novo_valor
+
+    planilha.save(caminho_arquivo)
+    planilha.close()
 # Como funciona o Apontamento
 
 # app.py
