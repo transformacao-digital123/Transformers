@@ -2,6 +2,7 @@
 # arquivos do Excel preservando sua estrutura.  
 from openpyxl import load_workbook
 import os
+import secrets
 
 from servicos.planilha import preencher_planilha
 from servicos.utilirarios import criar_zip
@@ -224,12 +225,19 @@ def converter_google_sheets(link):
         arquivo = selecionar_apontamento(turno, operador, ordens_operador)
         arquivos.append(arquivo)
 
-        arquivo_odps = preencher_odps(ordens_operador)
-        arquivos.append(arquivo_odps)
-
         for ordem in ordens_operador:
+
+# token_hex(4): Pede para o sistema gerar 4 bytes, cada byte representa um caracter, de dados aleatórios e transformá-los em uma string no formato hexadecimal (que usa números de 0 a 9 e letras de A a F).
+            identificador = "LUARI - " + secrets.token_hex(4).upper()
+
+# O identificador foi posto aquui para garantir que tanto preencher odp quanto eiquetas recebesse o mesmo,e não um independente cada um
+            ordem["identificador"] = identificador
+
             arquivo_etiqueta = preencher_etiqueta(ordem,rastreabilidade)
             arquivos.append(arquivo_etiqueta)
+
+    arquivo_odp = preencher_odps(ordens)
+    arquivos.append(arquivo_odp)
 
     arquivo_zip = criar_zip(arquivos)
 

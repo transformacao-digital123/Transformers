@@ -4,7 +4,6 @@ from openpyxl.styles import Font,Alignment
 from openpyxl import load_workbook
 import os
 import json
-import secrets
 
 from servicos.apontamento import localizar_odp
 
@@ -43,15 +42,16 @@ def interpretar_qrcode(identificador,rastreabilidade):
 
 def preencher_etiqueta(ordem,rastreabilidade):
 
-# token_hex(4): Pede para o sistema gerar 4 bytes, cada byte representa um caracter, de dados aleatórios e transformá-los em uma string no formato hexadecimal (que usa números de 0 a 9 e letras de A a F).
-        identificador = "LUARI-" + secrets.token_hex(4).upper()
+        identificador = ordem["identificador"]
 
         dados_identificador = {
                 "odp": ordem["odp"],
+                "numero_pedido": ordem["numero_pedido"],
+                "cliente": ordem["cliente"],
                 "operador": ordem["operador"],
                 "maquina": ordem["maquina"],
                 "turno": ordem["turno"],
-                "data": ordem["data"].strftime("%d%m%Y")
+                "data": ordem["data"].strftime("%d%m%Y"),
         }
 
         rastreabilidade[identificador] = dados_identificador
@@ -141,25 +141,48 @@ def formatar_data_aba(data):
        )
 
 def localizar_aba(dados):
-    data = formatar_data_aba(dados["data"])
 
-    nome_aba = f"{data}_{dados['turno']}"
+      data = formatar_data_aba(dados["data"])
+      print(data)
 
-    caminho_saida = f"temporario/ODP_{dados['operador']}.xlsx"
+      turno = dados["turno"]
 
-    planilha = load_workbook(caminho_saida)
+      nome_arquivo = f"{data}_{turno}.xlsx"
 
-    if nome_aba in planilha.sheetnames:
-        aba = planilha[nome_aba]
+      caminho_saida = os.path.join(f"temporario",nome_arquivo)
 
-        linha = localizar_odp(aba,dados["odp"])
+      print(f"Buscando arquivo em: {os.path.abspath(caminho_saida)}")
 
-        return {
-            "arquivo": caminho_saida,
-            "aba": nome_aba,
-            "linha": linha
-		}
-    else:
+      if not os.path.exists(caminho_saida):
+        print("ARQUIVO NÃO ENCONTRADO")
+        return None
+
+      planilha = load_workbook(caminho_saida)
+
+      print("ODP QUE ESTOU PROCURANDO:", repr(dados["odp"]))
+
+      aba = planilha.active
+
+      for aba in planilha.worksheets:
+
+        for linha in range(6, aba.max_row + 1):
+
+                valor_odp = aba[f"D{linha}"].value
+
+                print(
+                        "LINHA:", linha,
+                        "| ODP NA PLANILHA:", repr(valor_odp)
+                )
+
+                if str(aba[f"D{linha}"].value) == str(dados["odp"]).strip():
+                        print("ODP encontrada na linha:", linha)
+
+                        return {
+                                "arquivo": caminho_saida,
+                                "aba": aba.title,
+                                "linha": 6
+                                }
+        print("ODP não encontrada")
         return None
 
 def localizar_por_identificador(identificador):

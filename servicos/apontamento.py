@@ -96,7 +96,7 @@ def localizar_odp(aba, odp):
 # Se não retornará nada 
     return None
 
-def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido):
+def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido,op_material,op_tubete):
 
     linha = localizar_odp(aba,odp)
 
@@ -104,50 +104,27 @@ def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido):
         print(f"ODP não encontrada: {odp}")
         return False
     
-    aba[f'D{linha}'] = numero_pallet
-    aba[f'E{linha}'] = peso_total
-    aba[f'F{linha}'] = peso_liquido
+    aba[f'E{linha}'] = numero_pallet
+    aba[f'F{linha}'] = peso_total
+    aba[f'G{linha}'] = peso_liquido
+    aba[f'H{linha}'] = op_material
+    aba[f'I{linha}'] = op_tubete
 
     print(f"ODP {odp} encontrada na linha {linha}")
 
     return True
 
-def preencher_odps(ordens_operador):
+def preencher_odps(ordens):
 
-    primeira_ordem = ordens_operador[0]
+    primeira_ordem = ordens[0]
 
-    caminho_saida = f"temporario/ODP_{primeira_ordem['operador']}.xlsx"
-
-    if os.path.exists(caminho_saida):
-        planilha = load_workbook(caminho_saida)
-    else:
-        planilha = load_workbook("modelos/OdP's de cada funcionário.xlsx")
-
-# Se a aba historico já existir na planilha ela é guardada na variável historico para ser usada mais pra frente
-    if "historico" in planilha.sheetnames:
-        historico = planilha["historico"]
-    else:
-
-# Se não tiver, procra por historico_modelo, que é o nome da aba no arquivo principal
-# Historico_modelo guarda na variavel historico modelo pra ser usado mais pra frente
-# Faz uma cópia da planilha da aba do historico_modelo na em historico
-# O títuloda aba dessa planilha será historico
-# Depois disso a planilha historico_modelo será apagada e o loop não passará mais por aqui porque a aba historico já existirá no arquivo
-        if "historico_modelo" in planilha.sheetnames:
-            historico_modelo = planilha["historico_modelo"]
-            historico = planilha.copy_worksheet(historico_modelo)
-            historico.title = "historico"
-            planilha.remove(historico_modelo)
-
- # caso nenhuma das 2 abas forem achada ele cria uma aba vazia com o nome historico afim de evitar dar erro 
-        else:
-            historico = planilha.create_chartsheet(title="historico")
-
-    data = primeira_ordem["data"].strftime("%d-%m-%Y")
-    nome_aba = f"{data}_{primeira_ordem["turno"]}"
+    planilha = load_workbook("modelos/OdP's de cada odp.xlsx")
 
 # Assim fica especificado pro programa sempre usar de parâmetro a aba com o nome "Modelo"
     aba_modelo = planilha["Modelo"]
+
+    data = primeira_ordem["data"].strftime("%d-%m-%Y")
+    nome_aba = f"{data}_{primeira_ordem['turno']}"
 
     if nome_aba in planilha.sheetnames:
         aba = planilha[nome_aba]
@@ -155,68 +132,74 @@ def preencher_odps(ordens_operador):
         aba = planilha.copy_worksheet(aba_modelo)
         aba.title = nome_aba
 
-        logo = Image("imagens/luari_logo_empresa.png")
-        logo.width = 150
-        logo.height = 60
+    logo = Image("imagens/luari_logo_empresa.png")
+    logo.width = 150
+    logo.height = 60
+    aba.add_image(logo, "B2")
 
-        aba.add_image(logo, "B2")
+# congela o painel a partir ca célula A6
+    aba.freeze_panes = "A6"
 
-    aba["D3"] = primeira_ordem["operador"]
-    aba["D3"].font = FONTE_PADRAO
-    aba["D3"].alignment = ALINHAMENTO_PADRAO
+# Cabeçalho
 
-    aba["F3"] = primeira_ordem["maquina"]
-    aba["F3"].font = FONTE_PADRAO
-    aba["F3"].alignment = ALINHAMENTO_PADRAO
+    aba["D3"] = primeira_ordem["data"]
+    aba["D3"].number_format = "dd/mm/yyyy"
 
-    aba["K3"] = primeira_ordem["data"]
-    aba["K3"].number_format = "dd/mm/yyyy"
-    aba["K3"].font = FONTE_PADRAO
-    aba["K3"].alignment = ALINHAMENTO_PADRAO
+    aba["F3"] = primeira_ordem["turno"]
 
-    aba["M3"] = primeira_ordem["turno"]
-    aba["M3"].font = FONTE_PADRAO
-    aba["M3"].alignment = ALINHAMENTO_PADRAO
+    for celula in ("D3","F3"):
+        aba[celula].font = FONTE_PADRAO
+        aba[celula].alignment = ALINHAMENTO_PADRAO
 
     linha = 6
 
-    for ordem in ordens_operador:
+    for ordem in ordens:
 
         aba[f"C{linha}"] = ordem["numero_pedido"]
         aba[f"D{linha}"] = ordem["odp"]
+
+        # Valores que serão preenchidos na pesagem
+        aba[f"E{linha}"] = ""
+        aba[f"F{linha}"] = ""
+        aba[f"G{linha}"] = ""
+        aba[f"H{linha}"] = ""
+        aba[f"I{linha}"] = ""
+
         aba[f"J{linha}"] = ordem["cliente"]
         aba[f"K{linha}"] = ordem["padrao"]
         aba[f"L{linha}"] = ordem["filme"]
         aba[f"M{linha}"] = ordem["peso_tubete"]
-        aba[f"N{linha}"] = ordem.get("observacao", "")
+        aba[f"N{linha}"] = ordem.get("observacao","")
+        aba[f"O{linha}"] = ordem["operador"]
+        aba[f"P{linha}"] = ordem["maquina"]
 
-        aba[f"C{linha}"].font = FONTE_PADRAO
-        aba[f"D{linha}"].font = FONTE_PADRAO
-        aba[f"E{linha}"].font = FONTE_PADRAO
-        aba[f"F{linha}"].font = FONTE_PADRAO
-        aba[f"G{linha}"].font = FONTE_PADRAO
-        aba[f"H{linha}"].font = FONTE_PADRAO
-        aba[f"I{linha}"].font = FONTE_PADRAO
-        aba[f"J{linha}"].font = FONTE_PADRAO
-        aba[f"K{linha}"].font = FONTE_PADRAO
-        aba[f"L{linha}"].font = FONTE_PADRAO
-        aba[f"M{linha}"].font = FONTE_PADRAO
+        # Dados de rastreabilidade, para serem registrados no histórico
+        aba[f"Q{linha}"] = ""
+        aba[f"R{linha}"] = ""
+        aba[f"S{linha}"] = ""
+        aba[f"T{linha}"] = ordem["identificador"]
+        aba[f"U{linha}"] = ""
+        aba[f"V{linha}"] = ""
+        aba[f"W{linha}"] = ""
+
+# Essas letras todas são todas as colunas que tem informação na nossa tabela na qual aplicaremos alguma mudança
+        for coluna in "CDEFGHIJKLMNOPQRSTUVW":
+
+            aba[f"{coluna}{linha}"].font = FONTE_PADRAO
+            aba[f"{coluna}{linha}"].alignment = ALINHAMENTO_PADRAO
+
+    # OBS em vermelho
         aba[f"N{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
-        
-        aba[f"C{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"D{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"E{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"F{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"G{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"H{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"I{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"J{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"K{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"L{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"M{linha}"].alignment = ALINHAMENTO_PADRAO
-        aba[f"N{linha}"].alignment = ALINHAMENTO_PADRAO
 
-        linha += 2  
+        linha += 2
+
+    linha_historico = linha + 1
+
+# Remove a aba_modelo antes de salvar
+    if aba_modelo.title in planilha.sheetnames:
+        planilha.remove(aba_modelo)
+
+    caminho_saida = os.path.join("temporario", f"{data}_{primeira_ordem['turno']}.xlsx")
 
     planilha.save(caminho_saida)
     planilha.close()
@@ -224,12 +207,25 @@ def preencher_odps(ordens_operador):
     print("SALVANDO O ARQUIVO:", os.path.abspath(caminho_saida))
     return caminho_saida
 
+def localizar_fim_odps(aba):
+
+# É igual a 0 pois caso a planilha esteja vazia, ou seja, não tenha linhas preenchidas, ele retornará 0
+    ultima_linha = 0
+
+# Começa da linha 6 e daí por diante olha todas as linhas preenchidas
+    for linha in range(6, aba.max_row + 1):
+
+# Se a ODP ain da estiver preenchida atualiza o valor da ultima_linha,quandfo retornar vazio,o ultimo valor será o que retornará para a próxima função
+        if aba[f"D{linha}"].value is not None:
+            ultima_linha = linha
+
+    return ultima_linha
+
 def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
+
     planilha = load_workbook(caminho_arquivo)
 
     aba = planilha[nome_aba]
-
-    historico = planilha["historico"]
 
     campos = {
         "numero_pallet": 'E',
@@ -237,11 +233,9 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
         "peso_total": "G",
         "op_material": "H",
         "op_tubete": "I"
-    }
+    }   
 
-    linha_histotico = historico.max_row + 1
-
-    houve_alteracao = False
+    houve_alteracao = False 
 
 # Item faz uma lista onde campo é a chave e coluna valor
     for campo,coluna in campos.items():
@@ -263,44 +257,50 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
         aba[f"{coluna}{linha}"] = novo_valor
         houve_alteracao = True
 
+# Aqui estamos usando a função pra descobrir qual a ultima linha das ODP's pra somar mais 2 pra ter o espaço de 1 linha,e começar a gravar o histórico
+        linha_historico = localizar_fim_odps(aba) + 2
+
+        while aba[f"Q{linha_historico}"].value is not None:
+            linha_historico += 1
+
         agora = datetime.now()
 
-        historico[f"C{linha_histotico}"] = agora.strftime("%d%m%Y")
-        historico[f"D{linha_histotico}"] = agora.strftime("%H:%M:%S")
-        historico[f"E{linha_histotico}"] = identificador
-        historico[f"F{linha_histotico}"] = aba[f"D{linha}"].value
-        historico[f"G{linha_histotico}"] = dados.get("acao", "")
-        historico[f"H{linha_histotico}"] = valor_anterior
-        historico[f"I{linha_histotico}"] = novo_valor
+        aba[f"Q{linha_historico}"] = aba[f"D{linha}"].value
+        aba[f"R{linha_historico}"] = agora.strftime("%d/%m/%Y")
+        aba[f"S{linha_historico}"] = agora.strftime("%H:%M:%S")
+        aba[f"T{linha_historico}"] = identificador
+        aba[f"U{linha_historico}"] = dados.get("acao", "pesagem")
+        aba[f"V{linha_historico}"] = valor_anterior
+        aba[f"W{linha_historico}"] = novo_valor
 
-        linha_histotico += 1
-
-
+        for coluna_historico in "QRSTUVW":
+            aba[f"{coluna_historico}{linha_historico}"].font = FONTE_PADRAO
+            aba[f"{coluna_historico}{linha_historico}"].alignment = ALINHAMENTO_PADRAO
 
     if houve_alteracao:
         planilha.save(caminho_arquivo)
 
-    planilha.close() 
+    planilha.close()
+
+    return houve_alteracao
 
 def registrar_historico(caminho_arquivo,identificador,odp,acao,valor_anterior,novo_valor):
 
     planilha = load_workbook(caminho_arquivo)
 
-# Procura pela aba "historico"
-    historico = planilha["historico"]
+    aba = planilha.active
 
 # Essa linha vizualiza qual a última linha preenchida da tabela +1 pra garantir que comece na linha em branco
-    linha = historico.max_row + 1
+    linha = aba.max_row + 1
 
-    agora = datetime.now()
+    agora = datetime.now().strftime("%H:%M:%S")
 
-    historico[f"C{linha}"] = agora.strftime("%d%m%Y")
-    historico[f"D{linha}"] = agora.strftime("%H:%M:%S")
-    historico[f"E{linha}"] = identificador
-    historico[f"F{linha}"] = odp
-    historico[f"G{linha}"] = acao
-    historico[f"H{linha}"] = valor_anterior
-    historico[f"I{linha}"] = novo_valor
+    aba[f"D{linha}"] = agora
+    aba[f"E{linha}"] = identificador
+    aba[f"F{linha}"] = odp
+    aba[f"G{linha}"] = acao
+    aba[f"H{linha}"] = valor_anterior
+    aba[f"I{linha}"] = novo_valor
 
     planilha.save(caminho_arquivo)
     planilha.close()

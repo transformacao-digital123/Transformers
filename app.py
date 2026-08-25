@@ -63,6 +63,10 @@ def buscar_rastreabilidade_api():
 
 # Transforma os dados recebidos em JSON e transforma em um dicionário python
     texto = request.get_json()
+
+    print("=== BUSCAR RASTREABILIDADE ===")
+    print("JSON RECEBIDO:", texto)
+
     identificador = texto["identificador"]
     print("IDENTIFICADOR RECEBIDO:", identificador)
 
@@ -78,6 +82,9 @@ def buscar_rastreabilidade_api():
     if localizacao is None:
           return {"Erro": "não foi possível localizar a OdP"}, 404
 
+    print("DADOS:", dados)
+    print("LOCALIZAÇÃO:", localizacao)
+
 # Ao dar o último return o Flask sempre irá transformar o texto novamente em string para que ele possa navegar pela rede
     return {
           "odp": dados["odp"],
@@ -85,6 +92,8 @@ def buscar_rastreabilidade_api():
           "maquina": dados["maquina"],
           "data": dados["data"],
           "turno": dados["turno"],
+          "cliente": dados["cliente"],
+          "numero_pedido": dados["numero_pedido"],
           "arquivo": localizacao["arquivo"],
           "aba": localizacao["aba"],
           "linha": localizacao["linha"]
@@ -92,19 +101,34 @@ def buscar_rastreabilidade_api():
 
 @app.route("/atualizar-rastreabilidade",methods=["POST"])
 def atualizar_rastreabilidade_api():
+
+# Ele recebe todos os dados q1ue o servidor enviar e converte de JSON para dicionário do python para que o seu programa possa usá-lo
     texto = request.get_json()
+
+    print("=== ATUALIZAÇÃO RECEBIDA ===")
+    print("DADOS:", texto)
 
     identificador = texto["identificador"]
 
+    print("IDENTIFICADOR:", identificador)
+
     dados = buscar_rastreabilidade(identificador)
 
+    print("DADOS ENCONTRADOS:", dados)
+
     if dados is None:
+        print("ERRO: IDENTIFICADOR NÃO ENCONTRADO")
         return {"Erro": "Identificador não encontrado"}, 404
       
     localizacao = localizar_aba(dados)
 
+    print("LOCALIZAÇÃO:", localizacao)
+
     if localizacao is None:
+        print("ERRO: ODP NÃO ENCONTRADA")
         return {"Erro": "ODP não encontrada"}, 404
+
+    print("CHAMANDO ATUALIZAR_ODP")
 
     atualizar_odp (
         localizacao["arquivo"],
