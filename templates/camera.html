@@ -141,55 +141,55 @@
 
         function atualizarRastreabilidade(){
 
-    const dados = {
+            const dados = {
 
-        identificador: identificadorAtual,
+                identificador: identificadorAtual,
 
-        numero_pallet: document.getElementById("numero_pallet").value,
-        peso_liquido: document.getElementById("peso_liquido").value,
-        peso_total: document.getElementById("peso_total").value,
-        op_material: document.getElementById("op_material").value,
-        op_tubete: document.getElementById("op_tubete").value,
-        acao: document.getElementById("acao").value
-    };
+                numero_pallet: document.getElementById("numero_pallet").value,
+                peso_liquido: document.getElementById("peso_liquido").value,
+                peso_total: document.getElementById("peso_total").value,
+                op_material: document.getElementById("op_material").value,
+                op_tubete: document.getElementById("op_tubete").value,
+                acao: document.getElementById("acao").value
+            };
 
-    console.log("Dados enviados:", dados);
+            console.log("Dados enviados:", dados);
 
-    fetch("/atualizar-rastreabilidade", {
-        method: "POST",
+            fetch("/atualizar-rastreabilidade", {
+                method: "POST",
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-        body: JSON.stringify(dados)
-    })
+                body: JSON.stringify(dados)
+            })
 
-    .then(function(resposta){
-        return resposta.json();
-    })
+            .then(function(resposta){
+                return resposta.json();
+            })
 
-    .then(function(dados){
+            .then(function(dados){
 
-        console.log("Resposta atualização:", dados);
+                console.log("Resposta atualização:", dados);
 
-        if(dados.Erro){
-            document.getElementById("resultado").textContent = dados.Erro;
-            return;
+                if(dados.Erro){
+                    document.getElementById("resultado").textContent = dados.Erro;
+                    return;
+                }
+
+                document.getElementById("resultado").textContent =
+                    "Atualização efetuada com sucesso";
+            })
+
+            .catch(function(erro){
+
+                console.error("Erro ao atualizar:", erro);
+
+                document.getElementById("resultado").textContent =
+                    "Erro ao atualizar os dados";
+            });
         }
-
-        document.getElementById("resultado").textContent =
-            "Atualização efetuada com sucesso";
-    })
-
-    .catch(function(erro){
-
-        console.error("Erro ao atualizar:", erro);
-
-        document.getElementById("resultado").textContent =
-            "Erro ao atualizar os dados";
-    });
-}
 
 // O "new" está dizendo: crie um novo objeto a partir dessa ferramenta. isso será posto em "leitor" e então,caso haja uma div com esse nome essa função será executada onde é que ela estiver
 // Seguido de algumas formatações como 10 frames por segundo ou a área de refer~encia criada para ele conseguir scanne
