@@ -6969,3 +6969,195 @@
 2026-08-25 13:58:40,641 - INFO - 127.0.0.1 - - [25/Aug/2026 13:58:40] "POST / HTTP/1.1" 200 -
 2026-08-25 13:58:43,021 - INFO - 127.0.0.1 - - [25/Aug/2026 13:58:43] "GET /camera HTTP/1.1" 200 -
 2026-08-25 13:58:47,515 - INFO - 127.0.0.1 - - [25/Aug/2026 13:58:47] "[33mPOST /buscar-rastreabilidade HTTP/1.1[0m" 404 -
+2026-08-25 14:07:20,538 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-25 14:07:20,643 - INFO -  * Restarting with stat
+2026-08-25 14:07:21,762 - WARNING -  * Debugger is active!
+2026-08-25 14:07:21,765 - INFO -  * Debugger PIN: 133-117-302
+2026-08-25 14:07:26,688 - INFO - 127.0.0.1 - - [25/Aug/2026 14:07:26] "GET / HTTP/1.1" 200 -
+2026-08-25 14:07:26,722 - INFO - 127.0.0.1 - - [25/Aug/2026 14:07:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:07:26,737 - INFO - 127.0.0.1 - - [25/Aug/2026 14:07:26] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:07:26,760 - INFO - 127.0.0.1 - - [25/Aug/2026 14:07:26] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:07:36,232 - INFO - 127.0.0.1 - - [25/Aug/2026 14:07:36] "POST / HTTP/1.1" 200 -
+2026-08-25 14:07:38,544 - INFO - 127.0.0.1 - - [25/Aug/2026 14:07:38] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:07:43,591 - INFO - 127.0.0.1 - - [25/Aug/2026 14:07:43] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:17:16,786 - INFO - 127.0.0.1 - - [25/Aug/2026 14:17:16] "GET / HTTP/1.1" 200 -
+2026-08-25 14:17:16,840 - INFO - 127.0.0.1 - - [25/Aug/2026 14:17:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:17:16,841 - INFO - 127.0.0.1 - - [25/Aug/2026 14:17:16] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:17:16,843 - INFO - 127.0.0.1 - - [25/Aug/2026 14:17:16] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:17:25,994 - INFO - 127.0.0.1 - - [25/Aug/2026 14:17:25] "POST / HTTP/1.1" 200 -
+2026-08-25 14:17:26,014 - INFO - 127.0.0.1 - - [25/Aug/2026 14:17:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:17:26,017 - INFO - 127.0.0.1 - - [25/Aug/2026 14:17:26] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:17:26,019 - INFO - 127.0.0.1 - - [25/Aug/2026 14:17:26] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:18:00,750 - INFO - 127.0.0.1 - - [25/Aug/2026 14:18:00] "GET / HTTP/1.1" 200 -
+2026-08-25 14:18:00,796 - INFO - 127.0.0.1 - - [25/Aug/2026 14:18:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:18:00,796 - INFO - 127.0.0.1 - - [25/Aug/2026 14:18:00] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:18:00,812 - INFO - 127.0.0.1 - - [25/Aug/2026 14:18:00] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:18:10,787 - INFO - 127.0.0.1 - - [25/Aug/2026 14:18:10] "POST / HTTP/1.1" 200 -
+2026-08-25 14:18:12,667 - INFO - 127.0.0.1 - - [25/Aug/2026 14:18:12] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:18:19,836 - INFO - 127.0.0.1 - - [25/Aug/2026 14:18:19] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:18:27,632 - INFO - 127.0.0.1 - - [25/Aug/2026 14:18:27] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:19:00,189 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:00] "[35m[1mPOST /buscar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 14:19:08,535 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:08] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:19:13,111 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:13] "[35m[1mPOST /buscar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 14:19:26,678 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:26] "GET / HTTP/1.1" 200 -
+2026-08-25 14:19:26,697 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:26] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:19:26,699 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:19:26,701 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:26] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:19:27,943 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:27] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:19:45,086 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:45] "[35m[1mPOST /buscar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 14:19:55,041 - INFO - 127.0.0.1 - - [25/Aug/2026 14:19:55] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:20:15,796 - INFO - 127.0.0.1 - - [25/Aug/2026 14:20:15] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:20:21,885 - INFO - 127.0.0.1 - - [25/Aug/2026 14:20:21] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:20:32,330 - INFO - 127.0.0.1 - - [25/Aug/2026 14:20:32] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:29:03,609 - INFO - 127.0.0.1 - - [25/Aug/2026 14:29:03] "GET / HTTP/1.1" 200 -
+2026-08-25 14:29:03,625 - INFO - 127.0.0.1 - - [25/Aug/2026 14:29:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:29:03,627 - INFO - 127.0.0.1 - - [25/Aug/2026 14:29:03] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:29:03,628 - INFO - 127.0.0.1 - - [25/Aug/2026 14:29:03] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:29:38,899 - INFO - 127.0.0.1 - - [25/Aug/2026 14:29:38] "POST / HTTP/1.1" 200 -
+2026-08-25 14:29:41,111 - INFO - 127.0.0.1 - - [25/Aug/2026 14:29:41] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:29:54,474 - INFO - 127.0.0.1 - - [25/Aug/2026 14:29:54] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:30:04,101 - INFO - 127.0.0.1 - - [25/Aug/2026 14:30:04] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:30:09,531 - INFO - 127.0.0.1 - - [25/Aug/2026 14:30:09] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:30:20,776 - INFO - 127.0.0.1 - - [25/Aug/2026 14:30:20] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:30:25,085 - INFO - 127.0.0.1 - - [25/Aug/2026 14:30:25] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:30:37,534 - INFO - 127.0.0.1 - - [25/Aug/2026 14:30:37] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:31:27,958 - INFO - 127.0.0.1 - - [25/Aug/2026 14:31:27] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:31:41,871 - INFO - 127.0.0.1 - - [25/Aug/2026 14:31:41] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:42:37,193 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-08-25 14:42:37,299 - INFO -  * Restarting with stat
+2026-08-25 14:42:38,349 - WARNING -  * Debugger is active!
+2026-08-25 14:42:38,349 - INFO -  * Debugger PIN: 133-117-302
+2026-08-25 14:42:40,314 - INFO - 127.0.0.1 - - [25/Aug/2026 14:42:40] "GET / HTTP/1.1" 200 -
+2026-08-25 14:42:40,359 - INFO - 127.0.0.1 - - [25/Aug/2026 14:42:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:42:40,362 - INFO - 127.0.0.1 - - [25/Aug/2026 14:42:40] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:42:40,365 - INFO - 127.0.0.1 - - [25/Aug/2026 14:42:40] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:43:15,742 - INFO - 127.0.0.1 - - [25/Aug/2026 14:43:15] "POST / HTTP/1.1" 200 -
+2026-08-25 14:43:15,752 - INFO - 127.0.0.1 - - [25/Aug/2026 14:43:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:43:15,757 - INFO - 127.0.0.1 - - [25/Aug/2026 14:43:15] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:43:15,759 - INFO - 127.0.0.1 - - [25/Aug/2026 14:43:15] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:45:02,429 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:02] "GET / HTTP/1.1" 200 -
+2026-08-25 14:45:02,482 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:45:02,484 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:45:02,486 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:02] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:45:03,603 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:03] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:45:09,518 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:09] "[33mPOST /buscar-rastreabilidade HTTP/1.1[0m" 404 -
+2026-08-25 14:45:19,993 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:19] "GET / HTTP/1.1" 200 -
+2026-08-25 14:45:20,040 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:45:20,040 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:20] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:45:20,040 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:20] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:45:21,326 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:21] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:45:26,882 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:26] "[33mPOST /buscar-rastreabilidade HTTP/1.1[0m" 404 -
+2026-08-25 14:45:30,887 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:30] "[33mPOST /buscar-rastreabilidade HTTP/1.1[0m" 404 -
+2026-08-25 14:45:43,865 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:43] "GET / HTTP/1.1" 200 -
+2026-08-25 14:45:43,923 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:45:43,926 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:43] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:45:43,928 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:43] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:45:54,734 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:54] "POST / HTTP/1.1" 200 -
+2026-08-25 14:45:57,895 - INFO - 127.0.0.1 - - [25/Aug/2026 14:45:57] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:46:03,109 - INFO - 127.0.0.1 - - [25/Aug/2026 14:46:03] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:46:13,624 - INFO - 127.0.0.1 - - [25/Aug/2026 14:46:13] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:48:05,732 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-25 14:48:05,850 - INFO -  * Restarting with stat
+2026-08-25 14:48:06,751 - WARNING -  * Debugger is active!
+2026-08-25 14:48:06,751 - INFO -  * Debugger PIN: 133-117-302
+2026-08-25 14:48:09,774 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:09] "GET / HTTP/1.1" 200 -
+2026-08-25 14:48:09,819 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:48:09,820 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:09] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:48:09,824 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:09] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:48:18,104 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:18] "POST / HTTP/1.1" 200 -
+2026-08-25 14:48:20,765 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:20] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:48:30,376 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:30] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:48:39,550 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:39] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:48:43,637 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:43] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:48:56,795 - INFO - 127.0.0.1 - - [25/Aug/2026 14:48:56] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:49:01,094 - INFO - 127.0.0.1 - - [25/Aug/2026 14:49:01] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:49:14,485 - INFO - 127.0.0.1 - - [25/Aug/2026 14:49:14] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:53:02,495 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-25 14:53:02,658 - INFO -  * Restarting with stat
+2026-08-25 14:53:03,707 - WARNING -  * Debugger is active!
+2026-08-25 14:53:03,709 - INFO -  * Debugger PIN: 133-117-302
+2026-08-25 14:53:08,748 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:08] "[35m[1mPOST /buscar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 14:53:14,063 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:14] "GET / HTTP/1.1" 200 -
+2026-08-25 14:53:14,111 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:53:14,111 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:14] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:53:14,119 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:14] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:53:21,746 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:21] "POST / HTTP/1.1" 200 -
+2026-08-25 14:53:21,763 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:53:21,767 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:21] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:53:21,770 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:21] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:53:40,274 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:40] "GET / HTTP/1.1" 200 -
+2026-08-25 14:53:40,322 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:40] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 14:53:40,322 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 14:53:40,322 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:40] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 14:53:41,306 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:41] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:53:47,040 - INFO - 127.0.0.1 - - [25/Aug/2026 14:53:47] "[33mPOST /buscar-rastreabilidade HTTP/1.1[0m" 404 -
+2026-08-25 14:54:00,220 - INFO - 127.0.0.1 - - [25/Aug/2026 14:54:00] "POST / HTTP/1.1" 200 -
+2026-08-25 14:54:02,597 - INFO - 127.0.0.1 - - [25/Aug/2026 14:54:02] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:54:09,718 - INFO - 127.0.0.1 - - [25/Aug/2026 14:54:09] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:54:19,344 - INFO - 127.0.0.1 - - [25/Aug/2026 14:54:19] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:54:23,193 - INFO - 127.0.0.1 - - [25/Aug/2026 14:54:23] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:54:34,655 - INFO - 127.0.0.1 - - [25/Aug/2026 14:54:34] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:56:45,762 - INFO - 127.0.0.1 - - [25/Aug/2026 14:56:45] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:56:51,023 - INFO - 127.0.0.1 - - [25/Aug/2026 14:56:51] "[35m[1mPOST /buscar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 14:56:57,925 - INFO - 127.0.0.1 - - [25/Aug/2026 14:56:57] "GET /camera HTTP/1.1" 200 -
+2026-08-25 14:57:02,152 - INFO - 127.0.0.1 - - [25/Aug/2026 14:57:02] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:57:07,977 - INFO - 127.0.0.1 - - [25/Aug/2026 14:57:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-25 14:57:58,747 - INFO - 127.0.0.1 - - [25/Aug/2026 14:57:58] "[35m[1mPOST /atualizar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 14:58:14,767 - INFO - 127.0.0.1 - - [25/Aug/2026 14:58:14] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 14:58:25,168 - INFO - 127.0.0.1 - - [25/Aug/2026 14:58:25] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:14:06,211 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-25 15:14:06,437 - INFO -  * Restarting with stat
+2026-08-25 15:14:07,795 - WARNING -  * Debugger is active!
+2026-08-25 15:14:07,808 - INFO -  * Debugger PIN: 133-117-302
+2026-08-25 15:14:16,385 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:16] "GET / HTTP/1.1" 200 -
+2026-08-25 15:14:16,431 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:16] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 15:14:16,433 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 15:14:16,436 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:16] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 15:14:27,949 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:27] "POST / HTTP/1.1" 200 -
+2026-08-25 15:14:27,971 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 15:14:27,975 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:27] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 15:14:27,981 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:27] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 15:14:36,683 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:36] "GET / HTTP/1.1" 200 -
+2026-08-25 15:14:36,745 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 15:14:36,746 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:36] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 15:14:36,748 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:36] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 15:14:53,338 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:53] "POST / HTTP/1.1" 200 -
+2026-08-25 15:14:56,186 - INFO - 127.0.0.1 - - [25/Aug/2026 15:14:56] "GET /camera HTTP/1.1" 200 -
+2026-08-25 15:15:01,052 - INFO - 127.0.0.1 - - [25/Aug/2026 15:15:01] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:15:11,019 - INFO - 127.0.0.1 - - [25/Aug/2026 15:15:11] "[35m[1mPOST /atualizar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 15:17:36,456 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-25 15:17:36,571 - INFO -  * Restarting with stat
+2026-08-25 15:17:37,553 - WARNING -  * Debugger is active!
+2026-08-25 15:17:37,557 - INFO -  * Debugger PIN: 133-117-302
+2026-08-25 15:17:40,307 - INFO - 127.0.0.1 - - [25/Aug/2026 15:17:40] "GET / HTTP/1.1" 200 -
+2026-08-25 15:17:40,339 - INFO - 127.0.0.1 - - [25/Aug/2026 15:17:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 15:17:40,339 - INFO - 127.0.0.1 - - [25/Aug/2026 15:17:40] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 15:17:40,355 - INFO - 127.0.0.1 - - [25/Aug/2026 15:17:40] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 15:17:49,237 - INFO - 127.0.0.1 - - [25/Aug/2026 15:17:49] "POST / HTTP/1.1" 200 -
+2026-08-25 15:17:58,852 - INFO - 127.0.0.1 - - [25/Aug/2026 15:17:58] "GET /camera HTTP/1.1" 200 -
+2026-08-25 15:18:06,732 - INFO - 127.0.0.1 - - [25/Aug/2026 15:18:06] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:18:16,592 - INFO - 127.0.0.1 - - [25/Aug/2026 15:18:16] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:18:21,242 - INFO - 127.0.0.1 - - [25/Aug/2026 15:18:21] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:18:33,475 - INFO - 127.0.0.1 - - [25/Aug/2026 15:18:33] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:19:05,192 - INFO - 127.0.0.1 - - [25/Aug/2026 15:19:05] "[35m[1mPOST /buscar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 15:19:14,249 - INFO - 127.0.0.1 - - [25/Aug/2026 15:19:14] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:19:27,866 - INFO - 127.0.0.1 - - [25/Aug/2026 15:19:27] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:31:00,055 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\apontamento.py', reloading
+2026-08-25 15:31:00,163 - INFO -  * Restarting with stat
+2026-08-25 15:31:01,073 - WARNING -  * Debugger is active!
+2026-08-25 15:31:01,073 - INFO -  * Debugger PIN: 133-117-302
+2026-08-25 15:31:03,208 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:03] "GET / HTTP/1.1" 200 -
+2026-08-25 15:31:03,227 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 15:31:03,238 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:03] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 15:31:03,243 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:03] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 15:31:14,520 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:14] "POST / HTTP/1.1" 200 -
+2026-08-25 15:31:16,709 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:16] "GET /camera HTTP/1.1" 200 -
+2026-08-25 15:31:24,202 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:24] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:31:34,639 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:34] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:31:38,380 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:38] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:31:53,558 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:53] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:31:57,286 - INFO - 127.0.0.1 - - [25/Aug/2026 15:31:57] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:32:13,929 - INFO - 127.0.0.1 - - [25/Aug/2026 15:32:13] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:32:58,863 - INFO - 127.0.0.1 - - [25/Aug/2026 15:32:58] "[35m[1mPOST /buscar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-25 15:33:07,370 - INFO - 127.0.0.1 - - [25/Aug/2026 15:33:07] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 15:33:36,731 - INFO - 127.0.0.1 - - [25/Aug/2026 15:33:36] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -

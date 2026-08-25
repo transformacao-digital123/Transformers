@@ -258,11 +258,11 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
         houve_alteracao = True
 
 # Aqui estamos usando a função pra descobrir qual a ultima linha das ODP's pra somar mais 2 pra ter o espaço de 1 linha,e começar a gravar o histórico
-        linha_historico = localizar_fim_odps(aba) + 2
+        linha_historico = localizar_fim_odps(aba) + 1   
 
         while aba[f"Q{linha_historico}"].value is not None:
             linha_historico += 1
-
+            
         agora = datetime.now()
 
         aba[f"Q{linha_historico}"] = aba[f"D{linha}"].value

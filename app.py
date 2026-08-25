@@ -71,6 +71,7 @@ def buscar_rastreabilidade_api():
     print("IDENTIFICADOR RECEBIDO:", identificador)
 
     dados = buscar_rastreabilidade(identificador)
+    print("DADOS ENCONTRADOS:", dados)
 
     if dados is None:
           return {"Erro": "identificador não encontrado"}, 404

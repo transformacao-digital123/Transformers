@@ -180,7 +180,7 @@ def localizar_aba(dados):
                         return {
                                 "arquivo": caminho_saida,
                                 "aba": aba.title,
-                                "linha": 6
+                                "linha": linha
                                 }
         print("ODP não encontrada")
         return None
