@@ -7165,3 +7165,17 @@
 2026-08-25 15:58:48,021 - INFO - 127.0.0.1 - - [25/Aug/2026 15:58:48] "POST / HTTP/1.1" 200 -
 2026-08-25 15:58:55,492 - INFO - 127.0.0.1 - - [25/Aug/2026 15:58:55] "GET /camera HTTP/1.1" 200 -
 2026-08-25 15:59:01,217 - INFO - 127.0.0.1 - - [25/Aug/2026 15:59:01] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 16:10:47,403 - INFO - 127.0.0.1 - - [25/Aug/2026 16:10:47] "GET / HTTP/1.1" 200 -
+2026-08-25 16:10:47,461 - INFO - 127.0.0.1 - - [25/Aug/2026 16:10:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-25 16:10:47,464 - INFO - 127.0.0.1 - - [25/Aug/2026 16:10:47] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-25 16:10:47,466 - INFO - 127.0.0.1 - - [25/Aug/2026 16:10:47] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-25 16:10:57,555 - INFO - 127.0.0.1 - - [25/Aug/2026 16:10:57] "POST / HTTP/1.1" 200 -
+2026-08-25 16:11:29,197 - INFO - 127.0.0.1 - - [25/Aug/2026 16:11:29] "GET /camera HTTP/1.1" 200 -
+2026-08-25 16:11:33,602 - INFO - 127.0.0.1 - - [25/Aug/2026 16:11:33] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 16:13:39,073 - INFO - 127.0.0.1 - - [25/Aug/2026 16:13:39] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 16:13:48,882 - INFO - 127.0.0.1 - - [25/Aug/2026 16:13:48] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 16:14:00,079 - INFO - 127.0.0.1 - - [25/Aug/2026 16:14:00] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-08-25 16:30:07,004 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-08-25 16:30:07,466 - INFO -  * Restarting with stat
+2026-08-25 16:30:08,923 - WARNING -  * Debugger is active!
+2026-08-25 16:30:08,931 - INFO -  * Debugger PIN: 133-117-302

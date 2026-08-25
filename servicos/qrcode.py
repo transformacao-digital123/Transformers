@@ -117,6 +117,9 @@ def carregar_rastreabilidade():
 
     caminho = "temporario/rastreabilidade.json"
 
+    print("BUSCANDO RASTREABILIDADE EM:", os.path.abspath(caminho))
+    print("ARQUIVO EXISTE?", os.path.exists(caminho))
+
     if not os.path.exists(caminho):
         return {}
 
@@ -129,6 +132,9 @@ def buscar_rastreabilidade(identificador):
 
     if identificador not in rastreabilidade:
         return None
+
+    print("QUANTIDADE DE IDENTIFICADORES:", len(rastreabilidade))
+    print("IDENTIFICADORES:", list(rastreabilidade.keys()))
        
     return rastreabilidade[identificador]
 
