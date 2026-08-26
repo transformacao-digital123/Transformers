@@ -188,7 +188,7 @@ label{
     align-items: center;
     gap: 10px;
 }
-
+/* Parte relacionada a responsividade do programa em relação a celulares */
 @media (max-width: 600px){
     main{
         flex: 1;
@@ -295,4 +295,23 @@ label{
         word-break: break-word;
         margin: 7px;
     }
+}
+
+/* Parte relacionada a tela de carregamento do Optimus-Prime */
+
+.animacao-transformers{
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    height: 220px;
+    margin: 30px auto 0;
+    overflow: hidden;
+}
+
+.optimus{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: clamp(70px,9vw,200px);
+    height: auto;
 }

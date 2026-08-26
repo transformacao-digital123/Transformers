@@ -70,7 +70,7 @@
                         name="link"
                         placeholder="https://docs.google.com/...">
 
-                        <button class="botao-converter" type = "submit">    
+                        <button class="botao-converter" id = "botao-converter" type = "submit">    
                         Converter Ordem de Produção
                         </button>
                 </div>
@@ -96,6 +96,12 @@
 
             </form>
 
+            <div class="animacao-transformers" id="animacao-transformers">
+
+                <img id="optimus" class="optimus" src="static/assets/Optimus-Run.gif" alt="Optimus-prime">
+
+            </div>
+
         </main>
 
         <footer>
@@ -109,5 +115,53 @@
         </footer>
 
     </div>
+
+    <!-- <script>
+
+// Criou as 2 contantesuma é o optimus que receberá quem tiver id = "optimus" e formulario, que procura e captura o 1º formulário que encontrar na página, no caso as partes de preenchimento eo botão, e o oultimo captura o container,a caixa onde ocorrerá a animação
+        const formulario = document.querySelector("form");
+        const optmus = document.getElementById("optimus");
+        const areaAnimacao = document.getElementById("animacao-transformers");
+
+// O .addEventListener fica vigiando,quando formulario disparar o evento "submit" ele iniciará a função
+// Aqui o atributo de origem src substituirá o que estiver em optimus pelo caminho descrito
+        formulario.addEventListener("submit", function(event){
+
+            event.preventDefault();
+
+            optimus.src = "static/assets/Optimus-Run.gif";
+            optmus.transition = "nome";
+            optmus.style.left = "0px";
+
+            optmus.src = "static/assets/optimus_transformando_em_caminhao.gif";
+            optimus.style.width = "165px";
+
+            setTimeout(function(){
+                optmus.src = "static/assets/luari_caminhao.gif";
+
+                optimus.style.width = "185px";
+
+                const larguraArea = areaAnimacao.clientWidth;
+                const larguraOptimus = optmus.offsetWidth;
+
+                const destino = larguraArea - larguraOptimus;
+
+                optmus.style.transition = "left 3s linear";
+                optmus.style.left = destino + "px";
+
+            setTimeout(function(){
+            optimus.style.opacity = "1";
+
+            optmus.src = "static/assets/optimus_voltando_a_ser_robo.gif";
+
+            setTimeout(function(){
+            optmus.src = "static/assets/Optimus-Run.gif";
+
+            }, 800); // Esse 800 repreenta os milissegundos
+
+            },3000)
+            })
+        });
+    </script> -->
 </body>
 </html>
