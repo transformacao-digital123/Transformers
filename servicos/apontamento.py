@@ -278,9 +278,24 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
             aba[f"{coluna_historico}{linha_historico}"].alignment = ALINHAMENTO_PADRAO
 
     if houve_alteracao:
+
+        print("ARQUIVO ANTES DO SAVE:", caminho_arquivo)
         planilha.save(caminho_arquivo)
+        print("ARQUIVO SALVO:", caminho_arquivo)
 
     planilha.close()
+
+    teste = load_workbook(caminho_arquivo)
+    aba_teste = teste[aba.title]
+
+    print(
+        "VALOR SALVO:",
+        aba_teste[f"E{linha}"].value,
+        aba_teste[f"F{linha}"].value,
+        aba_teste[f"G{linha}"].value
+        )
+
+    teste.close()
 
     return houve_alteracao
 
