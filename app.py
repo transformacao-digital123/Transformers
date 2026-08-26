@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, send_file
+from openpyxl import load_workbook
+import os 
 
 import traceback
 
@@ -145,5 +147,60 @@ def atualizar_rastreabilidade_api():
          "aba": localizacao["aba"],
          "linha": localizacao["linha"]
     }
+
+@app.route("/acompanhamento")
+def acompanhamento():
+    return render_template("acompanhamento.html")
+
+@app.route("/dados-acompanhamento")
+def dados_acompanhamento():
+
+    arquivo = request.args.get("arquivo")
+
+    if not arquivo or not os.path.exists(arquivo):
+        return {"Erro": "Arquivo não encontrado"}, 404
+
+    planilha = load_workbook(arquivo, data_only=True)
+
+    dados = []
+
+    for aba in planilha.worksheets:
+
+        for linha in range(6, aba.max_row + 1):
+
+            valores = []
+
+            for coluna in range(3, 24):  # C até W
+                valores.append(aba.cell(linha, coluna).value)
+
+            # ignora linhas completamente vazias
+            if any(valor is not None for valor in valores):
+                dados.append({
+                    "aba": aba.title,
+                    "linha": linha,
+                    "valores": valores
+                })
+
+    planilha.close()
+
+    return {"dados": dados}
+
+@app.route("/arquivos-acompanhamento")
+def arquivos_acompanhamento():
+
+    arquivos = []
+
+    for nome in os.listdir("temporario"):
+
+        if nome.endswith(".xlsx"):
+
+            arquivos.append(nome)
+
+    return {"arquivos": arquivos}
+
+@app.route("/rastreabilidade")
+def rastreabilidade():
+    return render_template("rastreabilidade.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

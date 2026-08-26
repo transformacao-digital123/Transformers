@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acompanhamento</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .tabela {
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 1200px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ACOMPANHAMENTO DE PRODUÇÃO</h1>
+
+    <button onclick="carregarDados()">
+        🔄 Atualizar
+    </button>
+
+    <div class="tabela">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Aba</th>
+                    <th>Linha</th>
+
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                    <th>G</th>
+                    <th>H</th>
+                    <th>I</th>
+                    <th>J</th>
+                    <th>K</th>
+                    <th>L</th>
+                    <th>M</th>
+                    <th>N</th>
+                    <th>O</th>
+                    <th>P</th>
+                    <th>Q</th>
+                    <th>R</th>
+                    <th>S</th>
+                    <th>T</th>
+                    <th>U</th>
+                    <th>V</th>
+                    <th>W</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabela-dados">
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script>
+
+        function carregarDados() {
+
+            const arquivo = prompt(
+                "Digite o caminho do arquivo no Render:"
+            );
+
+            if (!arquivo) {
+                return;
+            }
+
+            fetch(
+                "/dados-acompanhamento?arquivo=" +
+                encodeURIComponent(arquivo)
+            )
+
+            .then(function(resposta) {
+                return resposta.json();
+            })
+
+            .then(function(resultado) {
+
+                if (resultado.Erro) {
+                    alert(resultado.Erro);
+                    return;
+                }
+
+                const tabela =
+                    document.getElementById("tabela-dados");
+
+                tabela.innerHTML = "";
+
+                resultado.dados.forEach(function(item) {
+
+                    const tr = document.createElement("tr");
+
+                    const tdAba = document.createElement("td");
+                    tdAba.textContent = item.aba;
+                    tr.appendChild(tdAba);
+
+                    const tdLinha = document.createElement("td");
+                    tdLinha.textContent = item.linha;
+                    tr.appendChild(tdLinha);
+
+                    item.valores.forEach(function(valor) {
+
+                        const td = document.createElement("td");
+
+                        td.textContent =
+                            valor === null ? "" : valor;
+
+                        tr.appendChild(td);
+
+                    });
+
+                    tabela.appendChild(tr);
+
+                });
+
+            })
+
+            .catch(function(erro) {
+
+                console.error(erro);
+
+                alert(
+                    "Erro ao carregar os dados."
+                );
+
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

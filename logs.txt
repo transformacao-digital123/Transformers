@@ -7191,3 +7191,37 @@
 2026-08-26 07:09:13,272 - INFO -  * Restarting with stat
 2026-08-26 07:09:14,100 - WARNING -  * Debugger is active!
 2026-08-26 07:09:14,100 - INFO -  * Debugger PIN: 133-117-302
+2026-08-26 07:13:18,288 - INFO - 127.0.0.1 - - [26/Aug/2026 07:13:18] "GET / HTTP/1.1" 200 -
+2026-08-26 07:13:18,317 - INFO - 127.0.0.1 - - [26/Aug/2026 07:13:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-26 07:13:18,327 - INFO - 127.0.0.1 - - [26/Aug/2026 07:13:18] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-26 07:13:18,327 - INFO - 127.0.0.1 - - [26/Aug/2026 07:13:18] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-26 07:13:18,385 - INFO - 127.0.0.1 - - [26/Aug/2026 07:13:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-26 07:32:16,058 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-08-26 07:32:16,213 - INFO -  * Restarting with stat
+2026-08-26 07:32:17,234 - WARNING -  * Debugger is active!
+2026-08-26 07:32:17,236 - INFO -  * Debugger PIN: 133-117-302
+2026-08-26 07:32:26,567 - INFO - 127.0.0.1 - - [26/Aug/2026 07:32:26] "GET / HTTP/1.1" 200 -
+2026-08-26 07:32:26,594 - INFO - 127.0.0.1 - - [26/Aug/2026 07:32:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-26 07:32:26,594 - INFO - 127.0.0.1 - - [26/Aug/2026 07:32:26] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-26 07:32:26,594 - INFO - 127.0.0.1 - - [26/Aug/2026 07:32:26] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-26 07:39:04,866 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-08-26 07:39:04,960 - INFO -  * Restarting with stat
+2026-08-26 07:39:05,692 - WARNING -  * Debugger is active!
+2026-08-26 07:39:05,693 - INFO -  * Debugger PIN: 133-117-302
+2026-08-26 07:39:19,217 - INFO - 127.0.0.1 - - [26/Aug/2026 07:39:19] "GET / HTTP/1.1" 200 -
+2026-08-26 07:39:19,255 - INFO - 127.0.0.1 - - [26/Aug/2026 07:39:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-26 07:39:19,255 - INFO - 127.0.0.1 - - [26/Aug/2026 07:39:19] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-26 07:39:19,255 - INFO - 127.0.0.1 - - [26/Aug/2026 07:39:19] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-26 07:40:55,121 - INFO - 127.0.0.1 - - [26/Aug/2026 07:40:55] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-08-26 07:40:55,141 - INFO - 127.0.0.1 - - [26/Aug/2026 07:40:55] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-08-26 07:40:55,141 - INFO - 127.0.0.1 - - [26/Aug/2026 07:40:55] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-08-26 07:40:55,164 - INFO - 127.0.0.1 - - [26/Aug/2026 07:40:55] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=45CDapafVDlM8IXc0tqL HTTP/1.1" 200 -
+2026-08-26 07:40:55,233 - INFO - 127.0.0.1 - - [26/Aug/2026 07:40:55] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-08-26 07:41:17,536 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:17] "GET / HTTP/1.1" 200 -
+2026-08-26 07:41:17,547 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-26 07:41:17,550 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:17] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-26 07:41:17,552 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:17] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-26 07:41:24,999 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:24] "[35m[1mGET /rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-26 07:41:25,004 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:25] "GET /acompanhamento HTTP/1.1" 200 -
+2026-08-26 07:41:58,736 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:58] "GET /acompanhamento HTTP/1.1" 200 -
+2026-08-26 07:41:58,741 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:58] "[35m[1mGET /rastreabilidade HTTP/1.1[0m" 500 -
