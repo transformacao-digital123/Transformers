@@ -7235,3 +7235,7 @@
 2026-08-26 07:53:52,204 - INFO -  * Restarting with stat
 2026-08-26 07:53:53,321 - WARNING -  * Debugger is active!
 2026-08-26 07:53:53,323 - INFO -  * Debugger PIN: 133-117-302
+2026-08-26 08:04:27,850 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-08-26 08:04:27,946 - INFO -  * Restarting with stat
+2026-08-26 08:04:28,782 - WARNING -  * Debugger is active!
+2026-08-26 08:04:28,785 - INFO -  * Debugger PIN: 133-117-302

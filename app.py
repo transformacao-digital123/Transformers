@@ -205,7 +205,12 @@ def rastreabilidade():
 @app.route("/baixar-acompanhamento")
 def baixar_acompanhamento():
 
-    arquivo = "temporario/16-07-2026_Noite.xlsx"
+    nome_arquivo = request.args.get("arquivo")
+
+    if not nome_arquivo:
+        return {"Erro": "Arquivo não informado"}, 400
+
+    arquivo = os.path.join("temporario", nome_arquivo)
 
     if not os.path.exists(arquivo):
         return {"Erro": "Arquivo não encontrado"}, 404
@@ -213,7 +218,7 @@ def baixar_acompanhamento():
     return send_file(
         arquivo,
         as_attachment=True,
-        download_name="16-07-2026_Noite_ATUALIZADO.xlsx"
+        download_name=nome_arquivo
     )
 
 if __name__ == "__main__":

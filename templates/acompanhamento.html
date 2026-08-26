@@ -54,11 +54,9 @@
         🔄 Atualizar
     </button>
 
-    <a href="/baixar-acompanhamento">
-    <button>
+    <button onclick="baixarExcel()">
         📥 Baixar Excel
     </button>
-    </a>
 
     <div class="tabela">
 
@@ -171,6 +169,20 @@
                 );
 
             });
+        }
+
+        function baixarExcel() {
+
+            const arquivo = document.getElementById("arquivo").value;
+
+            if (!arquivo) {
+                alert("Selecione um arquivo.");
+                return;
+            }
+
+            window.location.href =
+                "/baixar-acompanhamento?arquivo=" +
+                encodeURIComponent(arquivo);
         }
 
     </script>
