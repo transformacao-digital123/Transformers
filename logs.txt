@@ -7225,3 +7225,9 @@
 2026-08-26 07:41:25,004 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:25] "GET /acompanhamento HTTP/1.1" 200 -
 2026-08-26 07:41:58,736 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:58] "GET /acompanhamento HTTP/1.1" 200 -
 2026-08-26 07:41:58,741 - INFO - 127.0.0.1 - - [26/Aug/2026 07:41:58] "[35m[1mGET /rastreabilidade HTTP/1.1[0m" 500 -
+2026-08-26 07:49:59,663 - INFO - 127.0.0.1 - - [26/Aug/2026 07:49:59] "GET / HTTP/1.1" 200 -
+2026-08-26 07:49:59,676 - INFO - 127.0.0.1 - - [26/Aug/2026 07:49:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-26 07:49:59,680 - INFO - 127.0.0.1 - - [26/Aug/2026 07:49:59] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-26 07:49:59,685 - INFO - 127.0.0.1 - - [26/Aug/2026 07:49:59] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-26 07:50:10,580 - INFO - 127.0.0.1 - - [26/Aug/2026 07:50:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-26 07:50:10,613 - INFO - 127.0.0.1 - - [26/Aug/2026 07:50:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
