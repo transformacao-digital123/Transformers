@@ -15,6 +15,8 @@ import requests
 
 def converter_google_sheets(link):
 
+    print("1 - COMEÇANDO CONVERSÃO")
+
     rastreabilidade = {}
 
     print("LINK RECEBIDO:", link)
@@ -67,6 +69,9 @@ def converter_google_sheets(link):
         return planilha
          
     def identificar_blocos(aba):
+
+
+        print("2 - PLANILHA LIDA")
 
         maquina = ""
         operador = ""
@@ -179,6 +184,7 @@ def converter_google_sheets(link):
                 if   len(valores) == 1:
                     if valores[0].startswith("OBS: "):
                         ordens[-1]["observacao"] = valores[0].replace("OBS: ","")
+        print("3 - ORDENS INTERPRETADAS:", len(ordens))
 
         return ordens
 
@@ -217,8 +223,17 @@ def converter_google_sheets(link):
             raise
 
     grupos = agrupar_por_operador(ordens)
+
+    print("4 - GRUPOS CRIADOS:", len(grupos))
                     
     for operador,ordens_operador in grupos.items():
+
+        print(
+        "5 - PROCESSANDO OPERADOR:",
+        operador,
+        "ORDENS:",
+        len(ordens_operador)
+        )
 
         turno = ordens_operador[0]["turno"]
 
@@ -226,6 +241,13 @@ def converter_google_sheets(link):
         arquivos.append(arquivo)
 
         for ordem in ordens_operador:
+
+            print(
+                "PROCESSANDO ODP:",
+                ordem.get("odp"),
+                "OPERADOR:",
+                ordem.get("operador")
+            )
 
 # token_hex(4): Pede para o sistema gerar 4 bytes, cada byte representa um caracter, de dados aleatórios e transformá-los em uma string no formato hexadecimal (que usa números de 0 a 9 e letras de A a F).
             identificador = "LUARI - " + secrets.token_hex(4).upper()
