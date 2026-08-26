@@ -7231,3 +7231,7 @@
 2026-08-26 07:49:59,685 - INFO - 127.0.0.1 - - [26/Aug/2026 07:49:59] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
 2026-08-26 07:50:10,580 - INFO - 127.0.0.1 - - [26/Aug/2026 07:50:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-08-26 07:50:10,613 - INFO - 127.0.0.1 - - [26/Aug/2026 07:50:10] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-26 07:53:51,977 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-08-26 07:53:52,204 - INFO -  * Restarting with stat
+2026-08-26 07:53:53,321 - WARNING -  * Debugger is active!
+2026-08-26 07:53:53,323 - INFO -  * Debugger PIN: 133-117-302
