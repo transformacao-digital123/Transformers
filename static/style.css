@@ -312,6 +312,6 @@ label{
     position: absolute;
     left: 0;
     bottom: 0;
-    width: clamp(70px,9vw,200px);
+    width: clamp(70px,9vw,190px);
     height: auto;
 }

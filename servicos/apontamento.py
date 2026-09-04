@@ -279,9 +279,7 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 
     if houve_alteracao:
 
-        print("ARQUIVO ANTES DO SAVE:", caminho_arquivo)
         planilha.save(caminho_arquivo)
-        print("ARQUIVO SALVO:", caminho_arquivo)
 
     planilha.close()
 

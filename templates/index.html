@@ -108,60 +108,126 @@
 
             <div class="rodape">
                 <p>
-                Versão 4.0 -
+                Versão 5.0 -
                 LUARI EMBALAGENS - PACKAGING SOLUTIONS ©
                 </p>
             </div>
         </footer>
 
-    </div>
+    </div> 
 
-    <!-- <script>
+<script>
 
 // Criou as 2 contantesuma é o optimus que receberá quem tiver id = "optimus" e formulario, que procura e captura o 1º formulário que encontrar na página, no caso as partes de preenchimento eo botão, e o oultimo captura o container,a caixa onde ocorrerá a animação
-        const formulario = document.querySelector("form");
-        const optmus = document.getElementById("optimus");
-        const areaAnimacao = document.getElementById("animacao-transformers");
+    const formulario = document.querySelector("form");
+    const optimus = document.getElementById("optimus");
+    const areaAnimacao = document.getElementById("animacao-transformers");
+
+    function mostrarErro(){
+        optimus.style.transition = "none";
+
+        optimus.src = "static/assets/Optimus-erro.png";
+
+        optimus.style.opacity = "1";
+    }
+
+    function finalizarAnimacao(){
+        optimus.style.transition = "none";
+        optimus.style.opacity = "0";
+        optimus.style.left = "0px";
+
+        setTimeout(function(){
+
+            optimus.style.opacity = "1";
+            optimus.src = "static/assets/optimus_voltando_a_ser_robo.gif";
+            optimus.style.width = "170px";
+        }, 200);
+
+        setTimeout(function(){
+
+            optimus.src = "static/assets/Optimus-Run.gif";
+            optimus.style.width = "";
+        }, 1000);
+    }
 
 // O .addEventListener fica vigiando,quando formulario disparar o evento "submit" ele iniciará a função
 // Aqui o atributo de origem src substituirá o que estiver em optimus pelo caminho descrito
-        formulario.addEventListener("submit", function(event){
+    formulario.addEventListener("submit", function(event){
 
-            event.preventDefault();
+        event.preventDefault();
 
-            optimus.src = "static/assets/Optimus-Run.gif";
-            optmus.transition = "nome";
-            optmus.style.left = "0px";
+        const dados = new FormData(formulario); 
 
-            optmus.src = "static/assets/optimus_transformando_em_caminhao.gif";
-            optimus.style.width = "165px";
+// Estado inicial
+        optimus.src = "static/assets/Optimus-Run.gif";
+        optimus.style.transition = "none";
+        optimus.style.left = "0px";
+        optimus.style.opacity = "1";
 
-            setTimeout(function(){
-                optmus.src = "static/assets/luari_caminhao.gif";
+// Após 0.1s ele inicia a transformação
+        setTimeout(function(){ optimus.src = "static/assets/optimus_transformando_em_caminhao.gif";
+            optimus.style.width = "170px";
+            },100); //Esse 100 representa linha de largada,é a partir do momento 0.1s que ele iniciará
 
-                optimus.style.width = "185px";
+// 1000 - 100 = 900ms de tempo que a transformação terá para ser executada e então se iniciará o gif luaria_caminhao
+// Destino calcula a área que será percorrida, e essa variável é usada pra arrastar da esquerda pra direita em forma linear em 3s, considerando o valor do destino em px,pra ser mais fácil do programa contabilizar
+        setTimeout(function(){
+            optimus.src = "static/assets/luari_caminhao.gif";
 
-                const larguraArea = areaAnimacao.clientWidth;
-                const larguraOptimus = optmus.offsetWidth;
+            optimus.style.width = "210px";
 
-                const destino = larguraArea - larguraOptimus;
+            const larguraArea = areaAnimacao.clientWidth; // Calcula a área total,desde a largura total do conteúdo até os paddings internos de ambos os lados
+            const larguraOptimus = optimus.offsetWidth; // pega o conteúdo do gif desde a largura,padding e bordas, ignorando apenas o margin
 
-                optmus.style.transition = "left 3s linear";
-                optmus.style.left = destino + "px";
+            const destino = larguraArea - larguraOptimus; // A subtração disso é o valor que ele terá de andar
 
-            setTimeout(function(){
-            optimus.style.opacity = "1";
+            optimus.style.transition = "left 3s linear";
+            optimus.style.left = destino + "px";
+        },1000); // Esse 1000 repreenta os milissegundos, 1000ms = 1s
 
-            optmus.src = "static/assets/optimus_voltando_a_ser_robo.gif";
+        fetch("/",{
+            method: "POST",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest" // Esse cabeçalho é usado para indicar que a requisição está sendo feita via AJAX, permitindo que o servidor diferencie entre requisições normais e requisições assíncronas, pense nele como uma etiqueta do 2º pedido de 2, ele serve para que possa diferenciar quando quer executá-lo ou deixar de executá-lo, pois o 1º pedido é o normal, que é o GET, e o 2º pedido é o AJAX, que é o POST
+            },
+            body: dados
+        })
 
-            setTimeout(function(){
-            optmus.src = "static/assets/Optimus-Run.gif";
+        .then(function(resposta){
+            console.log("STATUS:", resposta.status);
+            console.log("RESPOSTA OK:", resposta.ok);
 
-            }, 800); // Esse 800 repreenta os milissegundos
+// O ! torna tudo inverso, então caso a resposta esteja errada, o ! considerará veradadeira e a levará ao próximo comando que é o indicador de erro,mas caso esteja correta, o ! considerará falsa e então pulará aquele comando indo direto ao return
+// Os dados obtidos será transformado em texto pois o javascript não sabe que tipo de arquivo é,se ele é .img,.pdf ou json, então ao especificar pra ele, a resposta é retornada para a próxima função
+            if(!resposta.ok){
+                throw new Error("Erro no processsamento");
+            }
+            return resposta.json();
+        })
 
-            },3000)
-            })
-        });
-    </script> -->
+        .then(function(resultado){
+            console.log("Resposta do Flask:", resultado);
+
+// Se o resultado for falso, o ! inverterá pra verdadeiro e então ele irá para o próximo comando que é o indicador de erro, mas caso seja verdadeiro, o ! inverterá para falso e então ele pulará aquele comando indo direto ao console.log
+            if(!resultado.sucesso){
+                throw new Error("A conversão não foi concluída");
+            }
+
+            console.log("Processamento concluído com sucesso");
+
+            console.log("JSON RECEBIDO:", resultado);
+            console.log("SUCESSO:", resultado.sucesso);
+
+            finalizarAnimacao();
+        })
+
+        .catch(function(erro){
+            console.error("Erro:",erro);
+
+            mostrarErro();
+        })
+
+    });
+</script> 
 </body>
 </html>

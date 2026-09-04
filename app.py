@@ -34,11 +34,15 @@ def home():
                         arquivo_saida = converter_pdf(arquivo)
 
                     elif link:
-                          arquivo_saida = converter_google_sheets(link)
+                        arquivo_saida = converter_google_sheets(link)
                     else:
-                          render_template("index.html", erro = "Selecione um PDF ou insira um link do google-sheet")
+                        return render_template("index.html", erro = "Selecione um PDF ou insira um link do google-sheet")
+
+# Condicionamento para ver se a requisição é AJAX ou não, caso seja, ele retorna um JSON com a mensagem de sucesso, caso contrário, ele retorna o arquivo para download
+                    if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+                        return {"sucesso": True}
                 
-#Ele lança o arquivo no sistema
+# Ele lança o arquivo no sistema
                     return send_file(arquivo_saida)
 
             except Exception as erro:
@@ -49,10 +53,15 @@ def home():
                     
                     mensagem  = tratar_erro(erro)
 
+                    if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+                        return {
+                            "sucesso": False,
+                            "erro": mensagem}, 400
+
             return render_template("index.html", erro = mensagem)
                 
 
-#Enquanto nada for enviado ainda será um GET, logo, enquanto isso, afim de evitar erro, o programa pula para as linha anteriores para que a página possa ser aberta, carregando a página através do arquivo HTML
+# Enquanto nada for enviado ainda será um GET, logo, enquanto isso, afim de evitar erro, o programa pula para as linha anteriores para que a página possa ser aberta, carregando a página através do arquivo HTML
     return render_template(
         "index.html")
 
@@ -66,27 +75,17 @@ def buscar_rastreabilidade_api():
 # Transforma os dados recebidos em JSON e transforma em um dicionário python
     texto = request.get_json()
 
-    print("=== BUSCAR RASTREABILIDADE ===")
-    print("JSON RECEBIDO:", texto)
-
     identificador = texto["identificador"]
-    print("IDENTIFICADOR RECEBIDO:", identificador)
 
     dados = buscar_rastreabilidade(identificador)
-    print("DADOS ENCONTRADOS:", dados)
 
     if dados is None:
           return {"Erro": "identificador não encontrado"}, 404
 
     localizacao = localizar_aba(dados)
 
-    print("LOCALIZAÇÃO ENCONTRADA: ", localizacao)
-
     if localizacao is None:
           return {"Erro": "não foi possível localizar a OdP"}, 404
-
-    print("DADOS:", dados)
-    print("LOCALIZAÇÃO:", localizacao)
 
 # Ao dar o último return o Flask sempre irá transformar o texto novamente em string para que ele possa navegar pela rede
     return {
@@ -108,30 +107,17 @@ def atualizar_rastreabilidade_api():
 # Ele recebe todos os dados q1ue o servidor enviar e converte de JSON para dicionário do python para que o seu programa possa usá-lo
     texto = request.get_json()
 
-    print("=== ATUALIZAÇÃO RECEBIDA ===")
-    print("DADOS:", texto)
-
     identificador = texto["identificador"]
-
-    print("IDENTIFICADOR:", identificador)
 
     dados = buscar_rastreabilidade(identificador)
 
-    print("DADOS ENCONTRADOS:", dados)
-
     if dados is None:
-        print("ERRO: IDENTIFICADOR NÃO ENCONTRADO")
         return {"Erro": "Identificador não encontrado"}, 404
       
     localizacao = localizar_aba(dados)
 
-    print("LOCALIZAÇÃO:", localizacao)
-
     if localizacao is None:
-        print("ERRO: ODP NÃO ENCONTRADA")
         return {"Erro": "ODP não encontrada"}, 404
-
-    print("CHAMANDO ATUALIZAR_ODP")
 
     atualizar_odp (
         localizacao["arquivo"],

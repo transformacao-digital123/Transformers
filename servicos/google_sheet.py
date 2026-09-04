@@ -15,11 +15,9 @@ import requests
 
 def converter_google_sheets(link):
 
-    print("1 - COMEÇANDO CONVERSÃO")
 
     rastreabilidade = {}
 
-    print("LINK RECEBIDO:", link)
 
     os.makedirs("temporario", exist_ok=True)
 
@@ -69,9 +67,6 @@ def converter_google_sheets(link):
         return planilha
          
     def identificar_blocos(aba):
-
-
-        print("2 - PLANILHA LIDA")
 
         maquina = ""
         operador = ""
@@ -208,6 +203,9 @@ def converter_google_sheets(link):
     for indice,ordem in enumerate(ordens):
 # Função chamada para analisar o padrão, e descobrir o filme e o peso do tubete. Além disso, dentro dela nota-se 2 padrao, o 1° é para encontrar a variável dentro do dicionário e o 2° é para encontrar a coluna caso ela se chame PADRÃO
         try:
+
+                print("PADRÃO:", repr(ordem["padrao"]))
+                print("TIPO:", type(ordem["padrao"]))
                 informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
              
                 ordem["filme"] = informacoes["filme"]

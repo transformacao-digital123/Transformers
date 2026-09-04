@@ -8123,3 +8123,811 @@
 2026-08-26 16:53:57,607 - INFO - 127.0.0.1 - - [26/Aug/2026 16:53:57] "POST / HTTP/1.1" 200 -
 2026-08-26 16:54:02,883 - INFO - 127.0.0.1 - - [26/Aug/2026 16:54:02] "GET /camera HTTP/1.1" 200 -
 2026-08-26 16:54:08,087 - INFO - 127.0.0.1 - - [26/Aug/2026 16:54:08] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-08-27 07:07:25,044 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-27 07:07:25,044 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-27 07:07:25,047 - INFO -  * Restarting with stat
+2026-08-27 07:07:25,796 - WARNING -  * Debugger is active!
+2026-08-27 07:07:25,798 - INFO -  * Debugger PIN: 133-117-302
+2026-08-27 07:28:14,153 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-27 07:28:14,154 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-27 07:28:14,157 - INFO -  * Restarting with stat
+2026-08-27 07:28:14,898 - WARNING -  * Debugger is active!
+2026-08-27 07:28:14,898 - INFO -  * Debugger PIN: 133-117-302
+2026-08-27 07:51:32,330 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:32] "GET / HTTP/1.1" 200 -
+2026-08-27 07:51:32,352 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 07:51:32,352 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:32] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 07:51:32,352 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:32] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 07:51:32,372 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:32] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 07:51:32,435 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-27 07:51:47,260 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:47] "POST / HTTP/1.1" 200 -
+2026-08-27 07:51:47,284 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 07:51:47,288 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:47] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 07:51:47,296 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:47] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 07:51:47,300 - INFO - 127.0.0.1 - - [27/Aug/2026 07:51:47] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 07:58:51,698 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\google_sheet.py', reloading
+2026-08-27 07:58:51,801 - INFO -  * Restarting with stat
+2026-08-27 07:58:53,120 - WARNING -  * Debugger is active!
+2026-08-27 07:58:53,120 - INFO -  * Debugger PIN: 133-117-302
+2026-08-27 07:58:58,484 - INFO - 127.0.0.1 - - [27/Aug/2026 07:58:58] "GET / HTTP/1.1" 200 -
+2026-08-27 07:58:58,527 - INFO - 127.0.0.1 - - [27/Aug/2026 07:58:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 07:58:58,530 - INFO - 127.0.0.1 - - [27/Aug/2026 07:58:58] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 07:58:58,535 - INFO - 127.0.0.1 - - [27/Aug/2026 07:58:58] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 07:58:58,536 - INFO - 127.0.0.1 - - [27/Aug/2026 07:58:58] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 07:59:09,626 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:09] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-27 07:59:12,639 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:12] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-27 07:59:46,244 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:46] "GET / HTTP/1.1" 200 -
+2026-08-27 07:59:46,326 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 07:59:46,332 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:46] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 07:59:46,333 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:46] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 07:59:46,340 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:46] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 07:59:56,812 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:56] "POST / HTTP/1.1" 200 -
+2026-08-27 07:59:56,827 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 07:59:56,837 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:56] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 07:59:56,845 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:56] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 07:59:56,850 - INFO - 127.0.0.1 - - [27/Aug/2026 07:59:56] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 08:02:52,199 - INFO - 127.0.0.1 - - [27/Aug/2026 08:02:52] "GET / HTTP/1.1" 200 -
+2026-08-27 08:02:52,249 - INFO - 127.0.0.1 - - [27/Aug/2026 08:02:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 08:02:52,249 - INFO - 127.0.0.1 - - [27/Aug/2026 08:02:52] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 08:02:52,249 - INFO - 127.0.0.1 - - [27/Aug/2026 08:02:52] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 08:02:52,262 - INFO - 127.0.0.1 - - [27/Aug/2026 08:02:52] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 08:03:06,937 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:06] "POST / HTTP/1.1" 200 -
+2026-08-27 08:03:06,949 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 08:03:06,954 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:06] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 08:03:06,955 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:06] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 08:03:06,961 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:06] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 08:03:58,567 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:58] "GET / HTTP/1.1" 200 -
+2026-08-27 08:03:58,612 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 08:03:58,613 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:58] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 08:03:58,614 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:58] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 08:03:58,625 - INFO - 127.0.0.1 - - [27/Aug/2026 08:03:58] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 08:04:13,386 - INFO - 127.0.0.1 - - [27/Aug/2026 08:04:13] "POST / HTTP/1.1" 200 -
+2026-08-27 08:04:13,402 - INFO - 127.0.0.1 - - [27/Aug/2026 08:04:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 08:04:13,411 - INFO - 127.0.0.1 - - [27/Aug/2026 08:04:13] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 08:04:13,420 - INFO - 127.0.0.1 - - [27/Aug/2026 08:04:13] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 08:04:13,425 - INFO - 127.0.0.1 - - [27/Aug/2026 08:04:13] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 08:05:03,706 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:03] "GET / HTTP/1.1" 200 -
+2026-08-27 08:05:03,763 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 08:05:03,768 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:03] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 08:05:03,775 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:03] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 08:05:03,775 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:03] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 08:05:22,328 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:22] "POST / HTTP/1.1" 200 -
+2026-08-27 08:05:31,598 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:31] "GET / HTTP/1.1" 200 -
+2026-08-27 08:05:31,635 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 08:05:31,635 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:31] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 08:05:31,652 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:31] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 08:05:31,659 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:31] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 08:05:46,655 - INFO - 127.0.0.1 - - [27/Aug/2026 08:05:46] "POST / HTTP/1.1" 200 -
+2026-08-27 15:24:18,140 - INFO - 127.0.0.1 - - [27/Aug/2026 15:24:18] "GET / HTTP/1.1" 200 -
+2026-08-27 15:24:18,174 - INFO - 127.0.0.1 - - [27/Aug/2026 15:24:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-27 15:24:18,176 - INFO - 127.0.0.1 - - [27/Aug/2026 15:24:18] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-27 15:24:18,182 - INFO - 127.0.0.1 - - [27/Aug/2026 15:24:18] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-27 15:24:18,185 - INFO - 127.0.0.1 - - [27/Aug/2026 15:24:18] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-27 15:24:44,700 - INFO - 127.0.0.1 - - [27/Aug/2026 15:24:44] "POST / HTTP/1.1" 200 -
+2026-08-28 07:22:48,239 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-28 07:22:48,241 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-28 07:22:48,244 - INFO -  * Restarting with stat
+2026-08-28 07:22:48,944 - WARNING -  * Debugger is active!
+2026-08-28 07:22:48,948 - INFO -  * Debugger PIN: 133-117-302
+2026-08-28 07:31:29,097 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-28 07:31:29,097 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-28 07:31:29,099 - INFO -  * Restarting with stat
+2026-08-28 07:31:29,732 - WARNING -  * Debugger is active!
+2026-08-28 07:31:29,734 - INFO -  * Debugger PIN: 133-117-302
+2026-08-28 07:48:24,624 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:24] "GET / HTTP/1.1" 200 -
+2026-08-28 07:48:24,654 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 07:48:24,670 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:24] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 07:48:24,670 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:24] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 07:48:24,684 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:24] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:48:24,729 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-28 07:48:29,186 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:29] "GET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1" 200 -
+2026-08-28 07:48:30,094 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:30] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:48:33,235 - INFO - 127.0.0.1 - - [28/Aug/2026 07:48:33] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:50:43,871 - INFO - 127.0.0.1 - - [28/Aug/2026 07:50:43] "GET / HTTP/1.1" 200 -
+2026-08-28 07:50:43,913 - INFO - 127.0.0.1 - - [28/Aug/2026 07:50:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 07:50:43,916 - INFO - 127.0.0.1 - - [28/Aug/2026 07:50:43] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 07:50:43,918 - INFO - 127.0.0.1 - - [28/Aug/2026 07:50:43] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 07:50:43,927 - INFO - 127.0.0.1 - - [28/Aug/2026 07:50:43] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:52:47,431 - INFO - 127.0.0.1 - - [28/Aug/2026 07:52:47] "GET / HTTP/1.1" 200 -
+2026-08-28 07:52:47,471 - INFO - 127.0.0.1 - - [28/Aug/2026 07:52:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 07:52:47,476 - INFO - 127.0.0.1 - - [28/Aug/2026 07:52:47] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 07:52:47,480 - INFO - 127.0.0.1 - - [28/Aug/2026 07:52:47] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 07:52:47,488 - INFO - 127.0.0.1 - - [28/Aug/2026 07:52:47] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:52:48,428 - INFO - 127.0.0.1 - - [28/Aug/2026 07:52:48] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:52:49,353 - INFO - 127.0.0.1 - - [28/Aug/2026 07:52:49] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:52:52,506 - INFO - 127.0.0.1 - - [28/Aug/2026 07:52:52] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:53:20,417 - INFO - 127.0.0.1 - - [28/Aug/2026 07:53:20] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:53:21,318 - INFO - 127.0.0.1 - - [28/Aug/2026 07:53:21] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:53:24,439 - INFO - 127.0.0.1 - - [28/Aug/2026 07:53:24] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:56:29,455 - INFO - 127.0.0.1 - - [28/Aug/2026 07:56:29] "GET / HTTP/1.1" 200 -
+2026-08-28 07:56:29,509 - INFO - 127.0.0.1 - - [28/Aug/2026 07:56:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 07:56:29,514 - INFO - 127.0.0.1 - - [28/Aug/2026 07:56:29] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 07:56:29,514 - INFO - 127.0.0.1 - - [28/Aug/2026 07:56:29] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 07:56:29,529 - INFO - 127.0.0.1 - - [28/Aug/2026 07:56:29] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:56:30,502 - INFO - 127.0.0.1 - - [28/Aug/2026 07:56:30] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:56:31,416 - INFO - 127.0.0.1 - - [28/Aug/2026 07:56:31] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 07:56:34,529 - INFO - 127.0.0.1 - - [28/Aug/2026 07:56:34] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:12:02,145 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:02] "GET / HTTP/1.1" 200 -
+2026-08-28 08:12:02,221 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:12:02,229 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:12:02,231 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:02] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:12:02,250 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:02] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:12:03,357 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:03] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:12:04,161 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:04] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:12:07,275 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:07] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:12:24,605 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:12:24,649 - INFO - 127.0.0.1 - - [28/Aug/2026 08:12:24] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-08-28 08:17:05,518 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:05] "GET / HTTP/1.1" 200 -
+2026-08-28 08:17:05,524 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:05] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:17:05,524 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:05] "GET /static/style.css HTTP/1.1" 200 -
+2026-08-28 08:17:05,524 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:05] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:17:05,541 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:05] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:17:07,217 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:07] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:17:07,981 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:07] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:17:11,121 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:11] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:17:24,301 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:24] "GET / HTTP/1.1" 200 -
+2026-08-28 08:17:24,350 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:17:24,352 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:24] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:17:24,352 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:24] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:17:24,368 - INFO - 127.0.0.1 - - [28/Aug/2026 08:17:24] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:18:26,274 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:26] "GET / HTTP/1.1" 200 -
+2026-08-28 08:18:26,280 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:18:26,289 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:26] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:18:26,296 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:26] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:18:26,297 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:26] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:18:27,609 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:27] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:18:28,414 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:28] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:18:31,532 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:31] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:18:36,387 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:36] "GET / HTTP/1.1" 200 -
+2026-08-28 08:18:36,402 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:18:36,404 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:36] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:18:36,406 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:36] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:18:36,408 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:36] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:18:40,290 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:40] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:18:41,090 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:41] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:18:45,319 - INFO - 127.0.0.1 - - [28/Aug/2026 08:18:45] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:19:21,495 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:21] "GET / HTTP/1.1" 200 -
+2026-08-28 08:19:21,518 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:19:21,520 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:21] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:19:21,523 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:21] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:19:21,527 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:21] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:19:22,766 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:22] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:19:23,568 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:23] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:19:26,671 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:26] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:19:44,586 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:44] "GET / HTTP/1.1" 200 -
+2026-08-28 08:19:44,601 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:19:44,601 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:44] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:19:44,603 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:44] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:19:44,612 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:44] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:19:46,454 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:46] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:19:47,256 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:47] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:19:50,381 - INFO - 127.0.0.1 - - [28/Aug/2026 08:19:50] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:24:02,442 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:02] "GET / HTTP/1.1" 200 -
+2026-08-28 08:24:02,457 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:24:02,460 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:24:02,466 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:02] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:24:02,473 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:02] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:24:03,762 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:03] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:24:04,566 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:04] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:24:07,686 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:07] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:24:12,234 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:12] "GET / HTTP/1.1" 200 -
+2026-08-28 08:24:12,253 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:24:12,255 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:12] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:24:12,256 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:12] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:24:12,263 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:12] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:24:14,261 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:14] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:24:15,055 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:15] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:24:18,179 - INFO - 127.0.0.1 - - [28/Aug/2026 08:24:18] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:35,212 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:35] "GET / HTTP/1.1" 200 -
+2026-08-28 08:30:35,233 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:30:35,239 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:35] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:30:35,243 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:35] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:30:35,251 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:35] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:36,904 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:36] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:37,006 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:37] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:40,125 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:40] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:46,298 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:46] "GET / HTTP/1.1" 200 -
+2026-08-28 08:30:46,362 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:30:46,365 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:46] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:30:46,368 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:46] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:30:46,372 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:46] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:48,631 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:48] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:48,770 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:48] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:51,851 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:51] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:30:51,985 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:51] "GET / HTTP/1.1" 200 -
+2026-08-28 08:30:52,003 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:30:52,005 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:52] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:30:52,007 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:52] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:30:52,013 - INFO - 127.0.0.1 - - [28/Aug/2026 08:30:52] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:22,193 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:22] "GET / HTTP/1.1" 200 -
+2026-08-28 08:49:22,208 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:49:22,214 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:22] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:49:22,216 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:22] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:49:22,229 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:22] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:23,814 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:23] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:24,014 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:24] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:27,216 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:27] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:44,621 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:44] "GET / HTTP/1.1" 200 -
+2026-08-28 08:49:44,637 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:49:44,645 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:44] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:49:44,648 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:44] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:49:44,653 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:44] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:46,673 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:46] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:46,870 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:46] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:49,637 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:49] "GET / HTTP/1.1" 200 -
+2026-08-28 08:49:49,651 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:49:49,654 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:49] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:49:49,657 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:49] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:49:49,705 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:49] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:51,406 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:51] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:51,614 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:51] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:49:55,318 - INFO - 127.0.0.1 - - [28/Aug/2026 08:49:55] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:18,555 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:18] "GET / HTTP/1.1" 200 -
+2026-08-28 08:50:18,568 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:50:18,572 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:18] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:50:18,576 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:18] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:50:18,584 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:18] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:20,485 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:20] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:20,522 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:20] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:23,692 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:23] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:26,132 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:26] "GET / HTTP/1.1" 200 -
+2026-08-28 08:50:26,151 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:26] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:50:26,152 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:50:26,152 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:26] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:50:26,165 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:26] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:27,992 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:27] "GET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1" 200 -
+2026-08-28 08:50:28,009 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:28] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:31,311 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:31] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:41,091 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:41] "GET / HTTP/1.1" 200 -
+2026-08-28 08:50:41,101 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:50:41,107 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:41] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:50:41,111 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:41] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:50:41,116 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:41] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:42,838 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:42] "GET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1" 200 -
+2026-08-28 08:50:43,043 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:43] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:50:46,313 - INFO - 127.0.0.1 - - [28/Aug/2026 08:50:46] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:04,747 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:04] "GET / HTTP/1.1" 200 -
+2026-08-28 08:51:04,754 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:51:04,762 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:04] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:51:04,766 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:04] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:51:04,769 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:04] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:05,972 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:05] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:06,858 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:06] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:08,821 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:08] "GET / HTTP/1.1" 200 -
+2026-08-28 08:51:08,857 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:51:08,857 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:08] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:51:08,872 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:08] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:51:08,877 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:08] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:10,286 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:10] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:11,192 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:11] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:14,395 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:14] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:15,185 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:15] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:51:16,258 - INFO - 127.0.0.1 - - [28/Aug/2026 08:51:16] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:55:35,412 - INFO - 127.0.0.1 - - [28/Aug/2026 08:55:35] "GET / HTTP/1.1" 200 -
+2026-08-28 08:55:35,420 - INFO - 127.0.0.1 - - [28/Aug/2026 08:55:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:55:35,427 - INFO - 127.0.0.1 - - [28/Aug/2026 08:55:35] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:55:35,438 - INFO - 127.0.0.1 - - [28/Aug/2026 08:55:35] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:55:35,445 - INFO - 127.0.0.1 - - [28/Aug/2026 08:55:35] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:55:37,358 - INFO - 127.0.0.1 - - [28/Aug/2026 08:55:37] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:55:38,260 - INFO - 127.0.0.1 - - [28/Aug/2026 08:55:38] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:55:41,460 - INFO - 127.0.0.1 - - [28/Aug/2026 08:55:41] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:56:18,876 - INFO - 127.0.0.1 - - [28/Aug/2026 08:56:18] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:56:19,778 - INFO - 127.0.0.1 - - [28/Aug/2026 08:56:19] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:56:23,319 - INFO - 127.0.0.1 - - [28/Aug/2026 08:56:23] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:59:09,229 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:09] "GET / HTTP/1.1" 200 -
+2026-08-28 08:59:09,238 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:59:09,244 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:09] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:59:09,247 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:09] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:59:09,260 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:09] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:59:10,156 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:10] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:59:11,052 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:11] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:59:14,256 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:14] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:59:49,139 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:49] "GET / HTTP/1.1" 200 -
+2026-08-28 08:59:49,152 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 08:59:49,157 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:49] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 08:59:49,162 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:49] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 08:59:49,170 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:49] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:59:49,962 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:49] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:59:50,861 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:50] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 08:59:54,057 - INFO - 127.0.0.1 - - [28/Aug/2026 08:59:54] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:00:48,679 - INFO - 127.0.0.1 - - [28/Aug/2026 09:00:48] "GET / HTTP/1.1" 200 -
+2026-08-28 09:00:48,679 - INFO - 127.0.0.1 - - [28/Aug/2026 09:00:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 09:00:48,693 - INFO - 127.0.0.1 - - [28/Aug/2026 09:00:48] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 09:00:48,695 - INFO - 127.0.0.1 - - [28/Aug/2026 09:00:48] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 09:00:48,704 - INFO - 127.0.0.1 - - [28/Aug/2026 09:00:48] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:00:49,983 - INFO - 127.0.0.1 - - [28/Aug/2026 09:00:49] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:00:50,885 - INFO - 127.0.0.1 - - [28/Aug/2026 09:00:50] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:00:54,070 - INFO - 127.0.0.1 - - [28/Aug/2026 09:00:54] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:01:05,978 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:05] "GET / HTTP/1.1" 200 -
+2026-08-28 09:01:05,994 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 09:01:05,998 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:05] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 09:01:05,999 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:05] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 09:01:06,008 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:06] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:01:07,265 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:07] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:01:08,166 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:08] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:01:11,371 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:11] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:01:30,339 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:30] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:01:31,261 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:31] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 09:01:34,459 - INFO - 127.0.0.1 - - [28/Aug/2026 09:01:34] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 10:47:38,162 - INFO - 127.0.0.1 - - [28/Aug/2026 10:47:38] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 10:47:39,007 - INFO - 127.0.0.1 - - [28/Aug/2026 10:47:39] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 10:47:42,233 - INFO - 127.0.0.1 - - [28/Aug/2026 10:47:42] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:38:56,838 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:56] "GET / HTTP/1.1" 200 -
+2026-08-28 11:38:56,856 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:38:56,856 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:56] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:38:56,856 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:56] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:38:56,880 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:56] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:38:57,723 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:57] "GET / HTTP/1.1" 200 -
+2026-08-28 11:38:57,766 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:38:57,767 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:57] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:38:57,778 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:57] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:38:57,787 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:57] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:38:58,332 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:58] "GET / HTTP/1.1" 200 -
+2026-08-28 11:38:58,338 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:38:58,338 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:58] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:38:58,338 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:58] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:38:58,353 - INFO - 127.0.0.1 - - [28/Aug/2026 11:38:58] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:39:02,088 - INFO - 127.0.0.1 - - [28/Aug/2026 11:39:02] "GET / HTTP/1.1" 200 -
+2026-08-28 11:39:02,161 - INFO - 127.0.0.1 - - [28/Aug/2026 11:39:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:39:02,162 - INFO - 127.0.0.1 - - [28/Aug/2026 11:39:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:39:02,171 - INFO - 127.0.0.1 - - [28/Aug/2026 11:39:02] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:39:02,177 - INFO - 127.0.0.1 - - [28/Aug/2026 11:39:02] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:39:56,420 - INFO - 127.0.0.1 - - [28/Aug/2026 11:39:56] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:39:57,351 - INFO - 127.0.0.1 - - [28/Aug/2026 11:39:57] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:40:00,562 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:00] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:40:29,595 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:29] "GET / HTTP/1.1" 200 -
+2026-08-28 11:40:29,631 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:40:29,640 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:29] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:40:29,646 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:29] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:40:29,651 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:29] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:40:30,565 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:30] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:40:31,491 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:31] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:40:34,674 - INFO - 127.0.0.1 - - [28/Aug/2026 11:40:34] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:42:43,668 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:43] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:42:44,569 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:44] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:42:49,838 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:49] "GET / HTTP/1.1" 200 -
+2026-08-28 11:42:49,871 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:42:49,885 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:49] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:42:49,885 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:49] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:42:49,901 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:49] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:42:50,941 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:50] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:42:51,873 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:51] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:42:55,257 - INFO - 127.0.0.1 - - [28/Aug/2026 11:42:55] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:44:59,047 - INFO - 127.0.0.1 - - [28/Aug/2026 11:44:59] "GET / HTTP/1.1" 200 -
+2026-08-28 11:44:59,086 - INFO - 127.0.0.1 - - [28/Aug/2026 11:44:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:44:59,090 - INFO - 127.0.0.1 - - [28/Aug/2026 11:44:59] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:44:59,091 - INFO - 127.0.0.1 - - [28/Aug/2026 11:44:59] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:44:59,099 - INFO - 127.0.0.1 - - [28/Aug/2026 11:44:59] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:00,289 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:00] "GET /static/assets/Optimus-erro.png HTTP/1.1" 200 -
+2026-08-28 11:45:00,402 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:00] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:01,335 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:01] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:04,005 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:04] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:04,412 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:04] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:04,523 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:04] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:05,291 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:05] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:19,954 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:19] "GET / HTTP/1.1" 200 -
+2026-08-28 11:45:19,954 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:45:19,969 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:19] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:45:19,976 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:19] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:45:19,978 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:19] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:21,391 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:21] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 11:45:21,504 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:21] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:22,410 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:22] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:25,238 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:25] "GET / HTTP/1.1" 200 -
+2026-08-28 11:45:25,286 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:45:25,286 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:25] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:45:25,286 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:25] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:45:25,299 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:25] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:26,246 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:26] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 11:45:26,361 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:26] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:27,262 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:27] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:31,451 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:31] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:33,228 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:33] "GET / HTTP/1.1" 200 -
+2026-08-28 11:45:33,241 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:45:33,241 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:33] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:45:33,250 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:33] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:45:33,253 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:33] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:45:34,603 - INFO - 127.0.0.1 - - [28/Aug/2026 11:45:34] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 11:46:06,672 - INFO - 127.0.0.1 - - [28/Aug/2026 11:46:06] "GET / HTTP/1.1" 200 -
+2026-08-28 11:46:06,690 - INFO - 127.0.0.1 - - [28/Aug/2026 11:46:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:46:06,694 - INFO - 127.0.0.1 - - [28/Aug/2026 11:46:06] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:46:06,696 - INFO - 127.0.0.1 - - [28/Aug/2026 11:46:06] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:46:06,700 - INFO - 127.0.0.1 - - [28/Aug/2026 11:46:06] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:48:14,380 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:14] "GET / HTTP/1.1" 200 -
+2026-08-28 11:48:14,400 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:48:14,400 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:14] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:14,400 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:14] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:14,420 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:14] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:48:15,232 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:15] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:17,494 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:17] "GET / HTTP/1.1" 200 -
+2026-08-28 11:48:17,508 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:48:17,517 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:17] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:17,523 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:17] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:17,534 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:17] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:48:19,450 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:19] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:24,740 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:24] "GET / HTTP/1.1" 200 -
+2026-08-28 11:48:24,754 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:48:24,755 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:24] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:24,756 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:24] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:24,763 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:24] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:48:25,722 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:25] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:29,712 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:29] "GET / HTTP/1.1" 200 -
+2026-08-28 11:48:29,723 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 11:48:29,728 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:29] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:29,731 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:29] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 11:48:29,734 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:29] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 11:48:31,079 - INFO - 127.0.0.1 - - [28/Aug/2026 11:48:31] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 13:16:39,485 - INFO - 127.0.0.1 - - [28/Aug/2026 13:16:39] "GET / HTTP/1.1" 200 -
+2026-08-28 13:16:39,504 - INFO - 127.0.0.1 - - [28/Aug/2026 13:16:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 13:16:39,507 - INFO - 127.0.0.1 - - [28/Aug/2026 13:16:39] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 13:16:39,508 - INFO - 127.0.0.1 - - [28/Aug/2026 13:16:39] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 13:16:39,519 - INFO - 127.0.0.1 - - [28/Aug/2026 13:16:39] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:16:40,570 - INFO - 127.0.0.1 - - [28/Aug/2026 13:16:40] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 13:17:57,496 - INFO - 127.0.0.1 - - [28/Aug/2026 13:17:57] "GET / HTTP/1.1" 200 -
+2026-08-28 13:17:57,514 - INFO - 127.0.0.1 - - [28/Aug/2026 13:17:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 13:17:57,519 - INFO - 127.0.0.1 - - [28/Aug/2026 13:17:57] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 13:17:57,522 - INFO - 127.0.0.1 - - [28/Aug/2026 13:17:57] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 13:17:57,523 - INFO - 127.0.0.1 - - [28/Aug/2026 13:17:57] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:17:58,813 - INFO - 127.0.0.1 - - [28/Aug/2026 13:17:58] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-08-28 13:18:07,960 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:07] "GET / HTTP/1.1" 200 -
+2026-08-28 13:18:07,997 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-28 13:18:07,997 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:07] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-28 13:18:08,008 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:08] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-28 13:18:08,015 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:08] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:09,402 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:09] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:10,328 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:10] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:13,495 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:13] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:16,599 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:16] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:17,506 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:17] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:20,707 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:20] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:29,128 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:29] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:30,033 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:30] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-08-28 13:18:33,235 - INFO - 127.0.0.1 - - [28/Aug/2026 13:18:33] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-08-31 16:41:59,872 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-31 16:41:59,872 - INFO - [33mPress CTRL+C to quit[0m
+2026-08-31 16:41:59,872 - INFO -  * Restarting with stat
+2026-08-31 16:42:00,689 - WARNING -  * Debugger is active!
+2026-08-31 16:42:00,691 - INFO -  * Debugger PIN: 133-401-508
+2026-08-31 16:42:02,843 - INFO - 127.0.0.1 - - [31/Aug/2026 16:42:02] "GET / HTTP/1.1" 200 -
+2026-08-31 16:42:02,888 - INFO - 127.0.0.1 - - [31/Aug/2026 16:42:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-08-31 16:42:02,889 - INFO - 127.0.0.1 - - [31/Aug/2026 16:42:02] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-08-31 16:42:02,890 - INFO - 127.0.0.1 - - [31/Aug/2026 16:42:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-08-31 16:42:02,905 - INFO - 127.0.0.1 - - [31/Aug/2026 16:42:02] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-08-31 16:42:02,936 - INFO - 127.0.0.1 - - [31/Aug/2026 16:42:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-09-01 09:30:02,794 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-01 09:30:02,795 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-01 09:30:02,798 - INFO -  * Restarting with stat
+2026-09-01 09:30:03,548 - WARNING -  * Debugger is active!
+2026-09-01 09:30:03,548 - INFO -  * Debugger PIN: 133-401-508
+2026-09-01 09:30:14,127 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-01 09:30:14,127 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-01 09:30:14,127 - INFO -  * Restarting with stat
+2026-09-01 09:30:14,996 - WARNING -  * Debugger is active!
+2026-09-01 09:30:14,996 - INFO -  * Debugger PIN: 133-401-508
+2026-09-01 09:34:00,185 - INFO - 127.0.0.1 - - [01/Sep/2026 09:34:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-09-01 09:34:01,814 - INFO - 127.0.0.1 - - [01/Sep/2026 09:34:01] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 09:34:02,740 - INFO - 127.0.0.1 - - [01/Sep/2026 09:34:02] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 09:34:05,927 - INFO - 127.0.0.1 - - [01/Sep/2026 09:34:05] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-01 09:34:21,300 - INFO - 127.0.0.1 - - [01/Sep/2026 09:34:21] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 09:34:22,199 - INFO - 127.0.0.1 - - [01/Sep/2026 09:34:22] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 09:34:25,408 - INFO - 127.0.0.1 - - [01/Sep/2026 09:34:25] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:04:02,944 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:02] "GET / HTTP/1.1" 200 -
+2026-09-01 11:04:02,964 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 11:04:02,971 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 11:04:02,975 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:02] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 11:04:02,978 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:02] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:04:04,343 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:04] "POST / HTTP/1.1" 200 -
+2026-09-01 11:04:04,432 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:04] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:04:05,329 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:05] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:04:08,555 - INFO - 127.0.0.1 - - [01/Sep/2026 11:04:08] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:43:01,736 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-01 11:43:02,122 - INFO -  * Restarting with stat
+2026-09-01 11:43:03,696 - WARNING -  * Debugger is active!
+2026-09-01 11:43:03,714 - INFO -  * Debugger PIN: 133-401-508
+2026-09-01 11:43:08,221 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:08] "GET / HTTP/1.1" 200 -
+2026-09-01 11:43:08,263 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 11:43:08,273 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:08] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 11:43:08,275 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:08] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 11:43:08,281 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:08] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:43:09,187 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:09] "POST / HTTP/1.1" 200 -
+2026-09-01 11:43:09,286 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:09] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:43:10,204 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:10] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:43:14,042 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:14] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-01 11:43:22,587 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:22] "POST / HTTP/1.1" 200 -
+2026-09-01 11:43:40,433 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-01 11:43:40,433 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-01 11:43:40,433 - INFO -  * Restarting with stat
+2026-09-01 11:43:41,407 - WARNING -  * Debugger is active!
+2026-09-01 11:43:41,407 - INFO -  * Debugger PIN: 133-401-508
+2026-09-01 11:43:43,202 - INFO - 127.0.0.1 - - [01/Sep/2026 11:43:43] "POST / HTTP/1.1" 200 -
+2026-09-01 13:02:35,236 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-01 13:02:35,554 - INFO -  * Restarting with stat
+2026-09-01 13:02:37,243 - WARNING -  * Debugger is active!
+2026-09-01 13:02:37,246 - INFO -  * Debugger PIN: 133-401-508
+2026-09-01 13:49:13,410 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-01 13:49:13,410 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-01 13:49:13,410 - INFO -  * Restarting with stat
+2026-09-01 13:49:14,010 - WARNING -  * Debugger is active!
+2026-09-01 13:49:14,021 - INFO -  * Debugger PIN: 959-009-196
+2026-09-01 14:23:22,106 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-01 14:23:22,214 - INFO -  * Restarting with stat
+2026-09-01 14:23:23,305 - WARNING -  * Debugger is active!
+2026-09-01 14:23:23,321 - INFO -  * Debugger PIN: 959-009-196
+2026-09-01 14:38:02,215 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:02] "GET / HTTP/1.1" 200 -
+2026-09-01 14:38:02,233 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 14:38:02,237 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:02] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:02,238 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:02,251 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:02] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:02,327 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-09-01 14:38:03,620 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:03] "POST / HTTP/1.1" 200 -
+2026-09-01 14:38:03,638 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:03] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:03,738 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:03] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:04,676 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:04] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:07,884 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:07] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:20,905 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:20] "POST / HTTP/1.1" 200 -
+2026-09-01 14:38:20,921 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:20] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:21,023 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:21] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:21,924 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:21] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:25,121 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:25] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:26,797 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:26] "POST / HTTP/1.1" 200 -
+2026-09-01 14:38:28,445 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:28] "POST / HTTP/1.1" 200 -
+2026-09-01 14:38:30,072 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:30] "GET / HTTP/1.1" 200 -
+2026-09-01 14:38:30,080 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 14:38:30,080 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:30] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:30,080 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:30] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:30,096 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:30] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:31,214 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:31] "POST / HTTP/1.1" 200 -
+2026-09-01 14:38:31,232 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:31] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:31,332 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:31] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:32,235 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:32] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:34,050 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:34] "GET / HTTP/1.1" 200 -
+2026-09-01 14:38:34,057 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 14:38:34,069 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:34] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:34,074 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:34] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:34,080 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:34] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:35,858 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:35] "POST / HTTP/1.1" 200 -
+2026-09-01 14:38:35,870 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:35] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:35,970 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:35] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:36,870 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:36] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:40,080 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:40] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:40,881 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:40] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:41,584 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:41] "POST / HTTP/1.1" 200 -
+2026-09-01 14:38:41,592 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:41] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:41,693 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:41] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:46,596 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:46] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:47,247 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:47] "POST / HTTP/1.1" 200 -
+2026-09-01 14:38:47,265 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:47] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 14:38:47,365 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:47] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:48,269 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:48] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 14:38:53,156 - INFO - 127.0.0.1 - - [01/Sep/2026 14:38:53] "POST / HTTP/1.1" 200 -
+2026-09-01 15:03:48,577 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-01 15:03:48,699 - INFO -  * Restarting with stat
+2026-09-01 15:03:49,795 - WARNING -  * Debugger is active!
+2026-09-01 15:03:49,797 - INFO -  * Debugger PIN: 959-009-196
+2026-09-01 15:06:20,811 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:20] "GET / HTTP/1.1" 200 -
+2026-09-01 15:06:20,862 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 15:06:20,867 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:20] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 15:06:20,870 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:20] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 15:06:20,875 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:20] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:06:21,619 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:21] "POST / HTTP/1.1" 200 -
+2026-09-01 15:06:21,635 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:21] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 15:06:21,737 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:21] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:06:22,642 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:22] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:06:37,684 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:37] "GET / HTTP/1.1" 200 -
+2026-09-01 15:06:37,689 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 15:06:37,700 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:37] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 15:06:37,700 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:37] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 15:06:37,706 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:37] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:06:41,256 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:41] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:06:42,153 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:42] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:06:48,419 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:48] "POST / HTTP/1.1" 200 -
+2026-09-01 15:06:48,428 - INFO - 127.0.0.1 - - [01/Sep/2026 15:06:48] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 15:24:23,093 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-01 15:24:23,283 - INFO -  * Restarting with stat
+2026-09-01 15:24:24,317 - WARNING -  * Debugger is active!
+2026-09-01 15:24:24,317 - INFO -  * Debugger PIN: 959-009-196
+2026-09-01 15:24:35,745 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:35] "GET / HTTP/1.1" 200 -
+2026-09-01 15:24:35,798 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 15:24:35,802 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:35] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 15:24:35,804 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:35] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 15:24:35,812 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:35] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:24:38,048 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:38] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:24:38,965 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:38] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:24:44,451 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:44] "POST / HTTP/1.1" 200 -
+2026-09-01 15:24:44,459 - INFO - 127.0.0.1 - - [01/Sep/2026 15:24:44] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 15:28:54,724 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-01 15:28:54,856 - INFO -  * Restarting with stat
+2026-09-01 15:28:55,671 - WARNING -  * Debugger is active!
+2026-09-01 15:28:55,685 - INFO -  * Debugger PIN: 959-009-196
+2026-09-01 15:28:58,492 - INFO - 127.0.0.1 - - [01/Sep/2026 15:28:58] "GET / HTTP/1.1" 200 -
+2026-09-01 15:28:58,524 - INFO - 127.0.0.1 - - [01/Sep/2026 15:28:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 15:28:58,524 - INFO - 127.0.0.1 - - [01/Sep/2026 15:28:58] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 15:28:58,539 - INFO - 127.0.0.1 - - [01/Sep/2026 15:28:58] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 15:28:58,551 - INFO - 127.0.0.1 - - [01/Sep/2026 15:28:58] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:29:01,042 - INFO - 127.0.0.1 - - [01/Sep/2026 15:29:01] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:29:01,945 - INFO - 127.0.0.1 - - [01/Sep/2026 15:29:01] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:29:06,371 - INFO - 127.0.0.1 - - [01/Sep/2026 15:29:06] "POST / HTTP/1.1" 200 -
+2026-09-01 15:29:06,377 - INFO - 127.0.0.1 - - [01/Sep/2026 15:29:06] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 15:37:33,585 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:33] "GET / HTTP/1.1" 200 -
+2026-09-01 15:37:33,637 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 15:37:33,657 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:33] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 15:37:33,659 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:33] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 15:37:33,663 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:33] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:37:35,757 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:35] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:37:36,690 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:36] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:37:41,813 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:41] "POST / HTTP/1.1" 200 -
+2026-09-01 15:37:42,029 - INFO - 127.0.0.1 - - [01/Sep/2026 15:37:42] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:39:24,319 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:24] "POST / HTTP/1.1" 200 -
+2026-09-01 15:39:24,381 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:24] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 15:39:24,434 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:24] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:39:25,336 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:25] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:39:36,560 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:36] "GET / HTTP/1.1" 200 -
+2026-09-01 15:39:36,579 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 15:39:36,579 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:36] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 15:39:36,597 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:36] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 15:39:36,598 - INFO - 127.0.0.1 - - [01/Sep/2026 15:39:36] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:40:06,757 - INFO - 127.0.0.1 - - [01/Sep/2026 15:40:06] "POST / HTTP/1.1" 200 -
+2026-09-01 15:40:06,772 - INFO - 127.0.0.1 - - [01/Sep/2026 15:40:06] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 15:40:06,828 - INFO - 127.0.0.1 - - [01/Sep/2026 15:40:06] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 15:40:07,743 - INFO - 127.0.0.1 - - [01/Sep/2026 15:40:07] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 16:16:59,892 - INFO - 127.0.0.1 - - [01/Sep/2026 16:16:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 16:16:59,916 - INFO - 127.0.0.1 - - [01/Sep/2026 16:16:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-09-01 16:26:16,512 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-01 16:26:16,824 - INFO -  * Restarting with stat
+2026-09-01 16:26:18,229 - WARNING -  * Debugger is active!
+2026-09-01 16:26:18,229 - INFO -  * Debugger PIN: 959-009-196
+2026-09-01 16:26:20,382 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:20] "GET / HTTP/1.1" 200 -
+2026-09-01 16:26:20,421 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:20] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-01 16:26:20,421 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 16:26:20,429 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:20] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-01 16:26:20,439 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:20] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-01 16:26:25,802 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:25] "[31m[1mPOST / HTTP/1.1[0m" 400 -
+2026-09-01 16:26:25,825 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:25] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-01 16:26:25,919 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:25] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 16:26:26,852 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:26] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-01 16:26:33,466 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-01 16:26:33,525 - INFO - 127.0.0.1 - - [01/Sep/2026 16:26:33] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-09-01 16:57:35,654 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-01 16:57:35,893 - INFO -  * Restarting with stat
+2026-09-01 16:57:36,908 - WARNING -  * Debugger is active!
+2026-09-01 16:57:36,910 - INFO -  * Debugger PIN: 959-009-196
+2026-09-02 07:07:34,289 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-02 07:07:34,289 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-02 07:07:34,289 - INFO -  * Restarting with stat
+2026-09-02 07:07:35,003 - WARNING -  * Debugger is active!
+2026-09-02 07:07:35,009 - INFO -  * Debugger PIN: 959-009-196
+2026-09-02 07:08:37,649 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:37] "GET / HTTP/1.1" 200 -
+2026-09-02 07:08:37,688 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-02 07:08:37,691 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:37] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-02 07:08:37,693 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:37] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-02 07:08:37,700 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:37] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:08:37,775 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-09-02 07:08:39,252 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:39] "POST / HTTP/1.1" 200 -
+2026-09-02 07:08:39,253 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:39] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-02 07:08:39,355 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:39] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:08:40,260 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:40] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:08:47,149 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:47] "GET / HTTP/1.1" 200 -
+2026-09-02 07:08:47,166 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-02 07:08:47,168 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:47] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-02 07:08:47,170 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:47] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-02 07:08:47,174 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:47] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:08:56,453 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:56] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:08:57,355 - INFO - 127.0.0.1 - - [02/Sep/2026 07:08:57] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:09:04,825 - INFO - 127.0.0.1 - - [02/Sep/2026 07:09:04] "POST / HTTP/1.1" 200 -
+2026-09-02 07:09:05,039 - INFO - 127.0.0.1 - - [02/Sep/2026 07:09:05] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:10:23,239 - INFO - 127.0.0.1 - - [02/Sep/2026 07:10:23] "GET / HTTP/1.1" 200 -
+2026-09-02 07:10:23,302 - INFO - 127.0.0.1 - - [02/Sep/2026 07:10:23] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-02 07:10:23,304 - INFO - 127.0.0.1 - - [02/Sep/2026 07:10:23] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-02 07:10:23,306 - INFO - 127.0.0.1 - - [02/Sep/2026 07:10:23] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-02 07:10:23,306 - INFO - 127.0.0.1 - - [02/Sep/2026 07:10:23] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:12:59,092 - INFO - 127.0.0.1 - - [02/Sep/2026 07:12:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-02 07:12:59,175 - INFO - 127.0.0.1 - - [02/Sep/2026 07:12:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-09-02 07:13:07,672 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:07] "GET / HTTP/1.1" 200 -
+2026-09-02 07:13:07,705 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-02 07:13:07,714 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:07] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-02 07:13:07,716 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:07] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:13:07,719 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:07] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-02 07:13:07,749 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:07] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-09-02 07:13:09,463 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:09] "POST / HTTP/1.1" 200 -
+2026-09-02 07:13:09,475 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:09] "[36mGET /static/assets/Optimus-erro.png HTTP/1.1[0m" 304 -
+2026-09-02 07:13:09,577 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:09] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-02 07:13:10,500 - INFO - 127.0.0.1 - - [02/Sep/2026 07:13:10] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-03 15:37:24,507 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-03 15:37:24,508 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-03 15:37:24,511 - INFO -  * Restarting with stat
+2026-09-03 15:37:25,193 - WARNING -  * Debugger is active!
+2026-09-03 15:37:25,193 - INFO -  * Debugger PIN: 959-009-196
+2026-09-03 15:38:08,413 - INFO - 127.0.0.1 - - [03/Sep/2026 15:38:08] "GET / HTTP/1.1" 200 -
+2026-09-03 15:38:08,462 - INFO - 127.0.0.1 - - [03/Sep/2026 15:38:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-03 15:38:08,462 - INFO - 127.0.0.1 - - [03/Sep/2026 15:38:08] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-03 15:38:08,462 - INFO - 127.0.0.1 - - [03/Sep/2026 15:38:08] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-03 15:38:08,478 - INFO - 127.0.0.1 - - [03/Sep/2026 15:38:08] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-03 15:38:08,537 - INFO - 127.0.0.1 - - [03/Sep/2026 15:38:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-09-03 15:39:46,368 - INFO - 127.0.0.1 - - [03/Sep/2026 15:39:46] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-03 15:39:47,270 - INFO - 127.0.0.1 - - [03/Sep/2026 15:39:47] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-03 15:39:58,191 - INFO - 127.0.0.1 - - [03/Sep/2026 15:39:58] "POST / HTTP/1.1" 200 -
+2026-09-03 15:39:58,413 - INFO - 127.0.0.1 - - [03/Sep/2026 15:39:58] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:16:55,057 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-04 07:16:55,068 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-04 07:16:55,072 - INFO -  * Restarting with stat
+2026-09-04 07:16:55,786 - WARNING -  * Debugger is active!
+2026-09-04 07:16:55,789 - INFO -  * Debugger PIN: 959-009-196
+2026-09-04 07:17:07,397 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:07] "GET / HTTP/1.1" 200 -
+2026-09-04 07:17:07,433 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-04 07:17:07,462 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:07] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-04 07:17:07,465 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:07] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:17:07,468 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:07] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-04 07:17:07,533 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-09-04 07:17:22,162 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:22] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:17:23,062 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:23] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:17:33,390 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:33] "POST / HTTP/1.1" 200 -
+2026-09-04 07:17:33,607 - INFO - 127.0.0.1 - - [04/Sep/2026 07:17:33] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:18:35,225 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-09-04 07:18:35,334 - INFO -  * Restarting with stat
+2026-09-04 07:18:36,650 - WARNING -  * Debugger is active!
+2026-09-04 07:18:36,656 - INFO -  * Debugger PIN: 959-009-196
+2026-09-04 07:18:53,938 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-04 07:18:53,938 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-04 07:18:53,938 - INFO -  * Restarting with stat
+2026-09-04 07:18:54,760 - WARNING -  * Debugger is active!
+2026-09-04 07:18:54,767 - INFO -  * Debugger PIN: 959-009-196
+2026-09-04 07:19:02,864 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:02] "GET / HTTP/1.1" 200 -
+2026-09-04 07:19:02,921 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-04 07:19:02,929 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:02] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-04 07:19:02,930 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:02] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:19:02,932 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:02] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-04 07:19:13,625 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:13] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:19:14,533 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:14] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:19:23,147 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:23] "POST / HTTP/1.1" 200 -
+2026-09-04 07:19:23,372 - INFO - 127.0.0.1 - - [04/Sep/2026 07:19:23] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-04 07:21:45,716 - INFO - 127.0.0.1 - - [04/Sep/2026 07:21:45] "GET /camera HTTP/1.1" 200 -
+2026-09-04 07:22:07,488 - INFO - 127.0.0.1 - - [04/Sep/2026 07:22:07] "[33mPOST /buscar-rastreabilidade HTTP/1.1[0m" 404 -
+2026-09-04 07:22:21,529 - INFO - 127.0.0.1 - - [04/Sep/2026 07:22:21] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 07:22:25,833 - INFO - 127.0.0.1 - - [04/Sep/2026 07:22:25] "[33mPOST /buscar-rastreabilidade HTTP/1.1[0m" 404 -
+2026-09-04 07:22:36,236 - INFO - 127.0.0.1 - - [04/Sep/2026 07:22:36] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 07:22:40,042 - INFO - 127.0.0.1 - - [04/Sep/2026 07:22:40] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 07:22:45,694 - INFO - 127.0.0.1 - - [04/Sep/2026 07:22:45] "[33mPOST /buscar-rastreabilidade HTTP/1.1[0m" 404 -
+2026-09-04 07:22:51,726 - INFO - 127.0.0.1 - - [04/Sep/2026 07:22:51] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-09-04 08:12:40,217 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-04 08:12:40,217 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-04 08:12:40,222 - INFO -  * Restarting with stat
+2026-09-04 08:12:41,167 - WARNING -  * Debugger is active!
+2026-09-04 08:12:41,179 - INFO -  * Debugger PIN: 959-009-196
+2026-09-04 08:12:47,838 - INFO - 127.0.0.1 - - [04/Sep/2026 08:12:47] "GET / HTTP/1.1" 200 -
+2026-09-04 08:12:47,890 - INFO - 127.0.0.1 - - [04/Sep/2026 08:12:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-04 08:12:47,915 - INFO - 127.0.0.1 - - [04/Sep/2026 08:12:47] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-04 08:12:47,918 - INFO - 127.0.0.1 - - [04/Sep/2026 08:12:47] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-04 08:12:47,920 - INFO - 127.0.0.1 - - [04/Sep/2026 08:12:47] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-04 08:12:50,623 - INFO - 127.0.0.1 - - [04/Sep/2026 08:12:50] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-04 08:12:51,523 - INFO - 127.0.0.1 - - [04/Sep/2026 08:12:51] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-04 08:13:00,678 - INFO - 127.0.0.1 - - [04/Sep/2026 08:13:00] "POST / HTTP/1.1" 200 -
+2026-09-04 08:13:00,897 - INFO - 127.0.0.1 - - [04/Sep/2026 08:13:00] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-04 08:13:39,676 - INFO - 127.0.0.1 - - [04/Sep/2026 08:13:39] "GET /camera HTTP/1.1" 200 -
+2026-09-04 08:13:49,604 - INFO - 127.0.0.1 - - [04/Sep/2026 08:13:49] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:13:52,561 - INFO - 127.0.0.1 - - [04/Sep/2026 08:13:52] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:13:55,441 - INFO - 127.0.0.1 - - [04/Sep/2026 08:13:55] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:13:58,164 - INFO - 127.0.0.1 - - [04/Sep/2026 08:13:58] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:14:01,922 - INFO - 127.0.0.1 - - [04/Sep/2026 08:14:01] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:14:17,976 - INFO - 127.0.0.1 - - [04/Sep/2026 08:14:17] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:14:30,967 - INFO - 127.0.0.1 - - [04/Sep/2026 08:14:30] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:14:33,774 - INFO - 127.0.0.1 - - [04/Sep/2026 08:14:33] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-09-04 08:14:40,442 - INFO - 127.0.0.1 - - [04/Sep/2026 08:14:40] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:15:59,641 - INFO - 127.0.0.1 - - [04/Sep/2026 08:15:59] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:16:10,875 - INFO - 127.0.0.1 - - [04/Sep/2026 08:16:10] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:23:56,825 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\qrcode.py', reloading
+2026-09-04 08:23:56,990 - INFO -  * Restarting with stat
+2026-09-04 08:23:58,274 - WARNING -  * Debugger is active!
+2026-09-04 08:23:58,274 - INFO -  * Debugger PIN: 959-009-196

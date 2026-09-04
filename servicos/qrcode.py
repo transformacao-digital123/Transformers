@@ -12,15 +12,17 @@ FONTE_PADRAO = Font(name="Arial", size=11)
 ALINHAMENTO_PADRAO = Alignment(horizontal="center",vertical="center",wrap_text=True)
 
 # O texto servirá como parâmetro no lugar de texto_qr onde ODP, data, turno e operador são parâmetros obrigatórios pois são eles que nos ajudarão a encontrar o caminho até ao arquivo, aba e linha onde está nossa odp
-def gerar_qrcode(texto,odp):
+def gerar_qrcode(texto,odp,operador):
 
 # Pegue o conteúdo recebido em odp e transforme-o em uma imagem de QR Code.
         qr = qrcode.make(texto)
 
         odp_limpo = odp.replace("/","-")
 
+        operario = operador
+
  # Aqui você aproveitou a própria ODP para criar um nome único para a imagem       
-        test = f"QR_{odp_limpo}.png"
+        test = f"QR_{odp_limpo}_{operario}.png"
 
         caminho = os.path.join("temporario", test)
 
@@ -83,7 +85,7 @@ def preencher_etiqueta(ordem,rastreabilidade):
         texto_qr = identificador
 
 # Usa a função Gerar_qrcode para gerar o caminho da imagem PNG do QRcode. A odp aí é apenas pq a função gerar-qrcode exige esses 2 parâmetros
-        caminho_qr = gerar_qrcode(texto_qr,ordem["odp"])
+        caminho_qr = gerar_qrcode(texto_qr,ordem["odp"],ordem["operador"])
 
 # Cria um objeto que pode ser inserido na planilha
         qr = Image(caminho_qr)
@@ -97,8 +99,10 @@ def preencher_etiqueta(ordem,rastreabilidade):
 
         odp_limpo = ordem["odp"].replace("/","-")
 
+        operario = ordem["operador"]
+
 # Camiho da saída do nvo arquivo das etiqueta
-        caminho = f"Etiqueta_{odp_limpo}.xlsx"
+        caminho = f"Etiqueta_{odp_limpo}_{operario}.xlsx"
 
         caminho_saida = os.path.join("temporario", caminho)
 
@@ -132,9 +136,6 @@ def buscar_rastreabilidade(identificador):
 
     if identificador not in rastreabilidade:
         return None
-
-    print("QUANTIDADE DE IDENTIFICADORES:", len(rastreabilidade))
-    print("IDENTIFICADORES:", list(rastreabilidade.keys()))
        
     return rastreabilidade[identificador]
 
