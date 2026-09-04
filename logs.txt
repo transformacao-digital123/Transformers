@@ -8931,3 +8931,7 @@
 2026-09-04 08:23:56,990 - INFO -  * Restarting with stat
 2026-09-04 08:23:58,274 - WARNING -  * Debugger is active!
 2026-09-04 08:23:58,274 - INFO -  * Debugger PIN: 959-009-196
+2026-09-04 08:25:56,348 - INFO - 127.0.0.1 - - [04/Sep/2026 08:25:56] "[35m[1mPOST /buscar-rastreabilidade HTTP/1.1[0m" 500 -
+2026-09-04 08:26:09,535 - INFO - 127.0.0.1 - - [04/Sep/2026 08:26:09] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-09-04 08:26:20,140 - INFO - 127.0.0.1 - - [04/Sep/2026 08:26:20] "GET /camera HTTP/1.1" 200 -
+2026-09-04 08:26:20,172 - INFO - 127.0.0.1 - - [04/Sep/2026 08:26:20] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
