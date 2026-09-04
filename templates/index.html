@@ -116,7 +116,7 @@
 
     </div> 
 
-<!-- <script>
+<script>
 
 // Criou as 2 contantesuma é o optimus que receberá quem tiver id = "optimus" e formulario, que procura e captura o 1º formulário que encontrar na página, no caso as partes de preenchimento eo botão, e o oultimo captura o container,a caixa onde ocorrerá a animação
     const formulario = document.querySelector("form");
@@ -154,6 +154,7 @@
 // Aqui o atributo de origem src substituirá o que estiver em optimus pelo caminho descrito
     formulario.addEventListener("submit", function(event){
 
+// Impede o comportamento padrão do formulário do navegador, é como se ele dissesse ao navegador: "Navegador, não envie esse formulário do jeito tradicional. Eu, JavaScript, vou cuidar disso."
         event.preventDefault();
 
         const dados = new FormData(formulario); 
@@ -228,6 +229,6 @@
         })
 
     });
-</script>  -->
+</script> 
 </body>
 </html>

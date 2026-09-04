@@ -36,11 +36,16 @@ def home():
                     elif link:
                         arquivo_saida = converter_google_sheets(link)
                     else:
+                        if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+                             return {
+                                  "sucesso": False,
+                                  "erro": "Selecione um PDF ou insira um link do google-sheet"
+                                  }, 400
+
                         return render_template("index.html", erro = "Selecione um PDF ou insira um link do google-sheet")
 
 # Condicionamento para ver se a requisição é AJAX ou não, caso seja, ele retorna um JSON com a mensagem de sucesso, caso contrário, ele retorna o arquivo para download
-                    if request.headers.get("X-Requested-With") == "XMLHttpRequest":
-                        return {"sucesso": True}
+
                 
 # Ele lança o arquivo no sistema
                     return send_file(arquivo_saida)

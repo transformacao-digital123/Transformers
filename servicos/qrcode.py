@@ -5,6 +5,10 @@ from openpyxl import load_workbook
 import os
 import json
 
+from openpyxl.drawing.spreadsheet_drawing import AnchorMarker, OneCellAnchor
+from openpyxl.drawing.xdr import XDRPositiveSize2D
+from openpyxl.utils.units import pixels_to_EMU
+
 from servicos.apontamento import localizar_odp
 
 FONTE_PADRAO = Font(name="Arial", size=11)
@@ -91,11 +95,17 @@ def preencher_etiqueta(ordem,rastreabilidade):
         qr = Image(caminho_qr)
 
 # Define os tamahos 406x240(valores do espaço onde o QR code está inserido)
-        qr.height = 200
-        qr.width = 200
+        qr.height = 245
+        qr.width = 245
+
+# col define a coluna B,row a linha 11 e as terminações em Off são pra encostar certinho das bordas da coluna e célula especificado, sem espaçamento desnecessário
+#         marcador = AnchorMarker(col = 1,colOff = 0, row = 10, rowOff = 0)
+
+# # 
+#         qr.anchor = OneCellAnchor(_from = marcador, ext = XDRPositiveSize2D(pixels_to_EMU(qr.width), pixels_to_EMU(qr.height)))
 
 # Adiciona a imagem começando na célula especificada
-        aba.add_image(qr,"B12")
+        aba.add_image(qr,"B11")
 
         odp_limpo = ordem["odp"].replace("/","-")
 
