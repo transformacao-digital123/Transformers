@@ -74,11 +74,14 @@
                         Converter Ordem de Produção
                         </button>
 
+                        {% if ambiente == "local" %}
                         <button
                         id = "btn-imprimir-etiquetas"
                         type = "button"
                         style="display: none;"
-                        >🖨️ Imprimir etiquetas</button>
+                        >🖨️ Imprimir etiquetas
+                        </button>
+                        {% endif %}
                 </div>
 
                 </div>

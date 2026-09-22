@@ -11,7 +11,8 @@ from servicos.progresso.progresso import obter_progresso
 from servicos.rastreabilidade.consultar_rastreabilidade import consultar_rastreabilidade
 from servicos.rastreabilidade.atualizar_rastreabilidade import atualizar_rastreabilidade
 from servicos.validacao.exceptions import RastreabilidadeNaoEncontradaError
-from servicos.etiquetas.imprimir_etiqueta import imprimir_etiqueta
+
+AMBIENTE = os.getenv("AMBIENTE","local")
 
 app = Flask(__name__)
 
@@ -53,12 +54,14 @@ def home():
                                   "erro": "Selecione um PDF ou insira um link do google-sheet"
                                   }, 400
 
-                        return render_template("index.html", erro = "Selecione um PDF ou insira um link do google-sheet")
+                        return render_template("index.html",
+                                               erro = "Selecione um PDF ou insira um link do google-sheet",
+                                               ambiente = AMBIENTE)
 
 # Condicionamento para ver se a requisição é AJAX ou não, caso seja, ele retorna um JSON com a mensagem de sucesso, caso contrário, ele retorna o arquivo para download
                     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
                         return {"sucesso": True}
-                
+              
 # Ele lança o arquivo no sistema
                     return send_file(arquivo_saida)
 
@@ -75,17 +78,23 @@ def home():
                             "sucesso": False,
                             "erro": mensagem}, 400
 
-            return render_template("index.html", erro = mensagem)
+            return render_template("index.html",
+                                   erro = mensagem,
+                                   ambiente = AMBIENTE)
                 
 
 # Enquanto nada for enviado ainda será um GET, logo, enquanto isso, afim de evitar erro, o programa pula para as linha anteriores para que a página possa ser aberta, carregando a página através do arquivo HTML
     return render_template(
-        "index.html")
+        "index.html",
+        ambiente = AMBIENTE)
 
 @app.route("/imprimir-etiquetas", methods = ["POST"])
 def imprimir_etiquetas():
 
     try:
+
+        from servicos.etiquetas.imprimir_etiqueta import imprimir_etiqueta
+
         for etiqueta in etiquetas_geradas:
             imprimir_etiqueta(etiqueta)
 

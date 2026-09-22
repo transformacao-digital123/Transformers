@@ -14291,3 +14291,37 @@
 2026-09-22 13:32:14,386 - INFO - 127.0.0.1 - - [22/Sep/2026 13:32:14] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
 2026-09-22 13:32:14,387 - INFO - 127.0.0.1 - - [22/Sep/2026 13:32:14] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
 2026-09-22 13:32:22,456 - INFO - 127.0.0.1 - - [22/Sep/2026 13:32:22] "POST / HTTP/1.1" 200 -
+2026-09-22 13:43:00,414 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:43:00,840 - INFO -  * Restarting with stat
+2026-09-22 13:43:02,528 - WARNING -  * Debugger is active!
+2026-09-22 13:43:02,542 - INFO -  * Debugger PIN: 356-189-915
+2026-09-22 13:43:07,726 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:43:07,819 - INFO -  * Restarting with stat
+2026-09-22 13:43:08,698 - WARNING -  * Debugger is active!
+2026-09-22 13:43:08,700 - INFO -  * Debugger PIN: 356-189-915
+2026-09-22 13:43:09,765 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:43:09,841 - INFO -  * Restarting with stat
+2026-09-22 13:43:10,640 - WARNING -  * Debugger is active!
+2026-09-22 13:43:10,642 - INFO -  * Debugger PIN: 356-189-915
+2026-09-22 13:43:11,694 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:43:11,773 - INFO -  * Restarting with stat
+2026-09-22 13:43:12,548 - WARNING -  * Debugger is active!
+2026-09-22 13:43:12,548 - INFO -  * Debugger PIN: 356-189-915
+2026-09-22 13:46:55,230 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:46:55,324 - INFO -  * Restarting with stat
+2026-09-22 13:46:56,362 - WARNING -  * Debugger is active!
+2026-09-22 13:46:56,373 - INFO -  * Debugger PIN: 356-189-915
+2026-09-22 13:47:00,509 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:47:00,673 - INFO -  * Restarting with stat
+2026-09-22 13:47:01,598 - WARNING -  * Debugger is active!
+2026-09-22 13:47:01,600 - INFO -  * Debugger PIN: 356-189-915
+2026-09-22 13:47:02,648 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:47:02,724 - INFO -  * Restarting with stat
+2026-09-22 13:47:03,521 - WARNING -  * Debugger is active!
+2026-09-22 13:47:03,524 - INFO -  * Debugger PIN: 356-189-915
+2026-09-22 13:47:04,597 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:47:04,681 - INFO -  * Restarting with stat
+2026-09-22 13:47:05,331 - WARNING -  * Debugger is active!
+2026-09-22 13:47:05,331 - INFO -  * Debugger PIN: 356-189-915
+2026-09-22 13:47:10,608 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-22 13:47:10,791 - INFO -  * Restarting with stat
