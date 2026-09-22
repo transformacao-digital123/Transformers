@@ -280,7 +280,11 @@
                         throw new Error("A conversão não foi concluída");
                     }
 
-                    document.getElementById("btn-imprimir-etiquetas").style.display = "block";
+                    const botaoImprimir = document.getElementById("btn-imprimir-etiquetas");
+
+                    if (botaoImprimir){
+                        botaoImprimir.style.display = "block";
+                    }
 
                     console.log("Processamento concluído com sucesso");
 
@@ -306,34 +310,40 @@
 
             pararAcompanhamentoProgresso();
         })
-
-    document.getElementById("btn-imprimir-etiquetas").addEventListener("click", function(){
-
-        fetch("/imprimir-etiquetas", {
-            method: "POST",
-            headers: {
-                "X-Requested-With": "XMLHttpRequest"
-            }
-        })
-        .then(function(resposta){
-            return resposta.json();
-        })
-        .then(function(resultado){
-
-            if(resultado.sucesso){
-                alert("Etiquetas enviadas para impressão!")
-            } else {
-                alert(resultado.erro)
-            }
-        })
-
-        .catch(function(erro){
-            console.error("Erro ao i,primir etiquetas:", erro);
-            alert("Não foi possível imprimir as etiquetas.")        
-        })
-    });
         
+
+    const botaoImprimir =document.getElementById("btn-imprimir-etiquetas");
+
+    if (botaoImprimir){
+
+        botaoImprimir.addEventListener("click", function(){
+
+            fetch("/imprimir-etiquetas", {
+                method: "POST",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+            .then(function(resposta){
+                return resposta.json();
+            })
+            .then(function(resultado){
+
+                if(resultado.sucesso){
+                    alert("Etiquetas enviadas para impressão!");
+                } else {
+                    alert(resultado.erro);
+                }
+            })
+
+            .catch(function(erro){
+                console.error("Erro ao imprimir etiquetas:", erro);
+                alert("Não foi possível imprimir as etiquetas.");      
+            })
         });
+    }
+    
+});
 </script> 
 </body>
 </html>
