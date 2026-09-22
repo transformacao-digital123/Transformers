@@ -1,8 +1,8 @@
 #importações vindas de outros arquivos
-from servicos.validar import validar_arquivo
-from servicos.extrator_pdf import processar_pdf
-from servicos.planilha import preencher_planilha
-from servicos.logger import registrar_info, registrar_erro
+from servicos.validacao.validar import validar_arquivo
+from servicos.interpretacao.extrator_pdf import processar_pdf
+from servicos.arquivos.planilha import preencher_planilha
+from servicos.log.logger import registrar_info, registrar_erro
 
 def converter_pdf(arquivo):
             try:

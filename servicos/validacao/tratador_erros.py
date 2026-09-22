@@ -1,9 +1,14 @@
-from servicos.exceptions import (
+from servicos.validacao.exceptions import (
     DataNaoEncontradoError,
     NumeroPedidoNaoEncontrado,
     ClienteNaoEncontradoError,
     PadraoNaoEncontradoerror,
-    FilmeNaoEncontradoerror
+    FilmeNaoEncontradoerror,
+    OdpNaoEncontradaError,
+    PlanilhaNaoEncontradaError,
+    PlanilhaCorrompidaError,
+    AbaNaoEncontradaError,
+    RastreabilidadeNaoEncontradaError
 )
 
 MENSAGENS = {
@@ -20,7 +25,22 @@ MENSAGENS = {
     "O campo padrão não foi encontrado",
 
     FilmeNaoEncontradoerror:    
-    "O campo filme não foi encontrado"
+    "O campo filme não foi encontrado",
+
+    OdpNaoEncontradaError:
+    "O número da ODP não foi encontrado na planilha",
+
+    PlanilhaNaoEncontradaError:
+    "A planilha de rastreabilidade não foi encontrada,\nverifique se ela não está aberta em outra aba",
+
+    PlanilhaCorrompidaError:
+    "A planilha encontrada está corrompida ou não é um arquivo Excel válido",
+
+    AbaNaoEncontradaError:
+    "A aba solicitada não foi encontrada na planilha",
+
+    RastreabilidadeNaoEncontradaError:
+    "Não foi possível encontrar os dados de rastreabilidade"
 }
 
 def tratar_erro(erro):
@@ -37,7 +57,7 @@ def tratar_erro(erro):
 
 #extrator_pdf│
 #       ▼
-# raise ClienteNaoEncontradoError
+# raise ClienteNaoEncontradoError()
 #       │
 #       ▼
 # conversor

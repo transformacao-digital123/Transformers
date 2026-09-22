@@ -146,13 +146,14 @@ button:hover{
 }
 
 .error{
+    display: none;
+    width: fit-content;
     padding-left: 10px;
     padding-right: 10px;
     font-size: 20px;
     margin:20px 10px;
     background: #fdeaea;
     border-radius: var(--borda-arredondada);
-    display: inline-block;
     border: 3px solid var(--cor-erro);
     color: var(--cor-erro);
     padding: 12px;

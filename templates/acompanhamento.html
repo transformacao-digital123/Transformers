@@ -100,19 +100,21 @@
 
     <script>
 
+        let arquivoAtual = "";
+
         function carregarDados() {
 
-            const arquivo = prompt(
+            arquivoAtual = prompt(
                 "Digite o caminho do arquivo no Render:"
             );
 
-            if (!arquivo) {
+            if (!arquivoAtual) {
                 return;
             }
 
             fetch(
                 "/dados-acompanhamento?arquivo=" +
-                encodeURIComponent(arquivo)
+                encodeURIComponent(arquivoAtual)
             )
 
             .then(function(resposta) {
@@ -173,16 +175,14 @@
 
         function baixarExcel() {
 
-            const arquivo = document.getElementById("arquivo").value;
-
-            if (!arquivo) {
+            if (!arquivoAtual) {
                 alert("Selecione um arquivo.");
                 return;
             }
 
             window.location.href =
                 "/baixar-acompanhamento?arquivo=" +
-                encodeURIComponent(arquivo);
+                encodeURIComponent(arquivoAtual);
         }
 
     </script>

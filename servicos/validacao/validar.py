@@ -1,5 +1,3 @@
-from flask import request
-
 def validar_arquivo(arquivo):
 
     if not arquivo:

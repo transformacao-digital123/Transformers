@@ -1,18 +1,25 @@
 from flask import Flask, render_template, request, send_file
 from openpyxl import load_workbook
 import os 
-
 import traceback
 
 #importações vindas de outros arquivos
-from servicos.conversor import converter_pdf
-from servicos.google_sheet import converter_google_sheets, criar_zip
-from servicos.tratador_erros import tratar_erro
-from servicos.qrcode import buscar_rastreabilidade, localizar_aba
-from servicos.apontamento import atualizar_odp
+from servicos.conversao.conversor import converter_pdf
+from servicos.orquestradror.google_sheet import converter_google_sheets
+from servicos.validacao.tratador_erros import tratar_erro
+from servicos.progresso.progresso import obter_progresso
+from servicos.rastreabilidade.consultar_rastreabilidade import consultar_rastreabilidade
+from servicos.rastreabilidade.atualizar_rastreabilidade import atualizar_rastreabilidade
+from servicos.validacao.exceptions import RastreabilidadeNaoEncontradaError
+from servicos.etiquetas.imprimir_etiqueta import imprimir_etiqueta
 
 app = Flask(__name__)
 
+@app.route("/progresso")
+def progresso():
+    return {"progresso": obter_progresso()}
+
+etiquetas_geradas = []
 # Comandos padrão do Flask para organizar o acesso a página Web
 @app.route("/", methods = ["GET", "POST"])
 def home():
@@ -34,7 +41,11 @@ def home():
                         arquivo_saida = converter_pdf(arquivo)
 
                     elif link:
-                        arquivo_saida = converter_google_sheets(link)
+                        arquivo_saida, etiquetas = converter_google_sheets(link)
+
+                        etiquetas_geradas.clear()
+                        etiquetas_geradas.extend(etiquetas)
+
                     else:
                         if request.headers.get("X-Requested-With") == "XMLHttpRequest":
                              return {
@@ -45,7 +56,8 @@ def home():
                         return render_template("index.html", erro = "Selecione um PDF ou insira um link do google-sheet")
 
 # Condicionamento para ver se a requisição é AJAX ou não, caso seja, ele retorna um JSON com a mensagem de sucesso, caso contrário, ele retorna o arquivo para download
-
+                    if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+                        return {"sucesso": True}
                 
 # Ele lança o arquivo no sistema
                     return send_file(arquivo_saida)
@@ -70,6 +82,27 @@ def home():
     return render_template(
         "index.html")
 
+@app.route("/imprimir-etiquetas", methods = ["POST"])
+def imprimir_etiquetas():
+
+    try:
+        for etiqueta in etiquetas_geradas:
+            imprimir_etiqueta(etiqueta)
+
+        return {
+            "sucesso": True
+        }
+    except Exception as erro:
+
+        traceback.print_exc()
+
+        mensagem = tratar_erro(erro)
+
+        return {
+            "sucesso": False,
+            "erro": mensagem  
+        }, 400
+
 @app.route("/camera")
 def camera():
     return render_template("camera.html")
@@ -82,15 +115,13 @@ def buscar_rastreabilidade_api():
 
     identificador = texto["identificador"]
 
-    dados = buscar_rastreabilidade(identificador)
+    resultado = consultar_rastreabilidade(identificador)
 
-    if dados is None:
-          return {"Erro": "identificador não encontrado"}, 404
+    if resultado is None:
+        raise RastreabilidadeNaoEncontradaError()
 
-    localizacao = localizar_aba(dados)
-
-    if localizacao is None:
-          return {"Erro": "não foi possível localizar a OdP"}, 404
+    dados = resultado["dados"]
+    localizacao = resultado["localizacao"]
 
 # Ao dar o último return o Flask sempre irá transformar o texto novamente em string para que ele possa navegar pela rede
     return {
@@ -114,29 +145,16 @@ def atualizar_rastreabilidade_api():
 
     identificador = texto["identificador"]
 
-    dados = buscar_rastreabilidade(identificador)
+    resultado = atualizar_rastreabilidade(identificador,texto)
 
-    if dados is None:
-        return {"Erro": "Identificador não encontrado"}, 404
-      
-    localizacao = localizar_aba(dados)
+    if resultado is None: 
+        return {"Erro": "não foi possível localizar a rastreabilidade"}, 404
 
-    if localizacao is None:
-        return {"Erro": "ODP não encontrada"}, 404
-
-    atualizar_odp (
-        localizacao["arquivo"],
-        localizacao["aba"],
-        localizacao["linha"],
-        identificador,
-        texto
-    )
+    localizacao = resultado["resultado"]
 
     return {
          "mensagem": "Dados atualizados com sucesso",
-         "arquivo": localizacao["arquivo"],
-         "aba": localizacao["aba"],
-         "linha": localizacao["linha"]
+         "resultado": localizacao
     }
 
 @app.route("/acompanhamento")
@@ -196,12 +214,17 @@ def rastreabilidade():
 @app.route("/baixar-acompanhamento")
 def baixar_acompanhamento():
 
+    print("ENTROU NA ROTA DE DOWNLOAD")
+
     nome_arquivo = request.args.get("arquivo")
 
     if not nome_arquivo:
         return {"Erro": "Arquivo não informado"}, 400
 
-    arquivo = os.path.join("temporario", nome_arquivo)
+    arquivo = nome_arquivo
+
+    print("ARQUIVO RECEBIDO:", nome_arquivo)
+    print("CAMINHO PROCURADO:", arquivo)
 
     if not os.path.exists(arquivo):
         return {"Erro": "Arquivo não encontrado"}, 404

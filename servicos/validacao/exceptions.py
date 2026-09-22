@@ -18,3 +18,18 @@ class ArquivoInvalidoerror(Exception):
 
 class NenhumArquivoSelecionadoError(Exception):
     pass
+
+class OdpNaoEncontradaError(Exception):
+    pass
+
+class PlanilhaNaoEncontradaError(Exception):
+    pass
+
+class PlanilhaCorrompidaError(Exception):
+    pass
+
+class AbaNaoEncontradaError(Exception):
+    pass
+
+class RastreabilidadeNaoEncontradaError(Exception):
+    pass

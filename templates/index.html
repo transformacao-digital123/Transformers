@@ -39,8 +39,8 @@
                 </a>
 
                 <h2 class="descricao">
-                    Converta automaticamente Ordens de Produção <br>
-                    em planilhas de rasteabilidade
+                    Transforme automaticamente Ordens de Produção <br>
+                    em dados de rastreabilidade
                 </h2>
             
         </header>
@@ -73,13 +73,18 @@
                         <button class="botao-converter" id = "botao-converter" type = "submit">    
                         Converter Ordem de Produção
                         </button>
+
+                        <button
+                        id = "btn-imprimir-etiquetas"
+                        type = "button"
+                        style="display: none;"
+                        >🖨️ Imprimir etiquetas</button>
                 </div>
 
                 </div>
 
-                {% if erro %}
 
-                <div class="error">
+                <div class="error" id = "mensagem-erro">
                     
                     {% if erro == "Ocorreu um erro inesperado" %}
                         <p> ⚠ {{erro}}</p>
@@ -89,7 +94,6 @@
 
                 </div>
 
-                {% endif %}
 
             
 
@@ -116,17 +120,24 @@
 
     </div> 
 
-<!-- <script>
+<script>
 
 // Criou as 2 contantesuma é o optimus que receberá quem tiver id = "optimus" e formulario, que procura e captura o 1º formulário que encontrar na página, no caso as partes de preenchimento eo botão, e o oultimo captura o container,a caixa onde ocorrerá a animação
     const formulario = document.querySelector("form");
     const optimus = document.getElementById("optimus");
     const areaAnimacao = document.getElementById("animacao-transformers");
+    const mensagemErro = document.getElementById("mensagem-erro");
+
+    let intervaloProgresso;
+    let posicaoInicialOptimus;
 
     function mostrarErro(){
         optimus.style.transition = "none";
 
+        optimus.style.left = "0px";
+
         optimus.src = "static/assets/Optimus-erro.png";
+        optimus.style.width = "230px";
 
         optimus.style.opacity = "1";
     }
@@ -150,41 +161,92 @@
         }, 1000);
     }
 
+    function acompanharProgresso(){
+        console.log("ACOMPANHAMENTO INICIADO");
+
+        posicaoInicialOptimus = optimus.offsetLeft;
+        larguraAreaMovimento = areaAnimacao.offsetWidth; // Calcula a área total,desde a largura total do conteúdo até os paddings internos de ambos os lados
+        larguraOptimusMovimento = optimus.offsetWidth;
+
+// O setInterval executa a função a cada 500ms,como especificado mais a baixo na função e o resultado guardado em intervaloProgresso
+        intervaloProgresso = setInterval(function(){
+            console.log("CONSULTANDO PROGRESSO...");
+
+// Pede a rota progresso os dados mais atuais do andamento da tarefa
+            fetch("/progresso")
+
+// Assim que receber os dados do servidor ele transformará json que é uma forma mais fácil do javascrpt trabalhar com os dados
+                .then(function(resposta){
+                    console.log("RESPOSTA DO PROGRESSO:", resposta.status);
+                    return resposta.json();
+                })
+
+// Quando os dados forem transformados em json, ele executará a função que está dentro do .then, e o resultado será guardado na variável dados, que é o que será mostrado no console.log como um print
+                .then(function(dados){
+                    console.log("progresso:", dados.progresso);
+
+                    let progresso = dados.progresso; // Guarda o valor que estiver em dados.progresso em progresso
+
+                    let larguraArea = areaAnimacao.offsetWidth; // Calcula a área total,desde a largura total do conteúdo até os paddings internos de ambos os lados
+                    let larguraMovimento = larguraArea - larguraOptimusMovimento - posicaoInicialOptimus; // A subtração disso é o valor que ele terá de andar
+
+                    let posicao = posicaoInicialOptimus + (progresso / 100) * larguraMovimento;
+
+// Esse limite final será responsável por impedir que o optimus passe da parede
+                    let limiteFinal = posicaoInicialOptimus + larguraMovimento;
+
+// Ele pega entre os 2 valores oferecidos a ele e escolhe o menor. Por exemplo, se posicao está em 760 (um valor que já passa da parede) e limiteFinal é 750, o valor de posicao será o do limiteFinal
+                    posicao = Math.min(posicao,limiteFinal);
+
+                    optimus.style.transition = "left 0.5s linear";
+                    optimus.style.left = posicao + "px";
+                    console.log("POSIÇÃO DO OPTIMUS:", posicao);
+                });
+        }, 500); // Númmero de milissegundos que a função levará para fazer cada atualização, nesse caso a cada 0.5s ele fará uma nova requisição para a rota /progresso
+    }
+
+    function pararAcompanhamentoProgresso(){
+        clearInterval(intervaloProgresso);
+    }
+
 // O .addEventListener fica vigiando,quando formulario disparar o evento "submit" ele iniciará a função
 // Aqui o atributo de origem src substituirá o que estiver em optimus pelo caminho descrito
     formulario.addEventListener("submit", function(event){
+        console.log("SUBMIT FOI EXECUTADO");
 
 // Impede o comportamento padrão do formulário do navegador, é como se ele dissesse ao navegador: "Navegador, não envie esse formulário do jeito tradicional. Eu, JavaScript, vou cuidar disso."
         event.preventDefault();
 
-        const dados = new FormData(formulario); 
+        const dados = new FormData(formulario);
+        
+        let ocorreuErro = false;
+
+        acompanharProgresso();
+
+        mensagemErro.style.display = "none";
 
 // Estado inicial
         optimus.src = "static/assets/Optimus-Run.gif";
         optimus.style.transition = "none";
-        optimus.style.left = "0px";
         optimus.style.opacity = "1";
 
 // Após 0.1s ele inicia a transformação
-        setTimeout(function(){ optimus.src = "static/assets/optimus_transformando_em_caminhao.gif";
+        setTimeout(function(){
+            if (ocorreuErro) return; // Se ocorreu err  o aqui,segue seu rumo
+
+            optimus.src = "static/assets/optimus_transformando_em_caminhao.gif";
             optimus.style.width = "170px";
             },100); //Esse 100 representa linha de largada,é a partir do momento 0.1s que ele iniciará
 
 // 1000 - 100 = 900ms de tempo que a transformação terá para ser executada e então se iniciará o gif luaria_caminhao
 // Destino calcula a área que será percorrida, e essa variável é usada pra arrastar da esquerda pra direita em forma linear em 3s, considerando o valor do destino em px,pra ser mais fácil do programa contabilizar
         setTimeout(function(){
+            if (ocorreuErro) return;
             optimus.src = "static/assets/luari_caminhao.gif";
 
             optimus.style.width = "210px";
 
-            const larguraArea = areaAnimacao.clientWidth; // Calcula a área total,desde a largura total do conteúdo até os paddings internos de ambos os lados
-            const larguraOptimus = optimus.offsetWidth; // pega o conteúdo do gif desde a largura,padding e bordas, ignorando apenas o margin
-
-            const destino = larguraArea - larguraOptimus; // A subtração disso é o valor que ele terá de andar
-
-            optimus.style.transition = "left 3s linear";
-            optimus.style.left = destino + "px";
-        },1000); // Esse 1000 repreenta os milissegundos, 1000ms = 1s
+        },500); // Esse 500 repreenta os milissegundos, 500ms = 0.5s
 
         fetch("/",{
             method: "POST",
@@ -201,34 +263,74 @@
 // O ! torna tudo inverso, então caso a resposta esteja errada, o ! considerará veradadeira e a levará ao próximo comando que é o indicador de erro,mas caso esteja correta, o ! considerará falsa e então pulará aquele comando indo direto ao return
 // Os dados obtidos será transformado em texto pois o javascript não sabe que tipo de arquivo é,se ele é .img,.pdf ou json, então ao especificar pra ele, a resposta é retornada para a próxima função
             if(!resposta.ok){
-                throw new Error("Erro no processsamento");
+                return resposta.json().then(function(erro){
+                    throw new Error(erro.erro);
+                });
             }
-            return resposta.json();
-        })
+            return resposta.json()
 
-        .then(function(resultado){
-            console.log("Resposta do Flask:", resultado);
+                .then(function(resultado){
+                    console.log("Resposta do Flask:", resultado);
 
 // Se o resultado for falso, o ! inverterá pra verdadeiro e então ele irá para o próximo comando que é o indicador de erro, mas caso seja verdadeiro, o ! inverterá para falso e então ele pulará aquele comando indo direto ao console.log
-            if(!resultado.sucesso){
-                throw new Error("A conversão não foi concluída");
-            }
+                    if(!resultado.sucesso){
+                        throw new Error("A conversão não foi concluída");
+                    }
 
-            console.log("Processamento concluído com sucesso");
+                    document.getElementById("btn-imprimir-etiquetas").style.display = "block";
 
-            console.log("JSON RECEBIDO:", resultado);
-            console.log("SUCESSO:", resultado.sucesso);
+                    console.log("Processamento concluído com sucesso");
 
-            finalizarAnimacao();
+                    pararAcompanhamentoProgresso();
+
+                    console.log("JSON RECEBIDO:", resultado);
+                    console.log("SUCESSO:", resultado.sucesso);
+
+                    finalizarAnimacao();
+                });
         })
 
         .catch(function(erro){
             console.error("Erro:",erro);
-
+            ocorreuErro = true;
+            if (erro.message === "Ocorreu um erro inesperado"){
+                mensagemErro.innerHTML = "⚠ " + erro.message;
+            }else{
+                mensagemErro.innerHTML = "❌ " + erro.message;
+            }
+            mensagemErro.style.display = "inline-block";
             mostrarErro();
+
+            pararAcompanhamentoProgresso();
         })
 
+    document.getElementById("btn-imprimir-etiquetas").addEventListener("click", function(){
+
+        fetch("/imprimir-etiquetas", {
+            method: "POST",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        })
+        .then(function(resposta){
+            return resposta.json();
+        })
+        .then(function(resultado){
+
+            if(resultado.sucesso){
+                alert("Etiquetas enviadas para impressão!")
+            } else {
+                alert(resultado.erro)
+            }
+        })
+
+        .catch(function(erro){
+            console.error("Erro ao i,primir etiquetas:", erro);
+            alert("Não foi possível imprimir as etiquetas.")        
+        })
     });
-</script>  -->
+        
+        });
+</script> 
 </body>
 </html>

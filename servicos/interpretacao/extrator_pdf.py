@@ -1,7 +1,7 @@
 import pdfplumber
 
 #importações vindas de outros arquivos
-from servicos.exceptions import(
+from servicos.validacao.exceptions import(
     DataNaoEncontradoError,
     NumeroPedidoNaoEncontrado,
     ClienteNaoEncontradoError,
@@ -22,7 +22,7 @@ def pegar_cliente(linhas):
             cliente = linha[inicio:]
 
             return cliente
-    raise ClienteNaoEncontradoError
+    raise ClienteNaoEncontradoError()
         
 def pegar_data(linhas):
                 
@@ -37,7 +37,7 @@ def pegar_data(linhas):
             data = linha[inicio:]
 
             return data
-    raise DataNaoEncontradoError
+    raise DataNaoEncontradoError()
         
 def pegar_numero_pedido(linhas):
                 
@@ -50,7 +50,7 @@ def pegar_numero_pedido(linhas):
             numero_pedido = linha[inicio:]
 
             return numero_pedido
-    raise NumeroPedidoNaoEncontrado
+    raise NumeroPedidoNaoEncontrado()
         
 def pegar_filme(linhas):
 
@@ -65,7 +65,7 @@ def pegar_filme(linhas):
             filme = linha[inicio:inicio+3] + "A"
 
             return filme
-    raise FilmeNaoEncontradoerror
+    raise FilmeNaoEncontradoerror()
         
 def pegar_peso_tubete(linhas):
 
@@ -104,7 +104,7 @@ def pegar_padrao(linhas):
                     padrao = palavra1 + " + " + palavra2
 
                     return padrao
-    raise PadraoNaoEncontradoerror
+    raise PadraoNaoEncontradoerror()
 
 
 # Função extrair os dados e lapidá-los para serem postos na planilha do Excel
