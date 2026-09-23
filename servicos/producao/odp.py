@@ -3,6 +3,7 @@ from openpyxl.styles import Font, Alignment
 from openpyxl.drawing.image import Image
 import os
 from datetime import datetime
+from copy import copy
 
 from servicos.validacao.exceptions import AbaNaoEncontradaError
 
@@ -151,6 +152,25 @@ def localizar_fim_odps(aba):
 
     return ultima_linha
 
+def localizar_pallet(aba,identificador,numero_pallet):
+
+# Analisa todas as linhas,desde a linha 1 até a última, devido ao + 1
+    for linha in range(1, aba.max_row + 1):
+
+        identificador_linha = aba[f"T{linha}"].value
+        pallet_linha = aba[f"E{linha}"].value
+
+# Se o identificador linha for igual ao identificador do QRcode da etiqueta e o Nº do pallet  inserido for igual ao Nº do pallet que já tinha sido inserido antes...
+# Devolve o Nº da linha em que parar
+# Se não retorna None, por não ter achado nada
+        if ( 
+            str(identificador_linha) == str(identificador)
+            and str(pallet_linha) == str(numero_pallet)
+        ):
+            return linha
+
+    return None
+
 def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 
     planilha = load_workbook(caminho_arquivo)
@@ -166,7 +186,71 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
         "peso_total": "G",
         "op_material": "H",
         "op_tubete": "I"
-    }   
+    }
+# Parte responsável por,caso o mesmo QRcode seja bipado mais de uma vez por possuir mais de um pallet dele
+    numero_pallet = dados.get("numero_pallet")
+    acao = dados.get("acao","pesagem")
+
+# Se a ação for pesagem:
+    if acao == "pesagem":
+
+# Descobre através da função linha_pallet qual a linha que deve-se trabalhar
+        linha_pallet = localizar_pallet(
+            aba,identificador,numero_pallet
+        )
+# Se a linha_pallet não tretornou um valor vazio
+        if linha_pallet is not None:
+
+# Acrescente 1 valor a mais no valor da linha atual
+            linha_nova = linha + 1
+
+# Pegue o valor dessa linha, e adicione uma linha amais na planilha empurrando todas as outras linhas prea baixo, inclusive a linha original    
+            aba.insert_rows(linha_nova)
+
+# Analisa todas as colunas,desde a coluna 1 até a última, devido ao + 1
+            for coluna in range(1, aba.max_column + 1):
+
+# Pega os valores antigos e atuais das respectivas células respeitando as leis (x,y)
+                origem = aba.cell(linha,coluna)
+                destino = aba.cell(linha_nova,coluna)
+
+# Guarda o valor que estiver em origem em destino
+                destino.value = origem.value
+
+# Se origem tiver alguma formatação de cor, borda, fonte diferente do padrão ele entra no if
+# É uma forma de economizar memória do computador com o python apenas perguntando se ele têm estilos especificados, e não pedindo todos os tipos de estilos posssíveis
+                if origem.has_style:
+
+# Formatação de estilo,incluindo cor, borda, fonte diferente do padrão
+# No _style o _ serve como uma medida de privacidade, é uma forma de garantir que usuários comuns não mexs, ou tentem copiar isso diretamente 
+                    destino._style = copy(origem._style)
+
+# Caso o if se cumpra o resto das condições são cumpridas automaticamente
+# Formato do número (se é texto, moeda, quilos, data)
+                destino.number_format = origem.number_format
+
+# Alinhamento do texto (centralizado, esquerda, direita)   
+                destino.alignment = copy(origem.alignment)
+
+# Estilo do texto (tipo de letra, tamanho, negrito)
+                destino.font = copy(origem.font)
+
+# Cor de fundo da célula
+                destino.fill = copy(origem.fill)
+
+# As linhas de contorno (bordas) da célula
+                destino.border = copy(origem.border)
+
+# O valor de linha agora é o valor que antes pertencia só a linha_nova
+            linha = linha_nova
+
+# Esse serve para caso seja o 1º registro desse Pallet, assim ainda usando a linha original normalmente
+        else:
+            pass
+
+# Esse é para caso a ação não seja pesagem
+    else:
+        pass
 
 # Só mudará para True quando algum valor realmente for modificado
     houve_alteracao = False
