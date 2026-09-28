@@ -31,22 +31,26 @@ def preencher_etiqueta(ordem,rastreabilidade,numero_etiquetas,total_etiquetas):
 # Abre na 1º aba do arquivo
         aba = planilha.active
 
-        aba["B6"] = ordem["odp"]
-        aba["B6"].font = FONTE_PADRAO
-        aba["B6"].alignment = ALINHAMENTO_PADRAO
+        aba["C6"] = ordem["odp"]
+        aba["C6"].font = FONTE_PADRAO
+        aba["C6"].alignment = ALINHAMENTO_PADRAO
 
-        aba["B7"] = ordem["operador"]
-        aba["B7"].font = FONTE_PADRAO
-        aba["B7"].alignment = ALINHAMENTO_PADRAO
+        aba["C7"] = ordem["operador"]
+        aba["C7"].font = FONTE_PADRAO
+        aba["C7"].alignment = ALINHAMENTO_PADRAO
 
-        aba["B8"] = ordem["maquina"]
-        aba["B8"].font = FONTE_PADRAO
-        aba["B8"].alignment = ALINHAMENTO_PADRAO
+        aba["C8"] = ordem["maquina"]
+        aba["C8"].font = FONTE_PADRAO
+        aba["C8"].alignment = ALINHAMENTO_PADRAO
 
-        aba["B9"] = ordem["data"]
-        aba["B9"].number_format = "dd/mm/yy"
-        aba["B9"].font = FONTE_PADRAO
-        aba["B9"].alignment = ALINHAMENTO_PADRAO
+        aba["C9"] = ordem["data"]
+        aba["C9"].number_format = "dd/mm/yy"
+        aba["C9"].font = FONTE_PADRAO
+        aba["C9"].alignment = ALINHAMENTO_PADRAO
+        
+        aba["C10"] = ordem["cliente"]
+        aba["C10"].font = FONTE_PADRAO
+        aba["C10"].alignment = ALINHAMENTO_PADRAO
 
 # Aqui ele pega e transforma o texto em uma linguagem que o programa do QR code consiga ler,no caso formato de texto, esse comando ensure_ascii= False serve para caso seja escrito uma palavra com ~ ou ç o programa faça o texto ficar normal e não um conjunto de letras estranhas
         texto_qr = identificador
@@ -58,12 +62,12 @@ def preencher_etiqueta(ordem,rastreabilidade,numero_etiquetas,total_etiquetas):
         qr = Image(caminho_qr)
 
 # Define os tamanhos 406x240(valores do espaço onde o QR code está inserido)
-        qr.height = 240
-        qr.width = 240
+        qr.height = 405
+        qr.width = 405
 
 
 # Adiciona a imagem começando na célula especificada
-        aba.add_image(qr,"B11")
+        aba.add_image(qr,"B12")
 
         odp_limpo = ordem["odp"].replace("/","-")
 

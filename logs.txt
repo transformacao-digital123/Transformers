@@ -14893,3 +14893,202 @@
 2026-09-23 16:11:36,159 - INFO -  * Restarting with stat
 2026-09-23 16:11:36,842 - WARNING -  * Debugger is active!
 2026-09-23 16:11:36,844 - INFO -  * Debugger PIN: 133-117-302
+2026-09-23 16:58:56,288 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-09-23 16:58:56,521 - INFO -  * Restarting with stat
+2026-09-24 07:27:03,866 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-24 07:27:03,868 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-24 07:27:03,871 - INFO -  * Restarting with stat
+2026-09-24 07:27:05,042 - WARNING -  * Debugger is active!
+2026-09-24 07:27:05,042 - INFO -  * Debugger PIN: 133-117-302
+2026-09-24 07:27:06,764 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:06] "GET / HTTP/1.1" 200 -
+2026-09-24 07:27:06,813 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:06] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-24 07:27:06,814 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-24 07:27:06,818 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:06] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-24 07:27:06,827 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:06] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-24 07:27:06,874 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-09-24 07:27:17,206 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:17] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-24 07:27:17,609 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:17] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:17,610 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:17] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-24 07:27:18,107 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:18] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:18,607 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:18] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:19,108 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:19] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:19,605 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:19] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:20,109 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:20] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:20,615 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:20] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:21,107 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:21] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:21,608 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:21] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:22,193 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:22] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:22,627 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:22] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:23,121 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:23] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:23,630 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:23] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:24,179 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:24] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:24,662 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:24] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:25,113 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:25] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:25,695 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:25] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:26,164 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:26] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:26,616 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:26] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:27,115 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:27] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:27,673 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:27] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:28,118 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:28] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:28,698 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:28] "GET /progresso HTTP/1.1" 200 -
+2026-09-24 07:27:28,968 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:28] "POST / HTTP/1.1" 200 -
+2026-09-24 07:27:29,197 - INFO - 127.0.0.1 - - [24/Sep/2026 07:27:29] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-24 09:27:38,588 - INFO - 127.0.0.1 - - [24/Sep/2026 09:27:38] "GET / HTTP/1.1" 200 -
+2026-09-24 09:27:38,629 - INFO - 127.0.0.1 - - [24/Sep/2026 09:27:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-24 09:27:38,631 - INFO - 127.0.0.1 - - [24/Sep/2026 09:27:38] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-24 09:27:38,640 - INFO - 127.0.0.1 - - [24/Sep/2026 09:27:38] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-24 09:27:38,642 - INFO - 127.0.0.1 - - [24/Sep/2026 09:27:38] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-24 09:46:30,459 - INFO - 127.0.0.1 - - [24/Sep/2026 09:46:30] "GET / HTTP/1.1" 200 -
+2026-09-24 09:46:30,511 - INFO - 127.0.0.1 - - [24/Sep/2026 09:46:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-24 09:46:30,514 - INFO - 127.0.0.1 - - [24/Sep/2026 09:46:30] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-24 09:46:30,522 - INFO - 127.0.0.1 - - [24/Sep/2026 09:46:30] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-24 09:46:30,525 - INFO - 127.0.0.1 - - [24/Sep/2026 09:46:30] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-28 08:33:12,772 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-28 08:33:12,774 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-28 08:33:12,777 - INFO -  * Restarting with stat
+2026-09-28 08:33:14,142 - WARNING -  * Debugger is active!
+2026-09-28 08:33:14,142 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 08:33:19,452 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:19] "GET / HTTP/1.1" 200 -
+2026-09-28 08:33:19,538 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:19] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-28 08:33:19,539 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-28 08:33:19,543 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:19] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-28 08:33:19,556 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:19] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-28 08:33:19,635 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-09-28 08:33:22,038 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:22] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-28 08:33:22,437 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:22] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:22,437 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:22] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-28 08:33:22,939 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:22] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:23,435 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:23] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:23,936 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:23] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:24,434 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:24] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:24,937 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:24] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:25,441 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:25] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:25,938 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:25] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:26,437 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:26] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:27,417 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:27] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:27,444 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:27] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:27,943 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:27] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:28,537 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:28] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:28,945 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:28] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:29,477 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:29] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 08:33:29,513 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:29] "POST / HTTP/1.1" 200 -
+2026-09-28 08:33:29,727 - INFO - 127.0.0.1 - - [28/Sep/2026 08:33:29] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-28 08:43:34,967 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 08:43:35,433 - INFO -  * Restarting with stat
+2026-09-28 09:01:05,393 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-09-28 09:01:05,393 - INFO - [33mPress CTRL+C to quit[0m
+2026-09-28 09:01:05,398 - INFO -  * Restarting with stat
+2026-09-28 09:01:06,558 - WARNING -  * Debugger is active!
+2026-09-28 09:01:06,563 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:01:13,375 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:13] "GET / HTTP/1.1" 200 -
+2026-09-28 09:01:13,421 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:13] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-28 09:01:13,422 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:13] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-28 09:01:13,422 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:13] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-28 09:01:13,434 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:13] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-28 09:01:39,417 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:39] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-28 09:01:39,870 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:39] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:39,875 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:39] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-28 09:01:40,333 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:40] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:40,838 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:40] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:41,337 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:41] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:41,839 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:41] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:42,338 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:42] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:42,841 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:42] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:43,320 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:43] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:43,825 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:43] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:44,326 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:44] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:44,821 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:44] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:45,344 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:45] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:45,844 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:45] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:46,330 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:46] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:46,873 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:46] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:01:47,092 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:47] "POST / HTTP/1.1" 200 -
+2026-09-28 09:01:47,307 - INFO - 127.0.0.1 - - [28/Sep/2026 09:01:47] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-28 09:06:25,968 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:26,152 - INFO -  * Restarting with stat
+2026-09-28 09:06:26,985 - WARNING -  * Debugger is active!
+2026-09-28 09:06:26,985 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:28,052 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:28,171 - INFO -  * Restarting with stat
+2026-09-28 09:06:28,856 - WARNING -  * Debugger is active!
+2026-09-28 09:06:28,856 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:29,930 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:30,066 - INFO -  * Restarting with stat
+2026-09-28 09:06:30,837 - WARNING -  * Debugger is active!
+2026-09-28 09:06:30,839 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:31,924 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:32,045 - INFO -  * Restarting with stat
+2026-09-28 09:06:32,729 - WARNING -  * Debugger is active!
+2026-09-28 09:06:32,736 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:33,864 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:33,942 - INFO -  * Restarting with stat
+2026-09-28 09:06:34,600 - WARNING -  * Debugger is active!
+2026-09-28 09:06:34,600 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:35,689 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:35,780 - INFO -  * Restarting with stat
+2026-09-28 09:06:36,462 - WARNING -  * Debugger is active!
+2026-09-28 09:06:36,462 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:38,552 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:38,626 - INFO -  * Restarting with stat
+2026-09-28 09:06:39,291 - WARNING -  * Debugger is active!
+2026-09-28 09:06:39,291 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:40,367 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:40,451 - INFO -  * Restarting with stat
+2026-09-28 09:06:41,155 - WARNING -  * Debugger is active!
+2026-09-28 09:06:41,158 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:44,317 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:44,455 - INFO -  * Restarting with stat
+2026-09-28 09:06:45,096 - WARNING -  * Debugger is active!
+2026-09-28 09:06:45,097 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:47,174 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:47,237 - INFO -  * Restarting with stat
+2026-09-28 09:06:48,064 - WARNING -  * Debugger is active!
+2026-09-28 09:06:48,064 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:51,201 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:51,315 - INFO -  * Restarting with stat
+2026-09-28 09:06:52,011 - WARNING -  * Debugger is active!
+2026-09-28 09:06:52,011 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:53,091 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:53,237 - INFO -  * Restarting with stat
+2026-09-28 09:06:54,039 - WARNING -  * Debugger is active!
+2026-09-28 09:06:54,043 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:06:57,190 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:06:57,316 - INFO -  * Restarting with stat
+2026-09-28 09:06:58,198 - WARNING -  * Debugger is active!
+2026-09-28 09:06:58,198 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:07:43,333 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:43] "GET / HTTP/1.1" 200 -
+2026-09-28 09:07:43,355 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-09-28 09:07:43,382 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:43] "[36mGET /static/assets/luari_logo.png HTTP/1.1[0m" 304 -
+2026-09-28 09:07:43,382 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:43] "[36mGET /static/assets/camera.png HTTP/1.1[0m" 304 -
+2026-09-28 09:07:43,389 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:43] "[36mGET /static/assets/Optimus-Run.gif HTTP/1.1[0m" 304 -
+2026-09-28 09:07:45,765 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:45] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-28 09:07:46,166 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:46] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:46,168 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:46] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-09-28 09:07:46,666 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:46] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:47,169 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:47] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:47,665 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:47] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:48,173 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:48] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:48,667 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:48] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:49,167 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:49] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:49,667 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:49] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:50,171 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:50] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:50,668 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:50] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:51,175 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:51] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:51,668 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:51] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:52,170 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:52] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:52,703 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:52] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:53,214 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:53] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:53,663 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:53] "GET /progresso HTTP/1.1" 200 -
+2026-09-28 09:07:53,825 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:53] "POST / HTTP/1.1" 200 -
+2026-09-28 09:07:54,037 - INFO - 127.0.0.1 - - [28/Sep/2026 09:07:54] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-09-28 09:10:08,390 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:10:08,509 - INFO -  * Restarting with stat
+2026-09-28 09:10:09,458 - WARNING -  * Debugger is active!
+2026-09-28 09:10:09,458 - INFO -  * Debugger PIN: 127-355-565
+2026-09-28 09:12:18,344 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\etiquetas\\etiqueta.py', reloading
+2026-09-28 09:12:18,480 - INFO -  * Restarting with stat
+2026-09-28 09:12:19,242 - WARNING -  * Debugger is active!
+2026-09-28 09:12:19,255 - INFO -  * Debugger PIN: 127-355-565
