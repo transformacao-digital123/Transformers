@@ -124,21 +124,49 @@ def interpretar_padrao(texto):
 
 def interpretar_mic_pol(texto):
 
-    esquerda,direita = texto.split("MIC -")
+    texto = texto.upper().strip()
 
-    filme = esquerda.strip()
+    if "DE FILME" in texto:
 
-    padrao =direita.strip()
+        parte_padrao,parte_pesos = texto.split("(")
 
-    conteudo = direita.split("(")[1].replace(")", "")
-    pesos = conteudo.split("+")
-    peso_tubete = pesos[1].strip()
+        parte_padrao = parte_padrao.strip()
 
-    informacoes = {
-        "padrao": padrao,
-        "filme": filme,
-        "peso_tubete": peso_tubete
-    }
+        parte_pesos = parte_pesos.replace(")","").strip()
+
+        pesos = parte_pesos.split("+")
+
+        filme = pesos[0].replace("KG DE FILME","").strip()
+
+# Se pesos for > 1, porque aqui foi separado em 2: pesos = parte_pesos.split("+")
+        if len(pesos) > 1:
+            peso_tubete = pesos[1].replace("KG DE TUBETE", "").strip()
+        else:
+            peso_tubete = ""
+
+        informacoes = {
+            "padrao": parte_padrao,
+            "filme": filme,
+            "peso_tubete": peso_tubete
+        }
+
+    else:
+
+        esquerda,direita = texto.split("MIC -")
+
+        filme = esquerda.strip()
+
+        padrao =direita.strip()
+
+        conteudo = direita.split("(")[1].replace(")", "")
+        pesos = conteudo.split("+")
+        peso_tubete = pesos[1].strip()
+
+        informacoes = {
+            "padrao": padrao,
+            "filme": filme,
+            "peso_tubete": peso_tubete
+        }
 
     return informacoes
 
@@ -265,7 +293,7 @@ def selecionar_interpretador(texto, origem):
                 return interpretar_medidas(texto)
             elif texto.startswith("FITA"):
                 return interpretar_fita(texto)
-            elif "MM" in texto:
+            elif "MM" in texto or "CM" in texto:
                 return interpretar_largura_micra(texto)
             elif "HOTMELT" in texto:
                 return interpretar_hotmelt(texto)

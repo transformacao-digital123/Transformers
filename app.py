@@ -20,17 +20,24 @@ app = Flask(__name__)
 def progresso():
     return {"progresso": obter_progresso()}
 
+# Estão aqui e não no home para que não sejam reiniciados para estarem vazios toda vez que a função roda, nesse caso ele só será acrescentado sendo chamado apenas quando convém
 etiquetas_geradas = []
+arquivo_gerado = None
+
 # Comandos padrão do Flask para organizar o acesso a página Web
 @app.route("/", methods = ["GET", "POST"])
 def home():
 
+    global arquivo_gerado
+
     if request.method == "POST":
             
-# Linhas responsáveis por determinar que somente arquivos PDF e linhas do DOCS serão importados 
+# Linhas responsáveis por determinar que somente arquivos PDF e linhas do DOCS serão importados, ou seja, faz a filtragem, apenas se atender a esses 3 requisitos é que o processamento começa
             arquivo = request.files.get("pdf")
 
             link = request.form.get("link")
+
+            acrescentar = request.form.get("acrescentar") == "sim"
             
 # Esse try e execpt são uma prevenção, caso o usuário envie algum arquivo que não seja correspondente ao que queremos, ele enviará essa mensagem de erro e o programa continuará a funcionar normalmente            
             try:
@@ -39,10 +46,10 @@ def home():
                     if arquivo:
 
 # Comando, com uma nova "variável arquivo_excel" que puxa do conversor o arquivo já pronto e lapidado e só espera ser chamado para lançado no sistema
-                        arquivo_saida = converter_pdf(arquivo)
+                        arquivo_gerado = converter_pdf(arquivo)
 
                     elif link:
-                        arquivo_saida, etiquetas = converter_google_sheets(link)
+                        arquivo_gerado, etiquetas = converter_google_sheets(link, acrescentar)
 
                         etiquetas_geradas.clear()
                         etiquetas_geradas.extend(etiquetas)
@@ -63,7 +70,7 @@ def home():
                         return {"sucesso": True}
               
 # Ele lança o arquivo no sistema
-                    return send_file(arquivo_saida)
+                    return send_file(arquivo_gerado)
 
             except Exception as erro:
 
@@ -88,11 +95,27 @@ def home():
         "index.html",
         ambiente = AMBIENTE)
 
+@app.route("/baixar-arquivo", methods = ["GET"])
+def baixar_arquivo():
+
+    if arquivo_gerado is None:
+        return {"Erro": "Nenhum arquivo foi gerado"}, 404
+
+    if not os.path.exists(arquivo_gerado):
+        return{"Erro": "Arquivo não encontrado"},404
+
+    return send_file(
+        arquivo_gerado,
+        as_attachment=True,
+        download_name=os.path.basename(arquivo_gerado)
+    )
+
 @app.route("/imprimir-etiquetas", methods = ["POST"])
 def imprimir_etiquetas():
 
     try:
 
+# Essa importação, em Windows, está dentro dessa função porque assim, quando estiver no Render, que funciona em Linux, não dá problema,já que ela está aqui para ser importada somente quando for solicitada
         from servicos.etiquetas.imprimir_etiqueta import imprimir_etiqueta
 
         for etiqueta in etiquetas_geradas:

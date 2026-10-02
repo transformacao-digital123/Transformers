@@ -15,7 +15,9 @@ from servicos.rastreabilidade.rastreabilidade import gerar_identificador
 from servicos.producao.odp import  preencher_odps
 from servicos.etiquetas.etiqueta import preencher_etiqueta
 
-def converter_google_sheets(link):
+from servicos.validacao.tratador_erros import RemessaNaoEncontradaError
+
+def converter_google_sheets(link, acrescentar = False):
 
     atualizar_progresso(0)
 
@@ -26,20 +28,22 @@ def converter_google_sheets(link):
 
     atualizar_progresso(10)
 
-    for nome in os.listdir("temporario"):
-         caminho = os.path.join("temporario", nome)
+    if not acrescentar:
 
-         if os.path.isfile(caminho):
+        for nome in os.listdir("temporario"):
+            caminho = os.path.join("temporario", nome)
+
+            if os.path.isfile(caminho):
 
 # Se começar com ODP_ seguirá reto e irá apagar o resto
-              if nome.startswith("ODP_") and nome.endswith(".xlsx"):
-                   continue
+                if nome.startswith("ODP_") and nome.endswith(".xlsx"):
+                    continue
 
-              try:
-                os.remove(caminho)
+                try:
+                    os.remove(caminho)
 
-              except PermissionError:
-                   print(f"Não foi possível apagar {nome}")
+                except PermissionError:
+                    print(f"Não foi possível apagar {nome}")
 
 # Valida se o link é do google docs ou não
     validar_link(link)
@@ -62,6 +66,23 @@ def converter_google_sheets(link):
 
     os.remove(caminho_arquivo)
 
+    if acrescentar:
+
+        primeira_ordem = ordens[0]
+
+        data = primeira_ordem["data"].strftime("%Y-%m-%d")
+
+        turno = primeira_ordem["turno"]
+
+# Variável que guarda o nome da remessa caso ela tenha sido gerada
+        nome_remessa = f"{data}_{turno}.xlsx"
+        caminho_remessa = os.path.join("temporario",nome_remessa)
+
+# Se ela não existir, emite um aviso para antes a gerar e depois tentar atualizá-la. Caso contrário apenas seguirá o caminho para atualizar a planilha
+        if not os.path.exists(caminho_remessa):
+            raise RemessaNaoEncontradaError(f"Ainda não foi gerada nenhuma remessa com o nome {nome_remessa}. "
+                                    "Confira se você de fato a criou antes de tentar atualizá-la.")
+
     arquivos = []
 
     etiquetas_para_imprimir = []
@@ -71,7 +92,6 @@ def converter_google_sheets(link):
     for indice,ordem in enumerate(ordens):
 # Função chamada para analisar o padrão, e descobrir o filme e o peso do tubete. Além disso, dentro dela nota-se 2 padrao, o 1° é para encontrar a variável dentro do dicionário e o 2° é para encontrar a coluna caso ela se chame PADRÃO
         try:
-
                 informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
              
                 ordem["filme"] = informacoes["filme"]

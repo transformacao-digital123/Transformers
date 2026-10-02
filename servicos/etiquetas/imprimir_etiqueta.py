@@ -1,6 +1,5 @@
 import win32api
 import win32print
-import win32com.client
 
 import os
 

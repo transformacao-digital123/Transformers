@@ -33,3 +33,6 @@ class AbaNaoEncontradaError(Exception):
 
 class RastreabilidadeNaoEncontradaError(Exception):
     pass
+
+class RemessaNaoEncontradaError(Exception):
+    pass

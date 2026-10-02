@@ -84,6 +84,11 @@
                         {% endif %}
                 </div>
 
+                <label>
+                    <input type = "checkbox" name = "acrescentar" value = "sim">
+                    Acrescentar à remessa existente
+                </label>
+
                 </div>
 
 
@@ -115,7 +120,7 @@
 
             <div class="rodape">
                 <p>
-                Versão 5.0 -
+                Versão 6.0 -
                 LUARI EMBALAGENS - PACKAGING SOLUTIONS ©
                 </p>
             </div>
@@ -285,6 +290,8 @@
                     if (botaoImprimir){
                         botaoImprimir.style.display = "block";
                     }
+
+                    window.location.href = "/baixar-arquivo"
 
                     console.log("Processamento concluído com sucesso");
 

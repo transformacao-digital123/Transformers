@@ -8,7 +8,8 @@ from servicos.validacao.exceptions import (
     PlanilhaNaoEncontradaError,
     PlanilhaCorrompidaError,
     AbaNaoEncontradaError,
-    RastreabilidadeNaoEncontradaError
+    RastreabilidadeNaoEncontradaError,
+    RemessaNaoEncontradaError
 )
 
 MENSAGENS = {
@@ -40,7 +41,10 @@ MENSAGENS = {
     "A aba solicitada não foi encontrada na planilha",
 
     RastreabilidadeNaoEncontradaError:
-    "Não foi possível encontrar os dados de rastreabilidade"
+    "Não foi possível encontrar os dados de rastreabilidade",
+
+    RemessaNaoEncontradaError:
+    "Não existe uma remessa para essa data e turno. Crie uma nova remessa antes de tentar acrescentar ODPs."
 }
 
 def tratar_erro(erro):
