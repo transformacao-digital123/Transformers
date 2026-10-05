@@ -5,6 +5,7 @@ import json
 from zipfile import BadZipFile
 
 from servicos.validacao.exceptions import OdpNaoEncontradaError,PlanilhaNaoEncontradaError,PlanilhaCorrompidaError
+from servicos.armazenamento import caminho_arquivo
 
 def gerar_identificador():
 
@@ -13,14 +14,14 @@ def gerar_identificador():
 
 def salvar_rastreabilidade(rastreabilidade):
 
-        caminho = "temporario/rastreabilidade.json"
+        caminho = caminho_arquivo("rastreabilidade.json")
 
         with open( caminho, "w", encoding= "utf-8") as arquivo:
                 json.dump(rastreabilidade,arquivo,ensure_ascii=False,indent=4)
 
 def carregar_rastreabilidade():
 
-    caminho = "temporario/rastreabilidade.json"
+    caminho = caminho_arquivo("rastreabilidade.json")
 
     print("BUSCANDO RASTREABILIDADE EM:", os.path.abspath(caminho))
     print("ARQUIVO EXISTE?", os.path.exists(caminho))
@@ -56,7 +57,7 @@ def localizar_aba(dados):
 
     nome_arquivo = f"{data}_{turno}.xlsx"
 
-    caminho_saida = os.path.join(f"temporario",nome_arquivo)
+    caminho_saida = caminho_arquivo(nome_arquivo)
 
     if not os.path.exists(caminho_saida):
 

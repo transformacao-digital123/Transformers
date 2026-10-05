@@ -7,15 +7,15 @@ from servicos.interpretacao.interpretador import selecionar_interpretador
 from servicos.producao.apontamento import agrupar_por_operador, selecionar_apontamento
 from servicos.rastreabilidade.rastreabilidade import salvar_rastreabilidade
 from servicos.progresso.progresso import atualizar_progresso
-
 from servicos.entradas.google_sheets import validar_link, baixar_planilha
 from servicos.arquivos.excel import abrir_planilha
 from servicos.interpretacao.identificar_blocos import identificar_blocos
 from servicos.rastreabilidade.rastreabilidade import gerar_identificador
 from servicos.producao.odp import  preencher_odps
 from servicos.etiquetas.etiqueta import preencher_etiqueta
-
 from servicos.validacao.tratador_erros import RemessaNaoEncontradaError
+
+from servicos.armazenamento import caminho_arquivo
 
 def converter_google_sheets(link, acrescentar = False):
 
@@ -70,7 +70,7 @@ def converter_google_sheets(link, acrescentar = False):
 
         primeira_ordem = ordens[0]
 
-        data = primeira_ordem["data"].strftime("%Y-%m-%d")
+        data = primeira_ordem["data"].strftime("%d-%m-%Y")
 
         turno = primeira_ordem["turno"]
 

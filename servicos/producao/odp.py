@@ -6,6 +6,7 @@ from datetime import datetime
 from copy import copy
 
 from servicos.validacao.exceptions import AbaNaoEncontradaError
+from servicos.armazenamento import caminho_arquivo
 
 ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center",wrap_text=True)
 
@@ -100,7 +101,7 @@ def preencher_odps(ordens):
     if aba_modelo.title in planilha.sheetnames:
         planilha.remove(aba_modelo)
 
-    caminho_saida = os.path.join("temporario", f"{data}_{primeira_ordem['turno']}.xlsx")
+    caminho_saida = caminho_arquivo(f"{data}_{primeira_ordem['turno']}.xlsx")
 
     planilha.save(caminho_saida)
     planilha.close()
