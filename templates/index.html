@@ -32,11 +32,20 @@
                 </div>
 
             </div>
+
+            <div class = "acoes-topo">
                 <a href="{{url_for('acompanhamento')}}">
                     <button onclick="window.location.href='/rastreabilidade'">
                             Ver rastreabilidade
                     </button>
                 </a>
+
+                <a class = "despacho" href = "{{url_for('despacho')}}" style = "text-decoration: none; color: inherit; display: block;">
+                        <button>
+                            <img src = "static/assets/despacho.png" alt = "ícone do despacho">
+                        </button>
+                </a>
+            </div>
 
                 <h2 class="descricao">
                     Transforme automaticamente Ordens de Produção <br>

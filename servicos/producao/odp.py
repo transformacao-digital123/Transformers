@@ -7,6 +7,7 @@ from copy import copy
 
 from servicos.validacao.exceptions import AbaNaoEncontradaError
 from servicos.armazenamento import caminho_arquivo
+from servicos.rastreabilidade.despacho import preencher_despacho
 
 ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center",wrap_text=True)
 
@@ -60,29 +61,32 @@ def preencher_odps(ordens):
         aba[f"C{linha}"] = ordem["numero_pedido"]
         aba[f"D{linha}"] = ordem["odp"]
 
-        # Valores que serão preenchidos na pesagem
+# Despachamento
         aba[f"E{linha}"] = ""
+
+# Valores que serão preenchidos na pesagem
         aba[f"F{linha}"] = ""
         aba[f"G{linha}"] = ""
         aba[f"H{linha}"] = ""
         aba[f"I{linha}"] = ""
+        aba[f"J{linha}"] = ""
 
-        aba[f"J{linha}"] = ordem["cliente"]
-        aba[f"K{linha}"] = ordem["padrao"]
-        aba[f"L{linha}"] = ordem["filme"]
-        aba[f"M{linha}"] = ordem["peso_tubete"]
-        aba[f"N{linha}"] = ordem.get("observacao","")
-        aba[f"O{linha}"] = ordem["operador"]
-        aba[f"P{linha}"] = ordem["maquina"]
+        aba[f"K{linha}"] = ordem["cliente"]
+        aba[f"L{linha}"] = ordem["padrao"]
+        aba[f"M{linha}"] = ordem["filme"]
+        aba[f"N{linha}"] = ordem["peso_tubete"]
+        aba[f"O{linha}"] = ordem.get("observacao","")
+        aba[f"P{linha}"] = ordem["operador"]
+        aba[f"Q{linha}"] = ordem["maquina"]
 
-        # Dados de rastreabilidade, para serem registrados no histórico
-        aba[f"Q{linha}"] = ""
+# Dados de rastreabilidade, para serem registrados no histórico
         aba[f"R{linha}"] = ""
         aba[f"S{linha}"] = ""
-        aba[f"T{linha}"] = ordem["identificador"]
-        aba[f"U{linha}"] = ""
+        aba[f"T{linha}"] = ""
+        aba[f"U{linha}"] = ordem["identificador"]
         aba[f"V{linha}"] = ""
         aba[f"W{linha}"] = ""
+        aba[f"X{linha}"] = ""
 
 # Essas letras todas são todas as colunas que tem informação na nossa tabela na qual aplicaremos alguma mudança
         for coluna in "CDEFGHIJKLMNOPQRSTUVW":
@@ -90,7 +94,7 @@ def preencher_odps(ordens):
             aba[f"{coluna}{linha}"].font = FONTE_PADRAO
             aba[f"{coluna}{linha}"].alignment = ALINHAMENTO_PADRAO
 
-    # OBS em vermelho
+# OBS em vermelho
         aba[f"N{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
 
         linha += 1
@@ -131,11 +135,11 @@ def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido,op_mater
         print(f"ODP não encontrada: {odp}")
         return False
     
-    aba[f'E{linha}'] = numero_pallet
-    aba[f'F{linha}'] = peso_total
-    aba[f'G{linha}'] = peso_liquido
-    aba[f'H{linha}'] = op_material
-    aba[f'I{linha}'] = op_tubete
+    aba[f'F{linha}'] = numero_pallet
+    aba[f'G{linha}'] = peso_total
+    aba[f'H{linha}'] = peso_liquido
+    aba[f'I{linha}'] = op_material
+    aba[f'J{linha}'] = op_tubete
 
     return True
 
@@ -182,11 +186,11 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
     aba = planilha[nome_aba]
 
     campos = {
-        "numero_pallet": 'E',
-        "peso_liquido": "F",
-        "peso_total": "G",
-        "op_material": "H",
-        "op_tubete": "I"
+        "numero_pallet": 'F',
+        "peso_liquido": "G",
+        "peso_total": "H",
+        "op_material": "I",
+        "op_tubete": "J"
     }
 # Parte responsável por,caso o mesmo QRcode seja bipado mais de uma vez por possuir mais de um pallet dele
     numero_pallet = dados.get("numero_pallet")
@@ -291,15 +295,15 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
             
         agora = datetime.now()
 
-        aba[f"Q{linha_historico}"] = aba[f"D{linha}"].value
-        aba[f"R{linha_historico}"] = agora.strftime("%d/%m/%Y")
-        aba[f"S{linha_historico}"] = agora.strftime("%H:%M:%S")
-        aba[f"T{linha_historico}"] = identificador
-        aba[f"U{linha_historico}"] = dados.get("acao", "pesagem")
-        aba[f"V{linha_historico}"] = valor_anterior
-        aba[f"W{linha_historico}"] = novo_valor
+        aba[f"R{linha_historico}"] = aba[f"D{linha}"].value
+        aba[f"S{linha_historico}"] = agora.strftime("%d/%m/%Y")
+        aba[f"T{linha_historico}"] = agora.strftime("%H:%M:%S")
+        aba[f"U{linha_historico}"] = identificador
+        aba[f"V{linha_historico}"] = dados.get("acao", "pesagem")
+        aba[f"W{linha_historico}"] = valor_anterior
+        aba[f"X{linha_historico}"] = novo_valor
 
-        for coluna_historico in "QRSTUVW":
+        for coluna_historico in "RSTUVWX":
             aba[f"{coluna_historico}{linha_historico}"].font = FONTE_PADRAO
             aba[f"{coluna_historico}{linha_historico}"].alignment = ALINHAMENTO_PADRAO
 

@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, send_file
 from openpyxl import load_workbook
 import os 
 import traceback
+from datetime import datetime
 
 #importações vindas de outros arquivos
 from servicos.conversao.conversor import converter_pdf
@@ -10,7 +11,10 @@ from servicos.validacao.tratador_erros import tratar_erro
 from servicos.progresso.progresso import obter_progresso
 from servicos.rastreabilidade.consultar_rastreabilidade import consultar_rastreabilidade
 from servicos.rastreabilidade.atualizar_rastreabilidade import atualizar_rastreabilidade
+from servicos.rastreabilidade.rastreabilidade import localizar_por_identificador
 from servicos.validacao.exceptions import RastreabilidadeNaoEncontradaError
+
+from servicos.rastreabilidade.despacho import preencher_despacho
 
 AMBIENTE = os.getenv("AMBIENTE","local")
 
@@ -138,6 +142,45 @@ def imprimir_etiquetas():
 @app.route("/camera")
 def camera():
     return render_template("camera.html")
+
+@app.route("/despacho")
+def despacho():
+    return render_template("despacho.html")
+
+@app.route("/registrar-despacho", methods = ["POST"])
+def registrar_despacho():
+
+    dados = request.get_json()
+    identificador = dados.get("identificador")
+
+    print(f"IDENTIFICADOR: {identificador}")
+
+    localizacao = localizar_por_identificador(identificador)
+
+    if localizacao is None:
+        return {
+            "sucesso": False,
+                "erro": "identificador não encontrado"
+        }, 404
+
+    resultado = preencher_despacho(
+        localizacao["arquivo"],
+        localizacao["aba"],
+        localizacao["linha"]
+    )
+
+# Aqui é que se o valor de novo for false porque if not True: = if False:
+    if not resultado["novo"]:
+        return {
+            "sucesso": True,
+            "ja_despachado": True,
+            "hora_despacho": resultado["hora_despacho"]
+        }
+# Se for true
+    return {
+        "sucesso": True,
+        "hora_despacho": resultado["hora_despacho"]
+    }
 
 @app.route("/buscar-rastreabilidade",methods = ["POST"])
 def buscar_rastreabilidade_api():

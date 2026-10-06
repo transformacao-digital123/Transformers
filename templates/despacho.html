@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despacho</title>
+
+    <style>
+        body{
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #F5F7FA;
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            color: #015794;
+            margin: 25px 0;
+        }
+
+        #despacho{
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+
+    </style>
+
+    <script src = "https://unpkg.com/html5-qrcode" type = "text/javascript"></script>
+</head>
+<body>
+    <h1>Despacho</h1>
+
+    <div id = "leitor"></div>
+
+    <div id = "resultado">
+        <p>Aguardando o QR Code...</p>
+    </div>
+
+    <script>
+
+        let identificadorAtual = null
+
+        function quandoLerQR(texto){
+            identificadorAtual = texto;
+
+            document.getElementById("resultado").textContent = "QR encontrado: " + texto;
+
+            console.log("QR: ", texto);
+
+            console.log("ENVIANDO IDENTIFICADOR PARA O BACKEND: ", identificadorAtual);
+
+            console.log("ANTES DO FETCH");
+
+            fetch("/registrar-despacho", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(
+                    {identificador: identificadorAtual})
+            })
+            .then(function(resposta){
+
+                console.log("RESPOSTA HTTP: ", resposta);
+                return resposta.json();
+            })
+
+            .then(function(resposta){
+                console.log("RESPOSTA DO FLASK: ", resposta);
+
+                if (resposta.ja_despachado){
+                    document.getElementById("resultado").innerHTML = `
+                    <h2>⚠️ Produto já despachado</h2>
+                    <p><strong>Horário da 1º bipagem: </strong> ${resposta.hora_despacho}</p>`;
+
+                    return;
+                }
+
+                document.getElementById("resultado").innerHTML = `
+                <h2>✅ Despacho Registrado</h2>
+                <p>ODP despachada às <strong>${resposta.hora_despacho}</strong></p>`;
+            })
+
+            .catch(function(erro){
+                console.error("ERRO AO ENVIAR O IDENTIFICADOR: ", erro)
+            })
+        }
+
+        const leitor = new Html5QrcodeScanner(
+            "leitor",
+            {
+                fps: 10,
+                qrbox: {
+                    width: 250,
+                    height: 250
+                }
+            }
+        );
+
+        leitor.render(
+            quandoLerQR
+        );
+    </script>
+</body>
+</html>
