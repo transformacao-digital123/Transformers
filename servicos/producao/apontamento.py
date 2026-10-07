@@ -2,6 +2,8 @@ from openpyxl import load_workbook
 from openpyxl.styles import Font, Alignment
 import os
 
+from servicos.armazenamento import pasta_arquivos
+
 ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center",wrap_text=True)
 
 FONTE_PADRAO = Font(name="Arial", size=11)
@@ -74,7 +76,7 @@ def preencher_apontamento(caminho_modelo,operador,ordens_operador):
 
     apontamento_arquivo = f"Apontamento_{operador}.xlsx"
 
-    caminho = os.path.join("temporario", apontamento_arquivo)
+    caminho = os.path.join(pasta_arquivos(), apontamento_arquivo)
 
     planilha.save(caminho)
 

@@ -4,6 +4,7 @@ from openpyxl.drawing.image import Image
 import os
 
 from servicos.etiquetas.qrcode import gerar_qrcode
+from servicos.armazenamento import pasta_arquivos
 
 FONTE_PADRAO = Font(name="Arial", size=11)
 
@@ -20,7 +21,7 @@ def preencher_etiqueta(ordem,rastreabilidade,numero_etiquetas,total_etiquetas):
                 "operador": ordem["operador"],
                 "maquina": ordem["maquina"],
                 "turno": ordem["turno"],
-                "data": ordem["data"].strftime("%d%m%Y"),
+                "data": ordem["data"].strftime("%d%m%Y")
         }
 
         rastreabilidade[identificador] = dados_identificador
@@ -79,7 +80,7 @@ def preencher_etiqueta(ordem,rastreabilidade,numero_etiquetas,total_etiquetas):
         else:
                 caminho = f"Etiqueta_{odp_limpo}_{operario}.xlsx"
 
-        caminho_saida = os.path.join("temporario", caminho)
+        caminho_saida = os.path.join(pasta_arquivos(), caminho)
 
         planilha.save(caminho_saida)
 

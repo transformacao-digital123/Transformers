@@ -15,7 +15,7 @@ from servicos.producao.odp import  preencher_odps
 from servicos.etiquetas.etiqueta import preencher_etiqueta
 from servicos.validacao.tratador_erros import RemessaNaoEncontradaError
 
-from servicos.armazenamento import caminho_arquivo
+from servicos.armazenamento import pasta_arquivos
 
 def converter_google_sheets(link, acrescentar = False):
 
@@ -24,14 +24,14 @@ def converter_google_sheets(link, acrescentar = False):
     rastreabilidade = {}
 
 
-    os.makedirs("temporario", exist_ok=True)
+    os.makedirs(pasta_arquivos(), exist_ok=True)
 
     atualizar_progresso(10)
 
     if not acrescentar:
 
-        for nome in os.listdir("temporario"):
-            caminho = os.path.join("temporario", nome)
+        for nome in os.listdir(pasta_arquivos()):
+            caminho = os.path.join(pasta_arquivos(), nome)
 
             if os.path.isfile(caminho):
 
@@ -76,7 +76,7 @@ def converter_google_sheets(link, acrescentar = False):
 
 # Variável que guarda o nome da remessa caso ela tenha sido gerada
         nome_remessa = f"{data}_{turno}.xlsx"
-        caminho_remessa = os.path.join("temporario",nome_remessa)
+        caminho_remessa = os.path.join(pasta_arquivos(),nome_remessa)
 
 # Se ela não existir, emite um aviso para antes a gerar e depois tentar atualizá-la. Caso contrário apenas seguirá o caminho para atualizar a planilha
         if not os.path.exists(caminho_remessa):

@@ -3,6 +3,8 @@ from datetime import datetime
 from openpyxl.styles import Font, Alignment
 import os
 
+from servicos.armazenamento import pasta_arquivos
+
 CELULAS = {
     "data": "B3",
     "numero_pedido": "B4",
@@ -85,11 +87,11 @@ def preencher_planilha(dados, indice, origem="pdf"):
     if origem == "pdf":
 
 # Caso seja um arquivo PDF
-        arquivo = os.path.join("temporario", f"{identificador}-{indice}-{nome}.xlsx")
+        arquivo = os.path.join(pasta_arquivos(), f"{identificador}-{indice}-{nome}.xlsx")
     else:
 
 # Caso seja um arquivo do Google Sheets
-        arquivo = os.path.join("temporario", f"{identificador}-{indice}-{nome}.xlsx")
+        arquivo = os.path.join(pasta_arquivos(), f"{identificador}-{indice}-{nome}.xlsx")
 
     planilha.save(arquivo)
     planilha.close()

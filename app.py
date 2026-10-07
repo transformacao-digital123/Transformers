@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, send_file
 from openpyxl import load_workbook
 import os 
 import traceback
-from datetime import datetime
 
 #importações vindas de outros arquivos
 from servicos.conversao.conversor import converter_pdf
@@ -15,6 +14,7 @@ from servicos.rastreabilidade.rastreabilidade import localizar_por_identificador
 from servicos.validacao.exceptions import RastreabilidadeNaoEncontradaError
 
 from servicos.rastreabilidade.despacho import preencher_despacho
+from servicos.armazenamento import pasta_arquivos
 
 AMBIENTE = os.getenv("AMBIENTE","local")
 
@@ -151,11 +151,14 @@ def despacho():
 def registrar_despacho():
 
     dados = request.get_json()
+
     identificador = dados.get("identificador")
+    numero_pallet = dados.get("numero_pallet")
 
     print(f"IDENTIFICADOR: {identificador}")
+    print(f"NUMERO_PALLET: {numero_pallet}")
 
-    localizacao = localizar_por_identificador(identificador)
+    localizacao = localizar_por_identificador(identificador, numero_pallet)
 
     if localizacao is None:
         return {
@@ -274,7 +277,7 @@ def arquivos_acompanhamento():
 
     arquivos = []
 
-    for nome in os.listdir("temporario"):
+    for nome in os.listdir(pasta_arquivos()):
 
         if nome.endswith(".xlsx"):
 

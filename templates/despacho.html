@@ -35,6 +35,11 @@
 <body>
     <h1>Despacho</h1>
 
+    <div for = "numero-pallet">Numero do Pallet</div>
+    <select id="numero-pallet"></select>
+
+    <br>
+
     <div id = "leitor"></div>
 
     <div id = "resultado">
@@ -43,10 +48,28 @@
 
     <script>
 
-        let identificadorAtual = null
+        const select = document.getElementById("numero-pallet");
+
+        for (let i = 1; i <= 80; i++) {
+            const opcao = document.createElement("option");
+
+            opcao.value = i;
+            opcao.textContent = `Pallet ${String(i).padStart(2, "0")}`;
+
+            if (i === 1) {
+                opcao.selected = true;
+            }
+
+            select.appendChild(opcao);
+        }
+
+        let identificadorAtual = null;
 
         function quandoLerQR(texto){
+
             identificadorAtual = texto;
+
+            const numeroPallet = document.getElementById("numero-pallet").value;
 
             document.getElementById("resultado").textContent = "QR encontrado: " + texto;
 
@@ -62,7 +85,9 @@
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(
-                    {identificador: identificadorAtual})
+                    {identificador: identificadorAtual,
+                    numero_pallet: numeroPallet
+                    })
             })
             .then(function(resposta){
 

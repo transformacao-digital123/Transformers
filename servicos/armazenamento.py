@@ -11,26 +11,22 @@ AMBIENTE = os.getenv("AMBIENTE", "local")
 PASTA_LOCAL = "temporario"
 PASTA_STORAGE = "storage"
 
+def pasta_arquivos():
+    if AMBIENTE == "local":
+        return PASTA_LOCAL
+    return PASTA_STORAGE
+
 # Salva o arquivo em um armazenamento adequado ao ambiente (local ou cloud)
 def salvar_arquivo(caminho_origem,nome_arquivo):
 
-# Se o AMBIENTE é local...
-    if AMBIENTE == "local":
+# Guarda qual vai ser a pasta
+    pasta = pasta_arquivos()
 
 # Se a pasta temporario não existir, cria ela. Caso a pasta já tenha sido criada antes o exist_ok=True evita do programa dar erro
-        os.makedirs(PASTA_LOCAL, exist_ok = True)
+    os.makedirs(pasta, exist_ok = True)
 
 # Junta o nome do arquivo e o nome da pasta em um único caminho, que será  destino do arquio
-        destino = os.path.join(PASTA_LOCAL, nome_arquivo)
-
-# Se não...
-    else:
-
-# Se a pasta storage não existir, cria ela. Caso a pasta já tenha sido criada antes o exist_ok=True evita do programa dar erro
-        os.makedirs(PASTA_STORAGE, exist_ok = True)
-
-# Junta o nome do arquivo e o nome da pasta em um único caminho, que será  destino do arquio
-        destino = os.path.join(PASTA_STORAGE,nome_arquivo)
+    destino = os.path.join(pasta, nome_arquivo)
 
 # Copia o arquivo de origem para o destino, mantendo as informações do arquivo original. O copy2 é usado porque ele também tenta preservar os metadados do arquivo original (como a data de criação e modificação)
     shutil.copy2(caminho_origem,destino)
@@ -42,14 +38,8 @@ def salvar_arquivo(caminho_origem,nome_arquivo):
 # Ele se repete em algumas funções, mas é necessário, por questões de boas práticas, para que o código funcione corretamente, pois ele é usado em várias partes do código e não seria viável usar afunção salvar_arquivo, já que ela faz mais do que isso e assim gerar confusão
 def caminho_arquivo(nome_arquivo):
 
-# Se o AMBIENTE for local...
-    if AMBIENTE == "local":
-
-# Retorna o caminho da pasta local insere o arquivo no cominho da pasta local, que é o temporario, e o nome do arquivo
-        return os.path.join(PASTA_LOCAL, nome_arquivo)
-
-# Se o AMBIENTE for diferente de local então ele retorna o caminho da pasta storage insere o arquivo no cominho da pasta storage, e o nome do arquivo
-    return os.path.join(PASTA_STORAGE, nome_arquivo)
+# Guarda o caminho do arquivo
+    return os.path.join(pasta_arquivos(), nome_arquivo)
 
 # Verifica se o arquivo existe no armazenamento atual
 def arquivo_existe(nome_arquivo):

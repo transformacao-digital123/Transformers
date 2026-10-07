@@ -1,6 +1,7 @@
 import qrcode
 import os
 
+from servicos.armazenamento import pasta_arquivos
 
 # O texto servirá como parâmetro no lugar de texto_qr onde ODP, data, turno e operador são parâmetros obrigatórios pois são eles que nos ajudarão a encontrar o caminho até ao arquivo, aba e linha onde está nossa odp
 def gerar_qrcode(texto,odp,operador):
@@ -15,7 +16,7 @@ def gerar_qrcode(texto,odp,operador):
  # Aqui você aproveitou a própria ODP para criar um nome único para a imagem       
         test = f"QR_{odp_limpo}_{operario}.png"
 
-        caminho = os.path.join("temporario", test)
+        caminho = os.path.join(pasta_arquivos(), test)
 
 # Agora a imagem que está na variável qr é realmente gravada no computador
         qr.save(caminho)

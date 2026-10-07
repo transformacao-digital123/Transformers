@@ -6,6 +6,7 @@ from zipfile import BadZipFile
 
 from servicos.validacao.exceptions import OdpNaoEncontradaError,PlanilhaNaoEncontradaError,PlanilhaCorrompidaError
 from servicos.armazenamento import caminho_arquivo
+from servicos.producao.odp import localizar_pallet,preencher_odps
 
 def gerar_identificador():
 
@@ -86,16 +87,34 @@ def localizar_aba(dados):
                             }
         raise OdpNaoEncontradaError()
 
-def localizar_por_identificador(identificador):
+# Serve pra localizar se aquela
+def localizar_por_identificador(identificador, numero_pallet):
 
-	dados = buscar_rastreabilidade(identificador)
+# Pega o identificador no arquivo json
+    dados = buscar_rastreabilidade(identificador)
 
-	if dados is None:
-		return None
+# Se estiver vazio acaba ali 
+    if dados is None:
+        return None
 
-	localizacao = localizar_aba(dados)
+# Encontra a localização do arquivo e aba    
+    localizacao = localizar_aba(dados)
 
-	if localizacao is None:
-		return None
+# Se estiver vazio acaba ali    
+    if localizacao is None:
+        return None
+    
+    planilha = load_workbook(localizacao["arquivo"])
 
-	return localizacao
+    aba = planilha[localizacao["aba"]]
+
+    linha_pallet = localizar_pallet(aba,identificador, numero_pallet)
+
+    planilha.close()
+
+    if linha_pallet is None:
+        return None
+
+    localizacao["linha"] = linha_pallet
+    
+    return localizacao

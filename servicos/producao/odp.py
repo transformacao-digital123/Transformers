@@ -44,7 +44,7 @@ def preencher_odps(ordens):
     aba["D3"] = primeira_ordem["data"]
     aba["D3"].number_format = "dd/mm/yyyy"
 
-    aba["F3"] = primeira_ordem["turno"]
+    aba["G3"] = primeira_ordem["turno"]
 
     for celula in ("D3","F3"):
         aba[celula].font = FONTE_PADRAO
@@ -95,7 +95,7 @@ def preencher_odps(ordens):
             aba[f"{coluna}{linha}"].alignment = ALINHAMENTO_PADRAO
 
 # OBS em vermelho
-        aba[f"N{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
+        aba[f"O{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
 
         linha += 1
 
@@ -162,8 +162,8 @@ def localizar_pallet(aba,identificador,numero_pallet):
 # Analisa todas as linhas,desde a linha 1 até a última, devido ao + 1
     for linha in range(1, aba.max_row + 1):
 
-        identificador_linha = aba[f"T{linha}"].value
-        pallet_linha = aba[f"E{linha}"].value
+        identificador_linha = aba[f"U{linha}"].value
+        pallet_linha = aba[f"F{linha}"].value
 
 # Se o identificador linha for igual ao identificador do QRcode da etiqueta e o Nº do pallet  inserido for igual ao Nº do pallet que já tinha sido inserido antes...
 # Devolve o Nº da linha em que parar
@@ -199,12 +199,8 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 # Se a ação for pesagem:
     if acao == "pesagem":
 
-# Descobre através da função linha_pallet qual a linha que deve-se trabalhar
-        linha_pallet = localizar_pallet(
-            aba,identificador,numero_pallet
-        )
-# Se a linha_pallet não tretornou um valor vazio
-        if linha_pallet is not None:
+# Se a celula que estou usando não estiver ocupada por nenhum pallet ele seguirá seu caminho
+        if aba[f"F{linha}"].value not in (None,""):
 
 # Acrescente 1 valor a mais no valor da linha atual
             linha_nova = linha + 1
@@ -227,7 +223,7 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
                 if origem.has_style:
 
 # Formatação de estilo,incluindo cor, borda, fonte diferente do padrão
-# No _style o _ serve como uma medida de privacidade, é uma forma de garantir que usuários comuns não mexs, ou tentem copiar isso diretamente 
+# No _style o _ serve como uma medida de privacidade, é uma forma de garantir que usuários comuns não mexam, ou tentem copiar isso diretamente 
                     destino._style = copy(origem._style)
 
 # Caso o if se cumpra o resto das condições são cumpridas automaticamente

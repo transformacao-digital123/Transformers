@@ -1,9 +1,10 @@
-import win32api
-import win32print
-
 import os
 
 def imprimir_etiqueta(caminho):
+
+    import win32api
+    import win32print
+
 
     print("CAMINHO:", os.path.abspath(caminho))
     print("ARQUIVO EXISTE?", os.path.exists(caminho))
