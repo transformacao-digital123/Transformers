@@ -10,7 +10,7 @@ from servicos.validacao.exceptions import (
     AbaNaoEncontradaError,
     RastreabilidadeNaoEncontradaError,
     RemessaNaoEncontradaError,
-    NenhumaOdpNovaErrror
+    NenhumaOdpNovaError
 )
 
 MENSAGENS = {
@@ -47,7 +47,7 @@ MENSAGENS = {
     RemessaNaoEncontradaError:
     "Não existe uma remessa para essa data e turno. Crie uma nova remessa antes de tentar acrescentar ODPs",
 
-    NenhumaOdpNovaErrror:
+    NenhumaOdpNovaError:
     "Nenhuma remessa nova foi incluída. todas as OdP's já estão na remessa"
 
 

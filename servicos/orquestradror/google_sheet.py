@@ -13,7 +13,7 @@ from servicos.interpretacao.identificar_blocos import identificar_blocos
 from servicos.rastreabilidade.rastreabilidade import gerar_identificador
 from servicos.producao.odp import  preencher_odps
 from servicos.etiquetas.etiqueta import preencher_etiqueta
-from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, NenhumaOdpNovaErrror
+from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, NenhumaOdpNovaError
 
 from servicos.armazenamento import pasta_arquivos
 from servicos.acrescentar_remessa import acrecentar_odps_por_remessa
@@ -121,7 +121,7 @@ def converter_google_sheets(link, acrescentar = False):
 # Mensagem de erro para caso coloque o mesmo link pra rodar o programa com o acrescentar ativado mas sem ter incluído novas OdP
 # Funciona da seguinte forma, se for chamado acrescentar e ordens estiver vazio, mostre a mensagem
         if acrescentar and not ordens:
-            raise NenhumaOdpNovaErrror()
+            raise NenhumaOdpNovaError()
 
         print("ODP's novas: ")
         for ordem in ordens:
