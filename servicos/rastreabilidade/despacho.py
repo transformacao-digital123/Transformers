@@ -1,5 +1,6 @@
-from datetime import datetime
 from openpyxl import load_workbook
+
+from servicos.data import agora
 
 def preencher_despacho(caminho_arquivo, nome_aba, linha):
 
@@ -19,8 +20,7 @@ def preencher_despacho(caminho_arquivo, nome_aba, linha):
             "hora_despacho": despacho_anterior
         }
 
-    agora = datetime.now()
-    hora_despacho = agora.strftime("%H:%M:%S")
+    hora_despacho = agora().strftime("%H:%M:%S")
 
     aba[f"E{linha}"] = hora_despacho
 

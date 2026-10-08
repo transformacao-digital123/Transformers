@@ -13,9 +13,10 @@ from servicos.interpretacao.identificar_blocos import identificar_blocos
 from servicos.rastreabilidade.rastreabilidade import gerar_identificador
 from servicos.producao.odp import  preencher_odps
 from servicos.etiquetas.etiqueta import preencher_etiqueta
-from servicos.validacao.tratador_erros import RemessaNaoEncontradaError
+from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, NenhumaOdpNovaErrror
 
 from servicos.armazenamento import pasta_arquivos
+from servicos.acrescentar_remessa import acrecentar_odps_por_remessa
 
 def converter_google_sheets(link, acrescentar = False):
 
@@ -80,8 +81,51 @@ def converter_google_sheets(link, acrescentar = False):
 
 # Se ela não existir, emite um aviso para antes a gerar e depois tentar atualizá-la. Caso contrário apenas seguirá o caminho para atualizar a planilha
         if not os.path.exists(caminho_remessa):
-            raise RemessaNaoEncontradaError(f"Ainda não foi gerada nenhuma remessa com o nome {nome_remessa}. "
-                                    "Confira se você de fato a criou antes de tentar atualizá-la.")
+            raise RemessaNaoEncontradaError()
+
+# Aqui usamos a função para abrir a planilha
+        planilha_remessa = abrir_planilha(caminho_remessa)
+
+# Aqui pegamos a 1º aba da planilha
+        aba_remessa = planilha_remessa.active
+
+# Aqui a gente criou uma caixaorganizadora que está vazia e será usada mais pra frente
+        odps_existentes = set()
+
+# Faz uma ánalise começando da linha 6 e indo até a penúltima linha + 1 
+        for linha in range(6, aba_remessa.max_row + 1):
+
+# Pega  valor de todas as células das OdP's e salva o contúdo em odp
+            odp = aba_remessa[f"D{linha}"].value
+
+# Se odp não estiver vazia ele formata os valores das odps para que se tornem string e que não tenham espaços invisíveis e então adiciona as odp a odps_existentes
+# O pulo do gato é que aqui o set() faz uma filtragem, caso eu mande novamente a mesma odp ela simplesmente a ignora e não a inclui em odps_existentes
+            if odp:
+                odps_existentes.add(str(odp).strip())
+
+        planilha_remessa.close()
+
+        print("ODP's já existem na remessa")
+
+# Passa por cada odp que foi configurada e gurdada em odps_existentes (Aqui está apenas para visualização das ODP, nada além disso)
+        for odp in odps_existentes:
+            print(odp)
+
+# Aqui fazemos a separação das novas OdP's com as antigas o for ordem analisa uma por uma em ordens, que refez a análise de toda aplanilha agora, incluindo com as novas, e guarda em ordem os valores como quando depois de um for ordem in ordens: fazemos nova_ordem.append(ordem)
+# Então é novamente submetido a uma filtragem dentro de um if e então guarda os valores que não estavam em odps_existentes em ordens que então segue viagem e continua seguindo na função onde já é submetido ali em total_ordens
+        ordens = [
+            ordem for ordem in ordens
+            if str(ordem["odp"]).strip() not in odps_existentes
+        ]
+
+# Mensagem de erro para caso coloque o mesmo link pra rodar o programa com o acrescentar ativado mas sem ter incluído novas OdP
+# Funciona da seguinte forma, se for chamado acrescentar e ordens estiver vazio, mostre a mensagem
+        if acrescentar and not ordens:
+            raise NenhumaOdpNovaErrror()
+
+        print("ODP's novas: ")
+        for ordem in ordens:
+            print(ordem["odp"])
 
     arquivos = []
 
@@ -156,7 +200,11 @@ def converter_google_sheets(link, acrescentar = False):
             progresso = 65 + ((indice + 1) / total_operadores) * 25
             atualizar_progresso(progresso)
 
-    arquivo_odp = preencher_odps(ordens)
+    if acrescentar:
+        arquivo_odp = acrecentar_odps_por_remessa(caminho_remessa,ordens)
+    else:
+        arquivo_odp = preencher_odps(ordens)
+
     arquivos.append(arquivo_odp)
 
     arquivo_zip = criar_zip(arquivos)

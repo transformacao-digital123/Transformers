@@ -1,9 +1,9 @@
 from openpyxl import load_workbook
-from datetime import datetime
 from openpyxl.styles import Font, Alignment
 import os
 
 from servicos.armazenamento import pasta_arquivos
+from servicos.data import agora
 
 CELULAS = {
     "data": "B3",
@@ -77,7 +77,7 @@ def preencher_planilha(dados, indice, origem="pdf"):
             celula.alignment = ALINHAMENTOS[chave]
 
 # Comando para nomear a data e hora no arquivo
-    nome = datetime.now().strftime("%d%m%Y_%H%M%S")
+    nome = agora().strftime("%d%m%Y_%H%M%S")
 
     if dados["odp"]:
         identificador = str(dados["odp"]).replace("/","-")

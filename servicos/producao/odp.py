@@ -2,12 +2,11 @@ from openpyxl import load_workbook
 from openpyxl.styles import Font, Alignment
 from openpyxl.drawing.image import Image
 import os
-from datetime import datetime
 from copy import copy
 
 from servicos.validacao.exceptions import AbaNaoEncontradaError
 from servicos.armazenamento import caminho_arquivo
-from servicos.rastreabilidade.despacho import preencher_despacho
+from servicos.data import agora
 
 ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center",wrap_text=True)
 
@@ -288,12 +287,10 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 
 # Serve pra indicar que quando passar pOr ele o flag será alterado, isso é importante pois masi pra frente haverá uma condição que só ocorrerá quando houve_alteracao for True
         houve_alteracao = True
-            
-        agora = datetime.now()
 
         aba[f"R{linha_historico}"] = aba[f"D{linha}"].value
-        aba[f"S{linha_historico}"] = agora.strftime("%d/%m/%Y")
-        aba[f"T{linha_historico}"] = agora.strftime("%H:%M:%S")
+        aba[f"S{linha_historico}"] = agora().strftime("%d/%m/%Y")
+        aba[f"T{linha_historico}"] = agora().strftime("%H:%M:%S")
         aba[f"U{linha_historico}"] = identificador
         aba[f"V{linha_historico}"] = dados.get("acao", "pesagem")
         aba[f"W{linha_historico}"] = valor_anterior

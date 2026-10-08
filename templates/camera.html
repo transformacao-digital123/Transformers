@@ -107,10 +107,10 @@
                     <label>PESO LÍQUIDO: <input type="text" id = "peso_liquido" name = "peso_liquido"></label>
                     <br>
                     <br>
-                    <label>PESO TOTAL: <input type="text" id = "peso_total" name = "peso_total"></label>
+                    <label>PESO TOTAL: <input type="text" id = "peso_total" name = "peso_total" maxlength = "6" minlength = "6" inputmode = "numeric"></label>
                     <br>
                     <br>
-                    <label>OP MATERIAL: <input type="text" id = "op_material" name = "op_material"></label>
+                    <label>OP MATERIAL: <input type="text" id = "op_material" name = "op_material" maxlength = 6 minlength = "6" inputmode = "numeric"></label>
                     <br>
                     <br>
                     <label>OP TUBETE: <input type="text" id = "op_tubete" name = "op_tubete"></label><br><br>
@@ -148,8 +148,8 @@
                 numero_pallet: document.getElementById("numero_pallet").value,
                 peso_liquido: document.getElementById("peso_liquido").value,
                 peso_total: document.getElementById("peso_total").value,
-                op_material: document.getElementById("op_material").value,
-                op_tubete: document.getElementById("op_tubete").value,
+                op_material: "1000" + document.getElementById("op_material").value,
+                op_tubete: "1000" + document.getElementById("op_tubete").value,
                 acao: document.getElementById("acao").value
             };
 

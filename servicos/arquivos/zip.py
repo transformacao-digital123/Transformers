@@ -1,7 +1,8 @@
 import zipfile
-from datetime import datetime
 
-tempo = datetime.now().strftime("%d%m%Y_%H%M%S")
+from servicos.data import agora
+
+tempo = agora().strftime("%d%m%Y_%H%M%S")
 
 def criar_zip(arquivos):
 

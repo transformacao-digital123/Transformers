@@ -36,3 +36,5 @@ class RastreabilidadeNaoEncontradaError(Exception):
 
 class RemessaNaoEncontradaError(Exception):
     pass
+class NenhumaOdpNovaErrror(Exception):
+    pass
