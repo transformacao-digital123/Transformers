@@ -9,7 +9,7 @@ def encontrar_proxima_linha(aba):
 
     linha = 6
 
-# Enquanto linha for mnor que a última linha preenchida ele continuaá analisano
+# Enquanto linha for menor que a última linha preenchida ele continuaá analisano
     while linha < aba.max_row:
 
         linha_atual_vazia = aba[f"D{linha}"].value is None
@@ -23,9 +23,9 @@ def encontrar_proxima_linha(aba):
         linha += 1
 
 # Se caso ele tiver rodado a planilha inteira e não tiver encontrado uma sequência de 2 linhas seguidas vazias ele retornará para quem o chamou aba.max_row + 1 que significa que ele visualizou todas as linhas preenchidas + 1 que sempre tem o espaçamento de 1 linha em branco
-    return aba.max_row + 1
+    return aba.max_row + 2
 
-def acrecentar_odps_por_remessa(caminho_remessa,ordens):
+def acrescentar_odps_por_remessa(caminho_remessa,ordens):
 
     planilha = load_workbook(caminho_remessa)
 
@@ -74,9 +74,10 @@ def acrecentar_odps_por_remessa(caminho_remessa,ordens):
 # OBS em vermelho
         aba[f"O{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
 
+             
         linha += 2
 
-        planilha.save(caminho_remessa)
-        planilha.close()
+    planilha.save(caminho_remessa)
+    planilha.close()
 
-        return caminho_remessa
+    return caminho_remessa

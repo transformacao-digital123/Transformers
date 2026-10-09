@@ -10,20 +10,22 @@ from servicos.progresso.progresso import atualizar_progresso
 from servicos.entradas.google_sheets import validar_link, baixar_planilha
 from servicos.arquivos.excel import abrir_planilha
 from servicos.interpretacao.identificar_blocos import identificar_blocos
-from servicos.rastreabilidade.rastreabilidade import gerar_identificador
+from servicos.rastreabilidade.rastreabilidade import gerar_identificador,carregar_rastreabilidade
 from servicos.producao.odp import  preencher_odps
 from servicos.etiquetas.etiqueta import preencher_etiqueta
 from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, NenhumaOdpNovaError
 
 from servicos.armazenamento import pasta_arquivos
-from servicos.acrescentar_remessa import acrecentar_odps_por_remessa
+from servicos.acrescentar_remessa import acrescentar_odps_por_remessa
 
 def converter_google_sheets(link, acrescentar = False):
-
+    
     atualizar_progresso(0)
-
-    rastreabilidade = {}
-
+    
+    if acrescentar:
+        rastreabilidade = carregar_rastreabilidade()
+    else:
+        rastreabilidade = {}
 
     os.makedirs(pasta_arquivos(), exist_ok=True)
 
@@ -201,7 +203,7 @@ def converter_google_sheets(link, acrescentar = False):
             atualizar_progresso(progresso)
 
     if acrescentar:
-        arquivo_odp = acrecentar_odps_por_remessa(caminho_remessa,ordens)
+        arquivo_odp = acrescentar_odps_por_remessa(caminho_remessa,ordens)
     else:
         arquivo_odp = preencher_odps(ordens)
 
