@@ -20126,3 +20126,32 @@
 2026-10-09 09:51:23,802 - INFO -  * Restarting with stat
 2026-10-09 09:51:24,650 - WARNING -  * Debugger is active!
 2026-10-09 09:51:24,650 - INFO -  * Debugger PIN: 540-938-365
+2026-10-09 10:22:40,609 - INFO - 127.0.0.1 - - [09/Oct/2026 10:22:40] "GET /acompanhamento HTTP/1.1" 200 -
+2026-10-09 10:22:40,646 - INFO - 127.0.0.1 - - [09/Oct/2026 10:22:40] "[35m[1mGET /rastreabilidade HTTP/1.1[0m" 500 -
+2026-10-09 10:25:25,312 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\app.py', reloading
+2026-10-09 10:25:25,447 - INFO -  * Restarting with stat
+2026-10-09 10:25:26,457 - WARNING -  * Debugger is active!
+2026-10-09 10:25:26,458 - INFO -  * Debugger PIN: 540-938-365
+2026-10-09 10:44:12,865 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:12] "GET / HTTP/1.1" 200 -
+2026-10-09 10:44:16,335 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:16] "[36mGET /static/assets/optimus_transformando_em_caminhao.gif HTTP/1.1[0m" 304 -
+2026-10-09 10:44:16,738 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:16] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:16,738 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:16] "[36mGET /static/assets/luari_caminhao.gif HTTP/1.1[0m" 304 -
+2026-10-09 10:44:17,235 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:17] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:17,734 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:17] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:18,235 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:18] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:18,740 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:18] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:19,237 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:19] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:19,736 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:19] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:20,256 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:20] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:20,788 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:20] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:21,226 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:21] "GET /progresso HTTP/1.1" 200 -
+2026-10-09 10:44:21,465 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:21] "POST / HTTP/1.1" 200 -
+2026-10-09 10:44:21,498 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:21] "GET /baixar-arquivo HTTP/1.1" 200 -
+2026-10-09 10:44:21,691 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:21] "[36mGET /static/assets/optimus_voltando_a_ser_robo.gif HTTP/1.1[0m" 304 -
+2026-10-09 10:44:22,842 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:22] "GET /camera HTTP/1.1" 200 -
+2026-10-09 10:44:43,876 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:43] "POST /buscar-rastreabilidade HTTP/1.1" 200 -
+2026-10-09 10:44:52,521 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:52] "POST /atualizar-rastreabilidade HTTP/1.1" 200 -
+2026-10-09 10:44:55,741 - INFO - 127.0.0.1 - - [09/Oct/2026 10:44:55] "GET /despacho HTTP/1.1" 200 -
+2026-10-09 10:45:01,477 - INFO - 127.0.0.1 - - [09/Oct/2026 10:45:01] "POST /registrar-despacho HTTP/1.1" 200 -
+2026-10-09 10:45:27,722 - INFO - 127.0.0.1 - - [09/Oct/2026 10:45:27] "POST /registrar-despacho HTTP/1.1" 200 -
+2026-10-09 11:02:48,130 - INFO - 127.0.0.1 - - [09/Oct/2026 11:02:48] "GET /despacho HTTP/1.1" 200 -
