@@ -101,7 +101,7 @@
                     <input type="hidden" id = "identificador" name = "identificador">
                     <br>
                     <br>
-                    <label>Nº do PALLET: <input type="text" id = "numero_pallet" name = "numero_pallet"></label>
+                    <label for = "numero_pallet">Nº do PALLET: <select id = "numero_pallet" name = "numero_pallet" required><option value = "" disabled>Selecione o pallet</option></select></label>
                     <br>
                     <br>
                     <label>PESO LÍQUIDO: <input type="text" id = "peso_liquido" name = "peso_liquido"></label>
@@ -120,6 +120,7 @@
                         <select id = "acao" name = "acao">
                             <option value = "pesagem" selected>Pesagem</option>
                             <option value = "atualizacao">Atualizacao</option>
+                            <option value = "cancelar">Cancelar</option>
                             <option value = "ajuste">Ajuste</option>
                             <option value = "retrabalho">Retrabalho</option>
                         </select>        
@@ -132,6 +133,8 @@
                         </button>
 
                `;
+
+               preencherListaPallets();
             })
 // CAPTURAR: Garantia para que caso de algum problema no servidor como queda de internet o programa inteiro não quebre, e então ele exibe uma mensagem de erro 
             .catch(function(erro){
@@ -141,11 +144,18 @@
 
         function atualizarRastreabilidade(){
 
+            const numeroPallet = document.getElementById("numero_pallet").value;
+
+            if (!numeroPallet) {
+                alert("Selecione um Nº de pallet");
+                return;
+            }
+
             const dados = {
 
                 identificador: identificadorAtual,
 
-                numero_pallet: document.getElementById("numero_pallet").value,
+                numero_pallet: numeroPallet,
                 peso_liquido: document.getElementById("peso_liquido").value,
                 peso_total: document.getElementById("peso_total").value,
                 op_material: "1000" + document.getElementById("op_material").value,
@@ -199,6 +209,29 @@
                 height:250           
             }}
         );
+
+        function preencherListaPallets(){
+            const select = document.getElementById("numero_pallet");
+
+            for (let i = 1;i <= 100; i++){
+                const opcao = document.createElement("option");
+
+// Transforma Nº em string e garante que o valor terá 2 digitos preenchendo com 0 quando necessário
+                opcao.value = String(i).padStart(2, "0");
+
+// Aqui o textConstext substitui o texto que é representado por opcao, então as crases tornam o que estiver dentro um template string
+// O "${}" insere o resultado de uma expressão dentro do texto, que no caso é o String(i).padStart(2, "0")
+                opcao.textContent = `Pallet ${String(i).padStart(2, "0")}`;
+
+                if (i ===1){
+
+// Garante que o pallet 01 já esteja pré-selecionado
+                    opcao.selected = true;
+                }
+
+                select.appendChild(opcao);
+            }
+        }
 // O leitor iniciará, quando o QR code for encontrado ativa a função quandolerQR
         leitor.render(
             quandoLerQR

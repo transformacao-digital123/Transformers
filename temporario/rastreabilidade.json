@@ -1,0 +1,173 @@
+{
+    "LUARI - 0D08A46D": {
+        "odp": "26/04926",
+        "numero_pedido": "FAT34044196",
+        "cliente": "JADLOG LOGISTICA 3",
+        "operador": "Larissa",
+        "maquina": "01",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 8A000330": {
+        "odp": "26/04926",
+        "numero_pedido": "FAT34044196",
+        "cliente": "JADLOG LOGISTICA 3",
+        "operador": "Rozi",
+        "maquina": "02",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - F5CA7F0F": {
+        "odp": "26/04926",
+        "numero_pedido": "FAT34044196",
+        "cliente": "JADLOG LOGISTICA 3",
+        "operador": "Carla",
+        "maquina": "03",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 0D0FAC70": {
+        "odp": "26/04968",
+        "numero_pedido": "FAT34874367",
+        "cliente": "CASTROLANDA",
+        "operador": "Lucas",
+        "maquina": "04",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 3920332F": {
+        "odp": "26/04304",
+        "numero_pedido": "FAT33214252",
+        "cliente": "ISOTERM",
+        "operador": "Lucas H.",
+        "maquina": "05",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - B2A0C226": {
+        "odp": "26/04968",
+        "numero_pedido": "FAT34874367",
+        "cliente": "CASTROLANDA",
+        "operador": "Wanderson",
+        "maquina": "06",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 4E97A942": {
+        "odp": "26/04966",
+        "numero_pedido": "FAT35150543",
+        "cliente": " YUSEN LOGISTICS",
+        "operador": "Lougas",
+        "maquina": "13",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 800EA935": {
+        "odp": "26/04896",
+        "numero_pedido": "FAT34571958",
+        "cliente": "GROW QUIMICA",
+        "operador": "Lougas",
+        "maquina": "13",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - D9303F54": {
+        "odp": "26/04969",
+        "numero_pedido": "FAT34318158",
+        "cliente": "ECOBOXES",
+        "operador": "Lougas",
+        "maquina": "13",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 7A060B9B": {
+        "odp": "26/04841",
+        "numero_pedido": "FAT34293437 ",
+        "cliente": "INCOPISOS",
+        "operador": "Gabriel",
+        "maquina": "14",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 6DD1C811": {
+        "odp": "26/04953",
+        "numero_pedido": "FAT32760846",
+        "cliente": "PAPIRUS",
+        "operador": "Gabriel",
+        "maquina": "14",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - A1B738E8": {
+        "odp": "26/04968",
+        "numero_pedido": "FAT34874367",
+        "cliente": "CASTROLANDA",
+        "operador": "Marcos",
+        "maquina": "17",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - C6BFB57C": {
+        "odp": "26/04873",
+        "numero_pedido": "FAT32670",
+        "cliente": " 3 FAZENDAS",
+        "operador": "Thierry",
+        "maquina": "Schockflex 1",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 65A5E7ED": {
+        "odp": "26/04970",
+        "numero_pedido": 0.0,
+        "cliente": "FRUTTY",
+        "operador": "Thierry",
+        "maquina": "Schockflex 1",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - DC4285C8": {
+        "odp": "26/04916",
+        "numero_pedido": "FAT34108366",
+        "cliente": "TING",
+        "operador": "Fabio",
+        "maquina": "Schockflex 2",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 923CD398": {
+        "odp": "26/04971",
+        "numero_pedido": 0.0,
+        "cliente": "FRUTTY",
+        "operador": "Fabio",
+        "maquina": "Schockflex 2",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - AA823BA0": {
+        "odp": "26/04972",
+        "numero_pedido": "FAT34237 ",
+        "cliente": " DUCOCO ALIMENTOS S/A LINHARES",
+        "operador": "Fabio",
+        "maquina": "Schockflex 2",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 0378BFBD": {
+        "odp": "26/04918",
+        "numero_pedido": "FAT32398724",
+        "cliente": "PEDRA BELA",
+        "operador": "Eduardo",
+        "maquina": "Permaco",
+        "turno": "Manhã",
+        "data": "12102026"
+    },
+    "LUARI - 5562CDC2": {
+        "odp": "26/04973",
+        "numero_pedido": "FAT33418052",
+        "cliente": "FABRICA NOSSA SENHORA ",
+        "operador": "Eduardo",
+        "maquina": "Permaco",
+        "turno": "Manhã",
+        "data": "12102026"
+    }
+}

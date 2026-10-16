@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file,jsonify
 from openpyxl import load_workbook
-import os 
+import os
+import re
 import traceback
+from datetime import datetime,date,time
 
 #importações vindas de outros arquivos
 from servicos.conversao.conversor import converter_pdf
@@ -12,7 +14,6 @@ from servicos.rastreabilidade.consultar_rastreabilidade import consultar_rastrea
 from servicos.rastreabilidade.atualizar_rastreabilidade import atualizar_rastreabilidade
 from servicos.rastreabilidade.rastreabilidade import localizar_por_identificador
 from servicos.validacao.exceptions import RastreabilidadeNaoEncontradaError
-
 from servicos.rastreabilidade.despacho import preencher_despacho
 from servicos.armazenamento import pasta_arquivos
 
@@ -239,28 +240,76 @@ def atualizar_rastreabilidade_api():
 def acompanhamento():
     return render_template("acompanhamento.html")
 
+# Serve para ser usado como o filtrador da data e turno quando for solicitado a visualização da planilha
+@app.route("/opcoes-acompanhamento")
+def opcoes_acompanhamento():
+    arquivos = []
+
+# Aqui será feito uma verificação, através do nome do caminho, de todos os caminhos dos arquivos
+    for nome in os.listdir(pasta_arquivos()):
+
+# Se, tudo em minúsculo, o caminho terminar em ".xlsx" ou começar com "~$", representa arquivos temporários ocultos que o próprio excel cria quando está aberto, simplesmente continue
+        if not nome.lower().endswith(".xlsx") or nome.startswith("~$"):
+            continue
+
+# Pega e faz a separação do nome do arquivo com sua terminação(.xlsx), em que ele pegará pra guardar apenas o 1° valor
+        base = os.path.splitext(nome)[0]
+
+# Aqui ele irá separar o texto em 3 partes através do "_", a data, o próprio _, e o turno
+        data_texto, separador, turno = base.partition("_")
+
+# aqui verificará se tem o separador("_") e o turno depois dele, caso esteja fora do padrão ele apenas dará continue e seguirá reto
+        if not separador or not turno:
+            continue
+
+# Aqui faremos uma verificação, se a sata que for passada for uma data convencional n~so acontecerá nada demais, caso contrário, caso haja algo como dia 32 ela dará erro
+# Aqui há 2 formatações de data,isso se deve porque a 1º está ali para a nossa visualização, já que usamos o método brasileiro, enquanto o 2º serve para enviar para o servidor qual a data, pois o sistema funciona no método americano, mas isso não afetará nada no nosso cotidiano, é apenas uma forma de evitar bug
+        try:
+            data = datetime.strptime(
+                data_texto, "%d-%m-%Y"
+            ).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+
+# Guarda em arquivos o nome, data e turno do arquivo
+        arquivos.append({
+            "nome": nome,
+            "data": data,
+            "turno": turno
+        })
+
+# Retorna em um formato que o.json consiga entender para que quem o chamou possa processar os dados
+    return {"arquivos": arquivos}
+
 @app.route("/dados-acompanhamento")
 def dados_acompanhamento():
 
-    arquivo = request.args.get("arquivo")
+# Aqui ele pegará o URL que está no momento, por exemplo /dados-acompanhamento?arquivo=planilha_manha.xlsx, e pegará tudo o que tiver depois de arquivo e guardará na nova variável arquivo
+    nome_arquivo = request.args.get("arquivo")
 
-    if not arquivo or not os.path.exists(arquivo):
+# Aqui é uma verificação, se não houver nem o nome do arquivo nem se existe um arquivo com esse nome no servidor, retornará erro, se não apenas irá continuar reto
+    if not nome_arquivo:
         return {"Erro": "Arquivo não encontrado"}, 404
 
-    planilha = load_workbook(arquivo, data_only=True)
+    caminho = (os.path.join(pasta_arquivos(), nome_arquivo))
+
+    planilha = load_workbook(caminho, data_only=True)
 
     dados = []
 
+# Aqui ele verificará todas as abas daquele arquivo,no caso só 1
     for aba in planilha.worksheets:
 
+# Irá analisar todas as linhas, começando da 6 até a última linha preenchida (isso devido ao + 1)
         for linha in range(6, aba.max_row + 1):
 
             valores = []
 
-            for coluna in range(3, 24):  # C até W
+# Aqui irá fazer uma análise de C a X e acrescentará em valores os valores que estiverem nas células analisadas
+            for coluna in range(3, 25):  # C até X
                 valores.append(aba.cell(linha, coluna).value)
 
-            # ignora linhas completamente vazias
+# Se a linha tiver ao menos 1 valor em valores ele seguirá seu rumo como deveria, se não dará erro
             if any(valor is not None for valor in valores):
                 dados.append({
                     "aba": aba.title,
@@ -292,23 +341,18 @@ def rastreabilidade():
 @app.route("/baixar-acompanhamento")
 def baixar_acompanhamento():
 
-    print("ENTROU NA ROTA DE DOWNLOAD")
-
     nome_arquivo = request.args.get("arquivo")
 
     if not nome_arquivo:
         return {"Erro": "Arquivo não informado"}, 400
 
-    arquivo = nome_arquivo
+    caminho = os.path.join(pasta_arquivos(), nome_arquivo)
 
-    print("ARQUIVO RECEBIDO:", nome_arquivo)
-    print("CAMINHO PROCURADO:", arquivo)
-
-    if not os.path.exists(arquivo):
+    if not os.path.exists(caminho):
         return {"Erro": "Arquivo não encontrado"}, 404
 
     return send_file(
-        arquivo,
+        caminho,
         as_attachment=True,
         download_name=nome_arquivo
     )

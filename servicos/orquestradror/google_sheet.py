@@ -139,6 +139,8 @@ def converter_google_sheets(link, acrescentar = False):
 # Função chamada para analisar o padrão, e descobrir o filme e o peso do tubete. Além disso, dentro dela nota-se 2 padrao, o 1° é para encontrar a variável dentro do dicionário e o 2° é para encontrar a coluna caso ela se chame PADRÃO
         try:
                 informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
+
+                print(f"INFORMAÇÔES: {informacoes}")
              
                 ordem["filme"] = informacoes["filme"]
                 ordem["peso_tubete"] = informacoes["peso_tubete"]

@@ -74,6 +74,8 @@ def preencher_apontamento(caminho_modelo,operador,ordens_operador):
 
         linha += 1
 
+    print(ordem["operador"])
+
     apontamento_arquivo = f"Apontamento_{operador}.xlsx"
 
     caminho = os.path.join(pasta_arquivos(), apontamento_arquivo)
