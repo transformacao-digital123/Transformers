@@ -13,7 +13,7 @@ from servicos.interpretacao.identificar_blocos import identificar_blocos
 from servicos.rastreabilidade.rastreabilidade import gerar_identificador,carregar_rastreabilidade
 from servicos.producao.odp import  preencher_odps
 from servicos.etiquetas.etiqueta import preencher_etiqueta
-from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, NenhumaOdpNovaError
+from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, NenhumaOdpNovaError,OdpNaoEncontradaError
 
 from servicos.armazenamento import pasta_arquivos
 from servicos.acrescentar_remessa import acrescentar_odps_por_remessa
@@ -63,6 +63,14 @@ def converter_google_sheets(link, acrescentar = False):
     aba = planilha.active
          
     ordens = identificar_blocos(aba)
+
+# Linhas responsáveis por garantir que caso a odp esteja vazia o usuário tem o processamento interrompido e recebe uma mensagem o notificando sobrte isso
+    for indice,ordem in enumerate(ordens,start=1):
+        odp = ordem.get("odp")
+
+        if odp is None or not str(odp).strip():
+            raise OdpNaoEncontradaError()
+
     atualizar_progresso(50)
 
     planilha.close()

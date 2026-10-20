@@ -87,6 +87,25 @@
         tbody tr:hover{
             background-color: #e0edf7; /*Muda a cor da linha quando o usuário passa o mouse*/
         }
+
+        .girando{
+            display: inline-block;
+            animation: girar 1s linear infinite;
+        }
+
+        [hidden]{
+            display: none !important;
+        }
+
+        @keyframes girar{
+            from{
+                transform: rotate(0deg);
+            }
+
+            to{
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -105,7 +124,8 @@
     </select>
 
     <button id = "btn-atualizar" onclick="carregarDados()">
-        🔄 Atualizar
+        <span id = "icone-carregando" class = "girando" hidden>⟳</span>
+        <span id = "texto-atualizar">🔄 Atualizar</span>
     </button>
 
     <button onclick="baixarExcel()">
@@ -168,9 +188,7 @@
             return;
            }
            
-           const botaoAtualizar = document.getElementById("btn-atualizar");
-           botaoAtualizar.disabled = true;
-           botaoAtualizar.textContent = "Carregando...";
+           iniciarCarregamento();
 
 // Aqui o .find irá vasculhar o arquivosDisponíveis buscando um valor condizente ao requerido, no caso, tanto a data quanto o turno devem ser correspondentes
            const arquivoSelecionados = arquivosDisponiveis.find(arquivo => arquivo.data === data && arquivo.turno === turno)
@@ -263,10 +281,8 @@
         }
 
         function restaurarBotaoAtualizar(){
-            const botaoAtualizar = document.getElementById("btn-atualizar");
-
-            botaoAtualizar.disabled = false;
-            botaoAtualizar.textContent = "🔄 Atualizar";
+            
+            finalizarCarregamento();
         }
 
         function baixarExcel() {
@@ -283,6 +299,18 @@
 // substirui a palavra que tiver depois do = pelo valor de arquivoAtual
                 "/baixar-acompanhamento?arquivo=" +
                 encodeURIComponent(arquivoAtual);
+        }
+
+        function iniciarCarregamento(){
+            document.getElementById("icone-carregando").hidden = false;
+            document.getElementById("texto-atualizar").textContent = "Carregando...";
+            document.getElementById("btn-atualizar").disabled = true;
+        }
+
+        function finalizarCarregamento(){
+            document.getElementById("icone-carregando").hidden = true;
+            document.getElementById("texto-atualizar").textContent = "🔄 Atualizar";
+            document.getElementById("btn-atualizar").disabled = false;
         }
 
         let arquivosDisponiveis = [];

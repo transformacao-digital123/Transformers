@@ -10,7 +10,8 @@ from servicos.validacao.exceptions import (
     AbaNaoEncontradaError,
     RastreabilidadeNaoEncontradaError,
     RemessaNaoEncontradaError,
-    NenhumaOdpNovaError
+    NenhumaOdpNovaError,
+    OdpNaoEncontradaError
 )
 
 MENSAGENS = {
@@ -48,9 +49,10 @@ MENSAGENS = {
     "Não existe uma remessa para essa data e turno. Crie uma nova remessa antes de tentar acrescentar ODPs",
 
     NenhumaOdpNovaError:
-    "Nenhuma remessa nova foi incluída. todas as OdP's já estão na remessa"
+    "Nenhuma remessa nova foi incluída. todas as OdP's já estão na remessa",
 
-
+    OdpNaoEncontradaError:
+    "Alguma OdP está faltando, verifique se todas as OdP's da planilha estão preenchidas"
 }
 
 def tratar_erro(erro):

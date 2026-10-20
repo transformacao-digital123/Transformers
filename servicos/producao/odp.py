@@ -263,7 +263,7 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 
 # Um laço que verifica se a linha anterior na coluna Q já possui conteúdo. Se tiver, ele pula para a próxima linha disponível para garantir que o histórico não apague dados antigos.
 # Nesse caso faz sentido o > porque linha_historico será maior que inicio visto que ele terá 1 linha em branco a mais do que ele
-    while linha_historico > inicio and aba[f"Q{linha_historico - 1}"]. value is not None:
+    while linha_historico > inicio and aba[f"R{linha_historico - 1}"]. value is not None:
         linha_historico += 1
 
 # Item faz uma lista onde campo é a chave e coluna valor

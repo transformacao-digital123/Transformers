@@ -445,12 +445,44 @@ def interpretar_filme_ou_pre(texto):
     }
 
     return informacoes
+def interpretar_pol_cm_kg(texto):
+
+# 3 POL-25 CM-5 KG (4 KG DE FILME + 1 KG DE TUBETE)
+
+    texto = texto.upper().strip()
+
+    partes = texto.split("(")
+
+    parte_padrao = partes[0].strip()
+
+    filme = ""
+
+    pesos = partes[1].split("+")
+
+    peso_filme = pesos[0].replace("KG DE FILME", "").strip()
+
+    if len(pesos) > 1:
+        peso_tubete = pesos[1].replace("KG DE TUBETE)", "").strip()
+    else:
+        peso_tubete = ""
+
+    padrao = f"{parte_padrao} + {peso_filme} + {peso_tubete}"
+
+    informacoes = {
+        "filme": filme,
+        "peso_tubete": peso_tubete,
+        "padrao": padrao
+    }
+
+    return informacoes
 
 def selecionar_interpretador(texto, origem):
 
     if origem == "PADRÃO":
             if texto.count("x") == 2:
                 return interpretar_medidas(texto)
+            if texto.count("-") == 2:
+                return interpretar_pol_cm_kg(texto)
             elif texto.count("-") == 3:
                 return interpretar_filme_pol(texto)
             elif "FILME" in texto and "MM -" in texto and ("MIC AUT -" in texto or "MIC MAN -" in texto): # TEM DE CONSERTAR

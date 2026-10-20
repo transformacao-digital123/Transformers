@@ -107,14 +107,20 @@
                     <label>PESO LÍQUIDO: <input type="text" id = "peso_liquido" name = "peso_liquido"></label>
                     <br>
                     <br>
-                    <label>PESO TOTAL: <input type="text" id = "peso_total" name = "peso_total" maxlength = "6" minlength = "6" inputmode = "numeric"></label>
+                    <label>PESO TOTAL: <input type="text" id = "peso_total" name = "peso_total"></label>
                     <br>
                     <br>
-                    <label>OP MATERIAL: <input type="text" id = "op_material" name = "op_material" maxlength = 6 minlength = "6" inputmode = "numeric"></label>
+                    <label>OP MATERIAL: <input type="text" id = "op_material" name = "op_material" maxlength = 6 pattern = "[0-9]{6}" minlength = "6" inputmode = "numeric" oninput = "this.value = this.value.replace(/[^0-9]/g,'')"></label>
                     <br>
                     <br>
-                    <label>OP TUBETE: <input type="text" id = "op_tubete" name = "op_tubete"></label><br><br>
+                    <label>OP TUBETE: <input type="text" id = "op_tubete" name = "op_tubete" maxlength = "6" pattern = "[0-9]{6}" minlength = "6" inputmode = "numeric" oninput = "this.value = this.value.replace(/[^0-9]/g,'')"></label><br><br>
 
+                    <div id = "ops_existentes" hidden>
+                        <p>OP's já preenchidas nessa bipagem: </p>
+                        <p>OP Material: <strong id = "op_material_exibida"></strong></p>
+                        <p>OP Tubete: <strong id = "op_tubete_exibida"></strong></p>
+                        </div>
+                    
                     <div class = "item_form">
                         <label for "acao">Ação</label>
                         <select id = "acao" name = "acao">
@@ -134,6 +140,11 @@
 
                `;
 
+                exibirOPsExistentes(
+                dados.op_material,
+                dados.op_tubete
+                );
+
                preencherListaPallets();
             })
 // CAPTURAR: Garantia para que caso de algum problema no servidor como queda de internet o programa inteiro não quebre, e então ele exibe uma mensagem de erro 
@@ -148,6 +159,19 @@
 
             if (!numeroPallet) {
                 alert("Selecione um Nº de pallet");
+                return;
+            }
+
+            const opMaterial = document.getElementById("op_material").value.trim();
+            const opTubete = document.getElementById("op_tubete").value.trim();
+
+            if (opMaterial != "" && !/^[0-9]{6}$/.test(opMaterial)){
+                alert("A OP Material deve conter exatamente 6 digitos numéricos");
+                return;
+            }
+
+            if (opTubete != "" && !/^[0-9]{6}$/.test(opTubete)){
+                alert("A OP Tubete deve conter exatamente 6 digitos numéricos");
                 return;
             }
 
@@ -201,6 +225,16 @@
             });
         }
 
+        function exibirOPsExistentes(op_material,op_tubete){
+            const area = document.getElementById("ops_existentes");
+
+            document.getElementById("op_material_exibida").textContent = op_material || "Não preenchida";
+
+            document.getElementById("op_tubete_exibida").textContent = op_tubete || "Não preenchida";
+
+            area.hidden = !(op_material || op_tubete);
+        }
+
 // O "new" está dizendo: crie um novo objeto a partir dessa ferramenta. isso será posto em "leitor" e então,caso haja uma div com esse nome essa função será executada onde é que ela estiver
 // Seguido de algumas formatações como 10 frames por segundo ou a área de refer~encia criada para ele conseguir scanne
         const leitor = new Html5QrcodeScanner(
@@ -210,6 +244,7 @@
             }}
         );
 
+// Função responsável por permitir opções de até 100 pallets na bipagem
         function preencherListaPallets(){
             const select = document.getElementById("numero_pallet");
 
