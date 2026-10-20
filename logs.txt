@@ -22720,3 +22720,11 @@
 2026-10-20 08:02:05,155 - INFO - 127.0.0.1 - - [20/Oct/2026 08:02:05] "GET /opcoes-acompanhamento HTTP/1.1" 200 -
 2026-10-20 08:02:09,401 - INFO - 127.0.0.1 - - [20/Oct/2026 08:02:09] "GET /dados-acompanhamento?arquivo=16-07-2026_Noite.xlsx HTTP/1.1" 200 -
 2026-10-20 08:02:21,159 - INFO - 127.0.0.1 - - [20/Oct/2026 08:02:21] "GET /baixar-acompanhamento?arquivo=16-07-2026_Noite.xlsx HTTP/1.1" 200 -
+2026-10-20 08:10:12,831 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\orquestradror\\google_sheet.py', reloading
+2026-10-20 08:10:13,585 - INFO -  * Restarting with stat
+2026-10-20 08:10:16,292 - WARNING -  * Debugger is active!
+2026-10-20 08:10:16,308 - INFO -  * Debugger PIN: 793-637-664
+2026-10-20 09:30:25,468 - INFO -  * Detected change in 'C:\\Users\\Luari\\OneDrive\\Desktop\\Projetos\\Transformers - Convertedor de arquivos\\servicos\\orquestradror\\google_sheet.py', reloading
+2026-10-20 09:30:26,259 - INFO -  * Restarting with stat
+2026-10-20 09:30:30,134 - WARNING -  * Debugger is active!
+2026-10-20 09:30:30,137 - INFO -  * Debugger PIN: 793-637-664
