@@ -34,11 +34,12 @@
             </div>
 
             <div class = "acoes-topo">
-                <a href="{{url_for('acompanhamento')}}">
+                <div class = "lupa"><a href="{{url_for('acompanhamento')}}">
                     <button onclick="window.location.href='/rastreabilidade'">
-                            Ver rastreabilidade
+                            <img src="static/assets/lupa.png" alt="Ícone de visualização do rastreabilidade">
                     </button>
                 </a>
+                </div>
 
                 <a class = "despacho" href = "{{url_for('despacho')}}" style = "text-decoration: none; color: inherit; display: block;">
                         <button>
@@ -137,7 +138,7 @@
 
     </div> 
 
-<!-- <script>
+<script>
 
 // Criou as 2 contantesuma é o optimus que receberá quem tiver id = "optimus" e formulario, que procura e captura o 1º formulário que encontrar na página, no caso as partes de preenchimento eo botão, e o oultimo captura o container,a caixa onde ocorrerá a animação
     const formulario = document.querySelector("form");
@@ -226,6 +227,8 @@
         clearInterval(intervaloProgresso);
     }
 
+    let ultimoLinkConvertido = null;
+
 // O .addEventListener fica vigiando,quando formulario disparar o evento "submit" ele iniciará a função
 // Aqui o atributo de origem src substituirá o que estiver em optimus pelo caminho descrito
     formulario.addEventListener("submit", function(event){
@@ -233,6 +236,17 @@
 
 // Impede o comportamento padrão do formulário do navegador, é como se ele dissesse ao navegador: "Navegador, não envie esse formulário do jeito tradicional. Eu, JavaScript, vou cuidar disso."
         event.preventDefault();
+
+        const linkAtual = document.getElementById("link").value.trim();
+
+        if (linkAtual == ultimoLinkConvertido){
+            const confirmar = confirm(
+                "Este link já foi convertido anteriormente, tem Certeza que quer convertê-lo novamente?"
+            );
+            if (!confirmar){
+                return;
+            }
+        }
 
         const dados = new FormData(formulario);
         
@@ -293,6 +307,8 @@
                     if(!resultado.sucesso){
                         throw new Error("A conversão não foi concluída");
                     }
+
+                    ultimoLinkConvertido = linkAtual;
 
                     const botaoImprimir = document.getElementById("btn-imprimir-etiquetas");
 
@@ -360,6 +376,6 @@
     }
     
 });
-</script> -->
+</script>
 </body>
 </html>

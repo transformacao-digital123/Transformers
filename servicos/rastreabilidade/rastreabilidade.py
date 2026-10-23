@@ -90,29 +90,42 @@ def localizar_aba(dados):
 # Serve pra localizar se aquela
 def localizar_por_identificador(identificador, numero_pallet):
 
+    print("1. IDENTIFICADOR RECEBIDO:", repr(identificador))
+    print("2. NÚMERO DO PALLET:", repr(numero_pallet))
+
 # Pega o identificador no arquivo json
     dados = buscar_rastreabilidade(identificador)
 
+    print("3. RESULTADO DE buscar_rastreabilidade:", dados)
+
 # Se estiver vazio acaba ali 
     if dados is None:
+        print("ERRO: buscar_rastreabilidade retornou None")
         return None
 
 # Encontra a localização do arquivo e aba    
     localizacao = localizar_aba(dados)
+    print("4. RESULTADO DE localizar_aba:", localizacao)
 
 # Se estiver vazio acaba ali    
     if localizacao is None:
+        print("ERRO: localizar_aba retornou None")
         return None
     
     planilha = load_workbook(localizacao["arquivo"])
 
     aba = planilha[localizacao["aba"]]
 
+    print(f"LOCALIZAR POR INDENTIFICADOR: {repr(numero_pallet)}")
+
     linha_pallet = localizar_pallet(aba,identificador, numero_pallet)
+
+    print("5. LINHA DO PALLET:", linha_pallet)
 
     planilha.close()
 
     if linha_pallet is None:
+        print("ERRO: localizar_pallet não encontrou o pallet")
         return None
 
     localizacao["linha"] = linha_pallet

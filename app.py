@@ -151,13 +151,23 @@ def despacho():
 @app.route("/registrar-despacho", methods = ["POST"])
 def registrar_despacho():
 
-    dados = request.get_json()
+    dados = request.get_json(silent=True) or {}
 
     identificador = dados.get("identificador")
     numero_pallet = dados.get("numero_pallet")
 
     print(f"IDENTIFICADOR: {identificador}")
     print(f"NUMERO_PALLET: {numero_pallet}")
+
+    cancelar = dados.get("cancelar", False)
+
+    if not identificador or not numero_pallet:
+        return {
+            "sucesso": False,
+            "erro": "Identificador ou número do pallet não informado"
+        }, 404
+
+    print(f"ROTA: {repr(numero_pallet)}")
 
     localizacao = localizar_por_identificador(identificador, numero_pallet)
 
@@ -170,8 +180,18 @@ def registrar_despacho():
     resultado = preencher_despacho(
         localizacao["arquivo"],
         localizacao["aba"],
-        localizacao["linha"]
+        localizacao["linha"],
+        cancelar = cancelar
     )
+
+    if resultado.get("cancelado"):
+        return{
+            "sucesso": True,
+            "cancelado": True,
+            "hora_despacho": "",
+            "numeroPallet": numero_pallet,
+            "identificadorAtual": identificador
+        }
 
 # Aqui é que se o valor de novo for false porque if not True: = if False:
     if not resultado["novo"]:
@@ -202,6 +222,15 @@ def buscar_rastreabilidade_api():
     dados = resultado["dados"]
     localizacao = resultado["localizacao"]
 
+    planilha = load_workbook(localizacao["arquivo"], data_only=True)
+    aba = planilha[localizacao["aba"]]
+    linha = localizacao["linha"]
+
+    op_material = aba[f"I{linha}"].value
+    op_tubete = aba[f"J{linha}"].value
+
+    planilha.close()
+
 # Ao dar o último return o Flask sempre irá transformar o texto novamente em string para que ele possa navegar pela rede
     return {
           "odp": dados["odp"],
@@ -211,6 +240,8 @@ def buscar_rastreabilidade_api():
           "turno": dados["turno"],
           "cliente": dados["cliente"],
           "numero_pedido": dados["numero_pedido"],
+          "op_material": op_material,
+          "op_tubete": op_tubete,
           "arquivo": localizacao["arquivo"],
           "aba": localizacao["aba"],
           "linha": localizacao["linha"]

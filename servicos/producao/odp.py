@@ -135,8 +135,8 @@ def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido,op_mater
         return False
     
     aba[f'F{linha}'] = numero_pallet
-    aba[f'G{linha}'] = peso_total
-    aba[f'H{linha}'] = peso_liquido
+    aba[f'G{linha}'] = peso_liquido
+    aba[f'H{linha}'] = peso_total
     aba[f'I{linha}'] = op_material
     aba[f'J{linha}'] = op_tubete
 
@@ -158,19 +158,24 @@ def localizar_fim_odps(aba):
 
 def localizar_pallet(aba,identificador,numero_pallet):
 
+    print("LOCALIZAR PALLET:", repr(numero_pallet))
+
 # Analisa todas as linhas,desde a linha 1 até a última, devido ao + 1
     for linha in range(1, aba.max_row + 1):
 
         identificador_linha = aba[f"U{linha}"].value
         pallet_linha = aba[f"F{linha}"].value
 
-# Se o identificador linha for igual ao identificador do QRcode da etiqueta e o Nº do pallet  inserido for igual ao Nº do pallet que já tinha sido inserido antes...
+# Se o identificador_linha for igual ao identificador do QRcode da etiqueta e o Nº do pallet  inserido for igual ao Nº do pallet que já tinha sido inserido antes...
 # Devolve o Nº da linha em que parar
 # Se não retorna None, por não ter achado nada
         if ( 
-            str(identificador_linha) == str(identificador)
-            and str(pallet_linha) == str(numero_pallet)
+            str(identificador_linha) == str(identificador).strip()
+            and str(pallet_linha) == str(numero_pallet).strip()
         ):
+
+            print(f"identificado: {identificador}")
+            print(f"pallet: {pallet_linha}")
             return linha
 
     return None
@@ -198,13 +203,18 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 # Se a ação for pesagem:
     if acao == "pesagem":
 
+        linha_existente = localizar_pallet(aba,identificador, numero_pallet)
+
+        if linha_existente:
+            linha = linha_existente
+
 # Se a celula que estou usando não estiver ocupada por nenhum pallet ele seguirá seu caminho
-        if aba[f"F{linha}"].value not in (None,""):
+        elif aba[f"F{linha}"].value not in (None,""):
 
 # Acrescente 1 valor a mais no valor da linha atual
             linha_nova = linha + 1
 
-# Pegue o valor dessa linha, e adicione uma linha amais na planilha empurrando todas as outras linhas prea baixo, inclusive a linha original    
+# Pegue o valor dessa linha, e adicione uma linha a mais na planilha empurrando todas as outras linhas pra baixo, inclusive a linha original    
             aba.insert_rows(linha_nova)
 
 # Analisa todas as colunas,desde a coluna 1 até a última, devido ao + 1
@@ -261,15 +271,15 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 # Descobre qual a última linha preenchida e soma 1 para pegar a linha em branco
     linha_historico = aba.max_row + 1
 
-# Um laço que verifica se a linha anterior na coluna Q já possui conteúdo. Se tiver, ele pula para a próxima linha disponível para garantir que o histórico não apague dados antigos.
+# Um laço que verifica se a linha anterior na coluna R já possui conteúdo. Se tiver, ele pula para a próxima linha disponível para garantir que o histórico não apague dados antigos.
 # Nesse caso faz sentido o > porque linha_historico será maior que inicio visto que ele terá 1 linha em branco a mais do que ele
-    while linha_historico > inicio and aba[f"Q{linha_historico - 1}"]. value is not None:
+    while linha_historico > inicio and aba[f"R{linha_historico - 1}"]. value is not None:
         linha_historico += 1
 
 # Item faz uma lista onde campo é a chave e coluna valor
     for campo,coluna in campos.items():
 
-# O .get() irá procurar se algum dos valores de campo está dados, se não tiver retornará None
+# O .get() irá procurar se algum dos valores de campo está em dados, se não estiver retornará None
         novo_valor = dados.get(campo)
 
 # Se o operador não preencheu o campo ou deixou em branco, não altera nada, ele continua

@@ -27,6 +27,13 @@
             border-radius: 10px;
         }
 
+        .cabecalho{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
 
     </style>
 
@@ -35,10 +42,20 @@
 <body>
     <h1>Despacho</h1>
 
-    <div for = "numero-pallet">Numero do Pallet</div>
-    <select id="numero-pallet"></select>
+    <div class = "cabecalho">
+        <div for = "numero-pallet">Numero do Pallet</div>
+        <select id="numero-pallet"></select>
+        <br>
 
-    <br>
+        <div class =  "cancelar">
+            <label for = "cancelar">
+                <input type="checkbox" name = "cancelar" id = "cancelar" value="sim">
+                Cancelar
+            </label>
+        </div>
+
+        <br>
+    </div>
 
     <div id = "leitor"></div>
 
@@ -53,7 +70,11 @@
         for (let i = 1; i <= 100; i++) {
             const opcao = document.createElement("option");
 
-            opcao.value = i;
+// Aqui é a parte de como o programara guardará pára si o valor inserido, no caso se inserirem 1, ele guardará 01
+// Essa parte é importante porque, caso a resposta de opcao.value fosse só i,caso fosse o 1º pallet ele guardaria só 1, quando na v erdade ele deve guardar o valor 01 pois esse é o valor que será mandado ao flask, mais especificamente no arquivo odp.py em str(pallet_linha) == str(numero_pallet).strip(), onde será feito uma comparação, se não fosse por isso daria 1 = 01, mas com isso dá certo ficando 01 = 01
+            opcao.value = String(i).padStart(2, "0");
+
+// E aqui é como será exibido para o acompanhamento, exibindo Pallet 01, com o padStart determinando que deve ter no mínimo 2 digitos o valor do pallet, e se não houver Nº o suficiente ele completa com 0
             opcao.textContent = `Pallet ${String(i).padStart(2, "0")}`;
 
             if (i === 1) {
@@ -86,7 +107,8 @@
                 },
                 body: JSON.stringify(
                     {identificador: identificadorAtual,
-                    numero_pallet: numeroPallet
+                    numero_pallet: numeroPallet,
+                    cancelar: document.getElementById("cancelar").checked
                     })
             })
             .then(function(resposta){
@@ -98,9 +120,25 @@
             .then(function(resposta){
                 console.log("RESPOSTA DO FLASK: ", resposta);
 
+                if (!resposta.sucesso){
+                    document.getElementById("resultado").innerHTML = `
+                    <h2>⚠️ Não foi possível realizar a operação</h2>
+                    <p>${resposta.erro || "Ocorreu um erro inesperado"}</p>`;
+
+                    return;
+                }
+
+                if (resposta.cancelado){
+                    document.getElementById("resultado").innerHTML = `
+                    <h2>❌ Despache cancelado</h2>
+                    <p>Pallet Nº <stong>${resposta.numeroPallet}</strong> cujo o identificador é <strong>${resposta.identificadorAtual}</strong> foi cancelado</p>`;
+                    
+                    return; 
+                }
+
                 if (resposta.ja_despachado){
                     document.getElementById("resultado").innerHTML = `
-                    <h2>⚠️ Produto já despachado</h2>
+                    <h2>⚠️ Pallet já despachado</h2>
                     <p><strong>Horário da 1º bipagem: </strong> ${resposta.hora_despacho}</p>`;
 
                     return;

@@ -2,31 +2,49 @@ from openpyxl import load_workbook
 
 from servicos.data import agora
 
-def preencher_despacho(caminho_arquivo, nome_aba, linha):
+def preencher_despacho(caminho_arquivo, nome_aba, linha,cancelar = False):
 
     planilha = load_workbook(caminho_arquivo)
 
-    aba = planilha[nome_aba]
+    try:
 
-    despacho_anterior = aba[f"E{linha}"].value
+        aba = planilha[nome_aba]
+        celula = aba[f"E{linha}"]
+        despacho_anterior = celula.value
+
+        if cancelar:
+            if despacho_anterior:
+                celula.value = None
+
+                planilha.save(caminho_arquivo)
+
+                return {
+                    "novo": False,
+                    "hora_despacho": "",
+                    "cancelar": True,
+                    "cancelado": True
+                }
 
 # Se não houver despacho_anterior então não entrará nesse if pois o resultado será false (não confundir com o resultado do novo ali que fala false) e dará continuidade na função
 # Já se houver um resultado em despacho_anterior ele entrará nesse if por ser True e terminará aqui
-    if despacho_anterior:
-        planilha.close()
+        if despacho_anterior:
+
+            return {
+                "novo": False,
+                "hora_despacho": despacho_anterior,
+                "cancelado": False
+            }
+   
+        hora_despacho = agora().strftime("%H:%M:%S")
+
+        celula.value = hora_despacho
+
+        planilha.save(caminho_arquivo)
 
         return {
-            "novo": False,
-            "hora_despacho": despacho_anterior
-        }
+            "novo": True,
+            "hora_despacho": hora_despacho,
+            "cancelado": False}
 
-    hora_despacho = agora().strftime("%H:%M:%S")
-
-    aba[f"E{linha}"] = hora_despacho
-
-    planilha.save(caminho_arquivo)
-    planilha.close()
-
-    return {
-        "novo": True,
-        "hora_despacho": hora_despacho}
+    finally:
+        planilha.close()

@@ -62,6 +62,19 @@ body{
     display: block;
 }
 
+.lupa img{
+    width: 45px;
+    height: auto;
+    display: block;
+}
+
+.lupa button{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
 .acoes-topo{
     display: flex;
     align-items: center;
@@ -88,7 +101,6 @@ body{
     height: auto;
     display: block;
 }
-
 
 main{
     flex: 1;

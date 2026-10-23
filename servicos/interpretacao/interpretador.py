@@ -449,10 +449,10 @@ def interpretar_filme_ou_pre(texto):
 def selecionar_interpretador(texto, origem):
 
     if origem == "PADRÃO":
-            if texto.count("x") == 2:
-                return interpretar_medidas(texto)
-            elif texto.count("-") == 3:
+            if texto.count("-") == 3:
                 return interpretar_filme_pol(texto)
+            elif texto.count("x") == 2:
+                return interpretar_medidas(texto)
             elif "FILME" in texto and "MM -" in texto and ("MIC AUT -" in texto or "MIC MAN -" in texto): # TEM DE CONSERTAR
                 return interpretar_filme_750(texto)
             elif "MM" in texto:
