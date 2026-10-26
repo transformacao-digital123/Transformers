@@ -1,9 +1,8 @@
-from flask import Flask, render_template, request, send_file,jsonify
+from flask import Flask, render_template, request, send_file
 from openpyxl import load_workbook
 import os
-import re
 import traceback
-from datetime import datetime,date,time
+from datetime import datetime
 
 #importações vindas de outros arquivos
 from servicos.conversao.conversor import converter_pdf
