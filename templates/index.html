@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
+    <!-- <link rel="stylesheet" href="wizard/radiant.js"> -->
     <title>Transformers</title>
 </head>
 <body>
@@ -323,17 +324,17 @@
 
             optimus.src = "static/assets/optimus_transformando_em_caminhao.gif";
             optimus.style.width = "170px";
-            },100); //Esse 100 representa linha de largada,é a partir do momento 0.1s que ele iniciará
+            },100); //Esse 100 representa linha de largada, é a partir do momento 0.1s que ele iniciará
 
 // 1000 - 100 = 900ms de tempo que a transformação terá para ser executada e então se iniciará o gif luaria_caminhao
 // Destino calcula a área que será percorrida, e essa variável é usada pra arrastar da esquerda pra direita em forma linear em 3s, considerando o valor do destino em px,pra ser mais fácil do programa contabilizar
         setTimeout(function(){
             if (ocorreuErro) return;
-            optimus.src = "static/assets/luari_caminhao.gif";
+            optimus.src = "static/assets/caminhao_luari_proporcional.gif";
 
-            optimus.style.width = "210px";
+            optimus.style.width = "";
 
-        },500); // Esse 500 repreenta os milissegundos, 500ms = 0.5s
+        },570); // Esse 500 repreenta os milissegundos, 500ms = 0.5s
 
         fetch("/",{
             method: "POST",
