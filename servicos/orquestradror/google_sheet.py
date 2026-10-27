@@ -18,9 +18,9 @@ from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, Nenhuma
 from servicos.armazenamento import pasta_arquivos
 from servicos.acrescentar_remessa import acrescentar_odps_por_remessa
 
-def converter_google_sheets(link, acrescentar = False):
+def converter_google_sheets(link, id_conversao, acrescentar = False):
     
-    atualizar_progresso(0)
+    atualizar_progresso(id_conversao, 0)
     
     if acrescentar:
         rastreabilidade = carregar_rastreabilidade()
@@ -29,7 +29,7 @@ def converter_google_sheets(link, acrescentar = False):
 
     os.makedirs(pasta_arquivos(), exist_ok=True)
 
-    atualizar_progresso(10)
+    atualizar_progresso(id_conversao, 10)
 
     if not acrescentar:
 
@@ -50,20 +50,20 @@ def converter_google_sheets(link, acrescentar = False):
 
 # Valida se o link é do google docs ou não
     validar_link(link)
-    atualizar_progresso(20)
+    atualizar_progresso(id_conversao, 20)
 
 # Variável que guarda a planilha em formato .xlsx que for criado
     caminho_arquivo = baixar_planilha(link)
-    atualizar_progresso(30)
+    atualizar_progresso(id_conversao, 30)
 
     planilha = abrir_planilha(caminho_arquivo)
-    atualizar_progresso(40)
+    atualizar_progresso(id_conversao, 40)
 
 # Seleciona a aba ativa da planilha
     aba = planilha.active
          
     ordens = identificar_blocos(aba)
-    atualizar_progresso(50)
+    atualizar_progresso(id_conversao, 50)
 
     planilha.close()
 
@@ -153,7 +153,7 @@ def converter_google_sheets(link, acrescentar = False):
 # Essa conta é feita para que o progresso da criação de cada arquivo represente 15% do total e depois seja acrescentado aos 50% até se tornar
 # É imporatante destacar que p + 1 está ali pois, se não tivesse, como o o 1º é sempre represebtado por 0, o 1° valor dessa conta seria 0, ou seja, na 1° volta não aumentaria a % e no final nunca daria 65%
                 progresso = 50 + ((indice + 1) / total_ordens) * 15
-                atualizar_progresso(progresso)
+                atualizar_progresso(id_conversao, progresso)
         
         except Exception as erro:
 
@@ -202,7 +202,7 @@ def converter_google_sheets(link, acrescentar = False):
             etiquetas_para_imprimir.append(arquivo_etiqueta)
 
             progresso = 65 + ((indice + 1) / total_operadores) * 25
-            atualizar_progresso(progresso)
+            atualizar_progresso(id_conversao, progresso)
 
     if acrescentar:
         arquivo_odp = acrescentar_odps_por_remessa(caminho_remessa,ordens)

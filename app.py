@@ -3,12 +3,13 @@ from openpyxl import load_workbook
 import os
 import traceback
 from datetime import datetime
+import uuid
 
 #importações vindas de outros arquivos
 from servicos.conversao.conversor import converter_pdf
 from servicos.orquestradror.google_sheet import converter_google_sheets
 from servicos.validacao.tratador_erros import tratar_erro
-from servicos.progresso.progresso import obter_progresso
+from servicos.progresso.progresso import (obter_progresso,atualizar_progresso)
 from servicos.rastreabilidade.consultar_rastreabilidade import consultar_rastreabilidade
 from servicos.rastreabilidade.atualizar_rastreabilidade import atualizar_rastreabilidade
 from servicos.rastreabilidade.rastreabilidade import localizar_por_identificador
@@ -22,7 +23,22 @@ app = Flask(__name__)
 
 @app.route("/progresso")
 def progresso():
-    return {"progresso": obter_progresso()}
+
+# O args aqui serve para capturar os valores que estiverem depois do ? em uma URL, ex: ?id_conversao=123456
+    id_conversao = request.args.get("id_conversao")
+
+    if not id_conversao or  len(id_conversao) != 32 or any(
+        caractere not in "0123456789abcdef"
+        for caractere in id_conversao
+    ):
+        return {"erro": "Identificador de conversão inválido"}, 400
+
+    estado = obter_progresso(id_conversao)
+
+    if estado is None:
+        return {"erro": "Conversão não encontrada"}, 404
+    
+    return estado
 
 # Estão aqui e não no home para que não sejam reiniciados para estarem vazios toda vez que a função roda, nesse caso ele só será acrescentado sendo chamado apenas quando convém
 etiquetas_geradas = []
@@ -35,6 +51,22 @@ def home():
     global arquivo_gerado
 
     if request.method == "POST":
+
+# O request.form contém os campos enviados pelo formulário, como o do input, e .get("id_conversao") serve pra procurar o campo com esse nome
+            id_conversao = request.form.get("id_conversao")
+
+# Verifica se o id_conversao está ausente ou vazio ou se o Nº de caracteres é diferente de 32, que é o formato do uuid.uuid4().hex, ou se algum dos caracteres está fora do conjunto permitido
+            if not id_conversao or len(id_conversao) != 32 or any(
+
+# Aqui ele faz uma verificação procuranado por cada caractere dentro de id_conversao, se um estiver fora do padrão como "g" retrona False, caso contrário True e atualiza o progresso
+# Isso acontece da seguinte forma o 2º caractere avalia cada caractere em id_conversao, já o 1° avalia se em caractere está algum valor que não seja "0123456789abcdef"
+                caractere not in "0123456789abcdef"
+                for caractere in id_conversao
+            ):
+                return {"sucesso": False, "erro": "Identificador de conversão inválido"}, 404
+
+# Aqui essa função será responsável por criar o .json para aquela conversão com progresso inicial de 0% e status "processando"
+            atualizar_progresso(id_conversao,0)
             
 # Linhas responsáveis por determinar que somente arquivos PDF e linhas do DOCS serão importados, ou seja, faz a filtragem, apenas se atender a esses 3 requisitos é que o processamento começa
             arquivo = request.files.get("pdf")
@@ -53,7 +85,7 @@ def home():
                         arquivo_gerado = converter_pdf(arquivo)
 
                     elif link:
-                        arquivo_gerado, etiquetas = converter_google_sheets(link, acrescentar)
+                        arquivo_gerado, etiquetas = converter_google_sheets(link, id_conversao, acrescentar)
 
                         etiquetas_geradas.clear()
                         etiquetas_geradas.extend(etiquetas)
@@ -92,12 +124,16 @@ def home():
             return render_template("index.html",
                                    erro = mensagem,
                                    ambiente = AMBIENTE)
-                
+
+#Aqui, enquanto o método é GET,já que nada foi enviado ainda, podemos deixá-lo aqui, pois GET representa os valores que o programa envia, e não que nós enviamos
+# Gera um identificador de 32 caracteres na versão 4
+    id_conversao = uuid.uuid4().hex
 
 # Enquanto nada for enviado ainda será um GET, logo, enquanto isso, afim de evitar erro, o programa pula para as linha anteriores para que a página possa ser aberta, carregando a página através do arquivo HTML
     return render_template(
         "index.html",
-        ambiente = AMBIENTE)
+        ambiente = AMBIENTE,
+        id_conversao = id_conversao)
 
 @app.route("/baixar-arquivo", methods = ["GET"])
 def baixar_arquivo():

@@ -10,8 +10,6 @@ DIRETORIO_ESTADOS =  os.path.join(tempfile.gettempdir(),"transformers_estados")
 # Caso a pasta já exista o exist_ok=True evita que gere erro por causa disso
 os.makedirs(DIRETORIO_ESTADOS,exist_ok=True)
 
-processamento_progresso = 0
-
 # Essa função terá um chamado nos respectivos lugares que quiserem demarcar uma evolução, a cada chamado representa um aumento de porcentagem, por exemplo, quando chamarem ele nos 10%, esse 10 substituirá o valor que estiver em processamento_progresso, e assim por diante, até chegar a 100% que é o final do processo
 def atualizar_progresso(id_conversao, valor, status = "processando", arquivo = None, erro = None):
 
@@ -31,13 +29,24 @@ def atualizar_progresso(id_conversao, valor, status = "processando", arquivo = N
     with open(caminho, "w", encoding="utf-8") as arquivo_json:
 
 # Transforma o dicionário em .json e guarda os dados no arquivo
-# O ensure_ascii = False permite usar letras com acento e ç
+# O ensure_ascii = False permite usar letras com acento ou ç
         json.dump(estado, arquivo_json, ensure_ascii = False)  
 
-    global processamento_progresso
-    processamento_progresso = valor
-
 # Ele retorn o valor que estiver em processamento_progresso e envia para a rota /progresso, que é o que o front-end vai usar para mostrar a evolução do processo
-def obter_progresso():
+def obter_progresso(id_conversao):
 
-    return processamento_progresso
+# Registra o caminho do arquivo
+    caminho = os.path.join(DIRETORIO_ESTADOS, f"{id_conversao}.json")
+
+# Se o caminho não existe não retorna nada
+    if not os.path.exists(caminho):
+        return None
+
+# Aqui o "r", diferente do "w", não apaga o conteúdo existente, caso precise, para o sobrescrever pelo novo, mas sim apenas o lê e o guarda em arquivo_json
+    with open(caminho, "r", encoding="utf-8") as arquivo_json:
+
+# Carrega os dados que estão em arquivo_json em estado
+        estado = json.load(arquivo_json)
+
+# Retorna o estado para que quem o estiver chamando a função possa receber qual o estado
+    return estado

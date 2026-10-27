@@ -20,7 +20,7 @@
                         </a>
                     </div>
 
-                <h1>TRANSFORMERS 3.0</h1>
+                <h1>TRANSFORMERS</h1>
 
                 <div class="camera">
                     <a href="{{url_for('camera')}}" style="text-decoration: none; color: inherit; display: block;">
@@ -61,6 +61,10 @@
             action = "/"
             method = "POST"
             enctype = "multipart/form-data">
+
+<!-- Aqui montamos um input pois, apesar de não ser o usuário que insirirá os dados, alguém iráq, no caso o próprio código, assim o input será um campo que armazenará os dados para ser enviado ao servidor
+ type = hidden é pra garantir que o usuário não enxergará esse campo; o name é o nome do qual o flask receberá o valor e o value usa sintaxe do jinja2, mecanismo de template do Flask, pra receber o id_conversao enviado pelo render_template(), no caso é o chaveamento "{" -->
+            <input type="hidden" name = "id_conversao" value = "{{id_conversao}}">
 
                <div class="entrada">
                 <input
@@ -190,8 +194,14 @@
         intervaloProgresso = setInterval(function(){
             console.log("CONSULTANDO PROGRESSO...");
 
+// O querySelector serve localizar o campo está oculto do formulário que contém o id_conversão, enquanto o value lê o valor contido nesse campo
+            const idConversao = document.querySelector(
+                'input[name="id_conversao"]'
+            ).value;
+
 // Pede a rota progresso os dados mais atuais do andamento da tarefa
-            fetch("/progresso")
+// No caso o encodeURIComponent(idConversao) coloca o valor de cada id_conversão depois do = na url pra ser visualizada pelo args
+            fetch(`/progresso?id_conversao=${encodeURIComponent(idConversao)}`)
 
 // Assim que receber os dados do servidor ele transformará json que é uma forma mais fácil do javascrpt trabalhar com os dados
                 .then(function(resposta){
@@ -315,8 +325,13 @@
                     if (botaoImprimir){
                         botaoImprimir.style.display = "block";
                     }
-
-                    window.location.href = "/baixar-arquivo"
+                    
+                    const idConversao = document.querySelector(
+                        'input[name = "id_conversao"]'
+                    ).value;
+                    
+// No caso o encodeURIComponent(idConversao) coloca o valor de cada id_conversão depois do = na url pra ser visualizada pelo args
+                    window.location.href = `/baixar-arquivo?id_conversao=${encodeURIComponent(idConversao)}`
 
                     console.log("Processamento concluído com sucesso");
 
