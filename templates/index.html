@@ -151,6 +151,7 @@
     const mensagemErro = document.getElementById("mensagem-erro");
 
     let intervaloProgresso;
+    let falhasConsultasProgresso = 0;        
     let posicaoInicialOptimus;
 
     function mostrarErro(){
@@ -206,12 +207,38 @@
 // Assim que receber os dados do servidor ele transformará json que é uma forma mais fácil do javascrpt trabalhar com os dados
                 .then(function(resposta){
                     console.log("RESPOSTA DO PROGRESSO:", resposta.status);
+
+                    if (!resposta.ok){
+                        throw new Error("Não foi possível consultar o progresso") // O  throw new Error para o fluxo do programa e encaminha para o .catch()
+                    }
                     return resposta.json();
                 })
 
 // Quando os dados forem transformados em json, ele executará a função que está dentro do .then, e o resultado será guardado na variável dados, que é o que será mostrado no console.log como um print
                 .then(function(dados){
+
+// Aqui devemos manter 0 pois não ocorreu nenhum erro ainda
+                    falhasConsultasProgresso = 0;
+
                     console.log("progresso:", dados.progresso);
+                    console.log("status:", dados.status);
+
+// Se status for igual a erro, dará erro
+                    if (dados.status === "erro"){
+
+                        pararAcompanhamentoProgresso();
+
+// Aqui não usamos throw new Error porque o tipo de erro não é falha na comunicação com o servidor, mas sim falha na conversão
+                        mensagemErro.innerHTML = "❌ " + (dados.erro || "A conversão falhou");
+                        mensagemErro.style.display = "inline-block";
+                        mostrarErro();
+                        return;
+                    }
+
+// Se status for igual a concluído, chamará a função pararAcompanhamentoProgresso
+                    if (dados.status === "concluido"){
+                        pararAcompanhamentoProgresso();
+                    }
 
                     let progresso = dados.progresso; // Guarda o valor que estiver em dados.progresso em progresso
 
@@ -229,7 +256,26 @@
                     optimus.style.transition = "left 0.5s linear";
                     optimus.style.left = posicao + "px";
                     console.log("POSIÇÃO DO OPTIMUS:", posicao);
+                })
+
+// Só será usado quando o tipo de erro for falta de comunicação com o servidor
+                .catch(function(erro){
+                    console.log("Erro ao consultar o progresso: ", erro);
+
+// Aqui ele vai aumentando o valor da falha de 1 em 1, ou seja, se o valor inicial é 0, toda vez que o .catch for chamado ele vai aumentar 1
+                    falhasConsultasProgresso++;
+
+// Se ele chegar em um Nº igual ou maior que 10 ele irá acionar a função de pra parar o progresso
+                    if (falhasConsultasProgresso >= 10){
+                        pararAcompanhamentoProgresso();
+                    
+
+                        mensagemErro.innerHTML = "❌" + erro.message;
+                        mensagemErro.style.display = "inline-block";
+                        mostrarErro();
+                    }
                 });
+
         }, 500); // Númmero de milissegundos que a função levará para fazer cada atualização, nesse caso a cada 0.5s ele fará uma nova requisição para a rota /progresso
     }
 
@@ -329,11 +375,6 @@
                     const idConversao = document.querySelector(
                         'input[name = "id_conversao"]'
                     ).value;
-                    
-// No caso o encodeURIComponent(idConversao) coloca o valor de cada id_conversão depois do = na url pra ser visualizada pelo args
-                    window.location.href = `/baixar-arquivo?id_conversao=${encodeURIComponent(idConversao)}`
-
-                    console.log("Processamento concluído com sucesso");
 
                     pararAcompanhamentoProgresso();
 
@@ -341,6 +382,11 @@
                     console.log("SUCESSO:", resultado.sucesso);
 
                     finalizarAnimacao();
+                    
+// No caso o encodeURIComponent(idConversao) coloca o valor de cada id_conversão depois do = na url pra ser visualizada pelo args
+                    window.location.href = `/baixar-arquivo?id_conversao=${encodeURIComponent(idConversao)}`
+
+                    console.log("Processamento concluído com sucesso");
                 });
         })
 

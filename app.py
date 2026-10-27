@@ -91,15 +91,24 @@ def home():
                         etiquetas_geradas.extend(etiquetas)
 
                     else:
+
+                        mensagem = "Selecione um PDF ou um link do Google-Sheets"
+
+                        atualizar_progresso(id_conversao,0,status="erro",erro=mensagem)
+
                         if request.headers.get("X-Requested-With") == "XMLHttpRequest":
                              return {
                                   "sucesso": False,
-                                  "erro": "Selecione um PDF ou insira um link do google-sheet"
+                                  "erro": mensagem
                                   }, 400
 
                         return render_template("index.html",
-                                               erro = "Selecione um PDF ou insira um link do google-sheet",
-                                               ambiente = AMBIENTE)
+                                               erro = mensagem,
+                                               ambiente = AMBIENTE,
+                                               id_conversao = id_conversao)
+
+# Aqui Vamos não só gravar o estado atualizado no JSON da conversão como vamos deixar o caminho do arquivo absoluto, se antes estava temporario/resultado.zip, agora ficará algo como C:\\Projetos\\Transformers\\temporario\\resultado.zip
+                    atualizar_progresso(id_conversao,100,status="concluido", arquivo = os.path.abspath(arquivo_gerado))
 
 # Condicionamento para ver se a requisição é AJAX ou não, caso seja, ele retorna um JSON com a mensagem de sucesso, caso contrário, ele retorna o arquivo para download
                     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
@@ -116,6 +125,9 @@ def home():
                     
                     mensagem  = tratar_erro(erro)
 
+# Aqui informaremos o atualizador de progresso caso o sistema falhe
+                    atualizar_progresso(id_conversao, 0, status = "erro", erro=mensagem)
+
                     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
                         return {
                             "sucesso": False,
@@ -129,6 +141,9 @@ def home():
 # Gera um identificador de 32 caracteres na versão 4
     id_conversao = uuid.uuid4().hex
 
+# Se não fosse por essa função se encontrar aqui o programa faria a consulta por progresso a cada 500ms, e caso o programa nãop tivesse começado ainda, daria um erro 404
+    atualizar_progresso(id_conversao, 0)
+
 # Enquanto nada for enviado ainda será um GET, logo, enquanto isso, afim de evitar erro, o programa pula para as linha anteriores para que a página possa ser aberta, carregando a página através do arquivo HTML
     return render_template(
         "index.html",
@@ -138,16 +153,38 @@ def home():
 @app.route("/baixar-arquivo", methods = ["GET"])
 def baixar_arquivo():
 
-    if arquivo_gerado is None:
-        return {"Erro": "Nenhum arquivo foi gerado"}, 404
+    id_conversao = request.args.get("id_conversao")
 
-    if not os.path.exists(arquivo_gerado):
-        return{"Erro": "Arquivo não encontrado"},404
+# Se o id_conversao estiver vazio, não contiver nenhum dos 16 caracteres ou não tiver 32 digitos retorna o erro
+    if not id_conversao or len(id_conversao) != 32 or any(
+        caractere not in "0123456789abcdef"
+        for caractere in id_conversao
+    ):
+        return {"erro": "Identificador de conversão inválido"},400
 
+# Guarda em .json os dados do progresso
+    estado = obter_progresso(id_conversao)
+
+# Se estado estiver vazio dá erro
+    if estado is None:
+        return {"erro": "Conversão nãoencontrada"},404
+
+# Se em estado o status não for concluido dá erro
+    if estado.get("status") != "concluido":
+        return { "erro": "A conversão ainda não foi concluída"}, 404
+
+# Em estado o "arquivo" contém o caminho absoluto do arquivo, ou seja, completo
+    caminho_arquivo = estado.get("arquivo")
+
+# Se o caminho_arquivo estiver vazio ou se não existir dá erro
+    if not caminho_arquivo or not os.path.isfile(caminho_arquivo):
+        return {"erro": "Arquivo não encontrado"},404
+
+# Envia a pasta contendo o arquivo para a interface do usuário
     return send_file(
-        arquivo_gerado,
+        caminho_arquivo,
         as_attachment=True,
-        download_name=os.path.basename(arquivo_gerado)
+        download_name=os.path.basename(caminho_arquivo)
     )
 
 @app.route("/imprimir-etiquetas", methods = ["POST"])
