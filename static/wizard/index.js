@@ -27,10 +27,6 @@ function finalizarAnimacao(){
     optimus.style.opacity = "0";
     optimus.style.left = "0px";
 
-    if (animacaoFinalizando) {
-        return;
-    }
-
     setTimeout(function(){
 
         optimus.style.opacity = "1";
@@ -138,6 +134,10 @@ function acompanharProgresso(){
 
 // Quando os dados forem transformados em json, ele executará a função que está dentro do .then, e o resultado será guardado na variável dados, que é o que será mostrado no console.log como um print
             .then(function(dados){
+
+                if (animacaoFinalizando) {
+                    return;
+                }
 
 // Aqui devemos manter 0 pois não ocorreu nenhum erro ainda
                 falhasConsultasProgresso = 0;
