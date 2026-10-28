@@ -12,7 +12,7 @@
 <body>
     <div class="container">
 
-        <header>
+        <header class="cabecalho">
 
             <div class="cabecalho_superior">
                     <div class="Logo">
@@ -25,13 +25,10 @@
 
                 <h1>TRANSFORMERS</h1>
 
-                <div class="camera">
-                    <a href="{{url_for('camera')}}" style="text-decoration: none; color: inherit; display: block;">
-                        <button>
-                            <img src="static/assets/camera.png" alt="ícone da câmera">
-                        </button>
-                    </a>
-
+                <div class = "menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
 
             </div>
@@ -42,6 +39,15 @@
                             <img src="static/assets/lupa.png" alt="Ícone de visualização do rastreabilidade">
                     </button>
                 </a>
+                </div>
+
+                <div class="camera">
+                    <a href="{{url_for('camera')}}" style="text-decoration: none; color: inherit; display: block;">
+                        <button>
+                            <img src="static/assets/camera.png" alt="ícone da câmera">
+                        </button>
+                    </a>
+
                 </div>
 
                 <a class = "despacho" href = "{{url_for('despacho')}}" style = "text-decoration: none; color: inherit; display: block;">
