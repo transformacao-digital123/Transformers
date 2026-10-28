@@ -273,6 +273,16 @@ label{
         justify-content: space-between;
     }
 
+    .acoes-topo {
+        position: relative;
+    }
+
+    .camera {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     h1{
         font-size: 20px;
         flex: 1;
