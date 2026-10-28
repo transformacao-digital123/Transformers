@@ -14,7 +14,7 @@ function mostrarErro(){
     optimus.style.left = "0px";
 
     optimus.src = "static/assets/Optimus-erro.png";
-    optimus.style.width = "230px";
+    optimus.classList.add("optimus-morto");
 
     optimus.style.opacity = "1";
 }

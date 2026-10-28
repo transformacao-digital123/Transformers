@@ -337,16 +337,22 @@ label{
         margin: 7px;
     }
 
+/* O !important garante a essas configurações de estilo */
     #animacao-transformers{
         height: 100px !important;
-        margin-top: 0 !important;
-        padding-top: 0 !important;
+        margin-top: 0 !important; /* Aqui ele elimina o espaçamento externo de cima */
+        padding-top: 0 !important; /* Aqui ele elimina o espaçamento interno de cima */
     }
 
     .rodape{
         height: 100px !important;
         margin-top: 0 !important;
         padding-top: 0 !important;
+    }
+
+    #optimus.optimus-morto{
+        width: 120px !important;
+        height: auto !important;
     }
 }
 
@@ -368,4 +374,9 @@ label{
     width: clamp(70px,9vw,190px);
     height: auto;
     object-fit: contain;
+}
+
+#optimus.optimus-morto{
+    width: 230px;
+    height: auto;
 }
