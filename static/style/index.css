@@ -274,13 +274,13 @@ label{
     }
 
     .acoes-topo {
-        position: relative;
+        position: relative; /* relative irá estabelecer .acoes-topo como referência para que position absolute possa se orientar*/
     }
 
     .camera {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        position: absolute; /* Aqui o a camera é retirado do cálculo de espaço dos outros elementos, assim caso aja algum margin ou padding não o afeta */
+        left: 50%; /* Posiciona a camera em uma posição que fique na metade da largura do container, assim sua borda esquerda fica no meio */
+        transform: translateX(-50%); /* O transform transforma ou desloca visualmente um elemento, nesse caso por ser X será na horizontal, e no caso o deslocamento é pra esquerda em 50% da sua própria largura */
     }
 
     h1{
