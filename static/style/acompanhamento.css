@@ -11,6 +11,10 @@ h1 {
     color: #263b50;
 }
 
+.botoes{
+    margin-top: 15px;
+}
+
 button {
     padding: 10px 20px; /*aumenta o espaço interno do botão*/
     font-size: 16px;
@@ -76,4 +80,20 @@ tbody tr:nth-child(even){
 
 tbody tr:hover{
     background-color: #e0edf7; /*Muda a cor da linha quando o usuário passa o mouse*/
+}
+
+@media (max-width: 600px){
+    main{
+        flex: 1;
+    }
+
+    header{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    .botoes{
+        margin-top: 15px;
+    }
 }

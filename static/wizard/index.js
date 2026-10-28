@@ -28,7 +28,7 @@ function finalizarAnimacao(){
 
         optimus.style.opacity = "1";
         optimus.src = "static/assets/optimus_voltando_a_ser_robo.gif";
-        optimus.style.width = "170px";
+        optimus.style.width = "";
     }, 200);
 
     setTimeout(function(){
@@ -237,7 +237,7 @@ formulario.addEventListener("submit", function(event){
         if (ocorreuErro) return; // Se ocorreu err  o aqui,segue seu rumo
 
         optimus.src = "static/assets/optimus_transformando_em_caminhao.gif";
-        optimus.style.width = "170px";
+        optimus.style.width = "";
         },100); //Esse 100 representa linha de largada, é a partir do momento 0.1s que ele iniciará
 
 // 1000 - 100 = 900ms de tempo que a transformação terá para ser executada e então se iniciará o gif luaria_caminhao
