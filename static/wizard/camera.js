@@ -1,0 +1,215 @@
+let identificadorAtual = null
+
+// Essa função guardará o valor do identificado no lugar de texto
+// Então substituirá o que estiver em resultado, podendo ficar por exemplo "QR encontrado: LUARI-62B2E9F5"
+function quandoLerQR(texto) {
+
+    identificadorAtual = texto;
+    
+    document.getElementById("resultado").textContent = "QR encontrado: "+ texto;
+
+    console.log("QR: ", texto);
+
+    console.log("ENVIANDO IDENTIFICADOR PARA O BACKEND:", identificadorAtual);
+
+// BUSCAR: /buscar-rastreabilidade - O o fetch faz com que haja uma obrigatoriedade do dado, após ser reformulado, retornar
+// O método serve para eu avisar que estou enviando um dado novo, e não pedindo para ver algo, pois o método em python diz explicitamente que só aceita em post, por isso especificamos em POST
+// Headers está avisando que o dado entregue está escrito no "idioma" JSON
+// Body é o conteúdo do dado, que recebe o valor do identificador após ele ser transformado em string pois o python tem dificuldade em ler javascript e envia o valor mais ou menos nesse formato: "identificador": "LUARI-AAD476BA" e envia para POST /buscar-rastreabilidade
+    console.log("ANTES DO FETCH");
+    fetch ("/buscar-rastreabilidade", {
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+            {identificador: texto}
+        )
+    })
+
+// ENTÂO: Ele transforma o texto string de volta em objeto para que o javascript possa interpretá-lo
+    .then(function(resposta){
+        console.log("RESPOSTA HTTP:", resposta);
+        return resposta.json();
+    })
+
+// Depois de transformado em javascript ele pega a informação, que no caso em python era "mensagem": "Identificador recebido com sucesso" e o console exibe no seu painel pra vc ver se deu certo
+    .then(function(dados){
+        console.log("RESPOSTA DO FLASK:", dados)
+
+        document.getElementById("resultado").innerHTML = `
+            <h2>QR encontrado ✓</h2>
+
+            <p><strong>ODP:</strong> ${dados.odp}</p>
+            <p><strong>Nº do PEDIDO:</strong> ${dados.numero_pedido}</p>
+            <p><strong>Cliente:</strong> ${dados.cliente}</p>
+            <p><strong>OPERADOR:</strong> ${dados.operador}</p>
+            <p><strong>MAQUINA:</strong> ${dados.maquina}</p>
+            <p><strong>DATA:</strong> ${
+                dados.data.slice(0,2) + "/" +
+                dados.data.slice(2,4) + "/" +
+                dados.data.slice(4,8) 
+                }</p>
+            <p><strong>TURNO:</strong> ${dados.turno}</p>
+
+            <br>
+
+            <input type="hidden" id = "identificador" name = "identificador">
+            <br>
+            <br>
+            <label for = "numero_pallet">Nº do PALLET: <select id = "numero_pallet" name = "numero_pallet" required><option value = "" disabled>Selecione o pallet</option></select></label>
+            <br>
+            <br>
+            <label>PESO LÍQUIDO: <input type="text" id = "peso_liquido" name = "peso_liquido"></label>
+            <br>
+            <br>
+            <label>PESO TOTAL: <input type="text" id = "peso_total" name = "peso_total"></label>
+            <br>
+            <br>
+            <label>OP MATERIAL: <input type="text" id = "op_material" name = "op_material" maxlength = 6 minlength = "6" inputmode = "numeric" pattern = "[0-9]{6}" minlength = "6" oninput = "this.value = this.value.replace(/[^0-9]/g,'')"></label>
+            <br>
+            <br>
+            <label>OP TUBETE: <input type="text" id = "op_tubete" name = "op_tubete" maxlength = "6" minlength = "6" inputmode = "numeric" pattern = "[0-9]{6}" minlength = "6" oninput = "this.value = this.value.replace(/[^0-9]/g,'')"></label><br><br>
+
+            <div id = "ops_existentes" hidden>
+                <p>OP's já preenchidas nessa pesagem: </p>
+                <p>OP MATERIAL: <strong id = "op_material_exibida"></strong></p>
+                <p>OP TUBETE: <strong id = "op_tubete_exibida"></strong></p>
+            </div>
+
+            <div class = "item_form">
+                <label for "acao">Ação</label>
+                <select id = "acao" name = "acao">
+                    <option value = "pesagem" selected>Pesagem</option>
+                    <option value = "atualizacao">Atualizacao</option>
+                    <option value = "cancelar">Cancelar</option>
+                    <option value = "ajuste">Ajuste</option>
+                    <option value = "retrabalho">Retrabalho</option>
+                </select>        
+            </div>
+
+            <p><strong>📍 Linha:</strong> ${dados.linha}</p>
+
+                <button type="button" onclick ="atualizarRastreabilidade()">
+                    Salvar
+                </button>
+
+    `;
+
+    exibirOPsExistentes(
+        dados.op_material,
+        dados.op_tubete
+    );
+
+    preencherListaPallets();
+    })
+// CAPTURAR: Garantia para que caso de algum problema no servidor como queda de internet o programa inteiro não quebre, e então ele exibe uma mensagem de erro 
+    .catch(function(erro){
+        console.error("Erro ao enviar identificador:", erro)
+    })
+}
+
+function atualizarRastreabilidade(){
+
+    const numeroPallet = document.getElementById("numero_pallet").value;
+
+    if (!numeroPallet) {
+        alert("Selecione um Nº de pallet");
+        return;
+    }
+
+    const dados = {
+
+        identificador: identificadorAtual,
+
+        numero_pallet: numeroPallet,
+        peso_liquido: document.getElementById("peso_liquido").value,
+        peso_total: document.getElementById("peso_total").value,
+        op_material: "1000" + document.getElementById("op_material").value,
+        op_tubete: "1000" + document.getElementById("op_tubete").value,
+        acao: document.getElementById("acao").value
+    };
+
+    console.log("Dados enviados:", dados);
+
+    fetch("/atualizar-rastreabilidade", {
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(dados)
+    })
+
+    .then(function(resposta){
+        return resposta.json();
+    })
+
+    .then(function(dados){
+
+        console.log("Resposta atualização:", dados);
+
+        if(dados.Erro){
+            document.getElementById("resultado").textContent = dados.Erro;
+            return;
+        }
+
+        document.getElementById("resultado").textContent =
+            "Atualização efetuada com sucesso";
+    })
+
+    .catch(function(erro){
+
+        console.error("Erro ao atualizar:", erro);
+
+        document.getElementById("resultado").textContent =
+            "Erro ao atualizar os dados";
+    });
+}
+
+// O "new" está dizendo: crie um novo objeto a partir dessa ferramenta. isso será posto em "leitor" e então,caso haja uma div com esse nome essa função será executada onde é que ela estiver
+// Seguido de algumas formatações como 10 frames por segundo ou a área de refer~encia criada para ele conseguir scanne
+const leitor = new Html5QrcodeScanner(
+    "leitor",{ fps:10, qrbox:{
+        width:250,
+        height:250           
+    }}
+);
+
+function preencherListaPallets(){
+    const select = document.getElementById("numero_pallet");
+
+    for (let i = 1;i <= 100; i++){
+        const opcao = document.createElement("option");
+
+// Transforma Nº em string e garante que o valor terá 2 digitos preenchendo com 0 quando necessário
+        opcao.value = String(i).padStart(2, "0");
+
+// Aqui o textConstext substitui o texto que é representado por opcao, então as crases tornam o que estiver dentro um template string
+// O "${}" insere o resultado de uma expressão dentro do texto, que no caso é o String(i).padStart(2, "0")
+        opcao.textContent = `Pallet ${String(i).padStart(2, "0")}`;
+
+        if (i ===1){
+
+// Garante que o pallet 01 já esteja pré-selecionado
+            opcao.selected = true;
+        }
+
+        select.appendChild(opcao);
+    }
+}
+
+function exibirOPsExistentes(op_material,op_tubete){
+    const area = document.getElementById("ops_existentes");
+
+    document.getElementById("op_material_exibida").textContent = op_material || "Não preenchida";
+
+    document.getElementById("op_tubete_exibida").textContent = op_tubete || "Não preenchida";
+
+    area.hidden = !(op_material || op_tubete);
+}
+// O leitor iniciará, quando o QR code for encontrado ativa a função quandolerQR
+leitor.render(
+    quandoLerQR
+);

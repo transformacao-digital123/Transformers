@@ -4,91 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style/acompanhamento.css">
     <script src="{{url_for('static', filename = 'wizard/acompanhamento.js')}}" defer></script>
 
     <title>Acompanhamento</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px; /*Cria um espaço de respiro entre as paredes da tela */
-            color: #263238;
-            background-color: #f7f9fb;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 25px; /*Empurra tudo que estiver abaixo dele*/
-            color: #263b50;
-        }
-
-        button {
-            padding: 10px 20px; /*aumenta o espaço interno do botão*/
-            font-size: 16px;
-            cursor: pointer; /*Faz a seta do mouse virar uma mão quando passa por um botão*/
-            margin-bottom: 20px;
-            border: none; /*Remove as bordas padrões*/
-            border-radius: 6px; /*Deixa o botão mais arredondado*/
-            background-color: #285b83; /*Cor do botão*/
-            color: white; /*Cor da fonte no botão*/
-        }
-
-        button:hover{
-            background-color: #1d4565; /*Cor que o botão fica quando se passa o mouse por cima dele*/
-        }
-
-        .tabela {
-            overflow-x: auto;
-            overflow-y: auto;
-            max-height: 70vh;
-            width: 100%; /*Faz o container usar toda a largura disponível, acredito que assim ele não fique comprimido em uma única tela,com agora a possibilidade de arrastar horizontalmente facilitando a visualização*/
-            border-radius: 6px;
-        }
-
-        table {
-            border-collapse: collapse; /*Cola as bordas das células umas nas outras pra evitar espaço duplo*/
-            width: 100%; /*Faz a tabela esticar até o limite da tela*/
-            min-width: 1200px; /*Garante que ela sempre terá 1200px de largura para o s dados não ficarem espremidos*/
-            background-color: white;
-        }
-
-        th, td {
-            border: 1px solid #d6dde3;
-            padding: 10px 12px;
-            text-align: center;
-            white-space: nowrap; /*Impede que o texto pule pra próxima linha caso seja grande demais,garantindo que fique tudo numa célula só*/
-        }
-
-        th:first-child,
-        td:first-child{
-            font-weight: bold;
-        }
-
-        th:nth-child(2),
-        td:nth-child(2){
-            font-weight: bold;
-        }
-
-        th {
-            background-color: #285b83;
-            color: white;
-            font-weight: bold;
-            position: sticky; /*Ele faz com que o cabeçalho/outra parte específica da tabela possa ter o poder de se grudar*/
-            top: 0; /*E o top avisa onde ele deve grudar, no caso no topo, ou seja, aqui o cabeçalho te acompanha conforme vai abaixando a tela*/
-            z-index: 2;
-
-            height: 48px;
-            vertical-align: middle;
-        }
-
-        tbody tr:nth-child(even){
-            background-color: #f0f4f7; /*Pinta as linhas pares da tabela com um azul bem clarinho pra facilitar a distinção uma das outras*/
-        }
-
-        tbody tr:hover{
-            background-color: #e0edf7; /*Muda a cor da linha quando o usuário passa o mouse*/
-        }
-    </style>
 </head>
 
 <body>
