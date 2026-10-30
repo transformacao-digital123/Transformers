@@ -2,8 +2,8 @@ from openpyxl import load_workbook
 from openpyxl.styles import Font, Alignment
 import os
 
-from servicos.armazenamento import pasta_arquivos
-from servicos.data import agora
+from servicos.entradas.armazenamento import pasta_arquivos
+from servicos.conversao.data import agora
 
 CELULAS = {
     "data": "B3",

@@ -15,8 +15,8 @@ from servicos.producao.odp import  preencher_odps
 from servicos.etiquetas.etiqueta import preencher_etiqueta
 from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, NenhumaOdpNovaError
 
-from servicos.armazenamento import pasta_arquivos
-from servicos.acrescentar_remessa import acrescentar_odps_por_remessa
+from servicos.entradas.armazenamento import pasta_arquivos
+from servicos.producao.acrescentar_remessa import acrescentar_odps_por_remessa
 
 def converter_google_sheets(link, id_conversao, acrescentar = False):
     

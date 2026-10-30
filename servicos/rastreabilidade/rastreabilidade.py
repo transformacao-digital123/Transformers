@@ -5,8 +5,8 @@ import json
 from zipfile import BadZipFile
 
 from servicos.validacao.exceptions import OdpNaoEncontradaError,PlanilhaNaoEncontradaError,PlanilhaCorrompidaError
-from servicos.armazenamento import caminho_arquivo
-from servicos.producao.odp import localizar_pallet,preencher_odps
+from servicos.entradas.armazenamento import caminho_arquivo
+from servicos.producao.odp import localizar_pallet
 
 def gerar_identificador():
 

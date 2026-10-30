@@ -4,7 +4,7 @@ from openpyxl.drawing.image import Image
 import os
 
 from servicos.etiquetas.qrcode import gerar_qrcode
-from servicos.armazenamento import pasta_arquivos
+from servicos.entradas.armazenamento import pasta_arquivos
 
 FONTE_PADRAO = Font(name="Arial", size=11)
 

@@ -233,6 +233,7 @@ formulario.addEventListener("submit", function(event){
     
     let ocorreuErro = false;
 
+    animacaoFinalizando = false;
     acompanharProgresso();
 
     mensagemErro.style.display = "none";

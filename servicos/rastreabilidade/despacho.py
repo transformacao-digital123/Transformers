@@ -1,6 +1,6 @@
 from openpyxl import load_workbook
 
-from servicos.data import agora
+from servicos.conversao.data import agora
 
 def preencher_despacho(caminho_arquivo, nome_aba, linha,cancelar = False):
 

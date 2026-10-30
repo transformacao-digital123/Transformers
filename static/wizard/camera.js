@@ -63,6 +63,12 @@ function quandoLerQR(texto) {
             <label>PESO LÍQUIDO: <input type="text" id = "peso_liquido" name = "peso_liquido"></label>
             <br>
             <br>
+            <label>PESO BRUTO: <input type="text" id = "peso_bruto" name = "peso_bruto"></label>
+            <br>
+            <br>
+            <label>PESO PALETE: <input type="text" id = "peso_pallet" name = "peso_pallet"></label>
+            <br>
+            <br>
             <label>PESO TOTAL: <input type="text" id = "peso_total" name = "peso_total"></label>
             <br>
             <br>
@@ -124,6 +130,8 @@ function atualizarRastreabilidade(){
 
         numero_pallet: numeroPallet,
         peso_liquido: document.getElementById("peso_liquido").value,
+        peso_bruto: document.getElementById("peso_bruto").value,
+        peso_pallet: document.getElementById("peso_pallet").value,
         peso_total: document.getElementById("peso_total").value,
         op_material: "1000" + document.getElementById("op_material").value,
         op_tubete: "1000" + document.getElementById("op_tubete").value,

@@ -16,7 +16,7 @@ h1 {
 }
 
 button {
-    padding: 10px 20px; /*aumenta o espaço interno do botão*/
+    padding: 10px 20px; /*Aumenta o espaço interno do botão*/
     font-size: 16px;
     cursor: pointer; /*Faz a seta do mouse virar uma mão quando passa por um botão*/
     margin-bottom: 20px;

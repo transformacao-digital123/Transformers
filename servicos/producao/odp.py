@@ -5,8 +5,8 @@ import os
 from copy import copy
 
 from servicos.validacao.exceptions import AbaNaoEncontradaError
-from servicos.armazenamento import caminho_arquivo
-from servicos.data import agora
+from servicos.entradas.armazenamento import caminho_arquivo
+from servicos.conversao.data import agora
 
 ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center",wrap_text=True)
 
@@ -69,23 +69,25 @@ def preencher_odps(ordens):
         aba[f"H{linha}"] = ""
         aba[f"I{linha}"] = ""
         aba[f"J{linha}"] = ""
+        aba[f"K{linha}"] = ""
+        aba[f"L{linha}"] = ""
 
-        aba[f"K{linha}"] = ordem["cliente"]
-        aba[f"L{linha}"] = ordem["padrao"]
-        aba[f"M{linha}"] = ordem["filme"]
-        aba[f"N{linha}"] = ordem["peso_tubete"]
-        aba[f"O{linha}"] = ordem.get("observacao","")
-        aba[f"P{linha}"] = ordem["operador"]
-        aba[f"Q{linha}"] = ordem["maquina"]
+        aba[f"M{linha}"] = ordem["cliente"]
+        aba[f"N{linha}"] = ordem["padrao"]
+        aba[f"O{linha}"] = ordem["filme"]
+        aba[f"P{linha}"] = ordem["peso_tubete"]
+        aba[f"Q{linha}"] = ordem.get("observacao","")
+        aba[f"R{linha}"] = ordem["operador"]
+        aba[f"S{linha}"] = ordem["maquina"]
 
 # Dados de rastreabilidade, para serem registrados no histórico
-        aba[f"R{linha}"] = ""
-        aba[f"S{linha}"] = ""
-        aba[f"T{linha}"] = ""
-        aba[f"U{linha}"] = ordem["identificador"]
+        aba[f"U{linha}"] = ""
         aba[f"V{linha}"] = ""
         aba[f"W{linha}"] = ""
-        aba[f"X{linha}"] = ""
+        aba[f"X{linha}"] = ordem["identificador"]
+        aba[f"Y{linha}"] = ""
+        aba[f"Z{linha}"] = ""
+        aba[f"AA{linha}"] = ""
 
 # Essas letras todas são todas as colunas que tem informação na nossa tabela na qual aplicaremos alguma mudança
         for coluna in "CDEFGHIJKLMNOPQRSTUVW":
@@ -94,7 +96,7 @@ def preencher_odps(ordens):
             aba[f"{coluna}{linha}"].alignment = ALINHAMENTO_PADRAO
 
 # OBS em vermelho
-        aba[f"O{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
+        aba[f"Q{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
 
         linha += 1
 
@@ -126,7 +128,7 @@ def localizar_odp(aba, odp):
 # Se não retornará nada 
     return None
 
-def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido,op_material,op_tubete):
+def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido,op_material,op_tubete,peso_bruto,peso_pallet):
 
     linha = localizar_odp(aba,odp)
 
@@ -136,9 +138,11 @@ def preencher_expedição(aba,odp,numero_pallet,peso_total,peso_liquido,op_mater
     
     aba[f'F{linha}'] = numero_pallet
     aba[f'G{linha}'] = peso_liquido
-    aba[f'H{linha}'] = peso_total
-    aba[f'I{linha}'] = op_material
-    aba[f'J{linha}'] = op_tubete
+    aba[f'H{linha}'] = peso_bruto
+    aba[f'I{linha}'] = peso_pallet
+    aba[f'J{linha}'] = peso_total
+    aba[f'K{linha}'] = op_material
+    aba[f'L{linha}'] = op_tubete
 
     return True
 
@@ -192,9 +196,11 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
     campos = {
         "numero_pallet": 'F',
         "peso_liquido": "G",
-        "peso_total": "H",
-        "op_material": "I",
-        "op_tubete": "J"
+        "peso_bruto": "H",
+        "peso_pallet": "I",
+        "peso_total": "J",
+        "op_material": "K",
+        "op_tubete": "L"
     }
 # Parte responsável por,caso o mesmo QRcode seja bipado mais de uma vez por possuir mais de um pallet dele
     numero_pallet = dados.get("numero_pallet")
@@ -273,7 +279,7 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 
 # Um laço que verifica se a linha anterior na coluna R já possui conteúdo. Se tiver, ele pula para a próxima linha disponível para garantir que o histórico não apague dados antigos.
 # Nesse caso faz sentido o > porque linha_historico será maior que inicio visto que ele terá 1 linha em branco a mais do que ele
-    while linha_historico > inicio and aba[f"R{linha_historico - 1}"]. value is not None:
+    while linha_historico > inicio and aba[f"U{linha_historico - 1}"]. value is not None:
         linha_historico += 1
 
 # Item faz uma lista onde campo é a chave e coluna valor
@@ -298,15 +304,15 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 # Serve pra indicar que quando passar pOr ele o flag será alterado, isso é importante pois masi pra frente haverá uma condição que só ocorrerá quando houve_alteracao for True
         houve_alteracao = True
 
-        aba[f"R{linha_historico}"] = aba[f"D{linha}"].value
-        aba[f"S{linha_historico}"] = agora().strftime("%d/%m/%Y")
-        aba[f"T{linha_historico}"] = agora().strftime("%H:%M:%S")
-        aba[f"U{linha_historico}"] = identificador
-        aba[f"V{linha_historico}"] = dados.get("acao", "pesagem")
-        aba[f"W{linha_historico}"] = valor_anterior
-        aba[f"X{linha_historico}"] = novo_valor
+        aba[f"U{linha_historico}"] = aba[f"D{linha}"].value
+        aba[f"V{linha_historico}"] = agora().strftime("%d/%m/%Y")
+        aba[f"W{linha_historico}"] = agora().strftime("%H:%M:%S")
+        aba[f"X{linha_historico}"] = identificador
+        aba[f"Y{linha_historico}"] = dados.get("acao", "pesagem")
+        aba[f"Z{linha_historico}"] = valor_anterior
+        aba[f"AA{linha_historico}"] = novo_valor
 
-        for coluna_historico in "RSTUVWX":
+        for coluna_historico in ["U","V","W","X","Y","Z","AA"]:
             aba[f"{coluna_historico}{linha_historico}"].font = FONTE_PADRAO
             aba[f"{coluna_historico}{linha_historico}"].alignment = ALINHAMENTO_PADRAO
 

@@ -1,7 +1,7 @@
 import qrcode
 import os
 
-from servicos.armazenamento import pasta_arquivos
+from servicos.entradas.armazenamento import pasta_arquivos
 
 # O texto servirá como parâmetro no lugar de texto_qr onde ODP, data, turno e operador são parâmetros obrigatórios pois são eles que nos ajudarão a encontrar o caminho até ao arquivo, aba e linha onde está nossa odp
 def gerar_qrcode(texto,odp,operador):

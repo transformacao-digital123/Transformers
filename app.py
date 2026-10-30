@@ -15,7 +15,7 @@ from servicos.rastreabilidade.atualizar_rastreabilidade import atualizar_rastrea
 from servicos.rastreabilidade.rastreabilidade import localizar_por_identificador
 from servicos.validacao.exceptions import RastreabilidadeNaoEncontradaError
 from servicos.rastreabilidade.despacho import preencher_despacho
-from servicos.armazenamento import pasta_arquivos
+from servicos.entradas.armazenamento import pasta_arquivos
 
 AMBIENTE = os.getenv("AMBIENTE","local")
 

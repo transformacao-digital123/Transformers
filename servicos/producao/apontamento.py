@@ -2,7 +2,7 @@ from openpyxl import load_workbook
 from openpyxl.styles import Font, Alignment
 import os
 
-from servicos.armazenamento import pasta_arquivos
+from servicos.entradas.armazenamento import pasta_arquivos
 
 ALINHAMENTO_PADRAO = Alignment(horizontal="center", vertical="center",wrap_text=True)
 
