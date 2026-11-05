@@ -206,14 +206,14 @@ def imprimir_etiquetas():
 
         estado = obter_progresso(id_conversao)
 
-        if estado is None or estado.get("status" != "concluido"):
+        if estado is None or estado.get("status") != "concluido":
             return {"sucesso": False, "erro": "Conversão não encontrada ou não concluída"}, 404
         
         if AMBIENTE != "local":
             caminho_pdf = estado.get("pdf")
 
             if not caminho_pdf or not os.path.isfile(caminho_pdf):
-                return {"suceso": False, "erro": "PDF não encontrado"}, 404
+                return {"sucesso": False, "erro": "PDF não encontrado"}, 404
 
             return {"sucesso": True, "url": f"/abrir-pdf?id_conversao={id_conversao}"}
 

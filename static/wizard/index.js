@@ -337,7 +337,7 @@ if (botaoImprimir){
 
     botaoImprimir.addEventListener("click", function(){
 
-        const idConversao = document.getElementById('input[name = "id_conversao"]').value
+        const idConversao = document.querySelector('input[name = "id_conversao"]').value
 
         fetch("/imprimir-etiquetas", {
             method: "POST",
