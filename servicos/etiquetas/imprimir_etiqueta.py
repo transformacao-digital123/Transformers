@@ -1,6 +1,11 @@
 import os
 
+AMBIENTE = os.getenv("AMBIENTE", "local")
+
 def imprimir_etiqueta(caminho):
+
+    if AMBIENTE != "local":
+        return
 
     import win32api
     import win32print
