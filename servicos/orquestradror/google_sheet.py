@@ -17,6 +17,13 @@ from servicos.validacao.tratador_erros import RemessaNaoEncontradaError, Nenhuma
 
 from servicos.entradas.armazenamento import pasta_arquivos
 from servicos.producao.acrescentar_remessa import acrescentar_odps_por_remessa
+from servicos.etiquetas.gerador_pdf import criar_pdf, adicionar_etiqueta_pdf
+
+# Aqui o os.path.abspath(__file__) transforma o caminho em absoluto, assim mostra o caminho inteiro com o __file__ sendo usado para encontrar a localização exata do arquivo
+# Por isso aplicamos também o os.path.dirname() para que possamos chegar a pasta raíz do projeto, o 1º os.path.dirname() regride pra só mostrar até a pasta assets, + 1 pra static, e o último pra finalmente chegar em Transformers - Convertedor de arquivos que é a raíz do projeto, assim no CAMINHO_LOGO ele terá a raíz de onde a logo está saindo
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+CAMINHO_LOGO = os.path.join(BASE_DIR, "static", "assets", "logo.png")
 
 def converter_google_sheets(link, id_conversao, acrescentar = False):
     
@@ -159,6 +166,14 @@ def converter_google_sheets(link, id_conversao, acrescentar = False):
 
             raise
 
+# Aqui criamos o caminho que será usado pela etiqueta
+    caminho_pdf = os.path.join(pasta_arquivos(), "Etiquetas.pdf")
+
+# Aqui estamos usando esse caminho pra ser usado na função que irá criar o arquivo PDF, no caso, o criar_pdf
+    pdf = criar_pdf(caminho_pdf)
+
+    primeira_etiqueta = True
+
     grupos = agrupar_por_operador(ordens)
 
     total_operadores = len(grupos)
@@ -196,13 +211,29 @@ def converter_google_sheets(link, id_conversao, acrescentar = False):
 # O identificador foi posto aqui para garantir que tanto preencher odp quanto eiquetas recebesse o mesmo,e não um independente cada um
             ordem["identificador"] = identificador
 
-            arquivo_etiqueta = preencher_etiqueta(ordem,rastreabilidade,numero_etiqueta,total_etiquetas)
+            arquivo_etiqueta, caminho_qr = preencher_etiqueta(ordem,rastreabilidade,numero_etiqueta,total_etiquetas)
+
             arquivos.append(arquivo_etiqueta)
 
             etiquetas_para_imprimir.append(arquivo_etiqueta)
 
+            if not primeira_etiqueta:
+
+# Aqui è feito a separação de página, finalizando uma págimna para que a próxima possa ser iniciada
+                pdf.showPage()
+
+# Aqui estamos chamando a função que irá fazer o desenho da etiqueta PDF quando clicar em imprimir pelo Render
+            adicionar_etiqueta_pdf(pdf, caminho_qr, CAMINHO_LOGO,ordem["odp"], ordem["operador"], ordem["maquina"], ordem["data"].strftime("%d/%m/%Y"), ordem["cliente"])
+
+            primeira_etiqueta = False
+
             progresso = 65 + ((indice + 1) / total_operadores) * 25
             atualizar_progresso(id_conversao, progresso)
+
+    pdf.save()
+
+# Após o PDF ser salvo ele será incluído na lsita dosarquivos salvos
+    arquivos.append(caminho_pdf)
 
     if acrescentar:
         arquivo_odp = acrescentar_odps_por_remessa(caminho_remessa,ordens)
@@ -215,4 +246,4 @@ def converter_google_sheets(link, id_conversao, acrescentar = False):
 
     salvar_rastreabilidade(rastreabilidade)
 
-    return arquivo_zip,etiquetas_para_imprimir
+    return arquivo_zip,etiquetas_para_imprimir, caminho_pdf

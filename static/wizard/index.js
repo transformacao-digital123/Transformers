@@ -331,17 +331,23 @@ formulario.addEventListener("submit", function(event){
     })
     
 
-const botaoImprimir =document.getElementById("btn-imprimir-etiquetas");
+const botaoImprimir = document.getElementById("btn-imprimir-etiquetas");
 
 if (botaoImprimir){
 
     botaoImprimir.addEventListener("click", function(){
 
+        const idConversao = document.getElementById('input[name = "id_conversao"]').value
+
         fetch("/imprimir-etiquetas", {
             method: "POST",
             headers: {
-                "X-Requested-With": "XMLHttpRequest"
-            }
+                "X-Requested-With": "XMLHttpRequest",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id_conversao: idConversao
+            })
         })
         .then(function(resposta){
             return resposta.json();

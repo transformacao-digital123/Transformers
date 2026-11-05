@@ -43,6 +43,7 @@ def progresso():
 # Estão aqui e não no home para que não sejam reiniciados para estarem vazios toda vez que a função roda, nesse caso ele só será acrescentado sendo chamado apenas quando convém
 etiquetas_geradas = []
 arquivo_gerado = None
+pdf_gerado = None
 
 # Comandos padrão do Flask para organizar o acesso a página Web
 @app.route("/", methods = ["GET", "POST"])
@@ -85,7 +86,7 @@ def home():
                         arquivo_gerado = converter_pdf(arquivo)
 
                     elif link:
-                        arquivo_gerado, etiquetas = converter_google_sheets(link, id_conversao, acrescentar)
+                        arquivo_gerado, etiquetas, pdf_gerado = converter_google_sheets(link, id_conversao, acrescentar)
 
                         etiquetas_geradas.clear()
                         etiquetas_geradas.extend(etiquetas)
@@ -108,7 +109,9 @@ def home():
                                                id_conversao = id_conversao)
 
 # Aqui Vamos não só gravar o estado atualizado no JSON da conversão como vamos deixar o caminho do arquivo absoluto, se antes estava temporario/resultado.zip, agora ficará algo como C:\\Projetos\\Transformers\\temporario\\resultado.zip
-                    atualizar_progresso(id_conversao,100,status="concluido", arquivo = os.path.abspath(arquivo_gerado))
+                    atualizar_progresso(id_conversao,100,status="concluido",
+                                        arquivo = os.path.abspath(arquivo_gerado),
+                                        pdf = os.path.abspath(pdf_gerado) if AMBIENTE != "local" else None)
 
 # Condicionamento para ver se a requisição é AJAX ou não, caso seja, ele retorna um JSON com a mensagem de sucesso, caso contrário, ele retorna o arquivo para download
                     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
@@ -191,6 +194,28 @@ def baixar_arquivo():
 def imprimir_etiquetas():
 
     try:
+
+        dados = request.get_json(silent=True) or {}
+        id_conversao = dados.get("id_conversao")
+
+        if not id_conversao or len(id_conversao) != 32 or any(
+            caractere not in "0123456789abcdef"
+            for caractere in id_conversao
+        ):
+            return {"sucesso": False, "erro": "Identificador inválido"}, 400
+
+        estado = obter_progresso(id_conversao)
+
+        if estado is None or estado.get("status" != "concluido"):
+            return {"sucesso": False, "erro": "Conversão não encontrada ou não concluída"}, 404
+        
+        if AMBIENTE != "local":
+            caminho_pdf = estado.get("pdf")
+
+            if not caminho_pdf or not os.path.isfile(caminho_pdf):
+                return {"suceso": False, "erro": "PDF não encontrado"}, 404
+
+            return {"sucesso": True, "url": f"/abrir-pdf?id_conversao={id_conversao}"}
 
 # Essa importação, em Windows, está dentro dessa função porque assim, quando estiver no Render, que funciona em Linux, não dá problema,já que ela está aqui para ser importada somente quando for solicitada
         from servicos.etiquetas.imprimir_etiqueta import imprimir_etiqueta
@@ -408,8 +433,9 @@ def dados_acompanhamento():
 
             valores = []
 
+# É essa parte a responsável por exibir as colunas, sem elas nada seria exibido, no caso de C até AA
 # Aqui irá fazer uma análise de C a X e acrescentará em valores os valores que estiverem nas células analisadas
-            for coluna in range(3, 25):  # C até X
+            for coluna in range(3, 28): 
                 valores.append(aba.cell(linha, coluna).value)
 
 # Se a linha tiver ao menos 1 valor em valores ele seguirá seu rumo como deveria, se não dará erro

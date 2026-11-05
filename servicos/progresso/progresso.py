@@ -1,4 +1,4 @@
-import os,json,re,tempfile
+import os,json,tempfile
 
 # A id_conversao identifica qual conversão estamos atualizando.
 
@@ -11,7 +11,7 @@ DIRETORIO_ESTADOS =  os.path.join(tempfile.gettempdir(),"transformers_estados")
 os.makedirs(DIRETORIO_ESTADOS,exist_ok=True)
 
 # Essa função terá um chamado nos respectivos lugares que quiserem demarcar uma evolução, a cada chamado representa um aumento de porcentagem, por exemplo, quando chamarem ele nos 10%, esse 10 substituirá o valor que estiver em processamento_progresso, e assim por diante, até chegar a 100% que é o final do processo
-def atualizar_progresso(id_conversao, valor, status = "processando", arquivo = None, erro = None):
+def atualizar_progresso(id_conversao, valor, status = "processando", arquivo = None, pdf = None, erro = None):
 
 # Aqui pegamos e criamos um caminho que se encaixará o arquivo .json na pasta do diretório,ex: "/tmp/transformers_estados/abcde.json"
     caminho = os.path.join(DIRETORIO_ESTADOS, f"{id_conversao}.json")
@@ -22,6 +22,7 @@ def atualizar_progresso(id_conversao, valor, status = "processando", arquivo = N
         "progresso": valor,
         "status": status,
         "arquivo": arquivo,
+        "pdf": pdf,
         "erro": erro
     }
 

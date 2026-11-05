@@ -84,4 +84,4 @@ def preencher_etiqueta(ordem,rastreabilidade,numero_etiquetas,total_etiquetas):
 
         planilha.save(caminho_saida)
 
-        return caminho_saida
+        return caminho_saida, caminho_qr
