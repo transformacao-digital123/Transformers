@@ -337,6 +337,9 @@ if (botaoImprimir){
 
     botaoImprimir.addEventListener("click", function(){
 
+// Abre uma nova aba, _blank, vazia em branco, graças ao about:blank, pra evitar bloqueio de pop-up, geralmente usados em janelas abertas para anúncios invasivos
+        const janela = window.open("about:blank", "_blank");
+
         const idConversao = document.querySelector('input[name = "id_conversao"]').value
 
         fetch("/imprimir-etiquetas", {
@@ -355,16 +358,44 @@ if (botaoImprimir){
         .then(function(resultado){
 
             if(resultado.sucesso){
-                alert("Etiquetas enviadas para impressão!");
+
+// Aqui, se o servidor responder com sucesso e enviar um link (a url do PDF), pegará apágina em branco e trocará a sua url pela do PDF, caso no meio desse processo dê algo de errado ele volta a página principal
+                if (janela.url){
+                    if (janela){
+                        janela.location.href = resultado.url;
+                    } else {
+                        window.location.href = resultado.url;
+                    }
+
+// caso o servidor tenha respondido com sucesso mas não gerou a url,  caso tenha mandado direto a impressora, simplesmente fecha a aba nova pra não incomodar o usuário e exibe a mensagem explicando, caso esse atribuído a quando houver impressão em ambiente local, e não no Render
+                } else {
+                    if (janela) {
+                        janela.close();
+                    }
+
+                    alert("Etiquetas enviadas para a impressão")
+                }
+
+// caso o servidor não tenha respondido com sucesso e sim com erro, simplesmente fecha a janela que havia sido aberta e exibe a mensagem do erro
             } else {
-                alert(resultado.erro);
+                if (janela) {
+                    janela. close();
+                }
+                alert(resultado.erro)
             }
+
         })
 
+// Caso haja queda de energia ou falha na internet, a ponto de nem conseguir iniciar o processo direito ou travar bruscamente no meio dele irá fechar a janela e exibir as mensagens de erro tanto no navegador quanto ao usuário
         .catch(function(erro){
+
+            if (janela) {
+                janela.close();
+            }
+
             console.error("Erro ao imprimir etiquetas:", erro);
             alert("Não foi possível imprimir as etiquetas.");      
-        })
+        });
     });
 }
 

@@ -237,6 +237,31 @@ def imprimir_etiquetas():
             "erro": mensagem  
         }, 400
 
+@app.route("/abrir_pdf", methods = ["GET"])
+def abrir_pdf():
+    id_conversao = request.args.get("id_conversao")
+
+    if not id_conversao or len(id_conversao) != 32 or any(
+        caractere not in "123456789abcdef"
+        for caractere in id_conversao
+    ):
+
+        return{"sucesso": False, "erro": "Identificador inválido"}, 400
+    
+    estado = obter_progresso()
+
+    if estado is None or estado.get("status") != "concluido":
+        return {"sucesso": False, "erro": "Conversão não encontrada ou concluída"}, 404
+
+    caminho_pdf = estado.get("pdf")
+
+    if not caminho_pdf or not os.path.isfile(caminho_pdf):
+        return {"erro": "PDF não encontrado"}, 404
+
+    return send_file(caminho_pdf,
+                     mimetype="application/pdf",
+                     as_attachment=False)
+
 @app.route("/camera")
 def camera():
     return render_template("camera.html")
@@ -390,7 +415,7 @@ def opcoes_acompanhamento():
         if not separador or not turno:
             continue
 
-# Aqui faremos uma verificação, se a sata que for passada for uma data convencional n~so acontecerá nada demais, caso contrário, caso haja algo como dia 32 ela dará erro
+# Aqui faremos uma verificação, se a data que for passada for uma data convencional não acontecerá nada demais, caso contrário, caso haja algo como dia 32 ela dará erro
 # Aqui há 2 formatações de data,isso se deve porque a 1º está ali para a nossa visualização, já que usamos o método brasileiro, enquanto o 2º serve para enviar para o servidor qual a data, pois o sistema funciona no método americano, mas isso não afetará nada no nosso cotidiano, é apenas uma forma de evitar bug
         try:
             data = datetime.strptime(

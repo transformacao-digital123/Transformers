@@ -167,7 +167,7 @@ def localizar_pallet(aba,identificador,numero_pallet):
 # Analisa todas as linhas,desde a linha 1 até a última, devido ao + 1
     for linha in range(1, aba.max_row + 1):
 
-        identificador_linha = aba[f"U{linha}"].value
+        identificador_linha = aba[f"X{linha}"].value
         pallet_linha = aba[f"F{linha}"].value
 
 # Se o identificador_linha for igual ao identificador do QRcode da etiqueta e o Nº do pallet  inserido for igual ao Nº do pallet que já tinha sido inserido antes...

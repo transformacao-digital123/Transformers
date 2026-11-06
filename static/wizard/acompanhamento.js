@@ -1,8 +1,67 @@
 let arquivoAtual = "";
 
+function formatarData(campo) {
+
+// Aqui removerá tudo que não for Nº, em que \D significa qualquer caractere que não seja Nº e g significa global, para que possa ser aplicado em todo o texto, e tnão será substituído por ""
+    let valor = campo.value.replace(/\D/g,"");
+
+// Se o texto possuir mais que 8 caracteres ele o corta o limitando apenas aos 8 primeiros
+    if (valor.length > 8) {
+        valor = valor.slice(0,8);
+    }
+
+// Se o texto possuir mais que 4 caracteres...
+    if (valor.length > 4) {
+
+// Será feito a substituição, em que ^(\d{2}) captura os 2 primeiros digitos e os gurda no grupo 1, ^(\d{2}), dia, e assim sucessivamente, aqui siginifica que ele digitou o dia e mês, então já são exibidos as 2 barras de separação da data. Lembrando que o .* ignora qualquer outra coisa no final
+        valor = valor.replace(/^(\d{2})(\d{2})(\d{1,4}).*/,"$1/$2/$3");
+
+// Se não, caso o valor possua mais que 2 caracteres pelo menos...
+    } else if (valor.length > 2) {
+
+// Será feito a substituição, em que ^(\d{2}) captura os 2 primeiros digitos e os gurda no grupo 1, ^(\d{2}), dia, e assim sucessivamente, aqui significa que ele já escreveu o dia e começou a escrever o mês,então surge a 1º barra. Vale ressaltar que ^ obriga o javascript a analisar desde o começo do texto
+        valor = valor.replace(/^(\d{2})(\d{1,2})/, "$1/$2");
+    }
+
+// Dá o valor formatado a tela do usuário
+    campo.value = valor;
+}
+
+function converterDataParaISO(data) {
+
+// Aqui match procurará uma correspondência usando uma Expressão Regular (Regex). Os ^ e $ indicam que o texto devem terminar exatamente com esse padrão pré estabelecido, sem espaço ou letras extras
+// Cada \d{2} representa o uma parte da data, em seuência, dia-mês-ano
+    const correspondencia = data.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+
+// Se o usuário digitar algo que não seja Nº ou exceder o Nº de digitos permitidos o resultado será null
+    if (!correspondencia) {
+        return null;
+    }
+
+    const [, dia, mes, ano] = correspondencia;
+
+    const diasNoMes = new Date(
+        Number(ano),
+        Number(mes),
+        0
+    ).getDate();
+
+    if (
+        Number(mes) < 1 ||
+        Number(mes) > 12 ||
+        Number(dia) < 1 ||
+        Number(dia) > diasNoMes
+    ) {
+        return null;
+    }
+
+    return `${ano}-${mes}-${dia}`;
+}
+
 function carregarDados() {
 
-    const data = document.getElementById("data").value;
+    const dataDigitada = document.getElementById("data").value;
+    const data = converterDataParaISO(dataDigitada);
     const turno = document.getElementById("turno").value;
 
 // Se o usuário não escolher nem turno nem data aparecerá essa mensagem
@@ -141,21 +200,10 @@ function carregarOpcoes(){
 // Aqui guardaremos o valor recebido dentro de arquivosDisponiveis
         arquivosDisponiveis = resultado.arquivos;
 
-        const campoData = document.getElementById("data");
         const campoTurno = document.getElementById("turno");
-
-// Guardará em data arquivosDisponíveis, que, através do .map, pegará da lista que receber só as datas e porá em arquivos (graças ao new set() nenhuma das datas pegas será duplicada e o ... transforma o Set em uma lista normal de volta que poderemos usar, isso por que o Set transforma a lista em um objeto conjunto)
-        const datas = [...new Set(
-            arquivosDisponiveis.map(arquivo => arquivo.data)
-        )];
 
 // Guardará em data arquivosDisponíveis, que, através do .map, pegará da lista que receber só as turnos e porá em arquivos (graças ao new set() nenhuma das turnos pegas será duplicada e o ... transforma o Set em uma lista normal de volta que poderemos usar, isso por que o Set transforma a lista em um objeto conjunto)
         const turnos = ["Manhã","Noite"];
-
-// ForEach é "para cada", ou seja, para cada data única recebida, adicione em campoData, mas para isso foi criada uma opção visual para põr no menu (o 1° é o texto que o usuário lê e o 2° é o que é enviado ao servidor)
-        datas.forEach(data => {
-            campoData.add(new Option(data,data))
-        });
 
 // ForEach é "para cada", ou seja, para cada turno única recebida, adicione em campoData, mas para isso foi criada uma opção visual para põr no menu (o 1° é o texto que o usuário lê e o 2° é o que é enviado ao servidor)
         turnos.forEach(turno => {
@@ -181,6 +229,8 @@ function carregarSeletorCompleto(){
 }
 
 document.getElementById("data").addEventListener("change", carregarSeletorCompleto);
+document.getElementById("data").addEventListener("input", function() {formatarData(this);})
+
 document.getElementById("turno").addEventListener("change", carregarSeletorCompleto);
 
 

@@ -4,7 +4,7 @@ import os
 from servicos.conversao.data import agora
 from servicos.entradas.armazenamento import pasta_arquivos
 
-tempo = agora().strftime("%d-%m-%Y_%H:%M:%S")
+tempo = agora().strftime("%d-%m-%Y_%H-%M-%S")
 
 def criar_zip(arquivos):
 

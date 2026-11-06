@@ -35,13 +35,26 @@ def selecionar_apontamento(turno, operador,ordens_operador):
 
 def preencher_apontamento(caminho_modelo,operador,ordens_operador):
 
-    planilha = load_workbook(caminho_modelo)
+    apontamento_arquivo = f"Apontamento_{operador}.xlsx"
+
+    caminho = os.path.join(pasta_arquivos(), apontamento_arquivo)
+
+    if os.path.exists(caminho):
+        planilha = load_workbook(caminho)
+    else:
+        planilha = load_workbook(caminho_modelo)
 
     aba = planilha.active
 
     primeira_ordem = ordens_operador[0]
 
     linha = 4
+
+# Aqui fará a verificação, enquanto um dos requisitos for verdadeiro ele acrescentará uma linha até encontrar, caso esteja no modo de acrescentar OdP, a linha onde pôr as novas, que no caso será caso os 2 requisitos sejam falsos, em que as 2 linhas estarão vazia
+# Agora se houver 2 linhas seguidas vazias, como dito antes, começará a partir daí a acrescentar as novas OdP, e se não estiver no modo acrescentar irá direto a acrescentar direto desde a linha 4 
+    while (aba.cell(row = linha, column = 2).value is not None
+           or aba.cell(row = linha + 1, column = 2).value is not None):
+        linha += 1
 
     aba["M2"] = primeira_ordem["data"]
     aba["M2"].number_format = "dd/mm/yyyy"
@@ -75,10 +88,6 @@ def preencher_apontamento(caminho_modelo,operador,ordens_operador):
         linha += 1
 
     print(ordem["operador"])
-
-    apontamento_arquivo = f"Apontamento_{operador}.xlsx"
-
-    caminho = os.path.join(pasta_arquivos(), apontamento_arquivo)
 
     planilha.save(caminho)
 
