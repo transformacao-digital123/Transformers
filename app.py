@@ -1,5 +1,3 @@
-# ADO A ADO CADA UM NO SEU QUADRADO ADO
-
 from flask import Flask, render_template, request, send_file
 from openpyxl import load_workbook
 import os
