@@ -19,6 +19,8 @@ from servicos.entradas.armazenamento import pasta_arquivos
 
 AMBIENTE = os.getenv("AMBIENTE","local")
 
+print(f"AMBIENTE CONFIGURADO {AMBIENTE}")
+
 app = Flask(__name__)
 
 @app.route("/progresso")
