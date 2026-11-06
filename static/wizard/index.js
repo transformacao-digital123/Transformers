@@ -41,67 +41,6 @@ function finalizarAnimacao(){
     }, 1000);
 }
 
-// // Aqui a função é carregar a imagem
-// function carregarImagens(caminho){
-
-// // Aqui é um return especial, que retorna algo que estará disponível posteriormente, no caso new Promise pode terminar de 2 formas sucesso se a imagem carregar ou falhar por não ter sido possível carregar a imagem
-// // Esses 2 resultados são os mecanismos contidos na função, resolvese der certo e reject se der errado
-//     return new Promise(function(resolve,reject){
-
-// // Aqui fica exibindo a imagem atual
-//         const imagem = new Image();
-
-// // onload: Evento do navegador que ocorre quando a imagem termina de carregar com sucesso
-//         imagem.onload = function() {
-
-// // Assim que o navegador terminar de carregar o gif a promessa será resolvida com o caminho daquele arquivo
-//             resolve(caminho);
-//         }
-
-// // onerror: Evento do navegador que ocorre quando ocorre uma falha ao carregar a imagem
-//         imagem.onerror = function() {
-
-// // new Error cria um novo objeto de erro já com uma mensagem associada
-//             reject(new Error("Não foi possível carregar a imagem: " + caminho));
-//         }
-
-// // E é aqui que a imagem é de fato carregada a próxima imagem
-//         imagem.src = caminho;
-//     });
-// }
-
-// // Aqui a importância dessa função é apenas dar tempo o suficiente pra carregar a imagem
-// // Aqui o async é o que permite usar o await dentro da função e retorne uma Promise
-// async function iniciarTransformacao() {
-
-//     const caminhoTransformacao = "static/assets/optimus_transformando_em_caminhao.gif";
-//     const caminhoCaminhao = "static/assets/caminhao_luari_proporcional.gif";
-
-// // O await espera a promise dessa função ser resolvida ou rejeitada antes de continuar a execução normal da função atual
-//     await carregarImagens(caminhoTransformacao);
-//     await carregarImagens(caminhoCaminhao);
-
-// // Exibe a transformação de transformação
-//     optimus.src = caminhoTransformacao;
-
-// // Espera 0,8s
-//     await esperar(800);
-
-// // Exibe o gif de caminhão
-//     optimus.src = caminhoCaminhao;
-// }
-
-// // Aqui é usado para esperar o GIF terminar de executar, em milissegundos, para passar pro próximo
-// function esperar(ms) {
-
-// // Aqui, como está resolve, quer dizer que deu certo, então é criado e retornado uma Promise, que é chamada para operações assíncronas, que precisam de tempo pra serem executadas
-//     return new Promise(function(resolve){
-
-// // O setTimeout aguarda o tempo definido em milissegundos e então dispara a função resolve
-//         setTimeout(resolve,ms);
-//     });
-// }
-
 function acompanharProgresso(){
     console.log("ACOMPANHAMENTO INICIADO");
 
