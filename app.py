@@ -217,7 +217,7 @@ def imprimir_etiquetas():
             if not caminho_pdf or not os.path.isfile(caminho_pdf):
                 return {"sucesso": False, "erro": "PDF não encontrado"}, 404
 
-            return {"sucesso": True, "url": f"/abrir-pdf?id_conversao={id_conversao}"}
+            return {"sucesso": True, "url": f"/abrir_pdf?id_conversao={id_conversao}"}
 
 # Essa importação, em Windows, está dentro dessa função porque assim, quando estiver no Render, que funciona em Linux, não dá problema,já que ela está aqui para ser importada somente quando for solicitada
         from servicos.etiquetas.imprimir_etiqueta import imprimir_etiqueta
