@@ -250,7 +250,7 @@ def abrir_pdf():
 
         return{"sucesso": False, "erro": "Identificador inválido"}, 400
     
-    estado = obter_progresso()
+    estado = obter_progresso(id_conversao)
 
     if estado is None or estado.get("status") != "concluido":
         return {"sucesso": False, "erro": "Conversão não encontrada ou concluída"}, 404
