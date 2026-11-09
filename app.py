@@ -244,7 +244,7 @@ def abrir_pdf():
     id_conversao = request.args.get("id_conversao")
 
     if not id_conversao or len(id_conversao) != 32 or any(
-        caractere not in "123456789abcdef"
+        caractere not in "0123456789abcdef"
         for caractere in id_conversao
     ):
 

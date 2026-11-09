@@ -299,7 +299,7 @@ if (botaoImprimir){
             if(resultado.sucesso){
 
 // Aqui, se o servidor responder com sucesso e enviar um link (a url do PDF), pegará apágina em branco e trocará a sua url pela do PDF, caso no meio desse processo dê algo de errado ele volta a página principal
-                if (janela.url){
+                if (resultado.url){
                     if (janela){
                         janela.location.href = resultado.url;
                     } else {
