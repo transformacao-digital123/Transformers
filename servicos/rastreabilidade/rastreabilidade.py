@@ -77,7 +77,7 @@ def localizar_aba(dados):
 
         for linha in range(6, aba.max_row + 1):                
 
-            if str(aba[f"D{linha}"].value) == str(dados["odp"]).strip():
+            if str(aba[f"D{linha}"].value).strip() == str(dados["odp"]).strip():
                     print("ODP encontrada na linha:", linha)
 
                     return {
@@ -85,7 +85,7 @@ def localizar_aba(dados):
                             "aba": aba.title,
                             "linha": linha
                             }
-        raise OdpNaoEncontradaError()
+    raise OdpNaoEncontradaError()
 
 # Serve pra localizar se aquela
 def localizar_por_identificador(identificador, numero_pallet):

@@ -339,3 +339,34 @@ if (botaoImprimir){
 }
 
 });
+
+const menuPrincipal = document.getElementById("menu-principal");
+const menuOpcoes = document.getElementById("menu-opcoes");
+
+// Verificação de se tanto menuPrincipal quanto menuOpcoes existem, se sim inicia-se a condição
+if (menuPrincipal && menuOpcoes) {
+
+// Quando o click é escutado menuPrincipal sofrerá alguma mudança... (O => serve pra substituir a palavra function)
+    menuPrincipal.addEventListener("click", () => {
+
+// Se o status do menu opções for ativo ele fará seu css funcionar e então exibe as opções, se não, oculta o menu de opções. Aqui o toggle funciona como um interruptor, enquanto o classList acessa a lista de classes CSS aplicadas ao elemento menuOpcoes
+        const aberto = menuOpcoes.classList.toggle("ativo");
+
+// Cria ou altera o atributo no próprio HTML, "aria-expanded" o que vai ser alterado, alteração essa que só depende do que aberto irá guardar, "true" ou "false"
+        menuPrincipal.setAttribute("aria-expanded", aberto);
+    });
+
+// Quando o click for escutado os dados do clique serão guardados em evento
+    document.addEventListener("click", (evento) => {
+
+// Aqui o target captura qual a interface o mouse clicou pra entrar, e o closest verifica em qual dos elementos HTML foi clicado, como aqui tem !, então ele só é acionado quando clicar pra fora do menu
+        if (!evento.target.closest(".menu-container")) {
+
+// Diferente do toggle, o remove remove a classe ativo de menuOpcoes, ou seja, remove da parte vsual da interface as opções que estão no menu
+            menuOpcoes.classList.remove("ativo");
+
+// Troca o status de aria-expanded pra false
+            menuPrincipal.setAttribute("aria-expanded", "false")
+        }
+    });
+}

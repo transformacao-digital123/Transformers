@@ -1,10 +1,11 @@
+from servicos.validacao.tratador_erros import NenhumArquivoEncontradoError, ArquivoInvalidoError
+
 def validar_arquivo(arquivo):
 
     if not arquivo:
-        print("Nenhum arquivo recebido")
+        raise NenhumArquivoEncontradoError()
         
     elif not arquivo.filename.lower().endswith(".pdf"):
-        print("Arquivo inválido")
+        raise ArquivoInvalidoError()
     else:
-        print("PDF recebido!")
         return True

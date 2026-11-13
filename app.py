@@ -4,6 +4,22 @@ import os
 import traceback
 from datetime import datetime
 import uuid
+from sqlalchemy import text
+
+# Aqui rfaz a verificação, a não ser que seja ambiente Windows esse bloco de condição é ignorado
+# Sistema operacional => os.name: Windows = nt; Linux = posix; macOS	= posix
+
+if os.name == "nt":
+
+# Aqui o r (raw string) garante que \ seja interpretada da maneira certa e não como um comando como \n, mas sim como um divisor de pastas. E o C:\Program Files\PostgreSQL\18\bin informa ao Windows um diretório adicional onde ele poderá procurar bibliotecas DLL necessárias para carregar módulos Python
+    os.add_dll_directory(r"C:\Program Files\PostgreSQL\18\bin")
+
+# Aqui environ (que pode modificar variáveis de ambiente) seleciona a variável PATH e e lhe atribui um novo valor, no caso faz com que o caminhos, variáveis necessárias, programas e mecanismos de carregamento que consultam o PATH tambémm encontrem os arquivos daquele diretório
+    os.environ["PATH"] = (r"C:\Program Files\PostgreSQL\18\bin;"
+                          + os.environ["PATH"])
+
+# Escolhe a implementação python do Psycopg que é a que a que utiliza a biblioteca libpq do sistema, no caso, a que funcionou
+    os.environ["PSYCOPG_IMPL"] = "python"
 
 #importações vindas de outros arquivos
 from servicos.conversao.conversor import converter_pdf
@@ -16,12 +32,77 @@ from servicos.rastreabilidade.rastreabilidade import localizar_por_identificador
 from servicos.validacao.exceptions import RastreabilidadeNaoEncontradaError
 from servicos.rastreabilidade.despacho import preencher_despacho
 from servicos.entradas.armazenamento import pasta_arquivos
+from config import Config # Carrega as configurações do config.py
+from extensions import db,migrate
+from models import PeriodoProducao, VersaoProducao, GrupoProducao, OrdemProducao
 
 AMBIENTE = os.getenv("AMBIENTE","local")
 
 print(f"AMBIENTE CONFIGURADO {AMBIENTE}")
 
 app = Flask(__name__)
+app.config.from_object(Config)
+
+# Nossa interface pra trabalhar com os dados
+db.init_app(app)
+
+# Permite atualizar a estrutura do banco sem precisar recriá-lo
+migrate.init_app(app, db)
+
+@app.route("/teste-banco")
+def teste_banco():
+    try:
+        db.session.execute(text("SELECT 1"))
+        return {"conexão": "sucesso"}
+
+    except Exception as erro:
+        db.session.rollback()
+        return {"conexao": "erro",
+                "detalhes": str(erro)}, 500
+
+@app.route("/teste-periodo")
+def teste_periodo():
+    try:
+        periodo = PeriodoProducao(
+            data = datetime(2026,11,12).date(),
+            turno = "Manhã"
+        )
+
+        db.session.add(periodo)
+        db.session.commit()
+
+        return{
+            "mensagem": "Período cadastrado com sucesso!",
+            "id": periodo.id,
+            "data": str(periodo.data),
+            "turno": periodo.turno
+        }
+
+    except Exception as erro:
+        db.session.rollback()
+        return {"conexao": "erro",
+                "detalhes": str(erro)}, 500
+
+@app.route("/consultar-periodos")
+def consultar_periodos():
+    try:
+        periodos = PeriodoProducao.query.all()
+
+        resultado = []
+
+        for periodo in periodos:
+            resultado.append({
+                "id": periodo.id,
+                "data": str(periodo.data),
+                "turno": periodo.turno
+                }   )
+
+            return resultado
+
+    except Exception as erro:
+        return {
+            "erro": str(erro)
+        }, 500
 
 @app.route("/progresso")
 def progresso():
@@ -85,7 +166,7 @@ def home():
                     if arquivo:
 
 # Comando, com uma nova "variável arquivo_excel" que puxa do conversor o arquivo já pronto e lapidado e só espera ser chamado para lançado no sistema
-                        arquivo_gerado = converter_pdf(arquivo)
+                        arquivo_gerado = converter_pdf(arquivo, id_conversao, acrescentar)
 
                     elif link:
                         arquivo_gerado, etiquetas, pdf_gerado = converter_google_sheets(link, id_conversao, acrescentar)

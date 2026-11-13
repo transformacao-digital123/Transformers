@@ -36,5 +36,15 @@ class RastreabilidadeNaoEncontradaError(Exception):
 
 class RemessaNaoEncontradaError(Exception):
     pass
+
 class NenhumaOdpNovaError(Exception):
+    pass
+
+class NenhumArquivoEncontradoError(Exception):
+    pass
+
+class ArquivoInvalidoError(Exception):
+    pass
+
+class NaoAcrescentarOdpEmArquivoPdfError(Exception):
     pass

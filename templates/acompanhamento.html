@@ -14,6 +14,7 @@
 
     <h1>ACOMPANHAMENTO DE PRODUÇÃO</h1>
 
+    <div class="data">
     <label for = "data">Data: </label>
     <input 
         type = "text"
@@ -23,11 +24,14 @@
         inputmode="numeric"
         autocomplete="off"
         >
+    </div>
 
+    <div class="turno">
     <label for="turno">Turno: </label>
     <select id="turno">
         <option value="">Selecione o turno</option>
     </select>
+    </div>
 
     <div class = "botoes">
     <button id = "btn-atualizar" onclick="carregarDados()">

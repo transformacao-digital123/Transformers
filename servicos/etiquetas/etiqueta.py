@@ -70,9 +70,9 @@ def preencher_etiqueta(ordem,rastreabilidade,numero_etiquetas,total_etiquetas):
 # Adiciona a imagem começando na célula especificada
         aba.add_image(qr,"B12")
 
-        odp_limpo = ordem["odp"].replace("/","-")
+        odp_limpo = ordem["odp"].strip().replace("/","-")
 
-        operario = ordem["operador"]
+        operario = ordem["operador"].strip()
 
 # Camiho da saída do nvo arquivo das etiqueta
         if total_etiquetas > 1:

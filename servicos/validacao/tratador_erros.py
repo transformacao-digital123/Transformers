@@ -10,7 +10,10 @@ from servicos.validacao.exceptions import (
     AbaNaoEncontradaError,
     RastreabilidadeNaoEncontradaError,
     RemessaNaoEncontradaError,
-    NenhumaOdpNovaError
+    NenhumaOdpNovaError,
+    NenhumArquivoEncontradoError,
+    ArquivoInvalidoError,
+    NaoAcrescentarOdpEmArquivoPdfError
 )
 
 MENSAGENS = {
@@ -48,9 +51,16 @@ MENSAGENS = {
     "Não existe uma remessa para essa data e turno. Crie uma nova remessa antes de tentar acrescentar ODPs",
 
     NenhumaOdpNovaError:
-    "Nenhuma remessa nova foi incluída. todas as OdP's já estão na remessa"
+    "Nenhuma remessa nova foi incluída. todas as OdP's já estão na remessa",
 
+    NenhumArquivoEncontradoError:
+    "Nenhum arquivo PDF de OdP foi encontrado para fazer a conversão",
 
+    ArquivoInvalidoError:
+    "O arquivo enviado não corresponde as diretrizes requeridas",
+
+    NaoAcrescentarOdpEmArquivoPdfError:
+    "Não é possível acrescentar OdP em conversões por PDF"
 }
 
 def tratar_erro(erro):

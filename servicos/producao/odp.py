@@ -43,9 +43,13 @@ def preencher_odps(ordens):
     aba["D3"] = primeira_ordem["data"]
     aba["D3"].number_format = "dd/mm/yyyy"
 
-    aba["G3"] = primeira_ordem["turno"]
+    aba["F3"] = primeira_ordem["turno"]
 
-    for celula in ("D3","F3"):
+    aba["H3"] = ""
+
+    aba["J3"] = ""
+
+    for celula in ("D3","F3","H3","J3"):
         aba[celula].font = FONTE_PADRAO
         aba[celula].alignment = ALINHAMENTO_PADRAO
 
@@ -88,9 +92,10 @@ def preencher_odps(ordens):
         aba[f"Y{linha}"] = ""
         aba[f"Z{linha}"] = ""
         aba[f"AA{linha}"] = ""
+        aba[f"AB{linha}"] = ""
 
 # Essas letras todas são todas as colunas que tem informação na nossa tabela na qual aplicaremos alguma mudança
-        for coluna in "CDEFGHIJKLMNOPQRSTUVW":
+        for coluna in ["C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","AA","AB"]:
 
             aba[f"{coluna}{linha}"].font = FONTE_PADRAO
             aba[f"{coluna}{linha}"].alignment = ALINHAMENTO_PADRAO
@@ -311,8 +316,9 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
         aba[f"Y{linha_historico}"] = dados.get("acao", "pesagem")
         aba[f"Z{linha_historico}"] = valor_anterior
         aba[f"AA{linha_historico}"] = novo_valor
+        aba[f"AB{linha_historico}"] = ""
 
-        for coluna_historico in ["U","V","W","X","Y","Z","AA"]:
+        for coluna_historico in ["U","V","W","X","Y","Z","AA","AB"]:
             aba[f"{coluna_historico}{linha_historico}"].font = FONTE_PADRAO
             aba[f"{coluna_historico}{linha_historico}"].alignment = ALINHAMENTO_PADRAO
 

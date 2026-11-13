@@ -80,9 +80,9 @@ def preencher_planilha(dados, indice, origem="pdf"):
     nome = agora().strftime("%d%m%Y_%H%M%S")
 
     if dados["odp"]:
-        identificador = str(dados["odp"]).replace("/","-")
+        identificador = str(dados["odp"]).strip().replace("/","-")
     else:
-        identificador = str(dados["numero_pedido"]).replace("/", "-")
+        identificador = str(dados["numero_pedido"]).strip().replace("/", "-")
 
     if origem == "pdf":
 

@@ -9,9 +9,9 @@ def gerar_qrcode(texto,odp,operador):
 # Pegue o conteúdo recebido em odp e transforme-o em uma imagem de QR Code.
         qr = qrcode.make(texto)
 
-        odp_limpo = odp.replace("/","-")
+        odp_limpo = odp.strip().replace("/","-")
 
-        operario = operador
+        operario = operador.strip()
 
  # Aqui você aproveitou a própria ODP para criar um nome único para a imagem       
         test = f"QR_{odp_limpo}_{operario}.png"
