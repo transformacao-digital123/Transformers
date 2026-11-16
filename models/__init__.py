@@ -4,3 +4,7 @@ from .periodos_producao import PeriodoProducao
 from .versoes_producao import VersaoProducao
 from .grupos_producao import GrupoProducao
 from .ordens_producao import OrdemProducao
+from .pesagens_producao import PesagensProducao
+from .pallets import Pallet
+from .despachos import Despacho
+from .historicos_producao import HistoricoProducao

@@ -12,7 +12,7 @@ class OrdemProducao(db.Model):
 
     pedido = db.Column(db.String(20), nullable = False)
 
-    odp = db.Column(db.String(20), nullable = False, unique = True)
+    odp = db.Column(db.String(20), nullable = False)
 
     cliente = db.Column(db.String(255), nullable = False)
 
@@ -20,9 +20,9 @@ class OrdemProducao(db.Model):
 
     filme = db.Column(db.String(40), nullable = False)
 
-    peso_tubete = db.Column(db.String(10), nullable = False)
+    peso_tubete = db.Column(db.Numeric(10,2), nullable = False)
 
     observacoes = db.Column(db.Text, nullable = True)
 
-    identificador = db.Column(db.String(30), nullable = False, unique = True)
+    identificador = db.Column(db.String(30), nullable = False)
 

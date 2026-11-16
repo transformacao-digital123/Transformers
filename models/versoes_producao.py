@@ -1,5 +1,6 @@
 from extensions import db
-from datetime import datetime
+
+from servicos.conversao.data import agora
 
 class VersaoProducao(db.Model):
 
@@ -11,7 +12,7 @@ class VersaoProducao(db.Model):
 
     numero_versao = db.Column(db.Integer, nullable = False)
 
-    criado_em = db.Column(db.DateTime, default = datetime.utcnow, nullable = False)
+    criado_em = db.Column(db.DateTime(timezone = True), default = agora(), nullable = False)
 
     motivo = db.Column(db.String(255), nullable = True)
 

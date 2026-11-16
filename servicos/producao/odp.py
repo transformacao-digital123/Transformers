@@ -88,8 +88,8 @@ def preencher_odps(ordens):
         aba[f"U{linha}"] = ""
         aba[f"V{linha}"] = ""
         aba[f"W{linha}"] = ""
-        aba[f"X{linha}"] = ordem["identificador"]
-        aba[f"Y{linha}"] = ""
+        aba[f"X{linha}"] = ""
+        aba[f"Y{linha}"] = ordem["identificador"]
         aba[f"Z{linha}"] = ""
         aba[f"AA{linha}"] = ""
         aba[f"AB{linha}"] = ""
@@ -172,7 +172,7 @@ def localizar_pallet(aba,identificador,numero_pallet):
 # Analisa todas as linhas,desde a linha 1 até a última, devido ao + 1
     for linha in range(1, aba.max_row + 1):
 
-        identificador_linha = aba[f"X{linha}"].value
+        identificador_linha = aba[f"Y{linha}"].value
         pallet_linha = aba[f"F{linha}"].value
 
 # Se o identificador_linha for igual ao identificador do QRcode da etiqueta e o Nº do pallet  inserido for igual ao Nº do pallet que já tinha sido inserido antes...
@@ -310,13 +310,13 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
         houve_alteracao = True
 
         aba[f"U{linha_historico}"] = aba[f"D{linha}"].value
-        aba[f"V{linha_historico}"] = agora().strftime("%d/%m/%Y")
-        aba[f"W{linha_historico}"] = agora().strftime("%H:%M:%S")
-        aba[f"X{linha_historico}"] = identificador
-        aba[f"Y{linha_historico}"] = dados.get("acao", "pesagem")
-        aba[f"Z{linha_historico}"] = valor_anterior
-        aba[f"AA{linha_historico}"] = novo_valor
-        aba[f"AB{linha_historico}"] = ""
+        aba[f"V{linha_historico}"] = aba[f"F{linha}"].value
+        aba[f"W{linha_historico}"] = agora().strftime("%d/%m/%Y")
+        aba[f"X{linha_historico}"] = agora().strftime("%H:%M:%S")
+        aba[f"Y{linha_historico}"] = identificador
+        aba[f"Z{linha_historico}"] = dados.get("acao", "pesagem")
+        aba[f"AA{linha_historico}"] = valor_anterior
+        aba[f"AB{linha_historico}"] = novo_valor
 
         for coluna_historico in ["U","V","W","X","Y","Z","AA","AB"]:
             aba[f"{coluna_historico}{linha_historico}"].font = FONTE_PADRAO

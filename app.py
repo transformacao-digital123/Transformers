@@ -34,7 +34,7 @@ from servicos.rastreabilidade.despacho import preencher_despacho
 from servicos.entradas.armazenamento import pasta_arquivos
 from config import Config # Carrega as configurações do config.py
 from extensions import db,migrate
-from models import PeriodoProducao, VersaoProducao, GrupoProducao, OrdemProducao
+from models import PeriodoProducao, VersaoProducao, GrupoProducao, OrdemProducao, PesagensProducao, Pallet, Despacho, HistoricoProducao
 
 AMBIENTE = os.getenv("AMBIENTE","local")
 
@@ -97,7 +97,7 @@ def consultar_periodos():
                 "turno": periodo.turno
                 }   )
 
-            return resultado
+        return resultado
 
     except Exception as erro:
         return {

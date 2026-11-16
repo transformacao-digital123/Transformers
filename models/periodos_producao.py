@@ -1,5 +1,6 @@
 from extensions import db
-from datetime import datetime
+
+from servicos.conversao.data import agora
 
 # Aqui a classe PeriodoProducao herda db.Model e então informa ao SQLAlchemy que esta classe representa uma tabela no banco de dados
 class PeriodoProducao(db.Model):
@@ -18,7 +19,7 @@ class PeriodoProducao(db.Model):
     turno = db.Column(db.String(20), nullable = False)
 
 # Aqui o default define uma valor automático quando um registro é criado, nesse caso, define a data e hora automaticamente com o padrão UTC
-    criado_em = db.Column(db.DateTime, default = datetime.utcnow, nullable = False)
+    criado_em = db.Column(db.DateTime(timezone = True), default = agora, nullable = False)
 
 # O onupdate atualizará o registro com uma nova data e hora toda vez que o registro sofrer alguma alteração no banco
-    atualizado_em = db.Column(db.DateTime, default = datetime.utcnow, onupdate = datetime.utcnow, nullable = False)
+    atualizado_em = db.Column(db.DateTime(timezone = True), default = agora, onupdate = agora, nullable = False)
