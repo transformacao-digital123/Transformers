@@ -34,7 +34,7 @@ from servicos.rastreabilidade.despacho import preencher_despacho
 from servicos.entradas.armazenamento import pasta_arquivos
 from config import Config # Carrega as configurações do config.py
 from extensions import db,migrate
-from models import PeriodoProducao, VersaoProducao, GrupoProducao, OrdemProducao, PesagensProducao, Pallet, Despacho, HistoricoProducao
+from models import PeriodoProducao, VersaoProducao, GrupoProducao, OrdemProducao, PesagemProducao, Pallet, Despacho, HistoricoProducao, LinkUtilizado, PerfilOperacional, Usuario, OrdemGrupo
 
 AMBIENTE = os.getenv("AMBIENTE","local")
 
@@ -541,9 +541,9 @@ def dados_acompanhamento():
 
             valores = []
 
-# É essa parte a responsável por exibir as colunas, sem elas nada seria exibido, no caso de C até AA
+# É essa parte a responsável por exibir as colunas, sem elas nada seria exibido, no caso de C até AB
 # Aqui irá fazer uma análise de C a X e acrescentará em valores os valores que estiverem nas células analisadas
-            for coluna in range(3, 28): 
+            for coluna in range(3, 29): 
                 valores.append(aba.cell(linha, coluna).value)
 
 # Se a linha tiver ao menos 1 valor em valores ele seguirá seu rumo como deveria, se não dará erro

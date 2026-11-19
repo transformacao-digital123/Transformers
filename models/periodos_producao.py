@@ -23,3 +23,8 @@ class PeriodoProducao(db.Model):
 
 # O onupdate atualizará o registro com uma nova data e hora toda vez que o registro sofrer alguma alteração no banco
     atualizado_em = db.Column(db.DateTime(timezone = True), default = agora, onupdate = agora, nullable = False)
+
+# Aqui o relacionamento é de 1:N com um único período podendo possuir várias versões
+    versoes = db.relationship("VersaoProducao", back_populates = "periodo")
+
+    __table_args__ = (db.UniqueConstraint("data", "turno", name = "uq_periodo_data_turno"),)

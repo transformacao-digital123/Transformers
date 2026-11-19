@@ -11,12 +11,12 @@ def extrair_pesos(parte_direita):
     for peso in pesos:
         if len(pesos) > 1:
             if "KG DE FILME" in peso:
-                peso_filme = pesos[0].replace("KG DE FILME", "").strip()
+                peso_filme = pesos[0].replace("KG DE FILME", "").replace("DE FILME", "").strip()
         else:
-            peso_filme = pesos[0].replace("KG DE FILME)", "").strip()
+            peso_filme = pesos[0].replace("KG DE FILME)", "").replace("DE FILME)", "").strip()
 
     if len(pesos) > 1:
-        peso_tubete = pesos[1].replace("KG DE TUBETE)", "").strip()
+        peso_tubete = pesos[1].replace("KG DE TUBETE)", "").replace("DE TUBETE)", "").strip()
     else:
         peso_tubete = ""
 

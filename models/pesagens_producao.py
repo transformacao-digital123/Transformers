@@ -1,6 +1,6 @@
 from extensions import db
 
-class PesagensProducao(db.Model):
+class PesagemProducao(db.Model):
 
     __tablename__ = "pesagens_producao"
 
@@ -19,3 +19,6 @@ class PesagensProducao(db.Model):
     op_material = db.Column(db.Integer, nullable = True)
 
     op_tubete = db.Column(db.Integer, nullable = True)
+
+# Aqui o relacionamento é de 1:1 em que um único pallet pertence a uma única pesagem
+    pallet = db.relationship("Pallet", back_populates = "pesagem")

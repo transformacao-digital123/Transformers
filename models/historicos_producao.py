@@ -17,6 +17,13 @@ class HistoricoProducao(db.Model):
 
     acao = db.Column(db.String(20), nullable = False)
 
+    campo_alterado = db.Column(db.String(30), nullable = False)
+
     valor_anterior = db.Column(db.String(30), nullable = True)
 
     valor_novo = db.Column(db.String(30), nullable = True)
+
+# Aqui o relacionamento é de 1:N em que um pallet possuindo vários registros históricos mas o histprico pertence só a um pallet
+    pallet = db.relationship("Pallet", back_populates = "historico")
+
+    ordem = db.relationship("OrdemProducao", back_populates = "historico")
