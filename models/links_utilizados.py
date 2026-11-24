@@ -7,6 +7,6 @@ class LinkUtilizado(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
 
-    link = db.Column(db.Text, nullable = False)
+    link = db.Column(db.Text, nullable = False, unique = True)
 
     utilizado_em = db.Column(db.DateTime(timezone = True), default = agora, nullable = False)

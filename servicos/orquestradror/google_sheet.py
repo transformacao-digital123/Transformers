@@ -98,7 +98,7 @@ def converter_google_sheets(link, id_conversao, acrescentar = False):
 # Aqui pegamos a 1º aba da planilha
         aba_remessa = planilha_remessa.active
 
-# Aqui a gente criou uma caixaorganizadora que está vazia e será usada mais pra frente
+# Aqui a gente criou uma caixa organizadora que está vazia e será usada mais pra frente
         odps_existentes = set()
 
 # Faz uma ánalise começando da linha 6 e indo até a penúltima linha + 1 

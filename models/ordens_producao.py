@@ -24,10 +24,16 @@ class OrdemProducao(db.Model):
 
     observacoes = db.Column(db.Text, nullable = True)
 
+# Identificador 
+    chave_origem = db.Column(db.String(36), nullable = False, unique = True)
+
+# Identificador da ocorrência por meio do QRcode, representando todas as OdP ligadas aquele QR, independente de quantos pallets aja
     identificador = db.Column(db.String(30), nullable = False)
 
-# Aqui o relacionamento é de N:N em que um grupo pode possui várias odp assim como uma única odp pode pertencer a vários grupos, criando assim a tabela intermediária entre eles
-    grupos_associados = db.relationship("OrdemGrupo", back_populates = "ordem")
+# Aqui o relacionamento é de N:1 em que um grupo pode possui várias ocorrências, mas 1 ocorrência (Identificador do QRcode) só pertence a um grupo
+    grupo_id = db.Colum(db.Integer, db.ForeignKey("grupos_producao.id"), nullable = False)
+
+    grupo = db.relationship("GrupoProducao", back_populates = "ordens")
 
 # Aqui a relaçã é de 1:N pois um pallet faz referência a uma única odp, já uma odp pode possui vários pallets
     pallet = db.relationship("Pallet", back_populates = "ordem")

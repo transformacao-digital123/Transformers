@@ -5,7 +5,7 @@ class GrupoProducao(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
 
-    versao_id = db.Column(db.Integer, db.ForeignKey("versoes_producao.id"), nullable = False)
+    periodo_id = db.Column(db.Integer, db.ForeignKey("periodos_producao.id"), nullable = False)
 
     operador = db.Column(db.String(100), nullable = False)
 
@@ -13,7 +13,8 @@ class GrupoProducao(db.Model):
 
     meta = db.Column(db.Integer, nullable = True)
 
-    versao = db.relationship("VersaoProducao", back_populates = "grupos")
+# Aqui o relacionamento é de N:1 em que um único período possui vários grupos
+    periodo = db.relationship("PeriodoProducao", back_populates = "grupos")
 
-# Aqui o relacionamento é de N:N em que um grupo pode possui várias odp assim como uma única odp pode pertencer a vários grupos, criando assim a tabela intermediária entre eles
-    ordens_associadas = db.relationship("OrdemGrupo", back_populates = "grupo")
+# Aqui o relacionamento é de N:1 em que um grupo pode possui várias ocorrências, mas 1 ocorrência (Identificador do QRcode) só pertence a um grupo
+    ordens = db.relationship("OrdemProducao", back_populates = "grupo")
