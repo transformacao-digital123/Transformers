@@ -6,8 +6,6 @@ class OrdemProducao(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
 
-# O relacionamento entre grupos e ordens_producao está em ordens_grupos.py
-
 # Aqui é string devido a / ou - da OdP
 
     pedido = db.Column(db.String(20), nullable = False)
@@ -15,6 +13,8 @@ class OrdemProducao(db.Model):
     odp = db.Column(db.String(20), nullable = False)
 
     cliente = db.Column(db.String(255), nullable = False)
+
+    origem = db.Column(db.String(60), nullable = True)
 
     padrao = db.Column(db.String(60), nullable = False)
 
@@ -31,7 +31,7 @@ class OrdemProducao(db.Model):
     identificador = db.Column(db.String(30), nullable = False)
 
 # Aqui o relacionamento é de N:1 em que um grupo pode possui várias ocorrências, mas 1 ocorrência (Identificador do QRcode) só pertence a um grupo
-    grupo_id = db.Colum(db.Integer, db.ForeignKey("grupos_producao.id"), nullable = False)
+    grupo_id = db.Column(db.Integer, db.ForeignKey("grupos_producao.id"), nullable = False)
 
     grupo = db.relationship("GrupoProducao", back_populates = "ordens")
 

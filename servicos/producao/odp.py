@@ -93,9 +93,10 @@ def preencher_odps(ordens):
         aba[f"Z{linha}"] = ""
         aba[f"AA{linha}"] = ""
         aba[f"AB{linha}"] = ""
+        aba[f"AC{linha}"] = ""
 
 # Essas letras todas são todas as colunas que tem informação na nossa tabela na qual aplicaremos alguma mudança
-        for coluna in ["C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","AA","AB"]:
+        for coluna in ["C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","AA","AB", "AC"]:
 
             aba[f"{coluna}{linha}"].font = FONTE_PADRAO
             aba[f"{coluna}{linha}"].alignment = ALINHAMENTO_PADRAO
@@ -262,6 +263,9 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
 # As linhas de contorno (bordas) da célula
                 destino.border = copy(origem.border)
 
+# Aqui é pra garantir que após o 1° despacho os pallets seguintes não dupliquem o valor do horário do despacho
+            aba[f"E{linha_nova}"] = None
+
 # O valor de linha agora é o valor que antes pertencia só a linha_nova
             linha = linha_nova
 
@@ -317,8 +321,9 @@ def atualizar_odp(caminho_arquivo,nome_aba,linha,identificador,dados):
         aba[f"Z{linha_historico}"] = dados.get("acao", "pesagem")
         aba[f"AA{linha_historico}"] = valor_anterior
         aba[f"AB{linha_historico}"] = novo_valor
+        aba[f"AC{linha_historico}"] = ""
 
-        for coluna_historico in ["U","V","W","X","Y","Z","AA","AB"]:
+        for coluna_historico in ["U","V","W","X","Y","Z","AA","AB","AC"]:
             aba[f"{coluna_historico}{linha_historico}"].font = FONTE_PADRAO
             aba[f"{coluna_historico}{linha_historico}"].alignment = ALINHAMENTO_PADRAO
 

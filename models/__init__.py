@@ -1,7 +1,6 @@
 # A existência desse arquivo é para que quando for fazer o import faça direto do arquivo certo, e não tenha de especificar o caminho inteiro desde a raís, já escolhendo a função começado já da su pasta
 
 from .periodos_producao import PeriodoProducao
-from .versoes_producao import VersaoProducao
 from .grupos_producao import GrupoProducao
 from .ordens_producao import OrdemProducao
 from .pesagens_producao import PesagemProducao
@@ -11,4 +10,3 @@ from .historicos_producao import HistoricoProducao
 from .links_utilizados import LinkUtilizado
 from .perfis_operacionais import PerfilOperacional
 from .usuarios import Usuario
-from .ordens_grupos import OrdemGrupo

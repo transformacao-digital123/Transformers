@@ -18,7 +18,7 @@ def converter_pdf(arquivo, id_conversao, acrescentar = False):
 # Comandos para executar as análises dos dados do PDF e o preenchimento do Excel
         validar_arquivo(arquivo)
         dados = processar_pdf(arquivo)
-        arquivo_excel = preencher_planilha(dados)
+        arquivo_excel = preencher_planilha(dados, 1) # O 1 aqui é porque por causa da opção do docs todos tem de enviar um índice, então deixamos 1 já pré-definido
 
         registrar_info(
             f"Conversão do {arquivo.filename} realizada com sucesso!"

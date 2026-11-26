@@ -79,7 +79,7 @@ def preencher_planilha(dados, indice, origem="pdf"):
 # Comando para nomear a data e hora no arquivo
     nome = agora().strftime("%d%m%Y_%H%M%S")
 
-    if dados["odp"]:
+    if dados.get("odp"):
         identificador = str(dados["odp"]).strip().replace("/","-")
     else:
         identificador = str(dados["numero_pedido"]).strip().replace("/", "-")

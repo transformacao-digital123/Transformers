@@ -47,32 +47,37 @@ def acrescentar_odps_por_remessa(caminho_remessa,ordens):
         aba[f"H{linha}"] = ""
         aba[f"I{linha}"] = ""
         aba[f"J{linha}"] = ""
+        aba[f"K{linha}"] = ""
+        aba[f"L{linha}"] = ""
 
-        aba[f"K{linha}"] = ordem["cliente"]
-        aba[f"L{linha}"] = ordem["padrao"]
-        aba[f"M{linha}"] = ordem["filme"]
-        aba[f"N{linha}"] = ordem["peso_tubete"]
-        aba[f"O{linha}"] = ordem.get("observacao","")
-        aba[f"P{linha}"] = ordem["operador"]
-        aba[f"Q{linha}"] = ordem["maquina"]
+        aba[f"M{linha}"] = ordem["cliente"]
+        aba[f"N{linha}"] = ordem["padrao"]
+        aba[f"O{linha}"] = ordem["filme"]
+        aba[f"P{linha}"] = ordem["peso_tubete"]
+        aba[f"Q{linha}"] = ordem.get("observacao","")
+        aba[f"R{linha}"] = ordem["operador"]
+        aba[f"S{linha}"] = ordem["maquina"]
 
 # Dados de rastreabilidade, para serem registrados no histórico
-        aba[f"R{linha}"] = ""
-        aba[f"S{linha}"] = ""
         aba[f"T{linha}"] = ""
-        aba[f"U{linha}"] = ordem["identificador"]
+        aba[f"U{linha}"] = ""
         aba[f"V{linha}"] = ""
         aba[f"W{linha}"] = ""
         aba[f"X{linha}"] = ""
+        aba[f"Y{linha}"] = ordem["identificador"]
+        aba[f"Z{linha}"] = ""
+        aba[f"AA{linha}"] = ""
+        aba[f"AB{linha}"] = ""
+        aba[f"AC{linha}"] = ""
 
 # Essas letras todas são todas as colunas que tem informação na nossa tabela na qual aplicaremos alguma mudança
-        for coluna in "CDEFGHIJKLMNOPQRSTUVW":
+        for coluna in ["U","V","W","X","Y","Z","AA","AB","AC"]:
 
             aba[f"{coluna}{linha}"].font = FONTE_PADRAO
             aba[f"{coluna}{linha}"].alignment = ALINHAMENTO_PADRAO
 
 # OBS em vermelho
-        aba[f"O{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
+        aba[f"Q{linha}"].font = Font(name="Arial", size=11, color="FF0000", bold=True)
 
              
         linha += 2
