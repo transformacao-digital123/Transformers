@@ -143,6 +143,7 @@ def converter_google_sheets(link, id_conversao, acrescentar = False):
     total_ordens = len(ordens)
     
     for indice,ordem in enumerate(ordens):
+
 # Função chamada para analisar o padrão, e descobrir o filme e o peso do tubete. Além disso, dentro dela nota-se 2 padrao, o 1° é para encontrar a variável dentro do dicionário e o 2° é para encontrar a coluna caso ela se chame PADRÃO
         try:
                 informacoes = selecionar_interpretador(ordem["padrao"], ordem["origem"])
@@ -152,6 +153,9 @@ def converter_google_sheets(link, id_conversao, acrescentar = False):
                 ordem["filme"] = informacoes["filme"]
                 ordem["peso_tubete"] = informacoes["peso_tubete"]
                 ordem["padrao"] = informacoes["padrao"]
+
+# responsável por colocar um valor aleatório para a pessoa que tentar bipar a etiqueta sem ser pelo Transformer receber. Além disso, o identificador foi posto aqui para garantir que tanto preencher odp quanto eiquetas recebesse o mesmo,e não um independente cada um
+                ordem["identificador"] = gerar_identificador()
 
                 arquivo = preencher_planilha(ordem, indice)
              
@@ -204,12 +208,6 @@ def converter_google_sheets(link, id_conversao, acrescentar = False):
 
             numero_etiqueta = sequencia_etiquetas[chave]
             total_etiquetas = contadores_etiquetas[chave]
-
-# responsável por colocar um valor aleatório para a pessoa que tentar bipar a etiqueta sem ser pelo Transformer receber
-            identificador = gerar_identificador()
-
-# O identificador foi posto aqui para garantir que tanto preencher odp quanto eiquetas recebesse o mesmo,e não um independente cada um
-            ordem["identificador"] = identificador
 
             arquivo_etiqueta, caminho_qr = preencher_etiqueta(ordem,rastreabilidade,numero_etiqueta,total_etiquetas)
 

@@ -24,6 +24,7 @@ def preencher_etiqueta(ordem,rastreabilidade,numero_etiquetas,total_etiquetas):
                 "data": ordem["data"].strftime("%d%m%Y")
         }
 
+# Essa linha faz a separação dos dados, ela separa cada dados_identificador, pra seu respectivo identificador, ou seja, a chave do dicionário é o identificador e o valor é outro dicionário que são os dados que ele representa
         rastreabilidade[identificador] = dados_identificador
 
 # Carrega a planilha que queremos
@@ -65,7 +66,6 @@ def preencher_etiqueta(ordem,rastreabilidade,numero_etiquetas,total_etiquetas):
 # Define os tamanhos 406x240(valores do espaço onde o QR code está inserido)
         qr.height = 405
         qr.width = 405
-
 
 # Adiciona a imagem começando na célula especificada
         aba.add_image(qr,"B12")

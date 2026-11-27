@@ -10,14 +10,19 @@ FONTE_PADRAO = Font(name="Arial", size=11)
 
 def agrupar_por_operador(ordens):
 
+# Aqui armazenamos os grupos de ordens
     grupos = {}
 
+# Percorre todas as ordens e extrai o nome do operador de cada uma delas
     for ordem in ordens:
         operador = ordem["operador"]
 
+# Se o operador não possuir um grupo é criada uma lista vazia a ele, caso contrário...
+# Isso se dá pois é porque toda 1º vez o operador passará por essa etapa e então das próximas vezes a odp seguinte dele já terá um grupo a que se associar e então irá direto pra grupos[operador].append(ordem)
         if operador not in grupos:
             grupos[operador] = []
 
+# Se não, adiciona a ordem à lista daquele operador
         grupos[operador].append(ordem)
 
     return grupos

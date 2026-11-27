@@ -14,9 +14,9 @@ def gerar_qrcode(texto,odp,operador):
         operario = operador.strip()
 
  # Aqui você aproveitou a própria ODP para criar um nome único para a imagem       
-        test = f"QR_{odp_limpo}_{operario}.png"
+        nome = f"QR_{odp_limpo}_{operario}.png"
 
-        caminho = os.path.join(pasta_arquivos(), test)
+        caminho = os.path.join(pasta_arquivos(), nome)
 
 # Agora a imagem que está na variável qr é realmente gravada no computador
         qr.save(caminho)
